@@ -29,7 +29,6 @@
 !/storage/logs/.gitignore
 
 # Public generated files
-/public/build
 /public/hot
 /public/storage
 /public/fonts-manifest.dev.json
