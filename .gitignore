@@ -1,27 +1,65 @@
-*.log
-.DS_Store
+# Environment
 .env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-/.codex
-/.cursor/
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/auth.json
+.env.*
+!.env.example
+
+# Dependencies
+/vendor
 /node_modules
-/public/build
-/public/fonts-manifest.dev.json
-/public/hot
-/public/storage
+
+# Laravel generated files
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+
 /storage/*.key
 /storage/pail
-/vendor
+/storage/app/*
+!/storage/app/.gitignore
+/storage/app/public/*
+!/storage/app/public/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/testing/*
+!/storage/framework/testing/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Public generated files
+/public/build
+/public/hot
+/public/storage
+/public/fonts-manifest.dev.json
+
+# Testing / cache
+.phpunit.result.cache
+/.phpunit.cache
+/.phpactor.json
+
+# IDE / editors
+/.idea
+/.vscode
+/.cursor
+/.codex
+/.nova
+/.zed
 _ide_helper.php
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Auth / local configs
+/auth.json
 Homestead.json
 Homestead.yaml
-Thumbs.db
