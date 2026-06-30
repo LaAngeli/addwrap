@@ -20,10 +20,10 @@
                     {{-- Desktop + mobil: lockup complet (marcă + wordmark) --}}
                     <img src="{{ asset('images/logo/addwrap-logo.png') }}" alt="{{ $company['name'] }}" width="900" height="422" loading="lazy" decoding="async" class="h-16 w-auto" />
                 </a>
-                <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">{{ __('messages.footer.tagline') }}</p>
+                <p class="mx-auto mt-4 max-w-sm text-center text-sm leading-relaxed text-muted lg:mx-0 lg:text-left">{{ __('messages.footer.tagline') }}</p>
 
                 @if (! empty($social))
-                    <div class="mt-6 flex items-center gap-3">
+                    <div class="mt-6 flex items-center justify-center gap-3 lg:justify-start">
                         @foreach ($social as $network => $url)
                             @continue(empty($socialIcons[$network]))
                             <a href="{{ $url }}" @if ($url !== '#') target="_blank" rel="noopener noreferrer" @endif

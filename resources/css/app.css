@@ -272,6 +272,57 @@
 }
 
 /* ----------------------------------------------------------------------------
+| Radar pentru paginile de eroare — „scanăm după pagina pierdută".
+| Reia motivul orbital (aw-spin + aw-pulse): grilă de radar + fascicul rotativ
+| portocaliu, cu marca AW în centru. Pe reduced-motion rămâne radar static.
+---------------------------------------------------------------------------- */
+.aw-radar {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--color-paper);
+    outline: 1px solid rgb(9 9 11 / 0.08);
+}
+
+.aw-radar-grid {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        linear-gradient(rgb(9 9 11 / 0.06), rgb(9 9 11 / 0.06)) center / 100% 1px no-repeat,
+        linear-gradient(rgb(9 9 11 / 0.06), rgb(9 9 11 / 0.06)) center / 1px 100% no-repeat,
+        radial-gradient(circle, transparent calc(34% - 1px), rgb(9 9 11 / 0.09) 34%, transparent calc(34% + 1px)),
+        radial-gradient(circle, transparent calc(67% - 1px), rgb(9 9 11 / 0.07) 67%, transparent calc(67% + 1px));
+}
+
+.aw-radar-sweep {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        rgb(234 113 23 / 0) 0deg,
+        rgb(234 113 23 / 0) 296deg,
+        rgb(234 113 23 / 0.34) 352deg,
+        rgb(234 113 23 / 0) 360deg
+    );
+    animation: aw-spin 3.4s linear infinite;
+}
+
+/* Pictogramă centrală rotativă (ex: roata dințată pe pagina 503 — mentenanță) */
+.aw-radar-spin {
+    transform-origin: center;
+    animation: aw-spin 9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aw-radar-sweep,
+    .aw-radar-spin {
+        animation: none;
+    }
+}
+
+/* ----------------------------------------------------------------------------
 | Cursor pointer pe elemente clickabile (Tailwind v4 nu-l mai adaugă implicit)
 ---------------------------------------------------------------------------- */
 @layer base {
