@@ -21,9 +21,11 @@
                         <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <x-service-icon :name="$service['icon'] ?? 'chart-bar'" class="h-6 w-6" />
                         </span>
-                        <span class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $svc['name'] }}</span>
                     </div>
-                    <h1 data-animate="fade-up" class="mt-6 text-4xl font-bold tracking-tight text-ink sm:text-5xl text-balance">{{ $svc['tagline'] }}</h1>
+                    <h1 data-animate="fade-up" class="mt-6 text-balance">
+                        <span class="block text-sm font-semibold uppercase tracking-wider text-muted">{{ $svc['name'] }}</span>
+                        <span class="mt-3 block text-4xl font-bold tracking-tight text-ink sm:text-5xl">{{ $svc['tagline'] }}</span>
+                    </h1>
                     <p data-animate="fade-up" class="mt-5 text-lg text-muted">{{ $svc['description'] }}</p>
 
                     <div data-animate="fade-up" class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
@@ -249,6 +251,8 @@
     </section>
 
     {{-- Alte servicii --}}
+    <x-service-faq :faq="$svc['faq'] ?? []" />
+
     <x-other-services :current="$serviceKey" />
 
     <x-cta-band

@@ -161,6 +161,9 @@
         </section>
     @endif
 
+    {{-- FAQ specific serviciului (FAQPage schema injectat în controller) --}}
+    <x-service-faq :faq="$svc['faq'] ?? []" />
+
     {{-- Alte servicii --}}
     <x-other-services :current="$serviceKey" />
 

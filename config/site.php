@@ -32,6 +32,33 @@ return [
 
     'logo' => 'images/logo/addwrap-mark.png',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Ultima modificare globală (pentru sitemap <lastmod>)
+    |--------------------------------------------------------------------------
+    | Folosită pentru paginile statice care nu au o dată proprie. Conținutul
+    | dinamic (blog, portfolio) folosește data sa specifică. Actualizează
+    | manual la deploy-uri cu impact semnificativ asupra conținutului.
+    */
+    'last_modified' => '2026-06-30',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Maparea categoriilor de blog → servicii relevante
+    |--------------------------------------------------------------------------
+    | Folosită în pagina de articol pentru a sugera serviciul aferent (internal
+    | linking SEO). Cheile sunt categoriile din BlogPosts; valorile sunt chei
+    | interne ale serviciilor din `site.services`. Categoriile fără mapping
+    | (ex: „strategy") cad înapoi pe pagina de overview servicii.
+    */
+    'blog_category_service' => [
+        'seo' => 'seo-aeo-geo',
+        'ads' => 'google-ads',
+        'content' => 'content-strategy',
+        'branding' => 'brandbook',
+        'web' => 'web-development',
+    ],
+
     'og_locales' => [
         'ro' => 'ro_RO',
         'en' => 'en_US',

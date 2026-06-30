@@ -140,6 +140,11 @@ class BlogPosts
                         ]],
                         ['type' => 'quote', 'text' => 'Bugetul mic nu e o problemă dacă îl pui în locul potrivit pentru afacerea ta.'],
                     ],
+                    'howto_steps' => [
+                        ['name' => 'Identifică tipul de cerere', 'text' => 'Întreabă-te dacă oamenii caută activ serviciul tău pe Google. Dacă da, există cerere existentă pe care o poți capta direct cu Google Ads — clienții sunt deja în decizie.'],
+                        ['name' => 'Evaluează factorul vizual', 'text' => 'Produsul sau serviciul tău se vinde prin imagine, atmosferă sau poveste? Atunci Meta Ads (Facebook + Instagram) îți permite să construiești dorință cu creativ bun, chiar dacă cererea nu există încă.'],
+                        ['name' => 'Alocă bugetul potrivit contextului', 'text' => 'Cu buget unic, începe cu platforma care se potrivește contextului afacerii. Cu buget dual, folosește Meta pentru notorietate și Google pentru conversie — Meta umple top-ul funnel-ului, Google îl închide.'],
+                    ],
                 ],
                 'en' => [
                     'title' => 'Google Ads or Meta Ads: where to put your first budget',
@@ -156,6 +161,11 @@ class BlogPosts
                             'Have budget for both? Use Meta for awareness and Google for conversion.',
                         ]],
                         ['type' => 'quote', 'text' => 'A small budget is not a problem if you put it in the right place for your business.'],
+                    ],
+                    'howto_steps' => [
+                        ['name' => 'Identify the type of demand', 'text' => 'Ask whether people are actively searching for your service on Google. If they are, there is existing demand you can capture directly with Google Ads — customers are already in decision mode.'],
+                        ['name' => 'Evaluate the visual factor', 'text' => 'Does your product or service sell through image, atmosphere or story? Then Meta Ads (Facebook + Instagram) lets you build desire with strong creative, even when demand does not exist yet.'],
+                        ['name' => 'Allocate the budget to fit context', 'text' => 'With a single budget, start with the platform that matches your business context. With dual budget, use Meta for awareness and Google for conversion — Meta fills the top of the funnel, Google closes it.'],
                     ],
                 ],
             ],
@@ -184,6 +194,12 @@ class BlogPosts
                         ['type' => 'quote', 'text' => 'Consistența bate inspirația. Un plan modest, dus la capăt, învinge mereu o idee genială lăsată baltă.'],
                         ['type' => 'paragraph', 'text' => 'Odată ce ai structura, planificarea devine simplă. Aloci teme pe săptămâni, pregătești din timp și măsori ce funcționează, ca să faci mai mult din ce aduce rezultate.'],
                     ],
+                    'howto_steps' => [
+                        ['name' => 'Definește obiectivul de business', 'text' => 'Înainte să decizi ce postezi, alege ce vrei să obții: notorietate, încredere sau vânzare. Fiecare postare ar trebui să servească unul dintre aceste scopuri, altfel e doar zgomot.'],
+                        ['name' => 'Structurează tipurile de conținut', 'text' => 'Acoperă patru direcții: educativ (răspunde la întrebări), încredere (rezultate, procese din spate), conversie (oferte, CTA) și comunitate (poveste, oameni). Așa eviți pagina monotonă care nu vinde.'],
+                        ['name' => 'Alocă teme pe săptămâni', 'text' => 'Repartizează direcțiile pe săptămâni și pregătește din timp materialele. Un calendar cu 4-6 săptămâni înainte e suficient ca să nu te prinzi în producție în ultima clipă.'],
+                        ['name' => 'Măsoară și ajustează lunar', 'text' => 'La sfârșit de lună, vezi ce postări au generat reacții, salvări sau lead-uri, și fă mai mult din ce a adus rezultate. Calendarul nu e gravat în piatră.'],
+                    ],
                 ],
                 'en' => [
                     'title' => 'The content calendar that actually brings customers',
@@ -201,6 +217,12 @@ class BlogPosts
                         ]],
                         ['type' => 'quote', 'text' => 'Consistency beats inspiration. A modest plan carried through always beats a brilliant idea left undone.'],
                         ['type' => 'paragraph', 'text' => 'Once you have the structure, planning becomes simple. You assign themes to weeks, prepare ahead and measure what works, so you do more of what brings results.'],
+                    ],
+                    'howto_steps' => [
+                        ['name' => 'Define the business goal', 'text' => 'Before deciding what to post, choose what you want to achieve: awareness, trust or sales. Every post should serve one of these goals, otherwise it is just noise.'],
+                        ['name' => 'Structure the content types', 'text' => 'Cover four directions: educational (answer questions), trust (results, behind-the-scenes), conversion (offers, CTA) and community (story, people). That keeps the page from sliding into the silent-sells-nothing trap.'],
+                        ['name' => 'Assign themes to weeks', 'text' => 'Map the directions to specific weeks and prepare assets ahead of time. A calendar that runs 4-6 weeks in advance is enough to avoid last-minute production scrambles.'],
+                        ['name' => 'Measure and adjust monthly', 'text' => 'At month-end, look at which posts drove reactions, saves or leads, and do more of what brought results. The calendar is not set in stone.'],
                     ],
                 ],
             ],
@@ -271,6 +293,12 @@ class BlogPosts
                         ['type' => 'quote', 'text' => 'Viteza nu e un detaliu tehnic, ci prima impresie pe care o lași înainte ca cineva să apuce să citească ceva.'],
                         ['type' => 'paragraph', 'text' => 'Tratează viteza ca pe o funcție de business, nu ca pe o bifă tehnică. Un site rapid convertește mai bine, costă mai puțin în publicitate și urcă mai ușor în căutări.'],
                     ],
+                    'howto_steps' => [
+                        ['name' => 'Măsoară Core Web Vitals', 'text' => 'Rulează PageSpeed Insights sau Lighthouse pe paginile cheie și notează LCP (cât de repede apare conținutul principal), INP (cât de repede răspunde site-ul la interacțiuni) și CLS (cât de stabil rămâne layout-ul).'],
+                        ['name' => 'Optimizează imaginile', 'text' => 'Comprimă, alege formate moderne (WebP/AVIF), setează dimensiuni explicite pentru width și height, și folosește lazy loading pentru imaginile sub fold. De obicei aici câștigi cea mai mare parte din LCP.'],
+                        ['name' => 'Curăță codul și încarcă inteligent resursele', 'text' => 'Elimină JS și CSS nefolosite, preîncarcă fonturile critice, defer-uiește scripturile non-critice și mută bibliotecile grele după prima interacțiune. Așa scapi de blocajele de render.'],
+                        ['name' => 'Re-măsoară și iterează', 'text' => 'După fiecare modificare, re-rulează testele și verifică tendința. O îmbunătățire de 1 secundă la LCP poate crește rata de conversie cu 5-10% — viteza nu e bifă, e canal de vânzări.'],
+                    ],
                 ],
                 'en' => [
                     'title' => 'Site speed means sales: a practical Core Web Vitals guide',
@@ -287,6 +315,12 @@ class BlogPosts
                         ['type' => 'paragraph', 'text' => 'Optimized images, good hosting, clean code and smart resource loading make the biggest difference. Often, a few technical tweaks cut load time in half.'],
                         ['type' => 'quote', 'text' => 'Speed is not a technical detail, it is the first impression you make before anyone gets to read a thing.'],
                         ['type' => 'paragraph', 'text' => 'Treat speed as a business function, not a technical checkbox. A fast site converts better, costs less in advertising and climbs more easily in search.'],
+                    ],
+                    'howto_steps' => [
+                        ['name' => 'Measure Core Web Vitals', 'text' => 'Run PageSpeed Insights or Lighthouse on key pages and note LCP (how fast the main content appears), INP (how fast the site responds to interactions) and CLS (how stable the layout stays).'],
+                        ['name' => 'Optimize images', 'text' => 'Compress, pick modern formats (WebP/AVIF), set explicit width and height, and lazy-load below-the-fold images. This usually yields most of your LCP gains.'],
+                        ['name' => 'Clean the code and load resources smartly', 'text' => 'Remove unused JS and CSS, preload critical fonts, defer non-critical scripts and move heavy libraries behind first interaction. That removes the render blockers.'],
+                        ['name' => 'Re-measure and iterate', 'text' => 'After every change, re-run the tests and watch the trend. A 1-second LCP improvement can lift conversion rate by 5-10% — speed is not a checkbox, it is a sales channel.'],
                     ],
                 ],
             ],
@@ -314,6 +348,11 @@ class BlogPosts
                         ['type' => 'paragraph', 'text' => 'Nu trebuie să faci tot odată. Mai bine pui bazele solid pe un singur canal și îl duci la capăt, decât să împrăștii bugetul pe cinci canale făcute pe jumătate.'],
                         ['type' => 'quote', 'text' => 'Marketingul nu e o cheltuială, ci un sistem: pui ceva la intrare, măsori la ieșire și ajustezi.'],
                     ],
+                    'howto_steps' => [
+                        ['name' => 'Pune fundația brand + site', 'text' => 'Înainte de orice ad, investește în identitate de brand coerentă și într-un site care convertește. Fără aceste două, restul investițiilor curg apă — niciun click plătit nu salvează un site lent sau un mesaj confuz.'],
+                        ['name' => 'Aloca bugetul pe atragere', 'text' => 'Pune între 50% și 70% din bugetul lunar în campanii plătite (Google sau Meta) și conținut constant. Atragerea aduce primii vizitatori și primele lead-uri într-un interval previzibil.'],
+                        ['name' => 'Optimizează lunar pe baza datelor', 'text' => 'Lunar, măsoară cost/lead per canal și fă mai mult din ce funcționează. 10-20% din buget rămân pentru testare — experimente pe care le poți închide dacă nu performează.'],
+                    ],
                 ],
                 'en' => [
                     'title' => 'Marketing budget for a small business: how to split it right',
@@ -330,6 +369,11 @@ class BlogPosts
                         ['type' => 'heading', 'text' => 'Start small, but start right'],
                         ['type' => 'paragraph', 'text' => 'You do not have to do everything at once. It is better to lay solid foundations on a single channel and see it through than to scatter your budget across five half-done channels.'],
                         ['type' => 'quote', 'text' => 'Marketing is not an expense, it is a system: you put something in, measure the output and adjust.'],
+                    ],
+                    'howto_steps' => [
+                        ['name' => 'Lay the brand + site foundation', 'text' => 'Before any ad, invest in coherent brand identity and a website that converts. Without these two, the rest of the spend leaks away — no paid click saves a slow site or a confused message.'],
+                        ['name' => 'Allocate the budget to attraction', 'text' => 'Put 50-70% of the monthly budget into paid campaigns (Google or Meta) and consistent content. Attraction brings your first visitors and first leads within a predictable timeframe.'],
+                        ['name' => 'Optimize monthly based on data', 'text' => 'Each month, measure cost per lead by channel and do more of what works. Keep 10-20% of the budget for testing — experiments you can shut down quickly if they do not perform.'],
                     ],
                 ],
             ],

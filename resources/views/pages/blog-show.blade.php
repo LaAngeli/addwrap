@@ -5,6 +5,13 @@
 
     $c = BlogPosts::content($post);
     $blocks = $c['blocks'] ?? [];
+
+    // Internal linking SEO: dacă există un serviciu mapat pentru categoria
+    // articolului, expunem un card cu link direct către pagina serviciului.
+    $relatedServiceKey = config('site.blog_category_service.'.($post['category'] ?? ''));
+    $relatedService = $relatedServiceKey
+        ? __('services.items.'.$relatedServiceKey)
+        : null;
 @endphp
 
 @extends('layouts.app')
@@ -74,8 +81,39 @@
                 @endswitch
             @endforeach
 
+            {{-- Pași concreți (vizibili pentru utilizatori, redundanți cu HowTo schema) --}}
+            @if (! empty($c['howto_steps']))
+                <section class="mt-14 rounded-2xl border border-zinc-200 bg-paper p-6 sm:p-8">
+                    <h2 class="text-xl font-bold tracking-tight text-ink">{{ __('blog.howto_title') }}</h2>
+                    <ol class="mt-6 space-y-5">
+                        @foreach ($c['howto_steps'] as $i => $step)
+                            <li class="flex items-start gap-4">
+                                <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-bold text-white">{{ $i + 1 }}</span>
+                                <div>
+                                    <h3 class="text-base font-semibold text-ink">{{ $step['name'] }}</h3>
+                                    <p class="mt-1 text-sm leading-relaxed text-muted">{{ $step['text'] }}</p>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ol>
+                </section>
+            @endif
+
+            {{-- Card serviciu relevant (internal linking SEO) --}}
+            @if ($relatedServiceKey && is_array($relatedService))
+                <div class="mt-14 rounded-2xl border border-zinc-900 bg-zinc-900 p-6 text-white sm:p-8">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">{{ __('blog.related_service.eyebrow') }}</p>
+                    <h3 class="mt-2 text-xl font-bold text-balance">{{ $relatedService['name'] ?? '' }}</h3>
+                    <p class="mt-2 text-sm text-zinc-300">{{ $relatedService['tagline'] ?? __('blog.related_service.text') }}</p>
+                    <a href="{{ Localization::serviceUrl($relatedServiceKey) }}" class="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100">
+                        {{ __('blog.related_service.cta') }}
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            @endif
+
             {{-- CTA inline --}}
-            <div class="mt-14 rounded-2xl border border-zinc-200 bg-paper p-6 text-center sm:p-8">
+            <div class="mt-8 rounded-2xl border border-zinc-200 bg-paper p-6 text-center sm:p-8">
                 <p class="text-lg font-semibold text-ink">{{ __('blog.cta_title') }}</p>
                 <p class="mt-2 text-sm text-muted">{{ __('blog.cta_text') }}</p>
                 <a href="{{ Localization::route('contact') }}" class="mt-5 inline-block rounded-lg bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-black">{{ __('messages.cta.discuss') }}</a>

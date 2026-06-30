@@ -12,11 +12,22 @@ use Illuminate\Contracts\View\View;
 
 class BlogController extends Controller
 {
-    public function index(): View
+    public function index(Seo $seo): View
     {
-        return view('pages.blog', [
-            'posts' => BlogPosts::published(),
-        ]);
+        $posts = BlogPosts::published();
+
+        $items = [];
+        foreach ($posts as $slug => $post) {
+            $content = BlogPosts::content($post);
+            $items[] = [
+                'url' => Localization::route('blog.show', ['slug' => $slug]),
+                'name' => (string) ($content['title'] ?? $slug),
+            ];
+        }
+
+        $seo->addSchema(Schema::itemList((string) trans('seo.blog.title'), $items));
+
+        return view('pages.blog', ['posts' => $posts]);
     }
 
     public function show(string $slug, Seo $seo): View
@@ -39,6 +50,18 @@ class BlogController extends Controller
                 ['name' => $title, 'url' => url()->current()],
             ])
             ->addSchema(Schema::article($post, $content, $seo->getImage()));
+
+        // AEO: articolele structurate ca pași/decizie expun HowTo schema
+        // (Google poate afișa rich snippet pas-cu-pas; LLM-urile preferă
+        // pașii numerotați ca răspuns).
+        $howtoSteps = $content['howto_steps'] ?? null;
+        if (is_array($howtoSteps) && ! empty($howtoSteps)) {
+            $seo->addSchema(Schema::howTo(
+                $title,
+                (string) ($content['excerpt'] ?? ''),
+                $howtoSteps
+            ));
+        }
 
         return view('pages.blog-show', [
             'post' => $post,

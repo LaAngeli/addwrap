@@ -64,6 +64,12 @@ return [
                 'title' => 'Flexibil · pachet personalizat',
                 'text' => 'Reconfigurăm pachetul ca să primești strict instrumentele de care ai nevoie — de ex. doar logo + paletă, doar fonturi + pattern-uri sau doar vizualizări. Preț calculat în funcție de solicitare.',
             ],
+            'faq' => [
+                ['q' => 'Ce primesc concret într-un brandbook?', 'a' => 'Logoul în 3 versiuni cu variațiuni de formă și culoare, paleta și fonturile, set de 4 pattern-uri, 10 vizualizări la alegere (carte de vizită, antet, mapă, plicuri etc.) și ghidul de brand cu reguli de utilizare.'],
+                ['q' => 'Cât durează crearea unui brandbook?', 'a' => 'Între 2 și 4 săptămâni, în funcție de complexitate, de la primul brief până la livrabilele finale.'],
+                ['q' => 'Pot să folosesc brandul singur după aceea?', 'a' => 'Da. Primești ghidul de brand cu reguli clare pentru logo, font, culori și vizualizări — îl poți preda oricărui colaborator sau imprimerii fără ambiguități.'],
+                ['q' => 'Pot lua doar o parte din pachet?', 'a' => 'Da. Reconfigurăm pachetul (doar logo + paletă, doar fonturi + pattern-uri sau doar vizualizări) și recalculăm prețul pe solicitarea ta.'],
+            ],
         ],
 
         'content-strategy' => [
@@ -87,6 +93,12 @@ return [
             ],
             'addons' => [
                 ['title' => 'Filmare și/sau editare video', 'price' => '50 €/oră', 'note' => 'cu subtitrare inclusă · + TVA 21%'],
+            ],
+            'faq' => [
+                ['q' => 'Ce conține planul pe 12 luni?', 'a' => 'Strategie cu obiective SMART, calendar editorial detaliat, scenarii lunare de conținut (8 sau 12), canale optime de comunicare și rapoarte lunare sau trimestriale.'],
+                ['q' => 'Faceți și producția conținutului (text + grafică)?', 'a' => 'Strategia și calendarul sunt incluse în abonament. Producția (text, foto/video, montaj) se cotează separat sau prin add-on Filmare/editare video la 50 €/oră.'],
+                ['q' => 'Pot ajusta strategia pe parcurs?', 'a' => 'Da. Lunar revizuim ce funcționează și ajustăm scenariile, astfel încât planul rămâne relevant chiar dacă apar schimbări la business.'],
+                ['q' => 'Pe ce canale lucrăm?', 'a' => 'Stabilim împreună canalele optime în faza de strategie — de regulă Facebook, Instagram, LinkedIn, blog, newsletter — și concentrăm efortul unde audiența ta este.'],
             ],
         ],
 
@@ -114,6 +126,12 @@ return [
                 ['title' => 'Creare banner', 'price' => '50 €/banner', 'note' => 'reformatare 15 €/format'],
             ],
             'note' => 'Bugetele Google Ads NU sunt incluse — se plătesc direct platformei. Toate prețurile + TVA 21%.',
+            'faq' => [
+                ['q' => 'Bugetul de publicitate este inclus în tariful lunar?', 'a' => 'Nu. Tariful lunar acoperă management, optimizare și raportare. Bugetul media se plătește direct către Google, separat de fee-ul nostru.'],
+                ['q' => 'Pe ce tip de campanii rulați?', 'a' => 'Search (pentru cerere existentă), Display (notorietate și remarketing) și YouTube (video) — alegerea depinde de obiectivul tău și de publicul țintă.'],
+                ['q' => 'Cât durează până apar primele rezultate?', 'a' => 'Search aduce conversii în câteva zile dacă există cerere. Display și YouTube au nevoie de 4-6 săptămâni pentru optimizarea algoritmilor și o medie ROAS stabilă.'],
+                ['q' => 'Există minimum de contract?', 'a' => 'Recomandăm minimum 3 luni — primele 30 de zile sunt de calibrare a algoritmilor, iar performanța reală se vede din luna a doua și a treia.'],
+            ],
         ],
 
         'meta-ads' => [
@@ -139,6 +157,12 @@ return [
                 ['title' => 'Creare banner', 'price' => '50 €/banner', 'note' => 'reformatare 15 €/format'],
             ],
             'note' => 'Bugetele Meta NU sunt incluse — se plătesc direct platformei. Toate prețurile + TVA 21%.',
+            'faq' => [
+                ['q' => 'Care e diferența dintre Meta Ads și Boost?', 'a' => 'Boost-ul promovează un post existent fără targeting precis. Meta Ads îți oferă obiective dedicate (vânzări, lead-uri, trafic), audiențe granulare, A/B testing și raportare detaliată.'],
+                ['q' => 'Faceți și creative-uri (imagini / video)?', 'a' => 'Strategia, setarea și optimizarea sunt incluse. Creativele se realizează prin add-on (banner 50 €, reformatare 15 €/format) sau folosim materialele tale existente.'],
+                ['q' => 'Cât durează până apar primii lead-uri?', 'a' => 'De obicei 2-3 săptămâni pentru calibrarea algoritmilor Meta și obținerea unei rate stabile cost/rezultat. Primele conversii pot apărea în primele zile.'],
+                ['q' => 'Bugetul reclamelor este inclus?', 'a' => 'Nu. Tariful lunar acoperă management, optimizare și raport. Bugetul Meta se plătește direct platformei, separat de fee-ul de management.'],
+            ],
         ],
 
         'seo-aeo-geo' => [
@@ -165,6 +189,26 @@ return [
                 'Date structurate (Schema.org)',
                 'Google Search Console',
                 'Monitorizare poziții & raportare',
+            ],
+            'definitions' => [
+                [
+                    'term' => 'SEO',
+                    'description' => 'Search Engine Optimization — optimizarea tehnică și de conținut a unui site pentru a apărea cât mai sus în rezultatele clasice ale motoarelor de căutare (Google, Bing).',
+                ],
+                [
+                    'term' => 'AEO',
+                    'description' => 'Answer Engine Optimization — optimizarea conținutului pentru a fi extras ca răspuns direct de motoarele de răspuns și de asistenții AI (ChatGPT, Perplexity, Google AI Overviews).',
+                ],
+                [
+                    'term' => 'GEO',
+                    'description' => 'Generative Engine Optimization — practica de a face un brand citabil de motoarele generative AI (LLM-uri), prin date structurate, llms.txt, citate verificabile și autoritate de domeniu.',
+                ],
+            ],
+            'faq' => [
+                ['q' => 'Care e diferența între SEO, AEO și GEO?', 'a' => 'SEO te aduce sus în rezultatele clasice Google. AEO te face citat ca răspuns direct de ChatGPT, Perplexity și AI Overviews. GEO e umbrela care îți face brandul citabil de toate motoarele generative AI prin date structurate și autoritate de domeniu.'],
+                ['q' => 'Cât durează până apar rezultate SEO?', 'a' => 'Primele semnale (poziții noi pe long-tail) apar în 6-10 săptămâni. Rezultate stabile pe cuvinte cheie competitive — 4-6 luni. SEO e un sport pe termen lung, nu o intervenție de o săptămână.'],
+                ['q' => 'Cum optimizați pentru ChatGPT și Google AI?', 'a' => 'Date structurate (Schema.org), llms.txt, FAQ-uri citabile, definiții clare și autoritate verificabilă (Person/Author schema). Conținutul care răspunde direct la întrebări câștigă în AI Overviews și Perplexity.'],
+                ['q' => 'Trebuie să-mi schimb conținutul existent?', 'a' => 'Nu de la zero. Auditul SEO identifică ce funcționează deja, ce trebuie restructurat (titluri, meta, conținut subțire) și ce trebuie adăugat (pagini noi, FAQ-uri, date structurate).'],
             ],
         ],
 
@@ -194,6 +238,12 @@ return [
                 ['title' => 'Optimizare continuă', 'items' => ['Actualizări periodice site', 'Modificări de conținut la cerere', 'Monitorizare permanentă performanță', 'Optimizări SEO continue', 'Suport tehnic dedicat', 'Posibilitate prelungire contract', 'Raportare lunară a rezultatelor']],
             ],
             'note' => 'Optimizarea SEO / GEO / AEO este inclusă în pachetul lunar.',
+            'faq' => [
+                ['q' => 'Pe ce tehnologii lucrați?', 'a' => 'Laravel pentru backend, Tailwind CSS și Livewire / Alpine pentru frontend. Site-uri rapide, SEO-friendly și ușor de întreținut, găzduite pe hosting compatibil shared sau VPS.'],
+                ['q' => 'Cât durează un site de prezentare?', 'a' => '4-8 săptămâni de la brief până la live, în funcție de numărul de pagini, conținut și integrări externe (formulare, plăți, API-uri).'],
+                ['q' => 'Hosting-ul este inclus?', 'a' => 'Nu. Recomandăm hosting potrivit complexității proiectului — ne integrăm cu provider-ul tău existent sau te ajutăm să-l alegi.'],
+                ['q' => 'Pot edita conținutul singur?', 'a' => 'Da, oriunde ai nevoie de update-uri frecvente integrăm un panou de administrare ușor de folosit. Pentru update-uri rare, mentenanța lunară include modificări la cerere.'],
+            ],
         ],
 
     ],

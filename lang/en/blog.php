@@ -13,6 +13,15 @@ return [
     'cta_title' => 'Want results like these for your business?',
     'cta_text' => 'Let us discuss how we can apply these ideas to your marketing strategy.',
 
+    'related_service' => [
+        'eyebrow' => 'Related service',
+        'title' => 'Put the ideas in this article into practice',
+        'text' => 'Let us apply them to your business — see our dedicated package.',
+        'cta' => 'See the service',
+    ],
+
+    'howto_title' => 'Concrete steps',
+
     'categories' => [
         'seo' => 'SEO',
         'ads' => 'Advertising',

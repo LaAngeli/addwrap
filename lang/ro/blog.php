@@ -13,6 +13,15 @@ return [
     'cta_title' => 'Vrei rezultate ca acestea pentru afacerea ta?',
     'cta_text' => 'Hai să discutăm cum putem aplica aceste idei în strategia ta de marketing.',
 
+    'related_service' => [
+        'eyebrow' => 'Serviciu relevant',
+        'title' => 'Pune ideile din articol în practică',
+        'text' => 'Hai să le aplicăm la afacerea ta — vezi pachetul nostru dedicat.',
+        'cta' => 'Vezi serviciul',
+    ],
+
+    'howto_title' => 'Pași concreți',
+
     'categories' => [
         'seo' => 'SEO',
         'ads' => 'Publicitate',

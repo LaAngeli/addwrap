@@ -219,4 +219,82 @@ class Schema
             }, $qas),
         ];
     }
+
+    /**
+     * Listă ordonată de articole / proiecte / orice pe o pagină-inventar.
+     * Ajută AI și Google să înțeleagă rapid ce conținut conține pagina.
+     *
+     * @param  array<int, array{url: string, name: string}>  $items
+     * @return array<string, mixed>
+     */
+    public static function itemList(string $name, array $items): array
+    {
+        return [
+            '@type' => 'ItemList',
+            '@id' => url()->current().'#itemlist',
+            'name' => $name,
+            'numberOfItems' => count($items),
+            'itemListElement' => array_map(static function (array $item, int $index): array {
+                return [
+                    '@type' => 'ListItem',
+                    'position' => $index + 1,
+                    'url' => $item['url'],
+                    'name' => $item['name'],
+                ];
+            }, $items, array_keys($items)),
+        ];
+    }
+
+    /**
+     * Set de termeni definiți (DefinedTermSet + DefinedTerm), util pentru
+     * glosare scurte și paginile care explică acronime/concepte (SEO/AEO/GEO).
+     *
+     * @param  array<int, array{term: string, description: string}>  $terms
+     * @return array<string, mixed>
+     */
+    public static function definedTermSet(string $name, array $terms): array
+    {
+        $setId = url()->current().'#terms';
+
+        return [
+            '@type' => 'DefinedTermSet',
+            '@id' => $setId,
+            'name' => $name,
+            'inDefinedTermSet' => $setId,
+            'hasDefinedTerm' => array_map(static function (array $t) use ($setId): array {
+                return [
+                    '@type' => 'DefinedTerm',
+                    'name' => $t['term'],
+                    'description' => $t['description'],
+                    'inDefinedTermSet' => $setId,
+                ];
+            }, $terms),
+        ];
+    }
+
+    /**
+     * Schema HowTo pentru articolele structurate ca pași/decizii. Acceptă
+     * etape ordonate cu titlu + text; Google poate afișa rich snippet HowTo.
+     *
+     * @param  array<int, array{name: string, text: string}>  $steps
+     * @return array<string, mixed>
+     */
+    public static function howTo(string $name, string $description, array $steps): array
+    {
+        return array_filter([
+            '@type' => 'HowTo',
+            '@id' => url()->current().'#howto',
+            'name' => $name,
+            'description' => $description,
+            'inLanguage' => app()->getLocale(),
+            'step' => array_map(static function (array $step, int $index): array {
+                return [
+                    '@type' => 'HowToStep',
+                    'position' => $index + 1,
+                    'name' => $step['name'],
+                    'text' => $step['text'],
+                ];
+            }, $steps, array_keys($steps)),
+        ], static fn ($value): bool => $value !== null && $value !== '');
+    }
 }

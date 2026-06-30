@@ -22,7 +22,7 @@ class SeoController extends Controller
     ];
 
     /**
-     * Sitemap XML multilingv, cu alternate hreflang pentru fiecare URL.
+     * Sitemap XML multilingv, cu alternate hreflang și lastmod pentru fiecare URL.
      */
     public function sitemap(): Response
     {
@@ -32,10 +32,14 @@ class SeoController extends Controller
         $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'."\n";
 
-        foreach ($this->pages() as $urls) {
+        foreach ($this->pages() as $page) {
+            $urls = $page['urls'];
+            $lastmod = $page['lastmod'];
+
             foreach ($locales as $locale) {
                 $xml .= "  <url>\n";
                 $xml .= '    <loc>'.e($urls[$locale]).'</loc>'."\n";
+                $xml .= '    <lastmod>'.e($lastmod).'</lastmod>'."\n";
 
                 foreach ($locales as $alt) {
                     $xml .= '    <xhtml:link rel="alternate" hreflang="'.$alt.'" href="'.e($urls[$alt]).'"/>'."\n";
@@ -101,28 +105,44 @@ class SeoController extends Controller
     }
 
     /**
-     * Toate paginile site-ului, fiecare cu URL-ul pe fiecare locale.
+     * Toate paginile site-ului, fiecare cu URL-ul pe fiecare locale și data
+     * ultimei modificări. Pentru paginile statice se folosește data globală
+     * din config; pentru blog data articolului; pentru portfolio anul + 12-31.
      *
-     * @return array<int, array<string, string>>
+     * @return array<int, array{urls: array<string, string>, lastmod: string}>
      */
     private function pages(): array
     {
+        $staticLastmod = (string) config('site.last_modified', date('Y-m-d'));
         $pages = [];
 
         foreach (self::STATIC_ROUTES as $route) {
-            $pages[] = $this->localizedUrls(fn (string $locale): string => Localization::route($route, [], $locale));
+            $pages[] = [
+                'urls' => $this->localizedUrls(fn (string $locale): string => Localization::route($route, [], $locale)),
+                'lastmod' => $staticLastmod,
+            ];
         }
 
         foreach (array_keys(Localization::services()) as $key) {
-            $pages[] = $this->localizedUrls(fn (string $locale): string => Localization::serviceUrl($key, $locale));
+            $pages[] = [
+                'urls' => $this->localizedUrls(fn (string $locale): string => Localization::serviceUrl($key, $locale)),
+                'lastmod' => $staticLastmod,
+            ];
         }
 
-        foreach (array_keys(BlogPosts::published()) as $slug) {
-            $pages[] = $this->localizedUrls(fn (string $locale): string => Localization::route('blog.show', ['slug' => $slug], $locale));
+        foreach (BlogPosts::published() as $slug => $post) {
+            $pages[] = [
+                'urls' => $this->localizedUrls(fn (string $locale): string => Localization::route('blog.show', ['slug' => $slug], $locale)),
+                'lastmod' => (string) ($post['date'] ?? $staticLastmod),
+            ];
         }
 
-        foreach (array_keys(Projects::published()) as $slug) {
-            $pages[] = $this->localizedUrls(fn (string $locale): string => Localization::route('portfolio.show', ['slug' => $slug], $locale));
+        foreach (Projects::published() as $slug => $project) {
+            $year = (string) ($project['year'] ?? '');
+            $pages[] = [
+                'urls' => $this->localizedUrls(fn (string $locale): string => Localization::route('portfolio.show', ['slug' => $slug], $locale)),
+                'lastmod' => $year !== '' ? $year.'-12-31' : $staticLastmod,
+            ];
         }
 
         return $pages;

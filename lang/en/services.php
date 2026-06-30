@@ -64,6 +64,12 @@ return [
                 'title' => 'Flexible · custom package',
                 'text' => 'We can reconfigure the package so you get exactly the assets you need — e.g. just logo + palette, just fonts + patterns, or just mockups. Price calculated on request.',
             ],
+            'faq' => [
+                ['q' => 'What do I get in the brandbook?', 'a' => 'The logo in 3 versions with shape and color variations, palette and fonts, a set of 4 patterns, 10 selected mockups (business card, letterhead, folder, envelopes, etc.) and the brand guide with usage rules.'],
+                ['q' => 'How long does the brandbook take?', 'a' => 'Between 2 and 4 weeks, depending on complexity, from the first brief to the final deliverables.'],
+                ['q' => 'Can I use the brand on my own afterwards?', 'a' => 'Yes. You receive the brand guide with clear rules for logo, font, colors and mockups — you can hand it to any collaborator or print shop without ambiguity.'],
+                ['q' => 'Can I take just part of the package?', 'a' => 'Yes. We reshape the package (just logo + palette, just fonts + patterns, or just mockups) and recalculate the price for your request.'],
+            ],
         ],
 
         'content-strategy' => [
@@ -87,6 +93,12 @@ return [
             ],
             'addons' => [
                 ['title' => 'Video shooting and/or editing', 'price' => '€50/hour', 'note' => 'subtitles included · + 21% VAT'],
+            ],
+            'faq' => [
+                ['q' => 'What is in the 12-month plan?', 'a' => 'A strategy with SMART goals, a detailed editorial calendar, monthly content scenarios (8 or 12), optimal communication channels and monthly or quarterly reports.'],
+                ['q' => 'Do you also produce the content (copy + visuals)?', 'a' => 'Strategy and calendar are included. Production (copy, photo/video, editing) is quoted separately or via the Video filming/editing add-on at €50/hour.'],
+                ['q' => 'Can I adjust the strategy along the way?', 'a' => 'Yes. We review monthly what works and adjust the scenarios, so the plan stays relevant even if your business changes.'],
+                ['q' => 'Which channels do we work on?', 'a' => 'We pick the optimal channels together in the strategy phase — usually Facebook, Instagram, LinkedIn, blog, newsletter — and concentrate effort where your audience already is.'],
             ],
         ],
 
@@ -114,6 +126,12 @@ return [
                 ['title' => 'Banner creation', 'price' => '€50/banner', 'note' => 'reformatting €15/size'],
             ],
             'note' => 'Google Ads budgets are NOT included — they are paid directly to the platform. All prices + 21% VAT.',
+            'faq' => [
+                ['q' => 'Is the ad budget included in the monthly fee?', 'a' => 'No. The monthly fee covers management, optimization and reporting. The media budget is paid directly to Google, separately from our fee.'],
+                ['q' => 'What types of campaigns do you run?', 'a' => 'Search (existing demand), Display (awareness and remarketing) and YouTube (video) — the choice depends on your goal and your target audience.'],
+                ['q' => 'How long until the first results?', 'a' => 'Search brings conversions within days if demand exists. Display and YouTube need 4-6 weeks for algorithm optimization and a steady ROAS.'],
+                ['q' => 'Is there a minimum contract?', 'a' => 'We recommend a 3-month minimum — the first 30 days are algorithm calibration, real performance shows from month two and three.'],
+            ],
         ],
 
         'meta-ads' => [
@@ -139,6 +157,12 @@ return [
                 ['title' => 'Banner creation', 'price' => '€50/banner', 'note' => 'reformatting €15/size'],
             ],
             'note' => 'Meta budgets are NOT included — they are paid directly to the platform. All prices + 21% VAT.',
+            'faq' => [
+                ['q' => 'What is the difference between Meta Ads and Boost?', 'a' => 'Boost promotes an existing post without precise targeting. Meta Ads gives you dedicated objectives (sales, leads, traffic), granular audiences, A/B testing and detailed reporting.'],
+                ['q' => 'Do you also produce creatives (images / video)?', 'a' => 'Strategy, setup and optimization are included. Creatives are produced via add-on (banner €50, reformat €15/format) or we use your existing assets.'],
+                ['q' => 'How long until the first leads?', 'a' => 'Usually 2-3 weeks for Meta algorithm calibration and a stable cost/result. First conversions can appear within days.'],
+                ['q' => 'Is the ad budget included?', 'a' => 'No. The monthly fee covers management, optimization and report. The Meta budget is paid directly to the platform, separate from the management fee.'],
+            ],
         ],
 
         'seo-aeo-geo' => [
@@ -165,6 +189,26 @@ return [
                 'Structured data (Schema.org)',
                 'Google Search Console',
                 'Ranking monitoring & reporting',
+            ],
+            'definitions' => [
+                [
+                    'term' => 'SEO',
+                    'description' => 'Search Engine Optimization — the technical and content optimization of a website to rank as high as possible in classic search engine results (Google, Bing).',
+                ],
+                [
+                    'term' => 'AEO',
+                    'description' => 'Answer Engine Optimization — optimizing content so it is extracted as a direct answer by answer engines and AI assistants (ChatGPT, Perplexity, Google AI Overviews).',
+                ],
+                [
+                    'term' => 'GEO',
+                    'description' => 'Generative Engine Optimization — making a brand citable by generative AI engines (LLMs) through structured data, llms.txt, verifiable citations and domain authority.',
+                ],
+            ],
+            'faq' => [
+                ['q' => 'What is the difference between SEO, AEO and GEO?', 'a' => 'SEO brings you to the top of classic Google results. AEO makes you cited as a direct answer by ChatGPT, Perplexity and AI Overviews. GEO is the umbrella that makes your brand citable by all generative AI engines via structured data and domain authority.'],
+                ['q' => 'How long until SEO results?', 'a' => 'First signals (new positions on long-tail keywords) appear in 6-10 weeks. Stable results on competitive keywords — 4-6 months. SEO is a long game, not a one-week intervention.'],
+                ['q' => 'How do you optimize for ChatGPT and Google AI?', 'a' => 'Structured data (Schema.org), llms.txt, citable FAQs, clear definitions and verifiable authority (Person/Author schema). Content that directly answers questions wins in AI Overviews and Perplexity.'],
+                ['q' => 'Do I have to change my existing content?', 'a' => 'Not from scratch. The SEO audit identifies what already works, what needs restructuring (titles, meta, thin content) and what needs adding (new pages, FAQs, structured data).'],
             ],
         ],
 
@@ -194,6 +238,12 @@ return [
                 ['title' => 'Continuous optimization', 'items' => ['Periodic site updates', 'Content changes on request', 'Ongoing performance monitoring', 'Continuous SEO optimization', 'Dedicated technical support', 'Option to extend the contract', 'Monthly results reporting']],
             ],
             'note' => 'SEO / GEO / AEO optimization is included in the monthly package.',
+            'faq' => [
+                ['q' => 'What technologies do you work with?', 'a' => 'Laravel for the backend, Tailwind CSS and Livewire / Alpine for the frontend. Fast, SEO-friendly, easy-to-maintain sites, hosted on shared or VPS hosting.'],
+                ['q' => 'How long for a presentation site?', 'a' => '4-8 weeks from brief to live, depending on the number of pages, content and external integrations (forms, payments, APIs).'],
+                ['q' => 'Is hosting included?', 'a' => 'No. We recommend hosting matched to the project complexity — we integrate with your existing provider or help you choose one.'],
+                ['q' => 'Can I edit the content myself?', 'a' => 'Yes, wherever you need frequent updates we integrate an easy-to-use admin panel. For rare updates, monthly maintenance includes on-demand changes.'],
+            ],
         ],
 
     ],

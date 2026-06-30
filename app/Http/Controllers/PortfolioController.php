@@ -12,11 +12,22 @@ use Illuminate\Contracts\View\View;
 
 class PortfolioController extends Controller
 {
-    public function index(): View
+    public function index(Seo $seo): View
     {
-        return view('pages.portfolio', [
-            'projects' => Projects::published(),
-        ]);
+        $projects = Projects::published();
+
+        $items = [];
+        foreach ($projects as $slug => $project) {
+            $content = Projects::content($project);
+            $items[] = [
+                'url' => Localization::route('portfolio.show', ['slug' => $slug]),
+                'name' => (string) ($content['title'] ?? $slug),
+            ];
+        }
+
+        $seo->addSchema(Schema::itemList((string) trans('seo.portfolio.title'), $items));
+
+        return view('pages.portfolio', ['projects' => $projects]);
     }
 
     public function show(string $slug, Seo $seo): View
