@@ -37,4 +37,28 @@ return [
         'service_invalid' => 'The selected service is not valid.',
     ],
 
+    'confirmation' => [
+        'subject' => 'We received your message — AddWrap',
+        'header' => 'Your message just landed with us',
+        'greeting' => 'Hi :name,',
+        'intro' => 'Thanks for reaching out. We received your message through the AddWrap contact form and will get back to you with a personalized reply within 24 business hours.',
+        'recap_label' => 'For your records, here is what you sent:',
+        'recap_service' => 'Service of interest',
+        'recap_message' => 'Your message',
+        'next_steps_title' => 'What happens next',
+        'next_steps' => [
+            'An AddWrap specialist reviews your context and goals.',
+            'We reach out by email or phone for a short discovery call.',
+            'You receive a clear proposal: scope, milestones and ballpark budget.',
+        ],
+        'meanwhile' => 'In the meantime, feel free to browse',
+        'link_portfolio' => 'our portfolio',
+        'link_services' => 'our services',
+        'link_separator' => 'or',
+        'signature_lead' => 'Warm regards,',
+        'signature_team' => 'The AddWrap team',
+        'reply_note' => 'This is an automated confirmation. If you want to add anything, just reply to this email or write to :email.',
+        'footer_company' => ':name · :phone · :email',
+    ],
+
 ];

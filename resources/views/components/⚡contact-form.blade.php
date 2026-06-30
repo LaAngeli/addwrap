@@ -1,7 +1,9 @@
 <?php
 
+use App\Mail\ContactConfirmationMail;
 use App\Mail\ContactFormMail;
 use App\Support\Localization;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\Rule;
@@ -120,7 +122,24 @@ new class extends Component
 
         RateLimiter::hit($key, 60);
 
+        $locale = Localization::current();
+
+        // Mesajul către business — prioritar. Dacă acesta cade, e o eroare reală
+        // și o lăsăm să propage (utilizatorul rămâne pe formular cu state intact).
         Mail::to(config('site.company.email'))->send(new ContactFormMail($validated));
+
+        // Confirmare către expeditor — best-effort. Dacă SMTP-ul refuză adresa
+        // (typo, mailbox plin), nu invalidăm lead-ul: îl logăm și mergem mai departe.
+        try {
+            Mail::to($validated['email'])
+                ->locale($locale)
+                ->send(new ContactConfirmationMail($validated));
+        } catch (\Throwable $e) {
+            Log::warning('Contact confirmation email failed', [
+                'email' => $validated['email'],
+                'error' => $e->getMessage(),
+            ]);
+        }
 
         return redirect()->to(Localization::route('thank_you'));
     }
