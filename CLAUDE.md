@@ -211,6 +211,26 @@ git push origin main
 
 ---
 
+# Deploy — Email deliverability (configurare DNS, NU în cod)
+
+> ⚠️ **Domeniul final NU este încă stabilit.** Tot ce apare mai jos ca `addwrap.ro` este un placeholder de lucru — domeniul de producție s-ar putea să nu fie `.ro` (TBD: extensie + registrar + provider DNS). Înainte de a aplica oricare dintre pașii de mai jos, confirmă domeniul real cu clientul și înlocuiește peste tot.
+
+Când se stabilește hosting-ul/domeniul final și site-ul trece în producție, configurează următoarele **la nivel de DNS / panou hosting** (nu sunt modificări de cod):
+
+1. **SPF** — record `TXT` pe domeniul rădăcină care autorizează explicit serverul SMTP folosit (Hostinger SMTP implicit, sau alt provider dacă se schimbă) să trimită email în numele domeniului.
+2. **DKIM** — semnătura criptografică generată din panoul SMTP-ului (de obicei `TXT default._domainkey.<domeniu>`).
+3. **DMARC** — politică `TXT _dmarc.<domeniu>` pentru ce se întâmplă când SPF/DKIM eșuează. Pornește cu `p=none` (monitorizare) primele zile, apoi `p=quarantine`, abia apoi `p=reject` după ce rapoartele arată trafic curat.
+4. **`MAIL_FROM_ADDRESS` coerent cu domeniul final** — în `.env` de producție, setează adresa de trimitere pe domeniul propriu (ex: `hello@<domeniu-final>`), nu pe un domeniu generic/gratuit (Gmail, Yahoo etc.). Inconsistența domeniu-site / domeniu-email scade scorul de încredere la Gmail/Outlook.
+5. **Reply-To corect** — deja implementat în cod, nimic de schimbat la deploy:
+   - [ContactFormMail::envelope()](app/Mail/ContactFormMail.php:23) — emailul către business are `replyTo` pe adresa expeditorului din formular, ca să răspunzi direct clientului.
+   - [ContactConfirmationMail::envelope()](app/Mail/ContactConfirmationMail.php:25) — confirmarea către expeditor are `replyTo` pe adresa firmei.
+
+**De ce contează**: fără SPF/DKIM/DMARC, Gmail și Outlook pun emailurile la Spam sau le resping tăcut, indiferent cât de bun e conținutul. Cele 3 record-uri DNS + adresa `From` coerentă sunt condiția minimă ca un email trimis programatic (formular de contact, confirmare) să ajungă în Inbox.
+
+**Acțiune când se ridică tema de deploy**: revino la această secțiune, confirmă domeniul real, configurează cele 3 record-uri DNS la providerul ales și actualizează `.env` de producție cu `MAIL_FROM_ADDRESS` pe domeniul final.
+
+---
+
 # AddWrap — Convenții de proiect (default, învățate din Laravel Boost + deciziile clientului)
 
 Aceste reguli se aplică la tot ce se construiește în AddWrap și au prioritate față de preferințele generice.
