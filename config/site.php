@@ -177,6 +177,18 @@ return [
     | sau dată completă YYYY-MM-DD). Lăsat null nu emite nodul.
     */
 
+    /*
+    |--------------------------------------------------------------------------
+    | Google Tag Manager
+    |--------------------------------------------------------------------------
+    | Container ID (ex: „GTM-XXXXXXX"). Setat în .env ca GTM_CONTAINER_ID.
+    | Lăsat null → GTM nu se încarcă, iar preconnect-ul către googletagmanager
+    | nu se emite (evită warning-ul „preconnect resource not used").
+    */
+    'gtm' => [
+        'container_id' => env('GTM_CONTAINER_ID'),
+    ],
+
     'organization' => [
         'knows_about' => [
             'Digital marketing',
