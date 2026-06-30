@@ -125,14 +125,15 @@ class Schema
     }
 
     /**
-     * Un serviciu oferit.
+     * Un serviciu oferit, opțional cu un nod Offer (preț + monedă) atașat
+     * pentru rich snippets de preț în SERP.
      *
      * @param  array<string, mixed>  $items  Textele serviciului din services.items.{key}
      * @return array<string, mixed>
      */
     public static function service(string $key, array $items): array
     {
-        return array_filter([
+        $service = array_filter([
             '@type' => 'Service',
             '@id' => url()->current().'#service',
             'name' => $items['name'] ?? $key,
@@ -143,6 +144,62 @@ class Schema
             'areaServed' => ['@type' => 'Country', 'name' => 'Romania'],
             'mainEntityOfPage' => ['@id' => self::webPageId()],
         ], static fn ($value): bool => $value !== null && $value !== '');
+
+        $offer = self::serviceOffer($key, $items['price'] ?? null);
+        if ($offer !== null) {
+            $service['offers'] = $offer;
+        }
+
+        return $service;
+    }
+
+    /**
+     * Construiește nodul Offer pentru un serviciu, parsând prețul din string
+     * (acceptă formate „3.000 €", „400 €", „de la 300 €"). Returnează null
+     * dacă nu există un preț parseabil.
+     *
+     * @param  array<string, mixed>|null  $price
+     * @return array<string, mixed>|null
+     */
+    private static function serviceOffer(string $key, ?array $price): ?array
+    {
+        if ($price === null || empty($price['amount'])) {
+            return null;
+        }
+
+        $amountStr = (string) $price['amount'];
+
+        // Extrage prima secvență numerică (cu „." sau „," ca separator de mii / zecimale).
+        if (! preg_match('/(\d[\d.,]*)/', $amountStr, $match)) {
+            return null;
+        }
+
+        // Normalizează: scoatem separatorul de mii („." în „3.000"). Dacă rămâne
+        // „,", o tratăm ca zecimală (ex: „1,5").
+        $numeric = str_replace('.', '', $match[1]);
+        $numeric = str_replace(',', '.', $numeric);
+        $value = (float) $numeric;
+
+        if ($value <= 0) {
+            return null;
+        }
+
+        return array_filter([
+            '@type' => 'Offer',
+            'price' => $value,
+            'priceCurrency' => 'EUR',
+            'availability' => 'https://schema.org/InStock',
+            'url' => Localization::serviceUrl($key),
+            'priceSpecification' => array_filter([
+                '@type' => 'UnitPriceSpecification',
+                'price' => $value,
+                'priceCurrency' => 'EUR',
+                'referenceQuantity' => isset($price['frequency']) ? [
+                    '@type' => 'QuantitativeValue',
+                    'unitText' => trim((string) $price['frequency'], '/ '),
+                ] : null,
+            ], static fn ($value): bool => $value !== null && $value !== '' && $value !== []),
+        ], static fn ($value): bool => $value !== null && $value !== '' && $value !== []);
     }
 
     /**

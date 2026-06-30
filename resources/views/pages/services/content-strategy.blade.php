@@ -15,7 +15,7 @@
     {{-- Hero --}}
     <section class="border-b border-zinc-200 bg-paper">
         <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-            <a href="{{ Localization::route('services.index') }}" class="text-sm font-medium text-ink transition hover:underline">&larr; {{ __('messages.nav.services') }}</a>
+            <x-breadcrumbs />
 
             <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">

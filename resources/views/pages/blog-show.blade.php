@@ -23,7 +23,7 @@
         {{-- Antet articol --}}
         <header class="border-b border-zinc-200 bg-paper">
             <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:py-20">
-                <a href="{{ Localization::route('blog') }}" class="text-sm font-medium text-ink transition hover:underline">&larr; {{ __('blog.back_to_blog') }}</a>
+                <x-breadcrumbs />
 
                 <div class="mt-6 flex items-center gap-2 text-xs text-muted">
                     <span class="rounded-full bg-zinc-900 px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ __('blog.categories.'.($post['category'] ?? 'general')) }}</span>

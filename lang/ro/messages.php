@@ -29,6 +29,7 @@ return [
         'close_menu' => 'Închide meniul',
         'language' => 'Limbă',
         'menu' => 'Meniu',
+        'breadcrumb' => 'Firul Ariadnei',
     ],
 
     'footer' => [

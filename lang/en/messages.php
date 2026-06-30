@@ -29,6 +29,7 @@ return [
         'close_menu' => 'Close menu',
         'language' => 'Language',
         'menu' => 'Menu',
+        'breadcrumb' => 'Breadcrumb',
     ],
 
     'footer' => [

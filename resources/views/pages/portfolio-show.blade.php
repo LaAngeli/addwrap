@@ -14,7 +14,7 @@
     {{-- Hero --}}
     <section class="bg-paper">
         <div class="mx-auto max-w-7xl px-4 pt-14 sm:px-6 lg:px-8 lg:pt-20">
-            <a href="{{ Localization::route('portfolio') }}" class="text-sm font-medium text-ink transition hover:underline">&larr; {{ __('portfolio.back_to_portfolio') }}</a>
+            <x-breadcrumbs />
 
             <div class="mt-6 max-w-3xl">
                 <div class="flex flex-wrap items-center gap-2 text-xs text-muted">

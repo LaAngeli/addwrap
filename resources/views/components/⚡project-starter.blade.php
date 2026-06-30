@@ -1,7 +1,9 @@
 <?php
 
+use App\Mail\ContactConfirmationMail;
 use App\Mail\ContactFormMail;
 use App\Support\Localization;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Attributes\Computed;
@@ -119,15 +121,32 @@ new class extends Component
             $lines[] = __('starter.summary_estimate').': ~'.number_format($this->estimate['monthly'], 0, ',', '.').' €/lună, setup ~'.number_format($this->estimate['setup'], 0, ',', '.').' €';
         }
 
-        Mail::to(config('site.company.email'))->send(new ContactFormMail([
+        $payload = [
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,
             'service' => '',
             'message' => implode("\n", $lines),
-        ]));
+        ];
 
-        return redirect()->to(\App\Support\Localization::route('thank_you'));
+        $locale = Localization::current();
+
+        // Email business — prioritar.
+        Mail::to(config('site.company.email'))->send(new ContactFormMail($payload));
+
+        // Confirmare către expeditor în limba navigării — best-effort.
+        try {
+            Mail::to($this->email)
+                ->locale($locale)
+                ->send(new ContactConfirmationMail($payload));
+        } catch (\Throwable $e) {
+            Log::warning('Project starter confirmation email failed', [
+                'email' => $this->email,
+                'error' => $e->getMessage(),
+            ]);
+        }
+
+        return redirect()->to(Localization::route('thank_you'));
     }
 };
 ?>

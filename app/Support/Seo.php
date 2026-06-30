@@ -281,6 +281,17 @@ class Seo
         return $this->type;
     }
 
+    /**
+     * Firul Ariadnei (pentru componenta &lt;x-breadcrumbs /&gt; care îl
+     * randează vizibil în pagină — același set folosit și în BreadcrumbList).
+     *
+     * @return array<int, array{name: string, url: string}>
+     */
+    public function getBreadcrumbs(): array
+    {
+        return $this->breadcrumbs;
+    }
+
     public function isIndexable(): bool
     {
         return $this->indexable;
