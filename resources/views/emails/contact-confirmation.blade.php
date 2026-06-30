@@ -18,11 +18,14 @@
             <td align="center">
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:580px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e4e4e7;">
 
-                    {{-- Header --}}
+                    {{-- Header — logo embedat inline via CID (Content-ID), nu remote:
+                         majoritatea clienților de email blochează imaginile remote implicit,
+                         dar un atașament inline cu Content-Disposition: inline se afișează
+                         întotdeauna, indiferent de setarea de blocare. --}}
                     <tr>
                         <td style="background:#18181b;padding:24px 32px;color:#ffffff;">
-                            <p style="margin:0;font-size:11px;font-weight:bold;letter-spacing:0.12em;text-transform:uppercase;color:#a1a1aa;">{{ $company['name'] }}</p>
-                            <p style="margin:6px 0 0;font-size:18px;font-weight:bold;line-height:1.3;">{{ __('contact.confirmation.header') }}</p>
+                            <img src="{{ $message->embed(public_path('images/logo/addwrap-white.png')) }}" width="130" height="61" alt="{{ $company['name'] }}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+                            <p style="margin:16px 0 0;font-size:18px;font-weight:bold;line-height:1.3;">{{ __('contact.confirmation.header') }}</p>
                         </td>
                     </tr>
 

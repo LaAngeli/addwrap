@@ -11,14 +11,17 @@
         <tr>
             <td align="center">
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e4e4e7;">
+                    {{-- Logo embedat inline via CID, nu remote — vezi nota din
+                         emails/contact-confirmation.blade.php. --}}
                     <tr>
-                        <td style="background:#18181b;padding:20px 28px;color:#ffffff;font-size:18px;font-weight:bold;">
-                            {{ $company['name'] }} — mesaj nou
+                        <td style="background:#18181b;padding:20px 28px;color:#ffffff;">
+                            <img src="{{ $message->embed(public_path('images/logo/addwrap-white.png')) }}" width="120" height="56" alt="{{ $company['name'] }}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+                            <p style="margin:12px 0 0;font-size:18px;font-weight:bold;">Mesaj nou din formularul de contact</p>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding:28px;">
-                            <p style="margin:0 0 16px;color:#71717a;font-size:14px;">Ai primit un mesaj nou din formularul de contact:</p>
+                            <p style="margin:0 0 16px;color:#71717a;font-size:14px;">Detaliile mesajului:</p>
 
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
                                 <tr><td style="padding:8px 0;color:#71717a;width:120px;">Nume</td><td style="padding:8px 0;font-weight:bold;">{{ $data['name'] }}</td></tr>
