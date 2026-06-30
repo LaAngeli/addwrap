@@ -124,6 +124,7 @@
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.about.story_eyebrow') }}</p>
                     <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.about.story_title') }}</h2>
                     <p data-animate="fade-up" class="mt-5 border-l-2 border-zinc-900 pl-6 text-xl font-medium leading-relaxed text-ink text-pretty">{{ __('pages.about.story_lead') }}</p>
+                    <p data-animate="fade-up" class="mt-5 text-base leading-relaxed text-muted">{{ __('pages.about.story_text') }}</p>
                 </div>
             </div>
 
@@ -222,11 +223,30 @@
         </div>
     </section>
 
+    {{-- Parcursul nostru (cronologie) --}}
+    <section class="border-t border-zinc-200 bg-paper py-20 lg:py-24">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <p data-animate="fade-up" class="text-center text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.about.story_rail_label') }}</p>
+
+            <div data-animate-group class="relative mt-12 space-y-10 border-l-2 border-zinc-200 pl-8">
+                @foreach (__('pages.about.story_milestones') as $milestone)
+                    <div class="relative">
+                        <span class="absolute -left-10 top-1 h-4 w-4 rounded-full border-2 border-zinc-900 bg-paper"></span>
+                        <p class="text-sm font-bold text-zinc-400">{{ $milestone['year'] }}</p>
+                        <h3 class="mt-1 text-lg font-semibold text-ink">{{ $milestone['title'] }}</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-muted">{{ $milestone['text'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     {{-- Statistici --}}
     <section class="relative overflow-hidden bg-zinc-900 py-16 text-white lg:py-20">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div data-animate-group class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+            <h2 data-animate="fade-up" class="text-center text-2xl font-bold tracking-tight text-balance sm:text-3xl">{{ __('pages.about.stats_title') }}</h2>
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-8 lg:grid-cols-4">
                 @foreach (__('pages.about.stats') as $stat)
                     <div class="text-center">
                         <div class="text-4xl font-bold tracking-tight sm:text-5xl">{{ $stat['value'] }}</div>
