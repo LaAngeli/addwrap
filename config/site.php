@@ -204,7 +204,7 @@ return [
             'Web development',
             'Conversion rate optimization',
         ],
-        'founding_date' => null,
+        'founding_date' => '2019',
     ],
 
     /*

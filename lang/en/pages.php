@@ -171,17 +171,6 @@ return [
             'Flexibility: we adapt our services to your business stage and budget.',
             'Real involvement: few projects, lots of attention for each one.',
         ],
-
-        'team_eyebrow' => 'The team',
-        'team_title' => 'The people behind AddWrap',
-        'team_subtitle' => 'A small team of specialists covering everything you need to grow.',
-        'team' => [
-            ['name' => 'Alex Marin', 'role' => 'Founder & Strategist'],
-            ['name' => 'Ioana Pop', 'role' => 'Brand & Creative Lead'],
-            ['name' => 'Andrei Ene', 'role' => 'Performance & Ads'],
-            ['name' => 'Maria Dinu', 'role' => 'Content & SEO'],
-        ],
-        'team_note' => 'Names and roles shown as examples — to be replaced with the real team.',
     ],
 
     'portfolio' => [
