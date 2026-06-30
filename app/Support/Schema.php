@@ -295,7 +295,78 @@ class Schema
             'mainEntityOfPage' => ['@id' => self::webPageId()],
             'author' => self::articleAuthor($post),
             'publisher' => ['@id' => self::organizationId()],
+            'articleSection' => self::articleSection($post),
+            'keywords' => self::articleKeywords($post),
+            'wordCount' => self::articleWordCount($content),
         ], static fn ($value): bool => $value !== null && $value !== '');
+    }
+
+    /**
+     * Eticheta de categorie tradusă (din `blog.categories.*`), folosită ca
+     * `articleSection` — semnal tematic suplimentar pentru AI/Google.
+     *
+     * @param  array<string, mixed>  $post
+     */
+    private static function articleSection(array $post): ?string
+    {
+        $category = (string) ($post['category'] ?? '');
+
+        if ($category === '' || ! \Illuminate\Support\Facades\Lang::has("blog.categories.{$category}")) {
+            return null;
+        }
+
+        return (string) trans("blog.categories.{$category}");
+    }
+
+    /**
+     * Cuvinte cheie comma-separated: eticheta categoriei + (dacă există o
+     * mapare în `site.blog_category_service`) numele serviciului asociat.
+     * Reutilizează aceeași sursă de adevăr ca internal linking-ul din
+     * blog-show, deci rămâne sincronizat dacă se schimbă mapping-ul.
+     *
+     * @param  array<string, mixed>  $post
+     */
+    private static function articleKeywords(array $post): ?string
+    {
+        $category = (string) ($post['category'] ?? '');
+        $terms = array_filter([self::articleSection($post)]);
+
+        $serviceKey = config("site.blog_category_service.{$category}");
+        if (is_string($serviceKey) && \Illuminate\Support\Facades\Lang::has("services.items.{$serviceKey}.name")) {
+            $terms[] = (string) trans("services.items.{$serviceKey}.name");
+        }
+
+        return ! empty($terms) ? implode(', ', $terms) : null;
+    }
+
+    /**
+     * Numără cuvintele din conținutul real al articolului (paragrafe,
+     * titluri, citate, iteme de listă), ignorând markup-ul de bloc.
+     *
+     * @param  array<string, mixed>  $content
+     */
+    private static function articleWordCount(array $content): ?int
+    {
+        $blocks = (array) ($content['blocks'] ?? []);
+        $text = '';
+
+        foreach ($blocks as $block) {
+            if (isset($block['text'])) {
+                $text .= ' '.$block['text'];
+            }
+            if (isset($block['items']) && is_array($block['items'])) {
+                $text .= ' '.implode(' ', $block['items']);
+            }
+        }
+
+        $text = trim($text);
+        if ($text === '') {
+            return null;
+        }
+
+        $words = preg_split('/\s+/u', $text, -1, PREG_SPLIT_NO_EMPTY);
+
+        return $words !== false ? count($words) : null;
     }
 
     /**
