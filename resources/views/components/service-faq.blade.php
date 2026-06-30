@@ -20,7 +20,7 @@
                             :aria-expanded="open === {{ $i }}"
                         >
                             <span class="text-lg font-medium text-ink">{{ $item['q'] }}</span>
-                            <svg class="h-5 w-5 shrink-0 text-zinc-900 transition" :class="open === {{ $i }} ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="h-5 w-5 shrink-0 text-zinc-900 transition" :class="open === {{ $i }} ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>

@@ -65,7 +65,7 @@
                     {{-- Mockup SEO --}}
                     <div x-show="layer === 'seo'" x-cloak class="mt-4 rounded-xl border border-zinc-200 p-3">
                         <div class="flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-2 text-xs text-muted">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             {{ $page['serp_query'] }}
                         </div>
                         <div class="mt-3 space-y-2">
@@ -89,7 +89,7 @@
                     {{-- Mockup AEO: răspuns direct (featured snippet) --}}
                     <div x-show="layer === 'aeo'" x-cloak class="mt-4">
                         <div class="flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-2 text-xs text-muted">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             {{ $page['aeo_query'] }}
                         </div>
                         <div class="mt-3 rounded-xl border-2 border-zinc-900 p-4">
@@ -102,7 +102,7 @@
                     {{-- Mockup GEO: răspuns generativ AI cu surse citate --}}
                     <div x-show="layer === 'geo'" x-cloak class="mt-4 rounded-xl border border-zinc-200 p-4">
                         <div class="flex items-center gap-2 text-xs font-semibold text-muted">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9.8 3.5l1 2.7 2.7 1-2.7 1-1 2.7-1-2.7-2.7-1 2.7-1 1-2.7zM18 10l.7 1.8L20.5 12.5l-1.8.7L18 15l-.7-1.8-1.8-.7 1.8-.7L18 10z" /></svg>
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9.8 3.5l1 2.7 2.7 1-2.7 1-1 2.7-1-2.7-2.7-1 2.7-1 1-2.7zM18 10l.7 1.8L20.5 12.5l-1.8.7L18 15l-.7-1.8-1.8-.7 1.8-.7L18 10z" /></svg>
                             {{ $page['geo_engine'] }}
                         </div>
                         <p class="mt-3 text-sm leading-relaxed text-zinc-700">{{ $page['geo_answer'] }}</p>
@@ -189,7 +189,7 @@
                                 @foreach ($group['items'] as $item)
                                     <li class="flex items-start gap-3 text-sm text-zinc-700">
                                         <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-900">
-                                            <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                                            <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                         </span>
                                         {{ $item }}
                                     </li>

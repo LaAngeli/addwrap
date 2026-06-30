@@ -82,9 +82,9 @@
 
                         {{-- Instagram: acțiuni --}}
                         <div x-show="platform === 'ig'" x-cloak class="flex items-center gap-4 text-zinc-800">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 12L3.27 3.27 21 12 3.27 20.73 6 12zm0 0h6" /></svg>
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 12L3.27 3.27 21 12 3.27 20.73 6 12zm0 0h6" /></svg>
                         </div>
                     </div>
 
@@ -125,7 +125,7 @@
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-center gap-3">
                                 <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $funnelIcons[$i] ?? '' !!}</svg>
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $funnelIcons[$i] ?? '' !!}</svg>
                                 </span>
                                 <div>
                                     <span class="text-xs font-semibold uppercase tracking-wider text-muted">{{ $stepLabel }} {{ $i + 1 }}</span>
@@ -171,9 +171,9 @@
                                 'bg-zinc-100 text-zinc-500' => $excl,
                             ])>
                                 @if ($excl)
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 9v4m0 4h.01M10.3 4l-7.4 12.5A1.5 1.5 0 004.2 19h15.6a1.5 1.5 0 001.3-2.5L13.7 4a1.5 1.5 0 00-3.4 0z" /></svg>
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 9v4m0 4h.01M10.3 4l-7.4 12.5A1.5 1.5 0 004.2 19h15.6a1.5 1.5 0 001.3-2.5L13.7 4a1.5 1.5 0 00-3.4 0z" /></svg>
                                 @else
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $featureIcons[$incIndex++ % count($featureIcons)] !!}</svg>
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $featureIcons[$incIndex++ % count($featureIcons)] !!}</svg>
                                 @endif
                             </span>
                             <p @class(['text-base font-medium leading-relaxed', 'text-ink' => ! $excl, 'text-muted' => $excl])>{{ $feature }}</p>
@@ -194,7 +194,7 @@
                         <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
                             <div class="flex items-center justify-between gap-3">
                                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white">
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
                                 </span>
                                 <span class="rounded-full border border-zinc-200 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted">{{ app()->getLocale() === 'ro' ? 'Opțional' : 'Optional' }}</span>
                             </div>

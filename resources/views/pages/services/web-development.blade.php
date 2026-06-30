@@ -52,10 +52,10 @@
                         {{-- Device --}}
                         <div class="inline-flex shrink-0 rounded-full border border-zinc-200 bg-zinc-50 p-1">
                             <button type="button" @click="device = 'desktop'" :aria-label="'{{ $page['device_desktop'] }}'" :class="device === 'desktop' ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-ink'" class="rounded-full p-1.5 transition">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 5h18v11H3zM8 20h8M12 16v4" /></svg>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 5h18v11H3zM8 20h8M12 16v4" /></svg>
                             </button>
                             <button type="button" @click="device = 'mobile'" :aria-label="'{{ $page['device_mobile'] }}'" :class="device === 'mobile' ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-ink'" class="rounded-full p-1.5 transition">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M7 3h10v18H7zM11 18h2" /></svg>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M7 3h10v18H7zM11 18h2" /></svg>
                             </button>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
                                     'text-zinc-300' => $offer['featured'] ?? false,
                                     'text-muted' => ! ($offer['featured'] ?? false),
                                 ])>
-                                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l2.5 2.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l2.5 2.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                     {{ $offer['note'] }}
                                 </p>
                             @endif
@@ -213,7 +213,7 @@
                         <a href="{{ Localization::route('contact') }}" class="inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200">{{ $page['price_cta'] }}</a>
                         @if (! empty($page['min_term']))
                             <span class="inline-flex items-center gap-1.5 text-sm text-zinc-400">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l2.5 2.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l2.5 2.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                 {{ $page['min_term'] }}
                             </span>
                         @endif
@@ -253,7 +253,7 @@
                                 class="flex flex-1 items-center gap-3 rounded-2xl border p-4 text-left transition"
                             >
                                 <span :class="tab === {{ $i }} ? 'bg-white/10 text-white' : 'bg-zinc-100 text-zinc-900'" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition">
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $moduleIcons[$i] ?? '' !!}</svg>
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $moduleIcons[$i] ?? '' !!}</svg>
                                 </span>
                                 <span class="font-semibold">{{ $module['title'] }}</span>
                             </button>
@@ -275,7 +275,7 @@
                                     @foreach ($module['items'] as $item)
                                         <li class="flex items-start gap-3 text-sm text-zinc-700">
                                             <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-900">
-                                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                             </span>
                                             {{ $item }}
                                         </li>

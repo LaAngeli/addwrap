@@ -16,7 +16,7 @@
 
         <div class="flex items-start gap-3">
             <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 2a10 10 0 1010 10 4 4 0 01-5-5 4 4 0 01-5-5zm-3 9h.01M15 14h.01M10 16h.01" /></svg>
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 2a10 10 0 1010 10 4 4 0 01-5-5 4 4 0 01-5-5zm-3 9h.01M15 14h.01M10 16h.01" /></svg>
             </span>
             <div>
                 <h2 class="text-base font-semibold text-ink">{{ __('messages.cookie.title') }}</h2>

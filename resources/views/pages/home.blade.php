@@ -109,7 +109,7 @@
                     {{-- Card plutitor: optimizare --}}
                     <div class="animate-float absolute -left-4 -bottom-5 hidden items-center gap-2 rounded-xl border border-zinc-200 bg-white px-3 py-2 shadow-lg sm:flex">
                         <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900 text-white">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                         </span>
                         <span class="text-xs font-semibold text-ink">{{ $dash['float_opt'] }}</span>
                     </div>
@@ -118,7 +118,7 @@
                     <div class="animate-float-slow absolute -right-4 -top-5 hidden flex-col rounded-xl border border-zinc-200 bg-white px-3 py-2 shadow-lg sm:flex">
                         <span class="text-[10px] uppercase tracking-wider text-muted">{{ $dash['float_new_label'] }}</span>
                         <span class="inline-flex items-center gap-1 text-sm font-bold text-ink">
-                            <svg class="h-3.5 w-3.5 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8M21 7v6m0-6h-6" /></svg>
+                            <svg class="h-3.5 w-3.5 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8M21 7v6m0-6h-6" /></svg>
                             {{ $dash['float_new_value'] }}
                         </span>
                     </div>
@@ -133,7 +133,7 @@
                     <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">
                         @foreach (__('pages.home.hero_points') as $point)
                             <span class="inline-flex items-center gap-1.5">
-                                <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                                <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                                 {{ $point }}
                             </span>
                         @endforeach
@@ -191,7 +191,7 @@
                 @foreach ($bentoItems as $i => $item)
                     <div class="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $itemIcons[$i] ?? '' !!}</svg>
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $itemIcons[$i] ?? '' !!}</svg>
                         </span>
                         <h3 class="mt-5 text-lg font-semibold text-ink">{{ $item['title'] }}</h3>
                         <p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{{ $item['text'] }}</p>
@@ -223,7 +223,7 @@
                 @foreach (__('pages.home.why_items') as $i => $item)
                     <div class="group rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 @switch($i)
                                     @case(0) <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 3v16h16M9 14l3-4 3 2 4-6" /> @break
                                     @case(1) <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 13a9 9 0 1018 0M12 3v6m0 0l-2.5-2.5M12 9l2.5-2.5" /> @break

@@ -42,7 +42,7 @@
                     <div class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-xl shadow-zinc-900/5 sm:p-7">
                         {{-- Bară de căutare (decorativă) --}}
                         <div class="flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2.5">
-                            <svg class="h-4 w-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            <svg class="h-4 w-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             <span class="text-sm text-muted">{{ __('faq.hero_search') }}</span>
                         </div>
 
@@ -111,7 +111,7 @@
                                         :aria-expanded="open === {{ $i }}"
                                     >
                                         <span class="text-lg font-medium text-ink">{{ $item['q'] }}</span>
-                                        <svg class="h-5 w-5 shrink-0 text-zinc-900 transition" :class="open === {{ $i }} ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                        <svg class="h-5 w-5 shrink-0 text-zinc-900 transition" :class="open === {{ $i }} ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                                     </button>
                                     <div x-show="open === {{ $i }}" x-collapse x-cloak>
                                         <p class="pb-4 leading-relaxed text-muted">{{ $item['a'] }}</p>

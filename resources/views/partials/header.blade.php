@@ -33,7 +33,7 @@
                     :aria-expanded="open"
                 >
                     {{ __('messages.nav.services') }}
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                 </a>
 
                 <div
@@ -130,7 +130,7 @@
                     <x-logo />
                 </a>
                 <button type="button" @click="mobileOpen = false" class="group absolute right-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-xl text-zinc-700 transition hover:bg-zinc-100 active:scale-90" aria-label="{{ __('messages.common.menu') }}">
-                    <svg class="h-6 w-6 transition-transform duration-300 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    <svg class="h-6 w-6 transition-transform duration-300 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </div>
 
@@ -145,7 +145,7 @@
                     'text-ink hover:bg-zinc-50' => ! request()->routeIs('*.home'),
                 ])>
                     {{ __('messages.nav.home') }}
-                    <svg class="h-5 w-5 opacity-30 transition group-hover:translate-x-0.5 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    <svg class="h-5 w-5 opacity-30 transition group-hover:translate-x-0.5 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                 </a>
 
                 {{-- Servicii (acordeon) --}}
@@ -161,7 +161,7 @@
                                 <span class="inline-block h-1.5 w-1.5 rounded-full bg-[#EA7117]"></span>
                             @endif
                         </span>
-                        <svg class="h-5 w-5 text-zinc-400 transition-transform duration-300" :class="servicesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        <svg class="h-5 w-5 text-zinc-400 transition-transform duration-300" :class="servicesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </button>
 
                     <div x-show="servicesOpen" x-cloak
@@ -195,7 +195,7 @@
                             @endforeach
                             <a href="{{ Localization::route('services.index') }}" @click="mobileOpen = false" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-[#EA7117] transition hover:bg-zinc-50">
                                 {{ __('messages.cta.all_services') }}
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                             </a>
                         </div>
                     </div>
@@ -209,7 +209,7 @@
                         'text-ink hover:bg-zinc-50' => ! request()->routeIs($link['pattern']),
                     ])>
                         {{ $link['label'] }}
-                        <svg class="h-5 w-5 opacity-30 transition group-hover:translate-x-0.5 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        <svg class="h-5 w-5 opacity-30 transition group-hover:translate-x-0.5 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                     </a>
                 @endforeach
                 </div>
@@ -268,7 +268,7 @@
             <div class="shrink-0 border-t border-zinc-200 px-4 py-4">
                 <a href="{{ Localization::route('contact') }}" @click="mobileOpen = false" class="flex items-center justify-center gap-2 rounded-xl bg-zinc-900 px-4 py-3.5 text-base font-semibold text-white transition hover:bg-black">
                     {{ __('messages.nav.contact') }}
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                 </a>
             </div>
         </div>

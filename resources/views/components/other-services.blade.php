@@ -29,7 +29,7 @@
                             <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-500">
                                 <x-service-icon :name="$currentIcon" class="h-5 w-5" />
                             </span>
-                            <svg class="h-4 w-4 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
+                            <svg class="h-4 w-4 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
                             <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
                                 <x-service-icon :name="$otherIcon" class="h-5 w-5" />
                             </span>

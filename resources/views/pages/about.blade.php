@@ -61,7 +61,7 @@
                                     class="absolute inset-0 flex flex-col justify-center p-6"
                                 >
                                     <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white">
-                                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $industryIcons[$i] ?? '' !!}</svg>
+                                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $industryIcons[$i] ?? '' !!}</svg>
                                     </span>
                                     <p class="mt-4 text-xl font-bold tracking-tight">{{ $ind['name'] }}</p>
                                     <p class="mt-1 text-sm leading-relaxed text-zinc-300">{{ $ind['focus'] }}</p>
@@ -80,7 +80,7 @@
                                     :aria-pressed="sel === {{ $i }} ? 'true' : 'false'"
                                     aria-label="{{ $ind['name'] }}"
                                 >
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $industryIcons[$i] ?? '' !!}</svg>
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $industryIcons[$i] ?? '' !!}</svg>
                                 </button>
                             @endforeach
                         </div>
@@ -96,7 +96,7 @@
                     <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">
                         @foreach (__('pages.about.hero_points') as $point)
                             <span class="inline-flex items-center gap-1.5">
-                                <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                                <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                                 {{ $point }}
                             </span>
                         @endforeach
@@ -275,7 +275,7 @@
                 @foreach (__('pages.about.why_points') as $i => $point)
                     <div class="flex items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
                         <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $whyIcons[$i] ?? '' !!}</svg>
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $whyIcons[$i] ?? '' !!}</svg>
                         </span>
                         <p class="text-base leading-relaxed text-zinc-700">{{ $point }}</p>
                     </div>
@@ -296,7 +296,7 @@
                 @foreach ($industries as $i => $industry)
                     <div class="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $industryIcons[$i] ?? '' !!}</svg>
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $industryIcons[$i] ?? '' !!}</svg>
                         </span>
                         <h3 class="mt-4 font-semibold text-ink">{{ $industry['name'] }}</h3>
                         <p class="mt-2 text-sm leading-relaxed text-muted">{{ $industry['focus'] }}</p>

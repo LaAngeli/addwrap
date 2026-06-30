@@ -77,7 +77,7 @@
                                             {{-- Rezultat #1 în căutare --}}
                                             <div class="w-4/5 max-w-[16rem] space-y-2">
                                                 <div class="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-2.5 py-1.5">
-                                                    <svg class="h-3 w-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                                    <svg class="h-3 w-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                                     <div class="h-1.5 w-1/2 rounded bg-white/20"></div>
                                                 </div>
                                                 <div class="rounded-md border border-white/30 bg-white/10 p-2">
@@ -170,7 +170,7 @@
                     <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">
                         @foreach (__('pages.portfolio.hero_points') as $point)
                             <span class="inline-flex items-center gap-1.5">
-                                <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                                <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                                 {{ $point }}
                             </span>
                         @endforeach

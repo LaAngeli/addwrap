@@ -124,7 +124,7 @@
                     @foreach ($features as $i => $feature)
                         <div class="group flex items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
                             <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $featureIcons[$i % count($featureIcons)] !!}</svg>
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $featureIcons[$i % count($featureIcons)] !!}</svg>
                             </span>
                             <p class="text-base font-medium leading-relaxed text-ink">{{ $feature }}</p>
                         </div>
