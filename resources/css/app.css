@@ -2,8 +2,302 @@
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /*
+    | Paletă neutră monocromă (alegere brand AddWrap, faza fără logo).
+    | Tokenii "brand-*" sunt mapați pe nuanțe neutre: tonurile mari (600-900)
+    | sunt aproape negre (CTA-uri puternice, editorial), iar cele mici sunt griuri.
+    */
+    --color-brand-50: #fafafa;
+    --color-brand-100: #f4f4f5;
+    --color-brand-200: #e4e4e7;
+    --color-brand-300: #d4d4d8;
+    --color-brand-400: #a1a1aa;
+    --color-brand-500: #52525b;
+    --color-brand-600: #18181b;
+    --color-brand-700: #0a0a0a;
+    --color-brand-800: #000000;
+    --color-brand-900: #000000;
+
+    --color-ink: #09090b;
+    --color-muted: #71717a;
+    --color-paper: #fafaf9;
+}
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Stare inițială pentru elementele animate via GSAP (evită flash before reveal) */
+    .js [data-animate],
+    .js [data-animate-group] > * {
+        opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        .js [data-animate],
+        .js [data-animate-group] > * {
+            opacity: 1 !important;
+        }
+    }
+}
+
+@layer components {
+    /* Utilitar pentru titluri mari, editorial */
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Pattern de puncte pentru cover-urile de blog (folosește currentColor) */
+    .bg-dot-grid {
+        background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+        background-size: 18px 18px;
+    }
+
+    /* Linie de gradient subtil pentru separatoare */
+    .hairline {
+        background-image: linear-gradient(to right, transparent, var(--color-brand-200), transparent);
+    }
+}
+
+/* ----------------------------------------------------------------------------
+| Plan izometric ortografic (replică Tailwind UI) — tile conținut, scalat
+---------------------------------------------------------------------------- */
+.isometric-tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 46rem;
+    margin-inline: auto;
+    height: 28rem;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background: var(--color-paper);
+    outline: 1px solid rgb(9 9 11 / 0.05);
+    perspective: none;
+}
+
+@media (min-width: 640px) {
+    .isometric-tile {
+        height: 36rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .isometric-tile {
+        height: 44rem;
+    }
+}
+
+/* Scalare identică cu referința: scale-50 / sm:scale-75 / lg:scale-100 */
+.isometric-stage {
+    position: relative;
+    flex-shrink: 0;
+    width: 1720px;
+    height: 1720px;
+    transform: scale(0.5);
+    transform-origin: center;
+}
+
+@media (min-width: 640px) {
+    .isometric-stage {
+        transform: scale(0.75);
+    }
+}
+
+@media (min-width: 1024px) {
+    .isometric-stage {
+        transform: scale(1);
+    }
+}
+
+.isometric-grid {
+    position: absolute;
+    top: 30%;
+    right: 45%;
+    display: grid;
+    grid-template-columns: repeat(4, 406px);
+    gap: 2rem;
+    width: 1720px;
+    transform: rotateX(55deg) rotateZ(-45deg);
+    transform-origin: top left;
+    transform-style: preserve-3d;
+}
+
+.isometric-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Stagger ca în referință (col cu mai puține carduri coboară mai mult) */
+.isometric-col:nth-child(1) {
+    transform: translateY(967px);
+}
+.isometric-col:nth-child(2) {
+    transform: translateY(533px);
+}
+.isometric-col:nth-child(3) {
+    transform: translateY(967px);
+}
+.isometric-col:nth-child(4) {
+    transform: translateY(1399px);
+}
+
+/* Card "screenshot" landscape, ca imaginile din referință (aspect 970/580) */
+.isometric-card {
+    aspect-ratio: 970 / 580;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
+    outline: 1px solid rgb(9 9 11 / 0.06);
+}
+
+.isometric-card--dark {
+    background: var(--color-ink);
+    outline-color: rgb(255 255 255 / 0.08);
+}
+
+/* Marquee pentru bara de "clienți / tehnologii" (logos placeholder) */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+        animation: none;
+    }
+}
+
+/* ----------------------------------------------------------------------------
+| Plutire subtilă pentru cardurile din hero (decorativ, oprit pe reduced-motion)
+---------------------------------------------------------------------------- */
+@keyframes float-soft {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+.animate-float {
+    animation: float-soft 4.5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float-soft 6.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-float-slow {
+        animation: none;
+    }
+}
+
+/* ----------------------------------------------------------------------------
+| Ecosistem orbital din meniul mobil: inel punctat rotativ + puls portocaliu
+---------------------------------------------------------------------------- */
+@keyframes aw-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes aw-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.85);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.3);
+        opacity: 0;
+    }
+}
+
+.aw-orbit-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: aw-spin 30s linear infinite;
+}
+
+.aw-pulse {
+    animation: aw-pulse 3.5s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aw-orbit-ring {
+        animation: none;
+    }
+
+    .aw-pulse {
+        display: none;
+    }
+}
+
+/* ----------------------------------------------------------------------------
+| Cursor pointer pe elemente clickabile (Tailwind v4 nu-l mai adaugă implicit)
+---------------------------------------------------------------------------- */
+@layer base {
+    button:not(:disabled),
+    [role='button']:not([aria-disabled='true']),
+    summary {
+        cursor: pointer;
+    }
+}
+
+/* ----------------------------------------------------------------------------
+| Pattern-uri brand board (alternative la bg-dot-grid)
+---------------------------------------------------------------------------- */
+.bg-stripes {
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgb(9 9 11 / 0.08) 0,
+        rgb(9 9 11 / 0.08) 2px,
+        transparent 2px,
+        transparent 9px
+    );
+}
+
+.bg-grid {
+    background-image:
+        linear-gradient(rgb(9 9 11 / 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(9 9 11 / 0.08) 1px, transparent 1px);
+    background-size: 13px 13px;
 }

@@ -140,3 +140,133 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - Do NOT delete tests without approval.
 
 </laravel-boost-guidelines>
+
+---
+
+# Project Command Shortcuts
+
+## Shortcut: "update live"
+
+When the user says `update live`, Claude should run the local update workflow for GitHub/shared hosting deployment.
+
+### Required workflow
+
+1. Go to the project root:
+
+```powershell
+cd C:\Users\LaAngeli\Documents\WebSites\addwrap
+```
+
+2. Check the current state before doing anything else:
+
+```powershell
+git status
+git diff --stat
+```
+
+3. Decide whether a frontend build is needed.
+
+Run `npm run build` only if frontend-related files were modified, including:
+
+```text
+resources/css
+resources/js
+vite.config.js
+tailwind.config.js
+package.json
+package-lock.json
+```
+
+If frontend files were modified, run:
+
+```powershell
+npm run build
+```
+
+4. Check Git status again:
+
+```powershell
+git status
+```
+
+5. If there are changes, create a relevant commit message based on the actual modified files.
+
+Use this flow:
+
+```powershell
+git add .
+git commit -m "Relevant commit message based on the actual changes"
+git push origin main
+```
+
+### Rules
+
+- If there are no changes, do not create a commit.
+- If `npm run build` fails, stop and explain the error before continuing.
+- If Git reports conflicts or errors, stop and explain the issue before continuing.
+- Never use `git push --force`.
+- `public/build` is intentionally tracked in Git for this shared hosting workflow.
+- After frontend builds, `public/build` must be included in the commit.
+- Before committing, always make sure `.env`, `vendor`, `node_modules`, logs, cache files and local IDE files are not being committed.
+
+---
+
+# AddWrap — Convenții de proiect (default, învățate din Laravel Boost + deciziile clientului)
+
+Aceste reguli se aplică la tot ce se construiește în AddWrap și au prioritate față de preferințele generice.
+
+## Stack & compatibilitate
+- Laravel 13, PHP 8.3, Livewire 4, Tailwind CSS v4, Vite, Alpine.js (vine cu Livewire — NU se include separat), GSAP, MySQL, SMTP.
+- Compatibil shared hosting Hostinger: fără Redis, fără queue workers permanenți, `QUEUE_CONNECTION=sync`, cache/session pe `file`.
+- Nu propune React, Vue, Inertia, Filament, Redis decât la cerere explicită.
+
+## Localizare (RO principal / EN secundar)
+- Soluție custom, fără pachet. RO pe rădăcină, EN cu prefix `/en`.
+- Slug-uri rute în `config/site.php` (`routes.ro` / `routes.en`); rutele se înregistrează în buclă pe locale în `routes/web.php`, cu nume prefixate `ro.*` / `en.*`.
+- Middleware `App\Http\Middleware\SetLocale` setează limba din URL.
+- În Blade/PHP folosește helper-ul `App\Support\Localization` (`route()`, `switchUrl()`, `serviceUrl()`), nu `route()` direct cu nume hardcodate de locale.
+- Toate textele, CTA-urile, meta title/description trec prin `__()` cu chei în `lang/ro` și `lang/en`. Orice text nou se adaugă în AMBELE limbi.
+
+## Design
+- Paletă neutră monocromă: tokeni `--color-brand-*` (în `@theme`) mapați pe griuri/negru, plus `--color-ink`, `--color-muted`, `--color-paper`. CTA-uri = aproape negru. Fără dark mode (site light-only, consecvent).
+- Mobile-first, totul responsive. Spațiere cu utilitare `gap`, nu margini între frați.
+- Animații: GSAP + ScrollTrigger via atribute `data-animate` / `data-animate-group`; parallax izometric via Alpine (`coworkAnimation`). Mereu respectă `prefers-reduced-motion` și ascunde efectele grele pe mobil.
+
+## Mobile-first & performanță (PRIORITATE MAXIMĂ)
+Experiența pe smartphone este prioritatea #1 a proiectului AddWrap. Majoritatea traficului unei agenții de marketing vine de pe mobil, deci fiecare pagină, secțiune și componentă se gândește, se structurează și se stilizează ÎNTÂI pentru mobil (~360–390px), apoi se îmbogățește pentru ecrane mari. Țintă: rapid, curat, fără bug-uri de layout și cu micro-interacțiuni plăcute („entertaining"), dar ușoare.
+
+**Structură & layout**
+- Mobile-first real: stilurile de bază (fără prefix) vizează telefonul; folosește `sm:`/`lg:` doar pentru a adăuga complexitate, nu pentru a o repara. Verifică mereu la 360 / 390 / 414px.
+- Zero scroll orizontal. Fără lățimi fixe pe mobil; folosește `w-full`, `max-w-*`, `gap`, nu margini între frați. Conținutul se stivuiește pe o coloană, în ordinea logică de citire.
+- Tipografie scalabilă: titluri mari dar nu uriașe pe mobil (`text-3xl` → `sm:text-4xl` → `lg:text-5xl`), `text-balance` pe titluri, lungime de rând confortabilă.
+
+**Touch & UX**
+- Ținte de atingere ≥ 44px, spațiere generoasă, CTA-uri ușor de apăsat cu degetul. Nu te baza pe `hover` (pe mobil nu există) — starea de bază trebuie să fie completă; `hover:` doar ca bonus pe desktop.
+- Navigație: meniu mobil clar, switch de limbă accesibil, butoane importante la îndemână.
+
+**Performanță pe smartphone**
+- Ascunde sau simplifică efectele grele pe mobil (ex: planul izometric e ascuns sub `lg`). Animații GSAP/Alpine subtile, scurte, accelerate GPU (`transform`/`opacity`), cu `requestAnimationFrame` și `passive` listeners. Respectă MEREU `prefers-reduced-motion`.
+- Media: `loading="lazy"` + `decoding="async"` la imagini, dimensiuni/format optimizate, fără asset-uri mari. Evită DOM excesiv (atenție la liste/marquee lungi).
+- Menține bundle-ul mic: doar GSAP + Alpine (din Livewire); fără librării JS noi. Fonturi cu weight-uri limitate și `display: swap`. Țintă Core Web Vitals bune (LCP/INP/CLS) pe 4G.
+
+**Experiență „entertaining" (cu măsură)**
+- Reveal-uri la scroll discrete (`data-animate`), tranziții fine pe CTA-uri, feedback vizual la interacțiune — dar niciodată în detrimentul vitezei sau al lizibilității. Pe reduced-motion totul rămâne static și complet funcțional.
+
+**Verificare (obligatoriu)**
+- Pentru ORICE pagină/secțiune nouă sau modificată, verifică explicit aspectul și comportamentul pe mobil înainte de a considera task-ul gata: stivuire corectă, fără overflow, ținte de atingere ok, animații ușoare, fără cost de performanță inutil.
+
+## Livewire (v4)
+- Componente single-file (SFC) în `resources/views/components/` cu prefix `⚡`; randate ca `<livewire:nume />` (prefixul ⚡ e ignorat). Urmează convenția existentă a proiectului.
+- `wire:key` pe toate buclele; `wire:model.live` pentru update instant; validează și autorizează în acțiuni (ca la HTTP). Tag-uri auto-închise.
+
+## Cod (Boost best practices)
+- Creează fișiere cu `php artisan make:*` când e posibil; respectă structura fișierelor surori.
+- Form Request + `validated()` pentru validare; notație array pentru reguli.
+- Controllere subțiri (logica în Action/Service classes); dependency injection prin constructor.
+- Convenții nume: Controller/Model singular, rute plural, **nume rute snake_case cu puncte** (ex: `users.show_active`, nu `show-active`), view-uri kebab-case, metode camelCase.
+- Preferă helperele `Str`, `Arr`, `Number`, `Uri` și sintaxa scurtă (`session()`, `now()`, `back()`, `->latest()`).
+- Fără JS/CSS inline în Blade (excepție: stiluri 3D one-off care nu se pot exprima în Tailwind); fără HTML în clase PHP; fără comentarii inutile (excepție: fișiere de config).
+- `vendor/bin/pint --dirty` după modificări PHP.
+
+## Mediu de lucru al asistentului
+- În sandbox NU există PHP/Composer; `npm run build` nu rulează aici (Vite/rolldown cere binar nativ Linux, dar `node_modules` e Windows). Fișierele PHP se scriu corect manual; build-ul și comenzile artisan/pint le rulează clientul local. Mount-ul bash poate fi out-of-sync pentru fișiere scrise prin file tools — Read tool e autoritativ.

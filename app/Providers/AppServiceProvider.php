@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Support\Seo;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +12,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Stare SEO partajată pe durata request-ului (aceeași instanță în
+        // controller și în componentul <x-seo />).
+        $this->app->scoped(Seo::class);
     }
 
     /**

@@ -1,0 +1,222 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Support;
+
+/**
+ * Builder de noduri JSON-LD (Schema.org) pentru un singur graf `@graph`.
+ *
+ * Fiecare metodă întoarce un nod fără `@context` (acesta e pus o singură dată
+ * la rădăcina grafului, în Seo::jsonLd()). Nodurile se leagă între ele prin
+ * `@id`, ceea ce dă motoarelor de căutare și asistenților AI o hartă coerentă a
+ * entităților (Organization, WebSite, WebPage, Breadcrumb, conținut) — baza
+ * solidă pentru AEO/GEO.
+ */
+class Schema
+{
+    public static function organizationId(): string
+    {
+        return Localization::route('home').'#organization';
+    }
+
+    public static function websiteId(): string
+    {
+        return Localization::route('home').'#website';
+    }
+
+    public static function webPageId(): string
+    {
+        return url()->current().'#webpage';
+    }
+
+    public static function breadcrumbId(): string
+    {
+        return url()->current().'#breadcrumb';
+    }
+
+    /**
+     * Entitatea firmei (nod global, referit prin @id din celelalte noduri).
+     *
+     * @return array<string, mixed>
+     */
+    public static function organization(): array
+    {
+        $company = (array) config('site.company');
+        $social = (array) ($company['social'] ?? []);
+
+        return array_filter([
+            '@type' => 'Organization',
+            '@id' => self::organizationId(),
+            'name' => $company['name'] ?? null,
+            'url' => Localization::route('home'),
+            'logo' => config('site.logo') ? [
+                '@type' => 'ImageObject',
+                'url' => asset(config('site.logo')),
+            ] : null,
+            'email' => $company['email'] ?? null,
+            'telephone' => $company['phone'] ?? null,
+            'description' => (string) trans('seo.default.description'),
+            'areaServed' => ['@type' => 'Country', 'name' => 'Romania'],
+            'sameAs' => array_values(array_filter([
+                $social['facebook'] ?? null,
+                $social['instagram'] ?? null,
+            ])),
+        ], static fn ($value): bool => $value !== null && $value !== [] && $value !== '');
+    }
+
+    /**
+     * Entitatea site-ului.
+     *
+     * @return array<string, mixed>
+     */
+    public static function website(): array
+    {
+        return [
+            '@type' => 'WebSite',
+            '@id' => self::websiteId(),
+            'url' => Localization::route('home'),
+            'name' => config('site.company.name'),
+            'inLanguage' => app()->getLocale(),
+            'publisher' => ['@id' => self::organizationId()],
+        ];
+    }
+
+    /**
+     * Pagina curentă, legată de site, breadcrumb și imaginea principală.
+     *
+     * @return array<string, mixed>
+     */
+    public static function webPage(string $title, string $description, ?string $image, bool $hasBreadcrumb): array
+    {
+        return array_filter([
+            '@type' => 'WebPage',
+            '@id' => self::webPageId(),
+            'url' => url()->current(),
+            'name' => $title,
+            'description' => $description,
+            'isPartOf' => ['@id' => self::websiteId()],
+            'inLanguage' => app()->getLocale(),
+            'primaryImageOfPage' => $image ? ['@type' => 'ImageObject', 'url' => $image] : null,
+            'breadcrumb' => $hasBreadcrumb ? ['@id' => self::breadcrumbId()] : null,
+        ], static fn ($value): bool => $value !== null);
+    }
+
+    /**
+     * Firul Ariadnei (breadcrumb).
+     *
+     * @param  array<int, array{name: string, url: string}>  $items
+     * @return array<string, mixed>
+     */
+    public static function breadcrumb(array $items): array
+    {
+        return [
+            '@type' => 'BreadcrumbList',
+            '@id' => self::breadcrumbId(),
+            'itemListElement' => array_map(static function (array $item, int $index): array {
+                return [
+                    '@type' => 'ListItem',
+                    'position' => $index + 1,
+                    'name' => $item['name'],
+                    'item' => $item['url'],
+                ];
+            }, $items, array_keys($items)),
+        ];
+    }
+
+    /**
+     * Un serviciu oferit.
+     *
+     * @param  array<string, mixed>  $items  Textele serviciului din services.items.{key}
+     * @return array<string, mixed>
+     */
+    public static function service(string $key, array $items): array
+    {
+        return array_filter([
+            '@type' => 'Service',
+            '@id' => url()->current().'#service',
+            'name' => $items['name'] ?? $key,
+            'serviceType' => $items['name'] ?? $key,
+            'description' => $items['description'] ?? ($items['excerpt'] ?? ''),
+            'url' => Localization::serviceUrl($key),
+            'provider' => ['@id' => self::organizationId()],
+            'areaServed' => ['@type' => 'Country', 'name' => 'Romania'],
+            'mainEntityOfPage' => ['@id' => self::webPageId()],
+        ], static fn ($value): bool => $value !== null && $value !== '');
+    }
+
+    /**
+     * Un articol de blog.
+     *
+     * @param  array<string, mixed>  $post  Meta articolului (date, author etc.)
+     * @param  array<string, mixed>  $content  Conținutul localizat (title, excerpt)
+     * @return array<string, mixed>
+     */
+    public static function article(array $post, array $content, ?string $image): array
+    {
+        return array_filter([
+            '@type' => 'BlogPosting',
+            '@id' => url()->current().'#article',
+            'headline' => $content['title'] ?? '',
+            'description' => $content['excerpt'] ?? '',
+            'datePublished' => $post['date'] ?? null,
+            'dateModified' => $post['date'] ?? null,
+            'inLanguage' => app()->getLocale(),
+            'image' => $image ? ['@type' => 'ImageObject', 'url' => $image] : null,
+            'mainEntityOfPage' => ['@id' => self::webPageId()],
+            'author' => [
+                '@type' => 'Organization',
+                'name' => $post['author'] ?? config('site.company.name'),
+            ],
+            'publisher' => ['@id' => self::organizationId()],
+        ], static fn ($value): bool => $value !== null && $value !== '');
+    }
+
+    /**
+     * Un studiu de caz din portofoliu.
+     *
+     * @param  array<string, mixed>  $project  Meta proiectului (client, year etc.)
+     * @param  array<string, mixed>  $content  Conținutul localizat (title, excerpt)
+     * @return array<string, mixed>
+     */
+    public static function caseStudy(array $project, array $content): array
+    {
+        return array_filter([
+            '@type' => 'CreativeWork',
+            '@id' => url()->current().'#case-study',
+            'name' => $content['title'] ?? '',
+            'abstract' => $content['excerpt'] ?? '',
+            'inLanguage' => app()->getLocale(),
+            'datePublished' => $project['year'] ?? null,
+            'mainEntityOfPage' => ['@id' => self::webPageId()],
+            'about' => isset($project['client'])
+                ? ['@type' => 'Organization', 'name' => $project['client']]
+                : null,
+            'creator' => ['@id' => self::organizationId()],
+        ], static fn ($value): bool => $value !== null && $value !== '');
+    }
+
+    /**
+     * Pagina de întrebări frecvente (AEO: răspunsuri directe pentru AI/Google).
+     *
+     * @param  array<int, array{question: string, answer: string}>  $qas
+     * @return array<string, mixed>
+     */
+    public static function faqPage(array $qas): array
+    {
+        return [
+            '@type' => 'FAQPage',
+            '@id' => url()->current().'#faq',
+            'mainEntity' => array_map(static function (array $qa): array {
+                return [
+                    '@type' => 'Question',
+                    'name' => $qa['question'],
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => $qa['answer'],
+                    ],
+                ];
+            }, $qas),
+        ];
+    }
+}
