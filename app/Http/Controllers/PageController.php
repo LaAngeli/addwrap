@@ -10,8 +10,15 @@ use Illuminate\Contracts\View\View;
 
 class PageController extends Controller
 {
-    public function home(): View
+    public function home(Seo $seo): View
     {
+        // FAQ vizibil în Home → expunem FAQPage schema, pentru rich snippets
+        // și citare directă de către AI Overviews / Perplexity.
+        $entries = $this->flatFaq((array) trans('pages.home.faq'));
+        if (! empty($entries)) {
+            $seo->addSchema(Schema::faqPage($entries));
+        }
+
         return view('pages.home');
     }
 
@@ -29,8 +36,13 @@ class PageController extends Controller
         return view('pages.faq');
     }
 
-    public function pricing(): View
+    public function pricing(Seo $seo): View
     {
+        $entries = $this->flatFaq((array) trans('pages.pricing.faq'));
+        if (! empty($entries)) {
+            $seo->addSchema(Schema::faqPage($entries));
+        }
+
         return view('pages.pricing');
     }
 
@@ -68,6 +80,26 @@ class PageController extends Controller
                 if (isset($item['q'], $item['a'])) {
                     $entries[] = ['question' => $item['q'], 'answer' => $item['a']];
                 }
+            }
+        }
+
+        return $entries;
+    }
+
+    /**
+     * Normalizează o listă de {q, a} la formatul {question, answer} cerut de
+     * Schema::faqPage (FAQ pe Home, Pricing etc.).
+     *
+     * @param  array<int, array<string, mixed>>  $items
+     * @return array<int, array{question: string, answer: string}>
+     */
+    private function flatFaq(array $items): array
+    {
+        $entries = [];
+
+        foreach ($items as $item) {
+            if (isset($item['q'], $item['a'])) {
+                $entries[] = ['question' => (string) $item['q'], 'answer' => (string) $item['a']];
             }
         }
 

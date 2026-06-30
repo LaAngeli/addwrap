@@ -190,6 +190,9 @@ return [
                 'Google Search Console',
                 'Ranking monitoring & reporting',
             ],
+            'glossary_eyebrow' => 'Glossary',
+            'glossary_title' => 'SEO, AEO and GEO: what each means, in short',
+            'glossary_subtitle' => 'Three terms, three complementary optimization directions — for classic Google, AI assistants and generative engines.',
             'definitions' => [
                 [
                     'term' => 'SEO',

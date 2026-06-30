@@ -221,12 +221,38 @@ class Schema
             'inLanguage' => app()->getLocale(),
             'image' => $image ? ['@type' => 'ImageObject', 'url' => $image] : null,
             'mainEntityOfPage' => ['@id' => self::webPageId()],
-            'author' => [
-                '@type' => 'Organization',
-                'name' => $post['author'] ?? config('site.company.name'),
-            ],
+            'author' => self::articleAuthor($post),
             'publisher' => ['@id' => self::organizationId()],
         ], static fn ($value): bool => $value !== null && $value !== '');
+    }
+
+    /**
+     * Decide ce să trimită ca `author` pe un articol:
+     * - dacă semnătura e generică („Echipa AddWrap"), referim Organization
+     *   prin @id (corect semantic, evită un Person fake);
+     * - dacă apare o persoană reală, emitem Person cu @id stabil sub /despre,
+     *   astfel încât articolele aceluiași autor să se grupeze în graf.
+     *
+     * @param  array<string, mixed>  $post
+     * @return array<string, mixed>
+     */
+    private static function articleAuthor(array $post): array
+    {
+        $name = trim((string) ($post['author'] ?? ''));
+
+        // Semnături colective — autor = Organization.
+        $teamSignatures = ['Echipa AddWrap', 'The AddWrap team', 'AddWrap', ''];
+        if (in_array($name, $teamSignatures, true)) {
+            return ['@id' => self::organizationId()];
+        }
+
+        // Autor individual — Person cu @id stabil bazat pe slug-ul numelui.
+        return [
+            '@type' => 'Person',
+            '@id' => Localization::route('about').'#author-'.\Illuminate\Support\Str::slug($name),
+            'name' => $name,
+            'worksFor' => ['@id' => self::organizationId()],
+        ];
     }
 
     /**

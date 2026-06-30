@@ -190,6 +190,9 @@ return [
                 'Google Search Console',
                 'Monitorizare poziții & raportare',
             ],
+            'glossary_eyebrow' => 'Glosar',
+            'glossary_title' => 'Ce înseamnă SEO, AEO și GEO, pe scurt',
+            'glossary_subtitle' => 'Trei termeni, trei direcții complementare de optimizare — orientate spre Google clasic, asistenții AI și motoarele generative.',
             'definitions' => [
                 [
                     'term' => 'SEO',

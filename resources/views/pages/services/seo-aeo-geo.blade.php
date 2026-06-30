@@ -130,6 +130,28 @@
         </div>
     </section>
 
+    {{-- Glosar SEO / AEO / GEO — termenii definiți vizibil în HTML
+         (oglindesc nodul DefinedTermSet injectat de ServiceController). --}}
+    @if (! empty($svc['definitions']))
+        <section class="border-b border-zinc-200 bg-white py-16 lg:py-20">
+            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl">
+                    <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $svc['glossary_eyebrow'] ?? '' }}</p>
+                    <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ $svc['glossary_title'] ?? '' }}</h2>
+                    <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ $svc['glossary_subtitle'] ?? '' }}</p>
+                </div>
+                <dl data-animate-group class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
+                    @foreach ($svc['definitions'] as $def)
+                        <div class="rounded-2xl border border-zinc-200 bg-paper p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-7">
+                            <dt class="inline-flex items-center justify-center rounded-xl bg-zinc-900 px-3 py-1.5 text-sm font-black tracking-tight text-white">{{ $def['term'] }}</dt>
+                            <dd class="mt-4 text-sm leading-relaxed text-zinc-700">{{ $def['description'] }}</dd>
+                        </div>
+                    @endforeach
+                </dl>
+            </div>
+        </section>
+    @endif
+
     {{-- Highlight: inclus în Website + SEO --}}
     @if (! empty($svc['highlight']))
         <section class="bg-white py-16 lg:py-20">
