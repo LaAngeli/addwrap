@@ -43,6 +43,16 @@ class PageController extends Controller
             $seo->addSchema(Schema::faqPage($entries));
         }
 
+        // Tabelul complet de prețuri → OfferCatalog cu un Offer per linie,
+        // citabil per item de Bing / Perplexity / AI Overviews.
+        $groups = (array) (trans('pages.pricing.table_groups') ?: []);
+        if (! empty($groups)) {
+            $seo->addSchema(Schema::priceList(
+                (string) trans('pages.pricing.full_list_title'),
+                $groups
+            ));
+        }
+
         return view('pages.pricing');
     }
 

@@ -229,20 +229,8 @@ class Schema
             return null;
         }
 
-        $amountStr = (string) $price['amount'];
-
-        // Extrage prima secvență numerică (cu „." sau „," ca separator de mii / zecimale).
-        if (! preg_match('/(\d[\d.,]*)/', $amountStr, $match)) {
-            return null;
-        }
-
-        // Normalizează: scoatem separatorul de mii („." în „3.000"). Dacă rămâne
-        // „,", o tratăm ca zecimală (ex: „1,5").
-        $numeric = str_replace('.', '', $match[1]);
-        $numeric = str_replace(',', '.', $numeric);
-        $value = (float) $numeric;
-
-        if ($value <= 0) {
+        $value = self::parsePriceAmount((string) $price['amount']);
+        if ($value === null) {
             return null;
         }
 
@@ -262,6 +250,28 @@ class Schema
                 ] : null,
             ], static fn ($value): bool => $value !== null && $value !== '' && $value !== []),
         ], static fn ($value): bool => $value !== null && $value !== '' && $value !== []);
+    }
+
+    /**
+     * Parsează prima secvență numerică dintr-un string de preț localizat
+     * („400 €", „de la 3.000 €", „+ 150–200 €", „50 €/oră").
+     * - „." e tratat ca separator de mii (3.000 → 3000).
+     * - „," rămas devine separator zecimal (1,5 → 1.5).
+     * - „preț la cerere" / orice fără cifre → null.
+     *
+     * Pentru intervale (150–200) și „de la X", returnează valoarea de start.
+     */
+    private static function parsePriceAmount(string $str): ?float
+    {
+        if (! preg_match('/(\d[\d.,]*)/', $str, $match)) {
+            return null;
+        }
+
+        $numeric = str_replace('.', '', $match[1]);
+        $numeric = str_replace(',', '.', $numeric);
+        $value = (float) $numeric;
+
+        return $value > 0 ? $value : null;
     }
 
     /**
@@ -414,6 +424,48 @@ class Schema
                     'inDefinedTermSet' => $setId,
                 ];
             }, $terms),
+        ];
+    }
+
+    /**
+     * OfferCatalog pentru tabelul complet de prețuri (un Offer per rând).
+     * Pe pagina /preturi expune toate liniile de preț grupate pe categorii,
+     * astfel încât Bing și asistenții AI să poată cita prețuri individuale.
+     *
+     * @param  array<int, array{title?: string, rows?: array<int, array{service?: string, price?: string}>}>  $groups
+     * @return array<string, mixed>
+     */
+    public static function priceList(string $name, array $groups): array
+    {
+        $items = [];
+        $position = 1;
+
+        foreach ($groups as $group) {
+            $category = (string) ($group['title'] ?? '');
+            foreach ((array) ($group['rows'] ?? []) as $row) {
+                $rawPrice = (string) ($row['price'] ?? '');
+                $priceValue = self::parsePriceAmount($rawPrice);
+
+                $items[] = array_filter([
+                    '@type' => 'Offer',
+                    'position' => $position++,
+                    'name' => (string) ($row['service'] ?? ''),
+                    'category' => $category !== '' ? $category : null,
+                    'priceCurrency' => 'EUR',
+                    'price' => $priceValue,
+                    // Dacă rândul nu are valoare numerică („preț la cerere"),
+                    // păstrăm eticheta originală ca description pentru context.
+                    'description' => $priceValue === null && $rawPrice !== '' ? $rawPrice : null,
+                ], static fn ($v): bool => $v !== null && $v !== '');
+            }
+        }
+
+        return [
+            '@type' => 'OfferCatalog',
+            '@id' => url()->current().'#price-list',
+            'name' => $name,
+            'numberOfItems' => count($items),
+            'itemListElement' => $items,
         ];
     }
 
