@@ -44,6 +44,7 @@ class Schema
     {
         $company = (array) config('site.company');
         $social = (array) ($company['social'] ?? []);
+        $profile = (array) config('site.organization', []);
 
         return array_filter([
             '@type' => 'Organization',
@@ -57,12 +58,73 @@ class Schema
             'email' => $company['email'] ?? null,
             'telephone' => $company['phone'] ?? null,
             'description' => (string) trans('seo.default.description'),
+            'foundingDate' => $profile['founding_date'] ?? null,
             'areaServed' => ['@type' => 'Country', 'name' => 'Romania'],
+            'knowsAbout' => $profile['knows_about'] ?? null,
+            'contactPoint' => self::organizationContactPoint($company),
+            'hasOfferCatalog' => self::organizationOfferCatalog(),
             'sameAs' => array_values(array_filter([
                 $social['facebook'] ?? null,
                 $social['instagram'] ?? null,
             ])),
         ], static fn ($value): bool => $value !== null && $value !== [] && $value !== '');
+    }
+
+    /**
+     * ContactPoint formal pentru Organization — canalul oficial către
+     * customer service (telefon + email + limbile suportate).
+     *
+     * @param  array<string, mixed>  $company
+     * @return array<string, mixed>|null
+     */
+    private static function organizationContactPoint(array $company): ?array
+    {
+        if (empty($company['email']) && empty($company['phone'])) {
+            return null;
+        }
+
+        return array_filter([
+            '@type' => 'ContactPoint',
+            'contactType' => 'customer service',
+            'telephone' => $company['phone'] ?? null,
+            'email' => $company['email'] ?? null,
+            'availableLanguage' => ['Romanian', 'English'],
+            'areaServed' => 'RO',
+        ], static fn ($value): bool => $value !== null && $value !== '' && $value !== []);
+    }
+
+    /**
+     * OfferCatalog cu inventarul de servicii — referit din Organization.
+     * Fiecare item e un Service stub cu @id care leagă graful la nodul Service
+     * complet emis pe pagina dedicată (`/servicii/{slug}#service`).
+     *
+     * @return array<string, mixed>|null
+     */
+    private static function organizationOfferCatalog(): ?array
+    {
+        $services = Localization::services();
+
+        if (empty($services)) {
+            return null;
+        }
+
+        return [
+            '@type' => 'OfferCatalog',
+            '@id' => Localization::route('home').'#offer-catalog',
+            'name' => (string) trans('seo.services_index.title'),
+            'itemListElement' => array_map(static function (string $key): array {
+                return [
+                    '@type' => 'Offer',
+                    'itemOffered' => array_filter([
+                        '@type' => 'Service',
+                        '@id' => Localization::serviceUrl($key).'#service',
+                        'name' => (string) trans('services.items.'.$key.'.name'),
+                        'description' => (string) trans('services.items.'.$key.'.excerpt'),
+                        'url' => Localization::serviceUrl($key),
+                    ], static fn ($value): bool => $value !== null && $value !== ''),
+                ];
+            }, array_keys($services)),
+        ];
     }
 
     /**

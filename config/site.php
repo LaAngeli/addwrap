@@ -167,6 +167,36 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Profilul de entitate al firmei (pentru schema Organization)
+    |--------------------------------------------------------------------------
+    | knows_about: lista temelor în care firma e expertă — folosită ca semnal
+    | pentru AEO/GEO (LLM-urile asociază aceste teme cu brandul). Termenii sunt
+    | în engleză pentru a fi canonici la Schema.org/Google (nu se localizează).
+    |
+    | founding_date: opțional; setează când vrei semnalul de istoric (an YYYY
+    | sau dată completă YYYY-MM-DD). Lăsat null nu emite nodul.
+    */
+
+    'organization' => [
+        'knows_about' => [
+            'Digital marketing',
+            'Search engine optimization',
+            'Answer engine optimization',
+            'Generative engine optimization',
+            'Brand identity',
+            'Content strategy',
+            'Google Ads',
+            'Meta Ads',
+            'Facebook advertising',
+            'Instagram advertising',
+            'Web development',
+            'Conversion rate optimization',
+        ],
+        'founding_date' => null,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Date de contact / firmă (placeholder, de completat ulterior)
     |--------------------------------------------------------------------------
     */
