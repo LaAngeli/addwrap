@@ -53,7 +53,7 @@
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;margin-bottom:12px;">
                                     <tr>
                                         <td style="padding:6px 0;color:#71717a;width:160px;">{{ __('contact.confirmation.recap_service') }}</td>
-                                        <td style="padding:6px 0;font-weight:bold;color:#18181b;">{{ __('services.items.'.$data['service'].'.name') }}</td>
+                                        <td style="padding:6px 0;font-weight:bold;color:#18181b;">{{ Localization::serviceName($data['service']) }}</td>
                                     </tr>
                                 </table>
                             @endif

@@ -21,6 +21,7 @@ return [
     ],
 
     'service_default' => 'Alege un serviciu',
+    'service_other' => 'Altceva',
     'submit' => 'Trimite mesajul',
     'sending' => 'Se trimite...',
     'consent_label' => 'Sunt de acord cu :privacy.',

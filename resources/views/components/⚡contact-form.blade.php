@@ -66,7 +66,7 @@ new class extends Component
             'name' => ['required', 'string', 'min:2', 'max:120', 'regex:/^[\p{L}\p{M}\s.\'-]+$/u'],
             'email' => ['required', 'string', 'email:rfc,strict', 'max:180'],
             'phone' => ['required', 'string', 'regex:/^\+?[0-9\s().-]{7,20}$/'],
-            'service' => ['nullable', Rule::in(array_merge([''], array_keys(config('site.services'))))],
+            'service' => ['nullable', Rule::in(array_merge([''], array_keys(config('site.services')), [Localization::OTHER_SERVICE]))],
             'message' => ['required', 'string', 'min:10', 'max:3000'],
             'consent' => ['accepted'],
             'website' => ['prohibited'],
@@ -179,6 +179,7 @@ new class extends Component
                 @foreach (App\Support\Localization::services() as $key => $service)
                     <option wire:key="cf-opt-{{ $key }}" value="{{ $key }}">{{ __('services.items.'.$key.'.name') }}</option>
                 @endforeach
+                <option wire:key="cf-opt-other" value="{{ App\Support\Localization::OTHER_SERVICE }}">{{ __('contact.service_other') }}</option>
             </select>
             @error('service') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
         </div>

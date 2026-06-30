@@ -10,6 +10,13 @@ use Illuminate\Support\Str;
 class Localization
 {
     /**
+     * Sentinelă pentru opțiunea "Altceva" din formularul de contact — nu e un
+     * serviciu real din config('site.services'), doar un fallback pentru
+     * solicitări care nu se încadrează în lista de servicii.
+     */
+    public const OTHER_SERVICE = 'other';
+
+    /**
      * Locale-ul curent al aplicației.
      */
     public static function current(): string
@@ -114,5 +121,18 @@ class Localization
         }
 
         return null;
+    }
+
+    /**
+     * Eticheta de afișare a unui serviciu selectat în formular, inclusiv
+     * sentinela OTHER_SERVICE (care nu există în site.services).
+     */
+    public static function serviceName(string $key): string
+    {
+        if ($key === self::OTHER_SERVICE) {
+            return (string) trans('contact.service_other');
+        }
+
+        return (string) trans('services.items.'.$key.'.name');
     }
 }

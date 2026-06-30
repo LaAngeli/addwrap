@@ -1,4 +1,7 @@
-@php($company = config('site.company'))
+@php
+    use App\Support\Localization;
+    $company = config('site.company');
+@endphp
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -30,7 +33,7 @@
                                     <tr><td style="padding:8px 0;color:#71717a;">Telefon</td><td style="padding:8px 0;">{{ $data['phone'] }}</td></tr>
                                 @endif
                                 @if (! empty($data['service']))
-                                    <tr><td style="padding:8px 0;color:#71717a;">Serviciu</td><td style="padding:8px 0;">{{ __('services.items.'.$data['service'].'.name') }}</td></tr>
+                                    <tr><td style="padding:8px 0;color:#71717a;">Serviciu</td><td style="padding:8px 0;">{{ Localization::serviceName($data['service']) }}</td></tr>
                                 @endif
                             </table>
 

@@ -21,6 +21,7 @@ return [
     ],
 
     'service_default' => 'Choose a service',
+    'service_other' => 'Something else',
     'submit' => 'Send message',
     'sending' => 'Sending...',
     'consent_label' => 'I agree with the :privacy.',
