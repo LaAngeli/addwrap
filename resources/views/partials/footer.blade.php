@@ -37,7 +37,7 @@
             </div>
 
             {{-- Servicii --}}
-            <div class="lg:col-span-2">
+            <div class="text-center lg:col-span-2 lg:text-left">
                 <h2 class="text-sm font-bold uppercase tracking-wider text-ink">{{ __('messages.footer.services_title') }}</h2>
                 <ul class="mt-4 space-y-3 text-sm lg:space-y-2">
                     @foreach ($services as $key => $service)
@@ -47,7 +47,7 @@
             </div>
 
             {{-- Companie --}}
-            <div class="lg:col-span-2">
+            <div class="text-center lg:col-span-2 lg:text-left">
                 <h2 class="text-sm font-bold uppercase tracking-wider text-ink">{{ __('messages.footer.company_title') }}</h2>
                 <ul class="mt-4 space-y-3 text-sm lg:space-y-2">
                     <li><a href="{{ Localization::route('about') }}" class="block text-zinc-600 transition hover:text-ink">{{ __('messages.nav.about') }}</a></li>
@@ -60,7 +60,7 @@
             </div>
 
             {{-- Legal --}}
-            <div class="lg:col-span-2">
+            <div class="text-center lg:col-span-2 lg:text-left">
                 <h2 class="text-sm font-bold uppercase tracking-wider text-ink">{{ __('messages.footer.legal_title') }}</h2>
                 <ul class="mt-4 space-y-3 text-sm lg:space-y-2">
                     <li><a href="{{ Localization::route('terms') }}" class="block text-zinc-600 transition hover:text-ink">{{ __('seo.terms.title') }}</a></li>
@@ -70,7 +70,7 @@
             </div>
 
             {{-- Contact --}}
-            <div class="lg:col-span-2">
+            <div class="text-center lg:col-span-2 lg:text-left">
                 <h2 class="text-sm font-bold uppercase tracking-wider text-ink">{{ __('messages.footer.contact_title') }}</h2>
                 <ul class="mt-4 space-y-3 text-sm lg:space-y-2">
                     <li><a href="mailto:{{ $company['email'] }}" class="block break-all text-zinc-600 transition hover:text-ink">{{ $company['email'] }}</a></li>
