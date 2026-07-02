@@ -73,8 +73,18 @@
             <div class="text-center lg:col-span-2 lg:text-left">
                 <h2 class="text-sm font-bold uppercase tracking-wider text-ink">{{ __('messages.footer.contact_title') }}</h2>
                 <ul class="mt-4 space-y-3 text-sm lg:space-y-2">
-                    <li><a href="mailto:{{ $company['email'] }}" class="block break-all text-zinc-600 transition hover:text-ink">{{ $company['email'] }}</a></li>
-                    <li><a href="tel:{{ preg_replace('/\s+/', '', $company['phone']) }}" class="block text-zinc-600 transition hover:text-ink">{{ $company['phone'] }}</a></li>
+                    <li>
+                        <a href="mailto:{{ $company['email'] }}" class="flex items-center justify-center gap-2 break-all text-zinc-600 transition hover:text-ink lg:justify-start">
+                            <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            {{ $company['email'] }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:{{ preg_replace('/\s+/', '', $company['phone']) }}" class="flex items-center justify-center gap-2 text-zinc-600 transition hover:text-ink lg:justify-start">
+                            <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.68l1.2 3.5a1 1 0 01-.5 1.2L8 9.6a12 12 0 006.4 6.4l1.2-1.5a1 1 0 011.2-.5l3.5 1.2a1 1 0 01.68.95V19a2 2 0 01-2 2A16 16 0 013 5z" /></svg>
+                            {{ $company['phone'] }}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
