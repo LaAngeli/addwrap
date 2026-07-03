@@ -60,12 +60,16 @@
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center"
                             >
                                 <img
-                                    src="{{ asset('images/partners/'.($project['logo'] ?? $slug).'.png') }}"
+                                    src="{{ \App\Support\Media::partnerLogo($project['logo'] ?? $slug) }}"
                                     alt="{{ $project['client'] }}"
                                     height="240"
                                     loading="lazy"
                                     decoding="async"
-                                    class="h-11 w-auto max-w-[65%] object-contain sm:h-14"
+                                    @class([
+                                        'w-auto max-w-[65%] object-contain',
+                                        'h-[5.5rem] sm:h-28' => $slug === 'synaptica',
+                                        'h-11 sm:h-14' => $slug !== 'synaptica',
+                                    ])
                                 />
                                 <div>
                                     <p class="text-xs font-semibold uppercase tracking-wider text-orange">{{ $c['tag'] ?? '' }}</p>
@@ -92,12 +96,16 @@
                                 :aria-pressed="sel === {{ $loop->index }} ? 'true' : 'false'"
                             >
                                 <img
-                                    src="{{ asset('images/partners/'.($project['logo'] ?? $slug).'.png') }}"
+                                    src="{{ \App\Support\Media::partnerLogo($project['logo'] ?? $slug) }}"
                                     alt="{{ $project['client'] }}"
                                     height="240"
                                     loading="lazy"
                                     decoding="async"
-                                    class="max-h-5 w-auto max-w-full object-contain sm:max-h-6"
+                                    @class([
+                                        'w-auto max-w-full object-contain',
+                                        'max-h-10 sm:max-h-12' => $slug === 'synaptica',
+                                        'max-h-5 sm:max-h-6' => $slug !== 'synaptica',
+                                    ])
                                 />
                             </button>
                         @endforeach
@@ -142,7 +150,7 @@
                     >
                         {{-- Vizual --}}
                         <div class="{{ $even ? 'lg:order-2' : '' }} overflow-hidden rounded-3xl">
-                            <x-project-cover :project="$project" tall class="transition duration-500 group-hover:scale-[1.03]" />
+                            <x-project-cover :project="$project" tall />
                         </div>
 
                         {{-- Detalii --}}

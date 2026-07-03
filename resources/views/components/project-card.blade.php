@@ -12,7 +12,7 @@
 @endphp
 
 <a href="{{ Localization::route('portfolio.show', ['slug' => $slug]) }}" class="group flex flex-col">
-    <x-project-cover :project="$project" class="transition group-hover:opacity-95" />
+    <x-project-cover :project="$project" />
 
     <div class="mt-5 flex flex-wrap items-center gap-2 text-xs text-muted">
         <span class="font-semibold uppercase tracking-wider text-ink">{{ __('portfolio.categories.'.($project['category'] ?? 'general')) }}</span>

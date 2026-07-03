@@ -15,7 +15,7 @@
         ['slug' => 'synaptica',                 'name' => 'Synaptica Cluj',              'w' => 230],
         ['slug' => 'pfg-finance',               'name' => 'PFG Finance',                 'w' => 825],
         ['slug' => 'piticii-din-gradina',       'name' => 'Piticii din grădină',         'w' => 345],
-        ['slug' => 'optiplaza',                 'name' => 'Optiplaza',                   'w' => 888],
+        ['slug' => 'optiplaza',                 'name' => 'Optiplaza',                   'w' => 1003],
         ['slug' => 'wolf-electric',             'name' => 'Wolf Electric',               'w' => 313],
         ['slug' => 'evikom',                    'name' => 'Evikom',                      'w' => 1045],
         ['slug' => 'napoca7',                   'name' => 'Napoca7',                     'w' => 549],
@@ -38,7 +38,7 @@
             >
                 @foreach ($partners as $partner)
                     <img
-                        src="{{ asset('images/partners/'.$partner['slug'].'.png') }}"
+                        src="{{ \App\Support\Media::partnerLogo($partner['slug']) }}"
                         alt="{{ $copy ? '' : $partner['name'] }}"
                         width="{{ $partner['w'] }}"
                         height="240"
