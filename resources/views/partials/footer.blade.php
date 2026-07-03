@@ -16,14 +16,14 @@
 
             {{-- Brand + social --}}
             <div class="col-span-2 lg:col-span-4">
-                <a href="{{ Localization::route('home') }}" class="flex items-center justify-center text-ink lg:justify-start" aria-label="{{ $company['name'] }}">
+                <a href="{{ Localization::route('home') }}" class="flex items-center justify-center text-ink" aria-label="{{ $company['name'] }}">
                     {{-- Desktop + mobil: lockup complet (marcă + wordmark) --}}
                     <img src="{{ asset('images/logo/addwrap-lockup.png') }}" alt="{{ $company['name'] }}" width="1100" height="203" loading="lazy" decoding="async" class="h-12 w-auto" />
                 </a>
-                <p class="mx-auto mt-4 max-w-sm text-center text-sm leading-relaxed text-muted lg:mx-0 lg:text-left">{{ __('messages.footer.tagline') }}</p>
+                <p class="mx-auto mt-4 max-w-sm text-center text-sm leading-relaxed text-muted">{{ __('messages.footer.tagline') }}</p>
 
                 @if (! empty($social))
-                    <div class="mt-6 flex items-center justify-center gap-3 lg:justify-start">
+                    <div class="mt-6 flex items-center justify-center gap-3">
                         @foreach ($social as $network => $url)
                             @continue(empty($socialIcons[$network]))
                             <a href="{{ $url }}" @if ($url !== '#') target="_blank" rel="noopener noreferrer" @endif
