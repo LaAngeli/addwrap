@@ -39,10 +39,10 @@ return [
     ],
 
     'confirmation' => [
-        'subject' => 'Confirmation: we received your message | AddWrap',
+        'subject' => 'Confirmation: we received your message | addWrap',
         'header' => 'Your message has reached us',
         'greeting' => 'Hi :name,',
-        'intro' => 'Thank you for your interest in AddWrap. Your message has been received and will be reviewed by a member of our team shortly.',
+        'intro' => 'Thank you for your interest in addWrap. Your message has been received and will be reviewed by a member of our team shortly.',
         'reply_eta' => 'You can expect a personalized reply within 24 business hours.',
         'recap_label' => 'For your records, here are the details of the message you sent:',
         'recap_service' => 'Service of interest',
@@ -58,7 +58,7 @@ return [
         'link_services' => 'our service packages',
         'link_separator' => 'or',
         'signature_lead' => 'With appreciation,',
-        'signature_team' => 'The AddWrap team',
+        'signature_team' => 'The addWrap team',
         'signature_tagline' => 'Strategy, creative and performance, under one roof.',
         'reply_note' => 'This is an automated confirmation message. For additional details, reply directly to this email or write to us at :email.',
         'footer_business' => ':name · Digital marketing agency',

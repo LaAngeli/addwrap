@@ -21,8 +21,8 @@
                 <div class="text-center lg:col-start-1 lg:row-start-1 lg:text-left">
                     <p data-animate="fade-up" class="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-muted backdrop-blur">
                         <span class="relative flex h-2 w-2">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-60"></span>
-                            <span class="relative inline-flex h-2 w-2 rounded-full bg-zinc-900"></span>
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-60"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-orange"></span>
                         </span>
                         {{ __('pages.contact.response_badge') }}
                     </p>
@@ -36,15 +36,10 @@
                         {{-- Header --}}
                         <div class="flex items-center gap-3 border-b border-zinc-200 bg-zinc-50 px-5 py-4">
                             <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-zinc-900">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157 127" fill="#EA7117" class="h-4 w-auto" aria-hidden="true" focusable="false">
-                                    <path d="M0,0 L6,0 L11,4 L12,7 L12,49 L-2,50 L-6,58 L-14,78 L-16,77 L-20,69 L-43,69 L-48,78 L-50,76 L-59,52 L-59,50 L-83,50 L-86,55 L-107,108 L-111,104 L-128,68 L-129,63 L-126,56 L-121,53 L-92,40 L-53,23 L-14,6 Z" transform="translate(137,8)" />
-                                    <path d="M0,0 L1,0 L1,27 L-2,32 L-5,34 L-13,34 L-7,18 Z" transform="translate(148,84)" />
-                                    <path d="M0,0 L2,2 L12,27 L12,29 L-11,29 L-1,2 Z" transform="translate(64,89)" />
-                                    <path d="M0,0 L3,4 L5,10 L-4,10 Z" transform="translate(105,108)" />
-                                </svg>
+                                <x-brand-glyph class="h-3 w-auto text-white" />
                             </span>
                             <div>
-                                <p class="text-sm font-semibold text-ink">AddWrap</p>
+                                <p class="text-sm font-semibold text-ink">addWrap</p>
                                 <p class="flex items-center gap-1.5 text-xs text-muted"><span class="h-1.5 w-1.5 rounded-full bg-zinc-900"></span>{{ __('pages.contact.response_badge') }}</p>
                             </div>
                         </div>
@@ -87,7 +82,7 @@
                 {{-- C: CTA --}}
                 <div class="text-center lg:col-start-1 lg:row-start-2 lg:text-left">
                     <div data-animate="fade-up" class="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                        <a href="#form" class="w-full rounded-lg bg-zinc-900 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-black hover:shadow-md sm:w-auto">{{ __('pages.contact.hero_cta_write') }}</a>
+                        <a href="#form" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">{{ __('pages.contact.hero_cta_write') }}</a>
                         <a href="https://wa.me/{{ $company['whatsapp'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-zinc-900 sm:w-auto">
                             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885z" /></svg>
                             WhatsApp
@@ -174,6 +169,23 @@
                     <div class="mt-6">
                         <livewire:contact-form />
                     </div>
+                </div>
+
+                {{-- Explorează --}}
+                <div class="mt-6 flex flex-wrap items-center gap-2 rounded-2xl border border-zinc-200 bg-paper p-4 text-sm">
+                    <span class="font-medium text-ink">{{ __('pages.contact.explore_title') }}</span>
+                    <a href="{{ Localization::route('portfolio') }}" class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 font-medium text-zinc-700 transition hover:border-zinc-900 hover:text-ink">
+                        {{ __('messages.nav.portfolio') }}
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                    <a href="{{ Localization::route('faq') }}" class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 font-medium text-zinc-700 transition hover:border-zinc-900 hover:text-ink">
+                        {{ __('messages.nav.faq') }}
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                    <a href="{{ Localization::route('blog') }}" class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 font-medium text-zinc-700 transition hover:border-zinc-900 hover:text-ink">
+                        {{ __('messages.nav.blog') }}
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
                 </div>
             </div>
         </div>

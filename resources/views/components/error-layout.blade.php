@@ -39,8 +39,8 @@
         @if ($eyebrow)
             <p data-animate="fade-up" class="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-muted backdrop-blur">
                 <span class="relative flex h-2 w-2">
-                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-60"></span>
-                    <span class="relative inline-flex h-2 w-2 rounded-full bg-zinc-900"></span>
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-60"></span>
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-orange"></span>
                 </span>
                 {{ $eyebrow }}
             </p>
@@ -59,7 +59,7 @@
         @if ($ctaHome || $ctaContact)
             <div data-animate="fade-up" data-animate-delay="0.24" class="mt-9 flex flex-col gap-3 sm:flex-row sm:justify-center">
                 @if ($ctaHome)
-                    <a href="{{ Localization::route('home') }}" class="w-full rounded-lg bg-zinc-900 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-black hover:shadow-md sm:w-auto">
+                    <a href="{{ Localization::route('home') }}" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">
                         {{ $ctaHome }}
                     </a>
                 @endif

@@ -20,8 +20,8 @@
                 <div class="text-center lg:col-start-1 lg:row-start-1 lg:text-left">
                     <p data-animate="fade-up" class="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-muted backdrop-blur">
                         <span class="relative flex h-2 w-2">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-60"></span>
-                            <span class="relative inline-flex h-2 w-2 rounded-full bg-zinc-900"></span>
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-60"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-orange"></span>
                         </span>
                         {{ __('services.index.eyebrow') }}
                     </p>
@@ -78,18 +78,13 @@
                                 class="flex h-16 w-16 items-center justify-center rounded-full bg-zinc-900 text-white shadow-xl transition sm:h-20 sm:w-20"
                                 aria-label="{{ config('site.company.name') }}"
                             >
-                                {{-- Marca AddWrap (vectorizată, portocaliu brand pe hub negru) --}}
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157 127" fill="#EA7117" class="h-7 w-auto sm:h-9" aria-hidden="true" focusable="false">
-                                    <path d="M0,0 L6,0 L11,4 L12,7 L12,49 L-2,50 L-6,58 L-14,78 L-16,77 L-20,69 L-43,69 L-48,78 L-50,76 L-59,52 L-59,50 L-83,50 L-86,55 L-107,108 L-111,104 L-128,68 L-129,63 L-126,56 L-121,53 L-92,40 L-53,23 L-14,6 Z" transform="translate(137,8)" />
-                                    <path d="M0,0 L1,0 L1,27 L-2,32 L-5,34 L-13,34 L-7,18 Z" transform="translate(148,84)" />
-                                    <path d="M0,0 L2,2 L12,27 L12,29 L-11,29 L-1,2 Z" transform="translate(64,89)" />
-                                    <path d="M0,0 L3,4 L5,10 L-4,10 Z" transform="translate(105,108)" />
-                                </svg>
+                                {{-- Glyph „AW" alb pe hub negru --}}
+                                <x-brand-glyph class="h-5 w-auto sm:h-6 text-white" />
                             </button>
                         </div>
                     </div>
 
-                    {{-- Caption dinamic: AddWrap (implicit) sau serviciul selectat --}}
+                    {{-- Caption dinamic: addWrap (implicit) sau serviciul selectat --}}
                     <div class="relative mt-6 min-h-[5.5rem] text-center">
                         <div
                             x-show="sel === 'aw'"
@@ -123,7 +118,7 @@
                 {{-- C: CTA + chips --}}
                 <div class="text-center lg:col-start-1 lg:row-start-2 lg:text-left">
                     <div data-animate="fade-up" class="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                        <a href="{{ Localization::route('home') }}#start" class="w-full rounded-lg bg-zinc-900 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-black hover:shadow-md sm:w-auto">{{ __('services.index.cta_primary') }}</a>
+                        <a href="{{ Localization::route('home') }}#start" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">{{ __('services.index.cta_primary') }}</a>
                         <a href="{{ Localization::route('pricing') }}" class="w-full rounded-lg border border-zinc-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-zinc-900 sm:w-auto">{{ __('services.index.cta_secondary') }}</a>
                     </div>
                     <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">

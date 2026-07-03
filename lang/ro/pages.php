@@ -11,7 +11,7 @@ return [
         'hero_cta_primary' => 'Începe proiectul',
         'hero_cta_secondary' => 'Vezi serviciile',
         'hero_points' => ['6 servicii integrate', 'Raportare transparentă', 'Orientat spre conversie'],
-        'clients_title' => 'Branduri care cresc alături de AddWrap',
+        'clients_title' => 'Branduri care cresc alături de addWrap',
         'hero_dashboard' => [
             'service_label' => 'Serviciu',
             'live' => 'Live',
@@ -49,7 +49,7 @@ return [
         'services_title' => 'Servicii care lucrează împreună',
         'services_subtitle' => 'De la identitate de brand la campanii plătite și platforme web.',
 
-        'why_eyebrow' => 'De ce AddWrap',
+        'why_eyebrow' => 'De ce addWrap',
         'why_title' => 'Marketing cu cap, execuție cu rezultate',
         'why_items' => [
             ['title' => 'Strategie înainte de tactici', 'text' => 'Pornim de la obiective de business, nu de la canale izolate.'],
@@ -67,7 +67,7 @@ return [
             ['title' => 'Optimizare', 'text' => 'Măsurăm, învățăm și îmbunătățim constant.'],
         ],
 
-        'bento_eyebrow' => 'Avantajul AddWrap',
+        'bento_eyebrow' => 'Avantajul addWrap',
         'bento_title' => 'Ce primești când lucrezi cu noi',
         'bento_subtitle' => 'Nu servicii izolate, ci un sistem integrat gândit pentru rezultate concrete.',
         'bento_feature' => [
@@ -87,7 +87,7 @@ return [
         'faq_title' => 'Răspunsuri clare, fără surprize',
         'faq_subtitle' => 'Cele mai frecvente întrebări despre cum lucrăm, ce includem și cum stabilim prețul.',
         'faq' => [
-            ['q' => 'Ce fel de agenție este AddWrap?', 'a' => 'O agenție de marketing digital: branding, conținut, Google & Meta Ads, SEO/AEO/GEO și dezvoltare web — toate sub același acoperiș.'],
+            ['q' => 'Ce fel de agenție este addWrap?', 'a' => 'O agenție de marketing digital: branding, conținut, Google & Meta Ads, SEO/AEO/GEO și dezvoltare web — toate sub același acoperiș.'],
             ['q' => 'Crearea site-ului costă separat?', 'a' => 'Nu. Crearea site-ului este inclusă în contractul de mentenanță (de la 400 €/lună), fără investiție mare la start.'],
             ['q' => 'SEO este inclus?', 'a' => 'Da. Optimizarea SEO / AEO / GEO este inclusă în pachetul lunar Website + SEO.'],
             ['q' => 'Pot alege un singur serviciu?', 'a' => 'Da. Iei exact serviciile de care ai nevoie sau construim un pachet personalizat în jurul obiectivelor tale.'],
@@ -128,7 +128,7 @@ return [
 
         'story_eyebrow' => 'Povestea noastră',
         'story_title' => 'Marketing făcut cu cap, nu pe pilot automat',
-        'story_lead' => 'AddWrap este o agenție de marketing digital. Lucrăm cu un număr restrâns de clienți, ca să le putem acorda atenția și implicarea de care au nevoie ca să crească.',
+        'story_lead' => 'addWrap este o agenție de marketing digital. Lucrăm cu un număr restrâns de clienți, ca să le putem acorda atenția și implicarea de care au nevoie ca să crească.',
         'story_text' => 'Am pornit dintr-o frustrare simplă: prea multe afaceri bune sunt invizibile online, iar prea multe agenții livrează rapoarte frumoase fără rezultate reale. Noi facem invers — punem strategia înaintea tacticilor, măsurăm tot ce contează și ne implicăm în fiecare proiect ca și cum ar fi al nostru. De la identitate de brand la campanii și site-uri rapide, ținem totul sub același acoperiș, ca să nu pierzi timp și mesaje între furnizori.',
         'story_roof_label' => 'Agenție integrată',
         'story_roof_caption' => 'totul sub același acoperiș',
@@ -146,7 +146,7 @@ return [
             ['year' => '2025', 'title' => 'Astăzi', 'text' => 'Suntem partener pe termen lung pentru zeci de branduri care vor creștere reală. Punem strategia înaintea tacticilor și măsurăm tot ce contează.'],
         ],
 
-        'stats_title' => 'AddWrap pe scurt',
+        'stats_title' => 'addWrap pe scurt',
         'stats' => [
             ['value' => '6', 'label' => 'servicii integrate sub același acoperiș'],
             ['value' => '1:1', 'label' => 'colaborare directă, fără intermediari'],
@@ -163,7 +163,7 @@ return [
             ['title' => 'Învățare continuă', 'text' => 'Rămânem mereu în pas cu schimbările din digital, de la SEO la AI.'],
         ],
 
-        'why_eyebrow' => 'De ce AddWrap',
+        'why_eyebrow' => 'De ce addWrap',
         'why_title' => 'Avantajul de a lucra cu o echipă mică',
         'why_points' => [
             'Vorbești direct cu oamenii care îți fac munca, nu cu un intermediar.',
@@ -202,6 +202,7 @@ return [
         ],
         'info_title' => 'Date de contact',
         'form_title' => 'Trimite-ne un mesaj',
+        'explore_title' => 'Vezi și:',
         'whatsapp' => 'WhatsApp',
         'social_title' => 'Urmărește-ne',
         'guided_title' => 'Preferi să fii ghidat?',
@@ -223,13 +224,14 @@ return [
             ['q' => 'Trebuie să știu exact ce serviciu vreau?', 'a' => 'Nu. Descrie-ne obiectivul afacerii, iar noi îți recomandăm soluția potrivită.'],
             ['q' => 'Cât costă o discuție inițială?', 'a' => 'Discuția și estimarea inițială sunt gratuite și fără obligații.'],
             ['q' => 'Pot programa un apel?', 'a' => 'Sigur. Menționează în mesaj că preferi un apel și stabilim împreună un interval potrivit.'],
+            ['q' => 'Pot scrie mesajul în engleză?', 'a' => 'Da, lucrăm în română și engleză — scrie-ne în limba cu care te simți mai confortabil.'],
         ],
     ],
 
     'pricing' => [
         'hero_eyebrow' => 'Prețuri',
         'hero_title' => 'Prețuri clare, fără surprize',
-        'hero_subtitle' => 'Listă completă de prețuri pentru serviciile AddWrap. Toate prețurile sunt fără TVA (cota 21%).',
+        'hero_subtitle' => 'Listă completă de prețuri pentru serviciile addWrap. Toate prețurile sunt fără TVA (cota 21%).',
         'hero_calc_title' => 'Estimează-ți abonamentul',
         'hero_calc_hint' => 'Bifează serviciile dorite',
         'hero_calc_total' => 'Total estimativ',

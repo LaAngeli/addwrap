@@ -16,8 +16,8 @@
                 <div class="text-center lg:col-start-1 lg:row-start-1 lg:text-left">
                     <p data-animate="fade-up" class="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-muted backdrop-blur">
                         <span class="relative flex h-2 w-2">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-60"></span>
-                            <span class="relative inline-flex h-2 w-2 rounded-full bg-zinc-900"></span>
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-60"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-orange"></span>
                         </span>
                         {{ __('pages.home.hero_eyebrow') }}
                     </p>
@@ -46,7 +46,7 @@
                     $dashState = [
                         'sel' => array_key_first($dashServices),
                         'services' => $dashServices,
-                        'colors' => ['bg-zinc-200', 'bg-zinc-300', 'bg-zinc-400', 'bg-zinc-500', 'bg-zinc-700', 'bg-zinc-800', 'bg-zinc-900'],
+                        'colors' => ['bg-zinc-200', 'bg-zinc-300', 'bg-zinc-500', 'bg-zinc-900', 'bg-orange/60', 'bg-orange', 'bg-orange'],
                     ];
                 @endphp
                 <div data-animate="scale-in" class="relative mx-auto w-full max-w-md lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:max-w-none lg:self-center">
@@ -65,7 +65,7 @@
                                     <p class="text-sm font-bold text-ink" x-text="services[sel].name"></p>
                                 </div>
                                 <span class="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-semibold text-zinc-700">
-                                    <span class="relative flex h-1.5 w-1.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-60"></span><span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-zinc-900"></span></span>{{ $dash['live'] }}
+                                    <span class="relative flex h-1.5 w-1.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-60"></span><span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-orange"></span></span>{{ $dash['live'] }}
                                 </span>
                             </div>
 
@@ -75,7 +75,7 @@
                                     <button
                                         type="button"
                                         @click="sel = '{{ $dkey }}'"
-                                        :class="sel === '{{ $dkey }}' ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400'"
+                                        :class="sel === '{{ $dkey }}' ? 'border-orange bg-orange text-white' : 'border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400'"
                                         class="inline-flex h-9 w-9 items-center justify-center rounded-lg border transition"
                                         title="{{ __('services.items.'.$dkey.'.name') }}"
                                         aria-label="{{ __('services.items.'.$dkey.'.name') }}"
@@ -96,7 +96,7 @@
                             <div class="grid grid-cols-2 gap-3">
                                 <div class="rounded-xl border border-zinc-200 p-3">
                                     <p class="text-xs text-muted" x-text="services[sel].k1l"></p>
-                                    <p class="mt-1 text-xl font-bold text-ink" x-text="services[sel].k1v"></p>
+                                    <p class="mt-1 text-xl font-bold text-orange" x-text="services[sel].k1v"></p>
                                 </div>
                                 <div class="rounded-xl border border-zinc-200 p-3">
                                     <p class="text-xs text-muted" x-text="services[sel].k2l"></p>
@@ -127,13 +127,13 @@
                 {{-- C: CTA + chips --}}
                 <div class="text-center lg:col-start-1 lg:row-start-2 lg:text-left">
                     <div data-animate="fade-up" class="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                        <a href="#start" class="w-full rounded-lg bg-zinc-900 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-black hover:shadow-md sm:w-auto">{{ __('pages.home.hero_cta_primary') }}</a>
+                        <a href="#start" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">{{ __('pages.home.hero_cta_primary') }}</a>
                         <a href="{{ Localization::route('services.index') }}" class="w-full rounded-lg border border-zinc-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-zinc-900 sm:w-auto">{{ __('pages.home.hero_cta_secondary') }}</a>
                     </div>
                     <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">
                         @foreach (__('pages.home.hero_points') as $point)
                             <span class="inline-flex items-center gap-1.5">
-                                <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                                <svg class="h-4 w-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                                 {{ $point }}
                             </span>
                         @endforeach
@@ -162,7 +162,7 @@
     <section class="bg-white py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
-                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.home.bento_eyebrow') }}</p>
+                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-orange">{{ __('pages.home.bento_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.bento_title') }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.home.bento_subtitle') }}</p>
             </div>
@@ -174,7 +174,7 @@
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.15]"></div>
                     <div class="relative">
                         <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                            <span class="h-1.5 w-1.5 rounded-full bg-white"></span>{{ $bentoFeature['badge'] }}
+                            <span class="h-1.5 w-1.5 rounded-full bg-orange"></span>{{ $bentoFeature['badge'] }}
                         </span>
                         <h3 class="mt-5 text-2xl font-bold tracking-tight sm:text-3xl">{{ $bentoFeature['title'] }}</h3>
                         <p class="mt-3 max-w-md text-zinc-300">{{ $bentoFeature['text'] }}</p>
@@ -216,7 +216,7 @@
     <section class="border-y border-zinc-200 bg-paper py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
-                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.home.why_eyebrow') }}</p>
+                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-ink">{{ __('pages.home.why_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.why_title') }}</h2>
             </div>
             <div data-animate-group class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -244,7 +244,7 @@
     <section class="bg-white py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
-                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.home.services_eyebrow') }}</p>
+                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-orange">{{ __('pages.home.services_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.services_title') }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.home.services_subtitle') }}</p>
             </div>
@@ -266,7 +266,7 @@
     <section class="border-t border-zinc-200 bg-paper py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
-                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.home.process_eyebrow') }}</p>
+                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-ink">{{ __('pages.home.process_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.process_title') }}</h2>
             </div>
             <div data-animate-group class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -281,14 +281,20 @@
         </div>
     </section>
 
-    {{-- Statistici --}}
+    {{-- Statistici — bandă ink cu glow portocaliu --}}
     <section class="relative overflow-hidden bg-zinc-900 py-16 text-white lg:py-20">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
+        <div class="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-orange opacity-20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-zinc-600 opacity-25 blur-3xl"></div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div data-animate-group class="grid grid-cols-2 gap-8 lg:grid-cols-4">
-                @foreach (__('pages.home.stats') as $stat)
+                @foreach (__('pages.home.stats') as $i => $stat)
                     <div class="text-center">
-                        <div class="text-4xl font-bold tracking-tight sm:text-5xl">{{ $stat['value'] }}</div>
+                        <div @class([
+                            'text-4xl font-bold tracking-tight sm:text-5xl',
+                            'text-orange' => $i % 2 === 0,
+                            'text-white' => $i % 2 === 1,
+                        ])>{{ $stat['value'] }}</div>
                         <p class="mt-2 text-sm text-zinc-400">{{ $stat['label'] }}</p>
                     </div>
                 @endforeach
@@ -300,7 +306,7 @@
     <section id="start" class="scroll-mt-20 bg-paper py-20 lg:py-24">
         <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto mb-10 max-w-2xl text-center">
-                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.home.starter_eyebrow') }}</p>
+                <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-orange">{{ __('pages.home.starter_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.starter_title') }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.home.starter_subtitle') }}</p>
             </div>

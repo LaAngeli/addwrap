@@ -9,7 +9,7 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 
     /*
-    | Paletă neutră monocromă (alegere brand AddWrap, faza fără logo).
+    | Paletă neutră monocromă (alegere brand addWrap, faza fără logo).
     | Tokenii "brand-*" sunt mapați pe nuanțe neutre: tonurile mari (600-900)
     | sunt aproape negre (CTA-uri puternice, editorial), iar cele mici sunt griuri.
     */
@@ -23,6 +23,16 @@
     --color-brand-700: #0a0a0a;
     --color-brand-800: #000000;
     --color-brand-900: #000000;
+
+    /*
+    | Accent de brand (brandbook 2026): portocaliu, singurul accent cromatic
+    | peste paleta neutră negru/gri. `*-soft` = tintă deschisă pentru fundal;
+    | `*-deep` = variantă închisă pentru text citibil pe tinte. Utilitare
+    | generate: bg-orange, text-orange, bg-orange/10, bg-orange-soft, text-orange-deep.
+    */
+    --color-orange: #f26c00;
+    --color-orange-soft: #fef4ec;
+    --color-orange-deep: #a34700;
 
     --color-ink: #09090b;
     --color-muted: #71717a;
@@ -301,10 +311,10 @@
     border-radius: 50%;
     background: conic-gradient(
         from 0deg,
-        rgb(234 113 23 / 0) 0deg,
-        rgb(234 113 23 / 0) 296deg,
-        rgb(234 113 23 / 0.34) 352deg,
-        rgb(234 113 23 / 0) 360deg
+        rgb(242 108 0 / 0) 0deg,
+        rgb(242 108 0 / 0) 296deg,
+        rgb(242 108 0 / 0.34) 352deg,
+        rgb(242 108 0 / 0) 360deg
     );
     animation: aw-spin 3.4s linear infinite;
 }

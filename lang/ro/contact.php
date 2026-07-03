@@ -39,10 +39,10 @@ return [
     ],
 
     'confirmation' => [
-        'subject' => 'Confirmare: am primit mesajul tău | AddWrap',
+        'subject' => 'Confirmare: am primit mesajul tău | addWrap',
         'header' => 'Mesajul tău a ajuns la noi',
         'greeting' => 'Bună, :name,',
-        'intro' => 'Îți mulțumim pentru interesul față de serviciile AddWrap. Mesajul tău a fost preluat și va fi analizat de un membru al echipei noastre în cel mai scurt timp.',
+        'intro' => 'Îți mulțumim pentru interesul față de serviciile addWrap. Mesajul tău a fost preluat și va fi analizat de un membru al echipei noastre în cel mai scurt timp.',
         'reply_eta' => 'Revenim cu un răspuns personalizat în maximum 24 de ore lucrătoare.',
         'recap_label' => 'Pentru evidența ta, iată detaliile mesajului trimis:',
         'recap_service' => 'Serviciu de interes',
@@ -58,7 +58,7 @@ return [
         'link_services' => 'pachetele de servicii',
         'link_separator' => 'sau',
         'signature_lead' => 'Cu apreciere,',
-        'signature_team' => 'Echipa AddWrap',
+        'signature_team' => 'Echipa addWrap',
         'signature_tagline' => 'Strategie, creație și performanță, sub același acoperiș.',
         'reply_note' => 'Acesta este un mesaj automat de confirmare. Pentru detalii suplimentare, răspunde direct la acest email sau scrie-ne la :email.',
         'footer_business' => ':name · Agenție de marketing digital',

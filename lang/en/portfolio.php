@@ -11,6 +11,7 @@ return [
     'client_label' => 'Client',
     'year_label' => 'Year',
     'category_label' => 'Service',
+    'website_label' => 'Website',
     'details_title' => 'Project details',
     'next_project' => 'Next project',
     'back_to_portfolio' => 'Back to portfolio',

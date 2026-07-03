@@ -24,7 +24,7 @@
                          întotdeauna, indiferent de setarea de blocare. --}}
                     <tr>
                         <td style="background:#18181b;padding:24px 32px;color:#ffffff;">
-                            <img src="{{ $message->embed(public_path('images/logo/addwrap-white.png')) }}" width="130" height="61" alt="{{ $company['name'] }}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+                            <img src="{{ $message->embed(public_path('images/logo/addwrap-lockup-white.png')) }}" width="176" height="32" alt="{{ $company['name'] }}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
                             <p style="margin:16px 0 0;font-size:18px;font-weight:bold;line-height:1.3;">{{ __('contact.confirmation.header') }}</p>
                         </td>
                     </tr>

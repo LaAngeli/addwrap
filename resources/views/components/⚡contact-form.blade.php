@@ -199,7 +199,7 @@ new class extends Component
         @error('consent') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
     </div>
 
-    <button type="submit" wire:loading.attr="disabled" class="inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-black disabled:opacity-60">
+    <button type="submit" wire:loading.attr="disabled" class="inline-flex items-center gap-2 rounded-lg bg-orange px-6 py-3 text-base font-semibold text-white transition hover:bg-orange-deep disabled:opacity-60">
         <span wire:loading.remove wire:target="submit">{{ __('contact.submit') }}</span>
         <span wire:loading wire:target="submit">{{ __('contact.sending') }}</span>
     </button>

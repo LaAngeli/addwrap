@@ -120,7 +120,7 @@ new class extends Component
             </div>
 
             <div class="mt-6 flex flex-wrap items-center gap-3">
-                <a href="{{ \App\Support\Localization::route('contact') }}" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-black">{{ __('quiz.cta') }}</a>
+                <a href="{{ \App\Support\Localization::route('contact') }}" class="rounded-lg bg-orange px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-deep">{{ __('quiz.cta') }}</a>
                 <button type="button" wire:click="restart" class="text-sm font-medium text-muted hover:text-ink">{{ __('quiz.restart') }}</button>
             </div>
         @endif

@@ -16,9 +16,9 @@ return [
     'categories' => [
         [
             'id' => 'general',
-            'title' => 'Despre AddWrap',
+            'title' => 'Despre addWrap',
             'items' => [
-                ['q' => 'Ce fel de agenție este AddWrap?', 'a' => 'Suntem o agenție de marketing digital. Lucrăm cu un număr restrâns de clienți și acoperim sub același acoperiș branding, conținut, publicitate plătită, SEO și dezvoltare web.'],
+                ['q' => 'Ce fel de agenție este addWrap?', 'a' => 'Suntem o agenție de marketing digital. Lucrăm cu un număr restrâns de clienți și acoperim sub același acoperiș branding, conținut, publicitate plătită, SEO și dezvoltare web.'],
                 ['q' => 'Cu ce tipuri de afaceri lucrați?', 'a' => 'De la afaceri la început de drum până la companii consacrate. Adaptăm serviciile la stadiul și bugetul fiecărei afaceri.'],
                 ['q' => 'În ce limbi lucrați?', 'a' => 'Lucrăm în română și engleză, inclusiv pentru site-uri și conținut multilingv.'],
             ],

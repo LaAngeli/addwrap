@@ -23,8 +23,8 @@
                 <div class="text-center lg:text-left">
                     <p data-animate="fade-up" class="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-muted backdrop-blur">
                         <span class="relative flex h-2 w-2">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-60"></span>
-                            <span class="relative inline-flex h-2 w-2 rounded-full bg-zinc-900"></span>
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-60"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-orange"></span>
                         </span>
                         {{ __('faq.eyebrow') }}
                     </p>
@@ -32,7 +32,7 @@
                     <p data-animate="fade-up" data-animate-delay="0.16" class="mx-auto mt-5 max-w-xl text-lg text-muted sm:mt-6 sm:text-xl text-pretty lg:mx-0">{{ __('faq.subtitle') }}</p>
 
                     <div data-animate="fade-up" data-animate-delay="0.24" class="mt-9 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                        <a href="#intrebari" class="w-full rounded-lg bg-zinc-900 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-black hover:shadow-md sm:w-auto">{{ __('faq.hero_cta') }}</a>
+                        <a href="#intrebari" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">{{ __('faq.hero_cta') }}</a>
                         <a href="{{ Localization::route('contact') }}" class="w-full rounded-lg border border-zinc-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-zinc-900 sm:w-auto">{{ __('messages.nav.contact') }}</a>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 | Meta SEO (RO)
 |--------------------------------------------------------------------------
-| Titlu: „{Titlu pagină} | AddWrap" — brandul se adaugă automat (App\Support\Seo),
+| Titlu: „{Titlu pagină} | addWrap" — brandul se adaugă automat (App\Support\Seo),
 | deci titlurile AICI sunt FĂRĂ brand. Titlu ≤ ~48 caractere, keyword-first.
 |
 | Descriere — structură fixă: [beneficiu/keyword-first] + [ce facem concret] +
@@ -27,7 +27,7 @@ return [
 
     'services_index' => [
         'title' => 'Servicii de marketing digital',
-        'description' => 'Servicii de marketing digital integrate: branding, content, Google & Meta Ads, SEO/AEO/GEO și dezvoltare web. Descoperă pachetele AddWrap.',
+        'description' => 'Servicii de marketing digital integrate: branding, content, Google & Meta Ads, SEO/AEO/GEO și dezvoltare web. Descoperă pachetele addWrap.',
     ],
 
     'about' => [
@@ -37,17 +37,17 @@ return [
 
     'portfolio' => [
         'title' => 'Portofoliu și studii de caz',
-        'description' => 'Studii de caz cu rezultate reale: branding, Google & Meta Ads, SEO și web development. Vezi proiectele realizate de AddWrap.',
+        'description' => 'Studii de caz cu rezultate reale: branding, Google & Meta Ads, SEO și web development. Vezi proiectele realizate de addWrap.',
     ],
 
     'blog' => [
         'title' => 'Blog de marketing digital',
-        'description' => 'Ghiduri și articole de marketing digital: SEO, Google și Meta Ads, content și performanță online. Citește blogul AddWrap.',
+        'description' => 'Ghiduri și articole de marketing digital: SEO, Google și Meta Ads, content și performanță online. Citește blogul addWrap.',
     ],
 
     'faq' => [
         'title' => 'Întrebări frecvente',
-        'description' => 'Răspunsuri clare despre servicii, prețuri și modul nostru de lucru. Află tot ce trebuie să știi înainte de o colaborare cu AddWrap.',
+        'description' => 'Răspunsuri clare despre servicii, prețuri și modul nostru de lucru. Află tot ce trebuie să știi înainte de o colaborare cu addWrap.',
     ],
 
     'pricing' => [
@@ -57,7 +57,7 @@ return [
 
     'contact' => [
         'title' => 'Contact',
-        'description' => 'Hai să discutăm despre proiectul tău de marketing digital. Contactează echipa AddWrap pentru o ofertă personalizată, fără obligații.',
+        'description' => 'Hai să discutăm despre proiectul tău de marketing digital. Contactează echipa addWrap pentru o ofertă personalizată, fără obligații.',
     ],
 
     'thank_you' => [
@@ -67,17 +67,17 @@ return [
 
     'terms' => [
         'title' => 'Termeni și condiții',
-        'description' => 'Termenii și condițiile de utilizare a site-ului și serviciilor AddWrap.',
+        'description' => 'Termenii și condițiile de utilizare a site-ului și serviciilor addWrap.',
     ],
 
     'privacy' => [
         'title' => 'Politica de confidențialitate',
-        'description' => 'Cum colectăm, folosim și protejăm datele tale personale pe site-ul AddWrap.',
+        'description' => 'Cum colectăm, folosim și protejăm datele tale personale pe site-ul addWrap.',
     ],
 
     'cookies' => [
         'title' => 'Politica de cookies',
-        'description' => 'Cum folosim cookie-urile pe site-ul AddWrap și cum îți poți gestiona preferințele.',
+        'description' => 'Cum folosim cookie-urile pe site-ul addWrap și cum îți poți gestiona preferințele.',
     ],
 
     /*

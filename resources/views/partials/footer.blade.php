@@ -18,7 +18,7 @@
             <div class="col-span-2 lg:col-span-4">
                 <a href="{{ Localization::route('home') }}" class="flex items-center justify-center text-ink lg:justify-start" aria-label="{{ $company['name'] }}">
                     {{-- Desktop + mobil: lockup complet (marcă + wordmark) --}}
-                    <img src="{{ asset('images/logo/addwrap-logo.png') }}" alt="{{ $company['name'] }}" width="900" height="422" loading="lazy" decoding="async" class="h-16 w-auto" />
+                    <img src="{{ asset('images/logo/addwrap-lockup.png') }}" alt="{{ $company['name'] }}" width="1100" height="203" loading="lazy" decoding="async" class="h-12 w-auto" />
                 </a>
                 <p class="mx-auto mt-4 max-w-sm text-center text-sm leading-relaxed text-muted lg:mx-0 lg:text-left">{{ __('messages.footer.tagline') }}</p>
 

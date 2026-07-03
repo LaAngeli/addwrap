@@ -116,7 +116,7 @@
             <div class="mt-8 rounded-2xl border border-zinc-200 bg-paper p-6 text-center sm:p-8">
                 <p class="text-lg font-semibold text-ink">{{ __('blog.cta_title') }}</p>
                 <p class="mt-2 text-sm text-muted">{{ __('blog.cta_text') }}</p>
-                <a href="{{ Localization::route('contact') }}" class="mt-5 inline-block rounded-lg bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-black">{{ __('messages.cta.discuss') }}</a>
+                <a href="{{ Localization::route('contact') }}" class="mt-5 inline-block rounded-lg bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-deep">{{ __('messages.cta.discuss') }}</a>
             </div>
         </div>
     </article>

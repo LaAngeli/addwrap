@@ -37,7 +37,7 @@ test('paginile statice isi rezolva meta din numele rutei', function () {
 test('titlul foloseste separatorul „|" si numele firmei', function () {
     $this->get('/despre')
         ->assertOk()
-        ->assertSee('<title>Despre noi | AddWrap</title>', false);
+        ->assertSee('<title>Despre noi | addWrap</title>', false);
 });
 
 test('versiunea EN serveste meta in engleza', function () {
@@ -54,7 +54,7 @@ test('subpagina de serviciu seteaza meta dedicat si schema Service', function ()
     $this->get('/servicii/seo-aeo-geo')
         ->assertOk()
         ->assertSee(e(trans('seo.services.seo-aeo-geo.title')), false)
-        ->assertSee(' | AddWrap', false)
+        ->assertSee(' | addWrap', false)
         ->assertSee('"@type":"Service"', false);
 });
 
@@ -67,7 +67,7 @@ test('articolul de blog are og:type article si schema BlogPosting', function () 
 });
 
 test('studiul de caz are schema CreativeWork', function () {
-    $this->get('/portofoliu/nordica-ecommerce')
+    $this->get('/portofoliu/optiplaza')
         ->assertOk()
         ->assertSee('"@type":"CreativeWork"', false);
 });
@@ -145,7 +145,7 @@ test('robots.txt referentiaza sitemap si blocheaza paginile noindex', function (
 test('llms.txt descrie site-ul pentru crawlerele AI', function () {
     $this->get('/llms.txt')
         ->assertOk()
-        ->assertSee('# AddWrap', false)
+        ->assertSee('# addWrap', false)
         ->assertSee('## Servicii', false);
 });
 
@@ -159,7 +159,9 @@ test('serviciile, articolele si studiile de caz au cover OG dedicat', function (
         ->assertOk()
         ->assertSee('images/og/blog/seo-ai-2026-ro.jpg', false);
 
-    $this->get('/portofoliu/nordica-ecommerce')
+    // Studiile de caz cu clienți reali nu au încă un cover OG dedicat,
+    // deci cad grațios pe imaginea OG implicită (fără og:image către un 404).
+    $this->get('/portofoliu/optiplaza')
         ->assertOk()
-        ->assertSee('images/og/portfolio/nordica-ecommerce-ro.jpg', false);
+        ->assertSee('images/og/addwrap-default.jpg', false);
 });

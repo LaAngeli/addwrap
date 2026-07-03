@@ -17,8 +17,9 @@
             <x-breadcrumbs />
 
             <div class="mt-6 max-w-3xl">
-                <div class="flex flex-wrap items-center gap-2 text-xs text-muted">
-                    <span class="rounded-full bg-zinc-900 px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ __('portfolio.categories.'.($project['category'] ?? 'general')) }}</span>
+                <img src="{{ asset('images/partners/'.($project['logo'] ?? $slug).'.png') }}" alt="{{ $project['client'] ?? '' }}" height="240" class="h-9 w-auto max-w-[220px] object-contain sm:h-10" loading="lazy" decoding="async">
+                <div class="mt-5 flex flex-wrap items-center gap-2 text-xs text-muted">
+                    <span class="rounded-full bg-zinc-900 px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ $c['tag'] ?? __('portfolio.categories.'.($project['category'] ?? 'general')) }}</span>
                     <span aria-hidden="true">·</span>
                     <span class="font-medium text-ink">{{ $project['client'] ?? '' }}</span>
                 </div>
@@ -100,13 +101,24 @@
                             <dt class="text-muted">{{ __('portfolio.category_label') }}</dt>
                             <dd class="font-medium text-ink">{{ __('portfolio.categories.'.($project['category'] ?? 'general')) }}</dd>
                         </div>
-                        <div class="flex justify-between gap-4">
+                        <div @class(['flex justify-between gap-4', 'border-b border-zinc-200 pb-4' => ! empty($project['url'])])>
                             <dt class="text-muted">{{ __('portfolio.year_label') }}</dt>
                             <dd class="font-medium text-ink">{{ $project['year'] ?? '' }}</dd>
                         </div>
+                        @if (! empty($project['url']))
+                            <div class="flex items-center justify-between gap-4">
+                                <dt class="text-muted">{{ __('portfolio.website_label') }}</dt>
+                                <dd>
+                                    <a href="{{ $project['url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-medium text-orange transition hover:text-orange-deep">
+                                        {{ preg_replace('#^https?://(www\.)?#', '', rtrim($project['url'], '/')) }}
+                                        <svg class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H9M17 7v8" /></svg>
+                                    </a>
+                                </dd>
+                            </div>
+                        @endif
                     </dl>
 
-                    <a href="{{ Localization::route('contact') }}" class="mt-6 block rounded-lg bg-zinc-900 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-black">{{ __('messages.cta.discuss') }}</a>
+                    <a href="{{ Localization::route('contact') }}" class="mt-6 block rounded-lg bg-orange px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-orange-deep">{{ __('messages.cta.discuss') }}</a>
                 </div>
             </aside>
         </div>

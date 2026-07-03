@@ -83,7 +83,6 @@ return [
         'price_cta' => 'Cere o ofertă',
     ],
 
-
     'google-ads' => [
         'dashboard_title' => 'Performanță campanii',
         'dashboard_note' => 'date orientative',
@@ -110,7 +109,6 @@ return [
         'price_cta' => 'Cere o ofertă',
     ],
 
-
     'meta-ads' => [
         'preview_brand' => 'Brandul tău',
         'preview_sponsored' => 'Sponsorizat',
@@ -132,7 +130,6 @@ return [
         'note_title' => 'Important de știut',
         'price_cta' => 'Cere o ofertă',
     ],
-
 
     'seo-aeo-geo' => [
         'included_label' => 'Inclus în Website + SEO',
@@ -181,7 +178,6 @@ return [
         'price_cta' => 'Cere o ofertă',
     ],
 
-
     'web-development' => [
         'device_desktop' => 'Desktop',
         'device_mobile' => 'Mobil',
@@ -198,10 +194,10 @@ return [
             ['name' => 'Mentenanță lunară', 'price' => 'de la 100 €', 'unit' => '/ lună', 'desc' => 'Actualizări, suport tehnic și optimizare continuă, în funcție de complexitatea site-ului.', 'featured' => false],
             ['name' => 'Web Dev + Mentenanță + SEO', 'price' => 'de la 400 €', 'unit' => '/ lună', 'desc' => 'Dezvoltare, mentenanță și SEO într-un singur abonament lunar — ideal pentru creștere continuă.', 'note' => 'Termen minim 6 luni', 'featured' => true],
         ],
-        'cost_eyebrow' => 'Avantajul AddWrap',
+        'cost_eyebrow' => 'Avantajul addWrap',
         'cost_old_label' => 'Clasic: investiție mare la start',
         'cost_old_value' => 'mii de € o dată',
-        'cost_new_label' => 'Cu AddWrap: distribuit lunar',
+        'cost_new_label' => 'Cu addWrap: distribuit lunar',
         'cost_new_value' => 'de la 400 €/lună',
         'modules_eyebrow' => 'Ce include abonamentul',
         'modules_title' => 'Întreținut și optimizat, lună de lună',

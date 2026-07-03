@@ -6,7 +6,7 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 | Meta SEO (EN)
 |--------------------------------------------------------------------------
-| Title: "{Page title} | AddWrap" — the brand is appended automatically
+| Title: "{Page title} | addWrap" — the brand is appended automatically
 | (App\Support\Seo), so titles HERE are WITHOUT the brand. Title ≤ ~48 chars,
 | keyword-first.
 |
@@ -28,7 +28,7 @@ return [
 
     'services_index' => [
         'title' => 'Digital marketing services',
-        'description' => 'Integrated digital marketing services: branding, content, Google & Meta Ads, SEO/AEO/GEO and web development. Discover the AddWrap packages.',
+        'description' => 'Integrated digital marketing services: branding, content, Google & Meta Ads, SEO/AEO/GEO and web development. Discover the addWrap packages.',
     ],
 
     'about' => [
@@ -38,17 +38,17 @@ return [
 
     'portfolio' => [
         'title' => 'Portfolio and case studies',
-        'description' => 'Case studies with real results: branding, Google & Meta Ads, SEO and web development. See the projects delivered by AddWrap.',
+        'description' => 'Case studies with real results: branding, Google & Meta Ads, SEO and web development. See the projects delivered by addWrap.',
     ],
 
     'blog' => [
         'title' => 'Digital marketing blog',
-        'description' => 'Digital marketing guides and articles: SEO, Google and Meta Ads, content and online performance. Read the AddWrap blog.',
+        'description' => 'Digital marketing guides and articles: SEO, Google and Meta Ads, content and online performance. Read the addWrap blog.',
     ],
 
     'faq' => [
         'title' => 'Frequently asked questions',
-        'description' => 'Clear answers about services, pricing and how we work. Find out everything you need to know before working with AddWrap.',
+        'description' => 'Clear answers about services, pricing and how we work. Find out everything you need to know before working with addWrap.',
     ],
 
     'pricing' => [
@@ -58,7 +58,7 @@ return [
 
     'contact' => [
         'title' => 'Contact',
-        'description' => 'Let us talk about your digital marketing project. Contact the AddWrap team for a custom quote, with no obligation.',
+        'description' => 'Let us talk about your digital marketing project. Contact the addWrap team for a custom quote, with no obligation.',
     ],
 
     'thank_you' => [
@@ -68,17 +68,17 @@ return [
 
     'terms' => [
         'title' => 'Terms and conditions',
-        'description' => 'Terms and conditions for using the AddWrap website and services.',
+        'description' => 'Terms and conditions for using the addWrap website and services.',
     ],
 
     'privacy' => [
         'title' => 'Privacy policy',
-        'description' => 'How we collect, use and protect your personal data on the AddWrap website.',
+        'description' => 'How we collect, use and protect your personal data on the addWrap website.',
     ],
 
     'cookies' => [
         'title' => 'Cookie policy',
-        'description' => 'How we use cookies on the AddWrap website and how you can manage your preferences.',
+        'description' => 'How we use cookies on the addWrap website and how you can manage your preferences.',
     ],
 
     /*

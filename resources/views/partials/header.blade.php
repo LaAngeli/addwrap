@@ -12,8 +12,8 @@
         {{-- Logo --}}
         <a href="{{ Localization::route('home') }}" class="flex items-center text-ink" aria-label="{{ config('site.company.name') }}">
             {{-- Desktop: lockup complet (marcă + wordmark) --}}
-            <img src="{{ asset('images/logo/addwrap-logo.png') }}" alt="{{ config('site.company.name') }}" width="900" height="422" class="hidden h-12 w-auto lg:block" />
-            {{-- Mobil: doar marca, fără textul AddWrap --}}
+            <img src="{{ asset('images/logo/addwrap-lockup.png') }}" alt="{{ config('site.company.name') }}" width="1100" height="203" class="hidden h-10 w-auto lg:block" />
+            {{-- Mobil: doar marca --}}
             <x-logo markOnly class="lg:hidden" />
         </a>
 
@@ -68,7 +68,7 @@
         {{-- Acțiuni dreapta --}}
         <div class="hidden items-center gap-3 lg:flex">
             @include('partials.language-switcher')
-            <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">
+            <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-orange px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-deep">
                 {{ __('messages.nav.contact') }}
             </a>
         </div>
@@ -127,7 +127,7 @@
                     @include('partials.language-switcher')
                 </div>
                 <a href="{{ Localization::route('home') }}" @click="mobileOpen = false" class="flex items-center text-ink" aria-label="{{ config('site.company.name') }}">
-                    <x-logo />
+                    <img src="{{ asset('images/logo/addwrap-lockup.png') }}" alt="{{ config('site.company.name') }}" width="1100" height="203" class="h-8 w-auto" />
                 </a>
                 <button type="button" @click="mobileOpen = false" class="group absolute right-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-xl text-zinc-700 transition hover:bg-zinc-100 active:scale-90" aria-label="{{ __('messages.common.menu') }}">
                     <svg class="h-6 w-6 transition-transform duration-300 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -158,7 +158,7 @@
                         <span class="flex items-center gap-2">
                             {{ __('messages.nav.services') }}
                             @if (request()->routeIs('*.services.*'))
-                                <span class="inline-block h-1.5 w-1.5 rounded-full bg-[#EA7117]"></span>
+                                <span class="inline-block h-1.5 w-1.5 rounded-full bg-orange"></span>
                             @endif
                         </span>
                         <svg class="h-5 w-5 text-zinc-400 transition-transform duration-300" :class="servicesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
@@ -193,7 +193,7 @@
                                     </span>
                                 </a>
                             @endforeach
-                            <a href="{{ Localization::route('services.index') }}" @click="mobileOpen = false" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-[#EA7117] transition hover:bg-zinc-50">
+                            <a href="{{ Localization::route('services.index') }}" @click="mobileOpen = false" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-orange transition hover:bg-zinc-50">
                                 {{ __('messages.cta.all_services') }}
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                             </a>
@@ -221,7 +221,7 @@
                 @endphp
                 <div class="relative mt-6 flex flex-1 flex-col items-center justify-center overflow-hidden rounded-2xl border border-zinc-100 bg-zinc-50/60 px-4 py-6">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 text-zinc-300 opacity-50"></div>
-                    <div class="pointer-events-none absolute -top-8 right-0 h-44 w-44 rounded-full bg-[#EA7117]/10 blur-3xl"></div>
+                    <div class="pointer-events-none absolute -top-8 right-0 h-44 w-44 rounded-full bg-orange/10 blur-3xl"></div>
 
                     <div class="relative w-full max-w-[244px]">
                         <div class="relative aspect-square">
@@ -234,7 +234,7 @@
                             </svg>
 
                             {{-- Puls portocaliu radiind din centru --}}
-                            <span class="aw-pulse pointer-events-none absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EA7117]/25"></span>
+                            <span class="aw-pulse pointer-events-none absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange/25"></span>
 
                             {{-- Noduri servicii --}}
                             @foreach (Localization::services() as $key => $service)
@@ -248,12 +248,7 @@
                             {{-- Marca centrală --}}
                             <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                                 <span class="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 shadow-lg ring-4 ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157 127" fill="#EA7117" class="h-6 w-auto" aria-hidden="true" focusable="false">
-                                        <path d="M0,0 L6,0 L11,4 L12,7 L12,49 L-2,50 L-6,58 L-14,78 L-16,77 L-20,69 L-43,69 L-48,78 L-50,76 L-59,52 L-59,50 L-83,50 L-86,55 L-107,108 L-111,104 L-128,68 L-129,63 L-126,56 L-121,53 L-92,40 L-53,23 L-14,6 Z" transform="translate(137,8)" />
-                                        <path d="M0,0 L1,0 L1,27 L-2,32 L-5,34 L-13,34 L-7,18 Z" transform="translate(148,84)" />
-                                        <path d="M0,0 L2,2 L12,27 L12,29 L-11,29 L-1,2 Z" transform="translate(64,89)" />
-                                        <path d="M0,0 L3,4 L5,10 L-4,10 Z" transform="translate(105,108)" />
-                                    </svg>
+                                    <x-brand-glyph class="h-4 w-auto text-white" />
                                 </span>
                             </div>
                         </div>

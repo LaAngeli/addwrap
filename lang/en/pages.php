@@ -11,7 +11,7 @@ return [
         'hero_cta_primary' => 'Start your project',
         'hero_cta_secondary' => 'See our services',
         'hero_points' => ['6 integrated services', 'Transparent reporting', 'Conversion-focused'],
-        'clients_title' => 'Brands growing with AddWrap',
+        'clients_title' => 'Brands growing with addWrap',
         'hero_dashboard' => [
             'service_label' => 'Service',
             'live' => 'Live',
@@ -49,7 +49,7 @@ return [
         'services_title' => 'Services that work together',
         'services_subtitle' => 'From brand identity to paid campaigns and web platforms.',
 
-        'why_eyebrow' => 'Why AddWrap',
+        'why_eyebrow' => 'Why addWrap',
         'why_title' => 'Smart marketing, results-driven execution',
         'why_items' => [
             ['title' => 'Strategy before tactics', 'text' => 'We start from business goals, not isolated channels.'],
@@ -67,7 +67,7 @@ return [
             ['title' => 'Optimization', 'text' => 'We measure, learn and improve constantly.'],
         ],
 
-        'bento_eyebrow' => 'The AddWrap advantage',
+        'bento_eyebrow' => 'The addWrap advantage',
         'bento_title' => 'What you get when you work with us',
         'bento_subtitle' => 'Not isolated services, but one integrated system built for concrete results.',
         'bento_feature' => [
@@ -87,7 +87,7 @@ return [
         'faq_title' => 'Clear answers, no surprises',
         'faq_subtitle' => 'The most common questions about how we work, what we include and how we set the price.',
         'faq' => [
-            ['q' => 'What kind of agency is AddWrap?', 'a' => 'A digital marketing agency: branding, content, Google & Meta Ads, SEO/AEO/GEO and web development — all under one roof.'],
+            ['q' => 'What kind of agency is addWrap?', 'a' => 'A digital marketing agency: branding, content, Google & Meta Ads, SEO/AEO/GEO and web development — all under one roof.'],
             ['q' => 'Does the website cost extra?', 'a' => 'No. Website creation is included in the maintenance contract (from €400/month), with no large investment at the start.'],
             ['q' => 'Is SEO included?', 'a' => 'Yes. SEO / AEO / GEO optimization is included in the monthly Website + SEO package.'],
             ['q' => 'Can I pick a single service?', 'a' => 'Yes. Take exactly the services you need, or we build a custom package around your goals.'],
@@ -128,7 +128,7 @@ return [
 
         'story_eyebrow' => 'Our story',
         'story_title' => 'Marketing done with intent, not on autopilot',
-        'story_lead' => 'AddWrap is a digital marketing agency. We work with a limited number of clients so we can give them the attention and involvement they need to grow.',
+        'story_lead' => 'addWrap is a digital marketing agency. We work with a limited number of clients so we can give them the attention and involvement they need to grow.',
         'story_text' => 'We started from a simple frustration: too many good businesses are invisible online, and too many agencies deliver pretty reports without real results. We do the opposite — we put strategy before tactics, measure everything that matters and treat every project as if it were our own. From brand identity to campaigns and fast websites, we keep everything under one roof, so you do not lose time and messages between vendors.',
         'story_roof_label' => 'Integrated agency',
         'story_roof_caption' => 'everything under one roof',
@@ -146,7 +146,7 @@ return [
             ['year' => '2025', 'title' => 'Today', 'text' => 'We became a long-term partner for dozens of brands that want real growth. We put strategy before tactics and measure everything that matters.'],
         ],
 
-        'stats_title' => 'AddWrap at a glance',
+        'stats_title' => 'addWrap at a glance',
         'stats' => [
             ['value' => '6', 'label' => 'integrated services under one roof'],
             ['value' => '1:1', 'label' => 'direct collaboration, no middlemen'],
@@ -163,7 +163,7 @@ return [
             ['title' => 'Continuous learning', 'text' => 'We always keep up with changes in digital, from SEO to AI.'],
         ],
 
-        'why_eyebrow' => 'Why AddWrap',
+        'why_eyebrow' => 'Why addWrap',
         'why_title' => 'The advantage of working with a small team',
         'why_points' => [
             'You talk directly to the people doing the work, not to a middleman.',
@@ -202,6 +202,7 @@ return [
         ],
         'info_title' => 'Contact details',
         'form_title' => 'Send us a message',
+        'explore_title' => 'See also:',
         'whatsapp' => 'WhatsApp',
         'social_title' => 'Follow us',
         'guided_title' => 'Prefer to be guided?',
@@ -223,13 +224,14 @@ return [
             ['q' => 'Do I need to know exactly which service I want?', 'a' => 'No. Describe your business goal and we recommend the right solution.'],
             ['q' => 'How much does an initial talk cost?', 'a' => 'The initial talk and estimate are free and with no obligation.'],
             ['q' => 'Can I schedule a call?', 'a' => 'Of course. Mention in your message that you prefer a call and we will find a suitable time together.'],
+            ['q' => 'Can I write my message in English?', 'a' => 'Yes, we work in both Romanian and English — write to us in whichever language feels most comfortable.'],
         ],
     ],
 
     'pricing' => [
         'hero_eyebrow' => 'Pricing',
         'hero_title' => 'Clear pricing, no surprises',
-        'hero_subtitle' => 'Full price list for AddWrap services. All prices exclude VAT (21% rate).',
+        'hero_subtitle' => 'Full price list for addWrap services. All prices exclude VAT (21% rate).',
         'hero_calc_title' => 'Estimate your subscription',
         'hero_calc_hint' => 'Tick the services you want',
         'hero_calc_total' => 'Estimated total',

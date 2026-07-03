@@ -60,13 +60,13 @@
                         'sel' => max(0, min(11, (int) now()->month - 1)),
                         'months' => $csMonths,
                         'types' => $page['roadmap_types'],
-                        'barColors' => ['bg-zinc-900', 'bg-[#EA7117]', 'bg-zinc-600', 'bg-zinc-400'],
+                        'barColors' => ['bg-zinc-900', 'bg-orange', 'bg-zinc-600', 'bg-zinc-400'],
                     ];
                 @endphp
                 <div data-animate="scale-in" x-data="{{ json_encode($csState) }}" class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-semibold text-ink">{{ $page['roadmap_title'] }}</span>
-                        <span class="rounded-full bg-[#EA7117]/10 px-2.5 py-1 text-[11px] font-semibold text-[#EA7117]">{{ $page['roadmap_badge'] }}</span>
+                        <span class="rounded-full bg-orange/10 px-2.5 py-1 text-[11px] font-semibold text-orange">{{ $page['roadmap_badge'] }}</span>
                     </div>
 
                     {{-- Bara celor 12 luni --}}
@@ -103,7 +103,7 @@
                         </div>
                         <div class="rounded-xl bg-zinc-900 p-3">
                             <p class="text-[10px] uppercase tracking-wider text-zinc-400">{{ $page['roadmap_measured_label'] }}</p>
-                            <p class="mt-0.5 text-base font-bold text-white"><span class="text-[#EA7117]" x-text="months[sel].measured + '%'"></span> {{ $page['roadmap_target_suffix'] }}</p>
+                            <p class="mt-0.5 text-base font-bold text-white"><span class="text-orange" x-text="months[sel].measured + '%'"></span> {{ $page['roadmap_target_suffix'] }}</p>
                         </div>
                     </div>
 
@@ -113,7 +113,7 @@
                 {{-- C: CTA --}}
                 <div class="lg:col-start-1 lg:row-start-2">
                     <div class="flex flex-col gap-3 sm:flex-row">
-                        <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-zinc-900 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-black">{{ $page['price_cta'] }}</a>
+                        <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-orange px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-orange-deep">{{ $page['price_cta'] }}</a>
                         <a href="{{ Localization::route('pricing') }}" class="rounded-lg border border-zinc-300 px-6 py-3 text-center text-base font-semibold text-ink transition hover:bg-white">{{ __('services.index.cta_secondary') }}</a>
                     </div>
                 </div>

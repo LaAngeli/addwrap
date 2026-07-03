@@ -68,13 +68,10 @@
 
                     {{-- Preview logo (fundal dinamic) --}}
                     <div class="mt-4 flex items-center justify-center rounded-2xl py-10 transition-colors duration-300" :style="{ backgroundColor: swatches[sel].bg }">
-                        {{-- Marca AddWrap (culoare dinamică după swatch, dimensiune mică) --}}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157 127" fill="currentColor" class="h-9 w-auto transition-colors duration-300" :style="{ color: swatches[sel].text }" aria-hidden="true" focusable="false">
-                            <path d="M0,0 L6,0 L11,4 L12,7 L12,49 L-2,50 L-6,58 L-14,78 L-16,77 L-20,69 L-43,69 L-48,78 L-50,76 L-59,52 L-59,50 L-83,50 L-86,55 L-107,108 L-111,104 L-128,68 L-129,63 L-126,56 L-121,53 L-92,40 L-53,23 L-14,6 Z" transform="translate(137,8)" />
-                            <path d="M0,0 L1,0 L1,27 L-2,32 L-5,34 L-13,34 L-7,18 Z" transform="translate(148,84)" />
-                            <path d="M0,0 L2,2 L12,27 L12,29 L-11,29 L-1,2 Z" transform="translate(64,89)" />
-                            <path d="M0,0 L3,4 L5,10 L-4,10 Z" transform="translate(105,108)" />
-                        </svg>
+                        {{-- Marca addWrap (culoare dinamică după swatch, dimensiune mică).
+                             `::style` (dublu „:") = escape Blade → randează literal `:style`
+                             pentru Alpine, nu binding de atribut Blade (PHP). --}}
+                        <x-brand-mark class="h-9 w-auto transition-colors duration-300" ::style="{ color: swatches[sel].text }" />
                     </div>
 
                     {{-- Paletă (clickabilă) --}}
@@ -107,7 +104,7 @@
                 {{-- C: CTA --}}
                 <div class="lg:col-start-1 lg:row-start-2">
                     <div class="flex flex-col gap-3 sm:flex-row">
-                        <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-zinc-900 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-black">{{ $page['price_cta'] }}</a>
+                        <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-orange px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-orange-deep">{{ $page['price_cta'] }}</a>
                         <a href="{{ Localization::route('pricing') }}" class="rounded-lg border border-zinc-300 px-6 py-3 text-center text-base font-semibold text-ink transition hover:bg-white">{{ __('services.index.cta_secondary') }}</a>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ return [
     'og_image_width' => 1200,
     'og_image_height' => 630,
 
-    'logo' => 'images/logo/addwrap-mark.png',
+    'logo' => 'images/logo/addwrap-compact.png',
 
     /*
     |--------------------------------------------------------------------------
@@ -214,7 +214,7 @@ return [
     */
 
     'company' => [
-        'name' => 'AddWrap',
+        'name' => 'addWrap',
         'email' => env('CONTACT_EMAIL', 'hello@addwrap.ro'),
         'phone' => '+40 741 069 314',
         // Număr WhatsApp în format internațional, fără + și fără spații (pentru wa.me).
@@ -223,7 +223,7 @@ return [
         // Date legale ale firmei — completează-le o singură dată aici;
         // apar automat pe toate paginile legale (Termeni, Confidențialitate, Cookies).
         'legal' => [
-            'name' => 'AddWrap S.R.L.',
+            'name' => 'addWrap S.R.L.',
             'cui' => 'RO________',
             'reg_com' => 'J__/____/____',
             'address' => '[sediul social — de completat]',

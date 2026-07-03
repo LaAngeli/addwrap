@@ -50,12 +50,7 @@
                     {{-- Header postare --}}
                     <div class="flex items-center gap-3">
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157 127" fill="#EA7117" class="h-4 w-auto" aria-hidden="true" focusable="false">
-                                <path d="M0,0 L6,0 L11,4 L12,7 L12,49 L-2,50 L-6,58 L-14,78 L-16,77 L-20,69 L-43,69 L-48,78 L-50,76 L-59,52 L-59,50 L-83,50 L-86,55 L-107,108 L-111,104 L-128,68 L-129,63 L-126,56 L-121,53 L-92,40 L-53,23 L-14,6 Z" transform="translate(137,8)" />
-                                <path d="M0,0 L1,0 L1,27 L-2,32 L-5,34 L-13,34 L-7,18 Z" transform="translate(148,84)" />
-                                <path d="M0,0 L2,2 L12,27 L12,29 L-11,29 L-1,2 Z" transform="translate(64,89)" />
-                                <path d="M0,0 L3,4 L5,10 L-4,10 Z" transform="translate(105,108)" />
-                            </svg>
+                            <x-brand-glyph class="h-3.5 w-auto text-white" />
                         </span>
                         <div>
                             <p class="text-sm font-semibold text-ink">{{ $page['preview_brand'] }}</p>
@@ -94,7 +89,7 @@
                 {{-- C: CTA --}}
                 <div class="lg:col-start-1 lg:row-start-2">
                     <div class="flex flex-col gap-3 sm:flex-row">
-                        <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-zinc-900 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-black">{{ $page['price_cta'] }}</a>
+                        <a href="{{ Localization::route('contact') }}" class="rounded-lg bg-orange px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-orange-deep">{{ $page['price_cta'] }}</a>
                         <a href="{{ Localization::route('pricing') }}" class="rounded-lg border border-zinc-300 px-6 py-3 text-center text-base font-semibold text-ink transition hover:bg-white">{{ __('services.index.cta_secondary') }}</a>
                     </div>
                 </div>

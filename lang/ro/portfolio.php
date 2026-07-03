@@ -11,6 +11,7 @@ return [
     'client_label' => 'Client',
     'year_label' => 'An',
     'category_label' => 'Serviciu',
+    'website_label' => 'Website',
     'details_title' => 'Detalii proiect',
     'next_project' => 'Proiectul următor',
     'back_to_portfolio' => 'Înapoi la portofoliu',

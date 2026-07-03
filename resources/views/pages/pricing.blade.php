@@ -25,8 +25,8 @@
                 <div class="text-center lg:col-start-1 lg:row-start-1 lg:text-left">
                     <p data-animate="fade-up" class="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-muted backdrop-blur">
                         <span class="relative flex h-2 w-2">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-zinc-900 opacity-60"></span>
-                            <span class="relative inline-flex h-2 w-2 rounded-full bg-zinc-900"></span>
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-60"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-orange"></span>
                         </span>
                         {{ __('pages.pricing.hero_eyebrow') }}
                     </p>
@@ -85,7 +85,7 @@
                                     <p class="text-xs text-zinc-500">{{ __('pages.pricing.hero_calc_novat') }}</p>
                                 </div>
                                 <p class="text-right">
-                                    <span class="text-3xl font-bold tracking-tight" x-text="total()">0</span>
+                                    <span class="text-3xl font-bold tracking-tight text-orange" x-text="total()">0</span>
                                     <span class="text-sm text-zinc-300"> {{ __('pages.pricing.hero_calc_unit') }}</span>
                                 </p>
                             </div>
@@ -103,7 +103,7 @@
                 {{-- C: CTA + chips --}}
                 <div class="text-center lg:col-start-1 lg:row-start-2 lg:text-left">
                     <div data-animate="fade-up" class="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                        <a href="{{ Localization::route('contact') }}" class="w-full rounded-lg bg-zinc-900 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-black hover:shadow-md sm:w-auto">{{ __('messages.cta.offer') }}</a>
+                        <a href="{{ Localization::route('contact') }}" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">{{ __('messages.cta.offer') }}</a>
                         <a href="#calculator" class="w-full rounded-lg border border-zinc-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-zinc-900 sm:w-auto">{{ __('pages.pricing.hero_more') }}</a>
                     </div>
                     <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">
@@ -142,7 +142,7 @@
                         </div>
 
                         <div class="mt-8 flex flex-1 flex-col justify-end gap-3">
-                            <a href="{{ Localization::route('contact') }}" class="block rounded-lg bg-zinc-900 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-black">{{ __('services.show.price_cta') }}</a>
+                            <a href="{{ Localization::route('contact') }}" class="block rounded-lg bg-orange px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-orange-deep">{{ __('services.show.price_cta') }}</a>
                             <a href="{{ Localization::serviceUrl($card['key']) }}" class="text-center text-sm font-medium text-muted transition hover:text-ink">{{ __('messages.cta.learn_more') }} &rarr;</a>
                         </div>
                     </div>

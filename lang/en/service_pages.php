@@ -83,7 +83,6 @@ return [
         'price_cta' => 'Request a quote',
     ],
 
-
     'google-ads' => [
         'dashboard_title' => 'Campaign performance',
         'dashboard_note' => 'indicative data',
@@ -110,7 +109,6 @@ return [
         'price_cta' => 'Request a quote',
     ],
 
-
     'meta-ads' => [
         'preview_brand' => 'Your brand',
         'preview_sponsored' => 'Sponsored',
@@ -132,7 +130,6 @@ return [
         'note_title' => 'Good to know',
         'price_cta' => 'Request a quote',
     ],
-
 
     'seo-aeo-geo' => [
         'included_label' => 'Included in Website + SEO',
@@ -181,7 +178,6 @@ return [
         'price_cta' => 'Request a quote',
     ],
 
-
     'web-development' => [
         'device_desktop' => 'Desktop',
         'device_mobile' => 'Mobile',
@@ -198,10 +194,10 @@ return [
             ['name' => 'Monthly maintenance', 'price' => 'from €100', 'unit' => '/ month', 'desc' => 'Updates, technical support and continuous optimization, based on site complexity.', 'featured' => false],
             ['name' => 'Web Dev + Maintenance + SEO', 'price' => 'from €400', 'unit' => '/ month', 'desc' => 'Development, maintenance and SEO in one monthly subscription — ideal for continuous growth.', 'note' => 'Minimum term 6 months', 'featured' => true],
         ],
-        'cost_eyebrow' => 'The AddWrap advantage',
+        'cost_eyebrow' => 'The addWrap advantage',
         'cost_old_label' => 'Classic: large upfront investment',
         'cost_old_value' => 'thousands of € at once',
-        'cost_new_label' => 'With AddWrap: spread monthly',
+        'cost_new_label' => 'With addWrap: spread monthly',
         'cost_new_value' => 'from €400/month',
         'modules_eyebrow' => 'What the subscription includes',
         'modules_title' => 'Maintained and optimized, month after month',

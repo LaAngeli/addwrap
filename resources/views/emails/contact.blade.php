@@ -18,7 +18,7 @@
                          emails/contact-confirmation.blade.php. --}}
                     <tr>
                         <td style="background:#18181b;padding:20px 28px;color:#ffffff;">
-                            <img src="{{ $message->embed(public_path('images/logo/addwrap-white.png')) }}" width="120" height="56" alt="{{ $company['name'] }}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+                            <img src="{{ $message->embed(public_path('images/logo/addwrap-lockup-white.png')) }}" width="176" height="32" alt="{{ $company['name'] }}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
                             <p style="margin:12px 0 0;font-size:18px;font-weight:bold;">Mesaj nou din formularul de contact</p>
                         </td>
                     </tr>

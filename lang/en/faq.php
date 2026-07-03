@@ -16,9 +16,9 @@ return [
     'categories' => [
         [
             'id' => 'general',
-            'title' => 'About AddWrap',
+            'title' => 'About addWrap',
             'items' => [
-                ['q' => 'What kind of agency is AddWrap?', 'a' => 'We are a digital marketing agency. We work with a limited number of clients and cover branding, content, paid advertising, SEO and web development under one roof.'],
+                ['q' => 'What kind of agency is addWrap?', 'a' => 'We are a digital marketing agency. We work with a limited number of clients and cover branding, content, paid advertising, SEO and web development under one roof.'],
                 ['q' => 'What types of businesses do you work with?', 'a' => 'From early-stage businesses to established companies. We adapt our services to the stage and budget of each business.'],
                 ['q' => 'Which languages do you work in?', 'a' => 'We work in Romanian and English, including multilingual websites and content.'],
             ],
