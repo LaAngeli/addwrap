@@ -9,8 +9,8 @@
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
         <div class="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-zinc-100 blur-3xl"></div>
 
-        <div class="mx-auto max-w-7xl px-4 pt-16 pb-16 sm:px-6 sm:pt-20 lg:px-8 lg:py-28">
-            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+        <div class="mx-auto max-w-7xl px-4 pt-10 pb-10 sm:px-6 sm:pt-16 sm:pb-16 lg:px-8 lg:py-28">
+            <div class="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
 
                 {{-- A: titlu + subtitlu --}}
                 <div class="text-center lg:col-start-1 lg:row-start-1 lg:text-left">
@@ -21,7 +21,7 @@
                         </span>
                         {{ __('pages.home.hero_eyebrow') }}
                     </p>
-                    <h1 data-animate="fade-up" data-animate-delay="0.08" class="mt-6 text-4xl font-bold tracking-tight text-ink sm:text-6xl lg:text-7xl text-balance">{{ __('pages.home.hero_title') }}</h1>
+                    <h1 data-animate="fade-up" data-animate-delay="0.08" class="mt-5 text-4xl font-bold tracking-tight text-ink sm:mt-6 sm:text-6xl lg:text-7xl text-balance">{{ __('pages.home.hero_title') }}</h1>
                     <p data-animate="fade-up" data-animate-delay="0.16" class="mx-auto mt-5 max-w-xl text-lg text-muted sm:mt-6 sm:text-xl text-pretty lg:mx-0">{{ __('pages.home.hero_subtitle') }}</p>
                 </div>
 
@@ -130,7 +130,7 @@
                         <a href="#start" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">{{ __('pages.home.hero_cta_primary') }}</a>
                         <a href="{{ Localization::route('services.index') }}" class="w-full rounded-lg border border-zinc-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-zinc-900 sm:w-auto">{{ __('pages.home.hero_cta_secondary') }}</a>
                     </div>
-                    <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">
+                    <div data-animate="fade-up" class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted sm:mt-8 lg:justify-start">
                         @foreach (__('pages.home.hero_points') as $point)
                             <span class="inline-flex items-center gap-1.5">
                                 <svg class="h-4 w-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
@@ -159,7 +159,7 @@
             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />',
         ];
     @endphp
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-orange">{{ __('pages.home.bento_eyebrow') }}</p>
@@ -167,10 +167,10 @@
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.home.bento_subtitle') }}</p>
             </div>
 
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-4 lg:grid-cols-3">
 
                 {{-- Card-semnătură (mare, închis) --}}
-                <div class="relative flex flex-col justify-between overflow-hidden rounded-3xl bg-zinc-900 p-8 text-white sm:col-span-2">
+                <div class="relative col-span-2 flex flex-col justify-between overflow-hidden rounded-3xl bg-zinc-900 p-6 text-white sm:p-8">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.15]"></div>
                     <div class="relative">
                         <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
@@ -189,11 +189,11 @@
 
                 {{-- Carduri item --}}
                 @foreach ($bentoItems as $i => $item)
-                    <div class="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
+                    <div class="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $itemIcons[$i] ?? '' !!}</svg>
                         </span>
-                        <h3 class="mt-5 text-lg font-semibold text-ink">{{ $item['title'] }}</h3>
+                        <h3 class="mt-4 text-lg font-semibold text-ink sm:mt-5">{{ $item['title'] }}</h3>
                         <p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{{ $item['text'] }}</p>
 
                         @if ($i === 0)
@@ -213,15 +213,15 @@
     </section>
 
     {{-- De ce noi --}}
-    <section class="border-y border-zinc-200 bg-paper py-20 lg:py-24">
+    <section class="border-y border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-ink">{{ __('pages.home.why_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.why_title') }}</h2>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6 lg:grid-cols-4">
                 @foreach (__('pages.home.why_items') as $i => $item)
-                    <div class="group rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
+                    <div class="group rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 @switch($i)
@@ -241,19 +241,19 @@
     </section>
 
     {{-- Servicii --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-orange">{{ __('pages.home.services_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.services_title') }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.home.services_subtitle') }}</p>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6 lg:grid-cols-3">
                 @foreach (Localization::services() as $key => $service)
                     <x-service-card :service-key="$key" />
                 @endforeach
             </div>
-            <div data-animate="fade-up" class="mt-10 text-center">
+            <div data-animate="fade-up" class="mt-8 text-center sm:mt-10">
                 <a href="{{ Localization::route('services.index') }}" class="inline-flex items-center gap-1 text-base font-semibold text-ink hover:underline">
                     {{ __('messages.cta.all_services') }}
                     <span aria-hidden="true">&rarr;</span>
@@ -263,13 +263,13 @@
     </section>
 
     {{-- Proces --}}
-    <section class="border-t border-zinc-200 bg-paper py-20 lg:py-24">
+    <section class="border-t border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-ink">{{ __('pages.home.process_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.process_title') }}</h2>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-4">
                 @foreach (__('pages.home.process_steps') as $i => $step)
                     <div class="relative">
                         <span class="text-5xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
@@ -282,7 +282,7 @@
     </section>
 
     {{-- Statistici — bandă ink cu glow portocaliu --}}
-    <section class="relative overflow-hidden bg-zinc-900 py-16 text-white lg:py-20">
+    <section class="relative overflow-hidden bg-zinc-900 py-12 text-white sm:py-16 lg:py-20">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
         <div class="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-orange opacity-20 blur-3xl"></div>
         <div class="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-zinc-600 opacity-25 blur-3xl"></div>
@@ -303,9 +303,9 @@
     </section>
 
     {{-- Starter / formular --}}
-    <section id="start" class="scroll-mt-20 bg-paper py-20 lg:py-24">
+    <section id="start" class="scroll-mt-20 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto mb-10 max-w-2xl text-center">
+            <div class="mx-auto mb-8 max-w-2xl text-center sm:mb-10">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-orange">{{ __('pages.home.starter_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.home.starter_title') }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.home.starter_subtitle') }}</p>

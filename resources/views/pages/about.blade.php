@@ -23,8 +23,8 @@
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
         <div class="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-zinc-100 blur-3xl"></div>
 
-        <div class="mx-auto max-w-7xl px-4 pt-16 pb-16 sm:px-6 sm:pt-20 lg:px-8 lg:py-28">
-            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+        <div class="mx-auto max-w-7xl px-4 pt-10 pb-10 sm:px-6 sm:pt-16 sm:pb-16 lg:px-8 lg:py-28">
+            <div class="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
 
                 {{-- A: titlu + subtitlu --}}
                 <div class="text-center lg:col-start-1 lg:row-start-1 lg:text-left">
@@ -35,7 +35,7 @@
                         </span>
                         {{ __('pages.about.hero_eyebrow') }}
                     </p>
-                    <h1 data-animate="fade-up" data-animate-delay="0.08" class="mt-6 text-4xl font-bold tracking-tight text-ink sm:text-6xl lg:text-7xl text-balance">{{ __('pages.about.hero_title') }}</h1>
+                    <h1 data-animate="fade-up" data-animate-delay="0.08" class="mt-5 text-4xl font-bold tracking-tight text-ink sm:mt-6 sm:text-6xl lg:text-7xl text-balance">{{ __('pages.about.hero_title') }}</h1>
                     <p data-animate="fade-up" data-animate-delay="0.16" class="mx-auto mt-5 max-w-xl text-lg text-muted sm:mt-6 sm:text-xl text-pretty lg:mx-0">{{ __('pages.about.hero_subtitle') }}</p>
                 </div>
 
@@ -93,7 +93,7 @@
                         <a href="{{ Localization::route('contact') }}" class="w-full rounded-lg bg-orange px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep hover:shadow-md sm:w-auto">{{ __('messages.cta.offer') }}</a>
                         <a href="{{ Localization::route('services.index') }}" class="w-full rounded-lg border border-zinc-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-zinc-900 sm:w-auto">{{ __('messages.cta.all_services') }}</a>
                     </div>
-                    <div data-animate="fade-up" class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted lg:justify-start">
+                    <div data-animate="fade-up" class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted sm:mt-8 lg:justify-start">
                         @foreach (__('pages.about.hero_points') as $point)
                             <span class="inline-flex items-center gap-1.5">
                                 <svg class="h-4 w-4 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
@@ -107,7 +107,7 @@
     </section>
 
     {{-- Poveste --}}
-    <section class="relative overflow-hidden bg-white py-20 lg:py-28">
+    <section class="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
             {{-- Antet: logo (stânga) + textul poveștii (dreapta) --}}
@@ -129,13 +129,13 @@
             </div>
 
             {{-- Triptic narativ (origine → misiune → promisiune) + diagrama „sub același acoperiș" --}}
-            <div class="mt-14 grid grid-cols-1 gap-12 lg:mt-16 lg:grid-cols-2 lg:items-center lg:gap-20">
+            <div class="mt-10 grid grid-cols-1 gap-8 sm:mt-14 lg:mt-16 lg:grid-cols-2 lg:items-center lg:gap-20">
 
                 {{-- Triptic narativ --}}
-                <div data-animate-group class="space-y-7">
+                <div data-animate-group class="space-y-4 sm:space-y-7">
                     @foreach (__('pages.about.story_steps') as $i => $step)
                         <div @class([
-                            'flex gap-5 rounded-2xl p-8',
+                            'flex gap-4 rounded-2xl p-5 sm:gap-5 sm:p-8',
                             'bg-zinc-900' => $loop->last,
                             'border border-zinc-200 bg-white' => ! $loop->last,
                         ])>
@@ -219,11 +219,11 @@
     </section>
 
     {{-- Parcursul nostru (cronologie) --}}
-    <section class="border-t border-zinc-200 bg-paper py-20 lg:py-24">
+    <section class="border-t border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <p data-animate="fade-up" class="text-center text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.about.story_rail_label') }}</p>
 
-            <div data-animate-group class="relative mt-12 space-y-10 border-l-2 border-zinc-200 pl-8">
+            <div data-animate-group class="relative mt-10 space-y-8 border-l-2 border-zinc-200 pl-8 sm:mt-12 sm:space-y-10">
                 @foreach (__('pages.about.story_milestones') as $milestone)
                     <div class="relative">
                         <span class="absolute -left-10 top-1 h-4 w-4 rounded-full border-2 border-zinc-900 bg-paper"></span>
@@ -237,7 +237,7 @@
     </section>
 
     {{-- Statistici --}}
-    <section class="relative overflow-hidden bg-zinc-900 py-16 text-white lg:py-20">
+    <section class="relative overflow-hidden bg-zinc-900 py-12 text-white sm:py-16 lg:py-20">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 data-animate="fade-up" class="text-center text-2xl font-bold tracking-tight text-balance sm:text-3xl">{{ __('pages.about.stats_title') }}</h2>
@@ -253,15 +253,15 @@
     </section>
 
     {{-- Valori --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 data-animate="fade-up" class="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ __('pages.about.values_title') }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.about.values_subtitle') }}</p>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6 lg:grid-cols-4">
                 @foreach (__('pages.about.values') as $i => $value)
-                    <div class="rounded-2xl border border-zinc-200 p-6">
+                    <div class="rounded-2xl border border-zinc-200 p-4 sm:p-6">
                         <span class="text-sm font-bold text-zinc-300">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                         <h3 class="mt-3 text-lg font-semibold text-ink">{{ $value['title'] }}</h3>
                         <p class="mt-2 text-sm leading-relaxed text-muted">{{ $value['text'] }}</p>
@@ -280,19 +280,19 @@
             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 21C7 17 4 14 4 9.5A4.5 4.5 0 0112 7a4.5 4.5 0 018 2.5C20 14 17 17 12 21z" />',
         ];
     @endphp
-    <section class="border-y border-zinc-200 bg-paper py-20 lg:py-24">
+    <section class="border-y border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.about.why_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.about.why_title') }}</h2>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6">
                 @foreach (__('pages.about.why_points') as $i => $point)
-                    <div class="flex items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
+                    <div class="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:flex-row sm:items-start sm:gap-4 sm:p-6">
                         <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $whyIcons[$i] ?? '' !!}</svg>
                         </span>
-                        <p class="text-base leading-relaxed text-zinc-700">{{ $point }}</p>
+                        <p class="text-sm leading-relaxed text-zinc-700 sm:text-base">{{ $point }}</p>
                     </div>
                 @endforeach
             </div>
@@ -300,16 +300,16 @@
     </section>
 
     {{-- Cu cine lucrăm (industrii) --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.about.industries_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.about.industries_title') }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('pages.about.industries_subtitle') }}</p>
             </div>
-            <div data-animate-group class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-5 lg:grid-cols-4">
                 @foreach ($industries as $i => $industry)
-                    <div class="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
+                    <div class="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $industryIcons[$i] ?? '' !!}</svg>
                         </span>
