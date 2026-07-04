@@ -43,7 +43,7 @@
                     <p class="text-sm font-medium text-ink">{{ __('messages.cookie.analytics') }}</p>
                     <p class="text-sm text-muted">{{ __('messages.cookie.analytics_desc') }}</p>
                 </div>
-                <button type="button" role="switch" :aria-checked="prefs.analytics" @click="prefs.analytics = !prefs.analytics"
+                <button type="button" role="switch" aria-checked="false" :aria-checked="prefs.analytics" aria-label="{{ __('messages.cookie.analytics') }}" @click="prefs.analytics = !prefs.analytics"
                     class="relative h-6 w-11 shrink-0 rounded-full transition" :class="prefs.analytics ? 'bg-zinc-900' : 'bg-zinc-300'">
                     <span class="absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform" :class="prefs.analytics ? 'translate-x-5' : ''"></span>
                 </button>
@@ -54,7 +54,7 @@
                     <p class="text-sm font-medium text-ink">{{ __('messages.cookie.marketing') }}</p>
                     <p class="text-sm text-muted">{{ __('messages.cookie.marketing_desc') }}</p>
                 </div>
-                <button type="button" role="switch" :aria-checked="prefs.marketing" @click="prefs.marketing = !prefs.marketing"
+                <button type="button" role="switch" aria-checked="false" :aria-checked="prefs.marketing" aria-label="{{ __('messages.cookie.marketing') }}" @click="prefs.marketing = !prefs.marketing"
                     class="relative h-6 w-11 shrink-0 rounded-full transition" :class="prefs.marketing ? 'bg-zinc-900' : 'bg-zinc-300'">
                     <span class="absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform" :class="prefs.marketing ? 'translate-x-5' : ''"></span>
                 </button>
