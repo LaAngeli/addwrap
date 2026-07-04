@@ -1,5 +1,6 @@
-// Marchează că JS este disponibil (folosit de CSS pentru stările inițiale ale animațiilor)
-document.documentElement.classList.add('js');
+// Clasa .js e adăugată sincron, inline, în <head> (layouts/app.blade.php) —
+// nu aici, fiindcă acest bundle e type="module" (deferred) și ar rula prea
+// târziu față de primul paint.
 
 import './animations';
 

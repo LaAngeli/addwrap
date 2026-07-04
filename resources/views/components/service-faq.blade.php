@@ -4,7 +4,7 @@
 ])
 
 @if (! empty($faq))
-    <section class="border-t border-zinc-200 bg-white py-16 lg:py-20">
+    <section class="border-t border-zinc-200 bg-white py-12 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
                 {{ $title ?? __('messages.nav.faq') }}

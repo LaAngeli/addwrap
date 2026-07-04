@@ -5,6 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{-- Marchează sincron că JS e disponibil, ÎNAINTE de primul paint — folosit de
+         CSS pentru starea inițială a elementelor [data-animate] (vezi app.css).
+         Trebuie să ruleze blocant, aici, NU din bundle-ul @vite (acela e
+         type="module" = deferred, deci ar rula după ce body-ul e deja pictat,
+         provocând un flash vizibil: conținut vizibil → dispare brusc → animă
+         înapoi cu GSAP). --}}
+    <script>document.documentElement.classList.add('js');</script>
+
     {{-- Favicon & icoane --}}
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo/addwrap-icon.svg') }}">

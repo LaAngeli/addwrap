@@ -67,4 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     });
+
+    // Fonturile (Instrument Sans, self-hostate) se pot încărca după acest
+    // moment și reflow-ui ușor layout-ul (lățimi de text ușor diferite
+    // față de fallback-ul de sistem). Fără acest refresh, pozițiile de
+    // trigger calculate mai sus rămân bazate pe layout-ul dinaintea
+    // fontului final, ceea ce poate desincroniza reveal-urile de sub fold.
+    if (document.fonts) {
+        document.fonts.ready.then(() => ScrollTrigger.refresh());
+    }
 });

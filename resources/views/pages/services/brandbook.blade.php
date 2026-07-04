@@ -13,10 +13,10 @@
 
     {{-- Hero --}}
     <section class="border-b border-zinc-200 bg-paper">
-        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
             <x-breadcrumbs />
 
-            <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 {{-- A: text --}}
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
@@ -114,7 +114,7 @@
 
     {{-- Stepper interactiv: ce conține pachetul (modulele I-V) --}}
     @if (! empty($modules))
-        <section class="bg-white py-20 lg:py-24">
+        <section class="bg-white py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['modules_eyebrow'] }}</p>
@@ -168,16 +168,16 @@
     @endif
 
     {{-- Livrabile (board) --}}
-    <section class="border-y border-zinc-200 bg-paper py-20 lg:py-24">
+    <section class="border-y border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['board_eyebrow'] }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ $page['board_title'] }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ $page['board_subtitle'] }}</p>
             </div>
-            <div data-animate-group class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6 lg:grid-cols-3">
                 @foreach ($page['board'] as $item)
-                    <div class="rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
+                    <div class="rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
                         <h3 class="font-semibold text-ink">{{ $item['label'] }}</h3>
                         <p class="mt-1 text-sm text-muted">{{ $item['desc'] }}</p>
                     </div>
@@ -189,7 +189,7 @@
 
     {{-- Pachet flexibil --}}
     @if (! empty($svc['highlight']))
-        <section class="bg-white py-16 lg:py-20">
+        <section class="bg-white py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="relative overflow-hidden rounded-3xl bg-zinc-900 p-8 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
@@ -204,13 +204,13 @@
     @endif
 
     {{-- Proces --}}
-    <section class="border-t border-zinc-200 bg-paper py-20 lg:py-24">
+    <section class="border-t border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.home.process_eyebrow') }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ __('pages.home.process_title') }}</h2>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-4">
                 @foreach (__('pages.home.process_steps') as $i => $step)
                     <div>
                         <span class="text-5xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
