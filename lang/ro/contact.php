@@ -36,6 +36,7 @@ return [
         'name_invalid' => 'Numele poate conține doar litere, spații, cratimă și punct.',
         'phone_invalid' => 'Introdu un număr de telefon valid (cifre, spații, eventual prefixul +).',
         'service_invalid' => 'Serviciul selectat nu este valid.',
+        'turnstile' => 'Verificarea anti-spam a eșuat. Te rugăm reîncearcă.',
     ],
 
     'confirmation' => [

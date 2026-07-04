@@ -238,4 +238,18 @@ return [
         'anpc_sol' => 'https://ec.europa.eu/consumers/odr',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Cloudflare Turnstile (anti-spam pe formulare)
+    |--------------------------------------------------------------------------
+    | Cheile vin din env. Dacă AMBELE lipsesc, Turnstile e INACTIV (formularele
+    | rămân protejate de honeypot + rate limiting). Site key = public (front-end);
+    | secret key = privat (verificare server-side, doar în .env de pe server).
+    */
+
+    'turnstile' => [
+        'site_key' => env('TURNSTILE_SITE_KEY'),
+        'secret_key' => env('TURNSTILE_SECRET_KEY'),
+    ],
+
 ];

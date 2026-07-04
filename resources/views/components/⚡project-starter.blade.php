@@ -3,6 +3,7 @@
 use App\Mail\ContactConfirmationMail;
 use App\Mail\ContactFormMail;
 use App\Support\Localization;
+use App\Support\Turnstile;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
@@ -31,6 +32,9 @@ new class extends Component
     public bool $consent = false;
 
     public string $website = '';
+
+    /** Token Cloudflare Turnstile (setat client-side de widget, verificat în submit). */
+    public string $turnstileToken = '';
 
     public function selectGoal(string $goal): void
     {
@@ -105,6 +109,14 @@ new class extends Component
             'phone' => __('contact.fields.phone'),
             'consent' => __('contact.fields.consent'),
         ]);
+
+        // Anti-spam Turnstile (după validare). Inactiv dacă nu sunt chei în env.
+        if (! Turnstile::verify($this->turnstileToken, request()->ip())) {
+            $this->addError('form', __('contact.errors.turnstile'));
+            $this->dispatch('turnstile-reset');
+
+            return null;
+        }
 
         RateLimiter::hit($key, 60);
 
@@ -283,6 +295,8 @@ new class extends Component
                     </label>
                     @error('consent') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
                 </div>
+
+                <x-turnstile />
 
                 <div class="flex items-center justify-between pt-2">
                     <button type="button" wire:click="back" class="text-sm font-medium text-muted hover:text-ink">&larr; {{ __('quiz.back') }}</button>

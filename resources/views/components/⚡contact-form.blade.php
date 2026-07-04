@@ -3,6 +3,7 @@
 use App\Mail\ContactConfirmationMail;
 use App\Mail\ContactFormMail;
 use App\Support\Localization;
+use App\Support\Turnstile;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
@@ -25,6 +26,9 @@ new class extends Component
 
     /** Honeypot anti-spam: trebuie să rămână gol. */
     public string $website = '';
+
+    /** Token Cloudflare Turnstile (setat client-side de widget, verificat în submit). */
+    public string $turnstileToken = '';
 
     /**
      * Pre-completează formularul din parametrii primiți de la calculatorul de buget
@@ -120,6 +124,15 @@ new class extends Component
 
         $validated = $this->validate();
 
+        // Anti-spam Turnstile (verificat după validare, ca token-ul să fie consumat
+        // doar când restul formularului e valid). Inactiv dacă nu sunt chei în env.
+        if (! Turnstile::verify($this->turnstileToken, request()->ip())) {
+            $this->addError('form', __('contact.errors.turnstile'));
+            $this->dispatch('turnstile-reset');
+
+            return null;
+        }
+
         RateLimiter::hit($key, 60);
 
         $locale = Localization::current();
@@ -198,6 +211,8 @@ new class extends Component
         </label>
         @error('consent') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
     </div>
+
+    <x-turnstile />
 
     <button type="submit" wire:loading.attr="disabled" class="inline-flex items-center gap-2 rounded-lg bg-orange px-6 py-3 text-base font-semibold text-white transition hover:bg-orange-deep disabled:opacity-60">
         <span wire:loading.remove wire:target="submit">{{ __('contact.submit') }}</span>

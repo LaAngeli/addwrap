@@ -36,6 +36,7 @@ return [
         'name_invalid' => 'The name may only contain letters, spaces, hyphen and dot.',
         'phone_invalid' => 'Enter a valid phone number (digits, spaces, optionally a leading +).',
         'service_invalid' => 'The selected service is not valid.',
+        'turnstile' => 'The anti-spam check failed. Please try again.',
     ],
 
     'confirmation' => [
