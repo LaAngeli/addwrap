@@ -199,15 +199,38 @@ git commit -m "Relevant commit message based on the actual changes"
 git push origin main
 ```
 
+6. **Deploy on the LIVE server** (Hostinger) — pull the just-pushed code and rebuild caches.
+
+The site runs at `https://add-wrap.ro`; the code lives in `.../app` (web root `public_html` is a symlink to `app/public`). See [[project-deploy-hostinger]] for the full layout. Run this via the **Bash tool** (not PowerShell — it's an SSH session using the dedicated key):
+
+```bash
+ssh -i ~/.ssh/hostinger_addwrap -o BatchMode=yes -p 65002 u686621605@82.198.230.72 '
+  cd /home/u686621605/domains/add-wrap.ro/app || exit 1
+  git pull origin main
+  # composer install DOAR daca s-a schimbat composer.lock in acest push:
+  git diff --name-only HEAD@{1} HEAD | grep -q "^composer.lock$" && composer install --no-dev --optimize-autoloader --no-interaction
+  php artisan config:cache && php artisan route:cache && php artisan view:cache
+  echo "DEPLOY_DONE"
+'
+```
+
+Then verify the live site is healthy (at least the homepage returns 200; from Windows curl add `--ssl-no-revoke`):
+
+```bash
+curl -sS --ssl-no-revoke -o /dev/null -w "live HTTP=%{http_code}\n" https://add-wrap.ro/
+```
+
 ### Rules
 
-- If there are no changes, do not create a commit.
+- If there are no changes, do not create a commit **and do not run the server deploy** (nothing new to pull).
 - If `npm run build` fails, stop and explain the error before continuing.
-- If Git reports conflicts or errors, stop and explain the issue before continuing.
+- If Git reports conflicts or errors (local OR on the server `git pull`), stop and explain the issue before continuing — never force.
 - Never use `git push --force`.
-- `public/build` is intentionally tracked in Git for this shared hosting workflow.
+- `public/build` is intentionally tracked in Git for this shared hosting workflow — so the server needs NO `npm`, only `git pull` + cache rebuild. `vendor` is NOT tracked, hence the conditional `composer install` when `composer.lock` changed.
 - After frontend builds, `public/build` must be included in the commit.
 - Before committing, always make sure `.env`, `vendor`, `node_modules`, logs, cache files and local IDE files are not being committed.
+- The server `.env` is git-ignored and lives only on the server — `git pull` never touches it. If a change needs new/changed env vars, update the server `.env` separately (via `scp`/edit over SSH) and re-run `php artisan config:cache`.
+- After the server deploy, if the live site returns 5xx, check `app/storage/logs/laravel.log` over SSH before assuming the pull was clean.
 
 ---
 
