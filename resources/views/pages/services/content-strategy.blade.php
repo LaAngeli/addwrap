@@ -14,10 +14,10 @@
 
     {{-- Hero --}}
     <section class="border-b border-zinc-200 bg-paper">
-        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
             <x-breadcrumbs />
 
-            <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
                         <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
@@ -123,7 +123,7 @@
 
     {{-- Pachete cu comutator de facturare --}}
     @if (! empty($packages))
-        <section class="bg-white py-20 lg:py-24" x-data="{ billing: 'annual' }">
+        <section class="bg-white py-12 sm:py-16 lg:py-24" x-data="{ billing: 'annual' }">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['packages_eyebrow'] }}</p>
@@ -132,25 +132,25 @@
                 </div>
 
                 {{-- Toggle --}}
-                <div class="mt-8 flex justify-center">
+                <div class="mt-6 flex justify-center sm:mt-8">
                     <div class="inline-flex rounded-full border border-zinc-200 bg-white p-1">
                         <button type="button" @click="billing = 'annual'" :class="billing === 'annual' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-4 py-1.5 text-sm font-semibold transition">{{ $page['billing_annual'] }}</button>
                         <button type="button" @click="billing = 'monthly'" :class="billing === 'monthly' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-4 py-1.5 text-sm font-semibold transition">{{ $page['billing_monthly'] }}</button>
                     </div>
                 </div>
 
-                <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div class="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6">
                     @foreach ($packages as $plan)
                         <div @class([
-                            'relative flex flex-col rounded-3xl border p-8',
+                            'relative flex flex-col rounded-3xl border p-4 sm:p-8',
                             'border-zinc-900 shadow-xl ring-1 ring-zinc-900' => $plan['featured'] ?? false,
                             'border-zinc-200' => ! ($plan['featured'] ?? false),
                         ])>
                             @if (! empty($plan['badge']))
                                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-zinc-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">{{ $plan['badge'] }}</span>
                             @endif
-                            <h3 class="text-lg font-semibold text-ink">{{ $plan['name'] }}</h3>
-                            <p class="mt-4 text-2xl font-bold tracking-tight text-ink">{{ $plan['volume'] }}</p>
+                            <h3 class="text-base font-semibold text-ink sm:text-lg">{{ $plan['name'] }}</h3>
+                            <p class="mt-3 text-xl font-bold tracking-tight text-ink sm:mt-4 sm:text-2xl">{{ $plan['volume'] }}</p>
 
                             <div class="mt-4">
                                 <div x-show="billing === 'annual'">
@@ -163,7 +163,7 @@
                             </div>
 
                             <a href="{{ Localization::route('contact') }}" @class([
-                                'mt-8 block rounded-lg px-5 py-3 text-center text-sm font-semibold transition',
+                                'mt-5 block rounded-lg px-4 py-3 text-center text-sm font-semibold transition sm:mt-8 sm:px-5',
                                 'bg-zinc-900 text-white hover:bg-black' => $plan['featured'] ?? false,
                                 'border border-zinc-300 text-ink hover:bg-zinc-50' => ! ($plan['featured'] ?? false),
                             ])>{{ $page['price_cta'] }}</a>
@@ -173,9 +173,9 @@
 
                 {{-- Ambele pachete includ --}}
                 @if (! empty($features))
-                    <div class="mt-12 rounded-3xl border border-zinc-200 bg-paper p-6 sm:p-8">
+                    <div class="mt-8 rounded-3xl border border-zinc-200 bg-paper p-5 sm:mt-12 sm:p-8">
                         <h3 class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $svc['features_title'] ?? '' }}</h3>
-                        <ul class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        <ul class="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
                             @foreach ($features as $feature)
                                 <li class="flex items-start gap-3 text-sm text-zinc-700">
                                     <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
@@ -202,17 +202,17 @@
     @endif
 
     {{-- Tipuri de conținut (piloni) --}}
-    <section class="border-y border-zinc-200 bg-paper py-20 lg:py-24">
+    <section class="border-y border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['pillars_eyebrow'] }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ $page['pillars_title'] }}</h2>
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ $page['pillars_subtitle'] }}</p>
             </div>
-            <div data-animate-group class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6 lg:grid-cols-4">
                 @foreach ($page['pillars'] as $pillar)
-                    <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
-                        <h3 class="text-lg font-semibold text-ink">{{ $pillar['title'] }}</h3>
+                    <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
+                        <h3 class="text-base font-semibold text-ink sm:text-lg">{{ $pillar['title'] }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $pillar['desc'] }}</p>
                         <ul class="mt-4 space-y-1.5 border-t border-zinc-100 pt-4 text-sm text-zinc-600">
                             @foreach ($pillar['examples'] as $ex)
@@ -226,13 +226,13 @@
     </section>
 
     {{-- Proces --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['process_eyebrow'] }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ $page['process_title'] }}</h2>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-2 gap-8 lg:grid-cols-5">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-5">
                 @foreach ($page['process'] as $i => $step)
                     <div>
                         <span class="text-4xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
