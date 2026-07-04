@@ -28,6 +28,7 @@ return [
         'open_menu' => 'Open menu',
         'close_menu' => 'Close menu',
         'language' => 'Language',
+        'switch_language' => 'Switch to Romanian',
         'menu' => 'Menu',
         'breadcrumb' => 'Breadcrumb',
     ],

@@ -28,6 +28,7 @@ return [
         'open_menu' => 'Deschide meniul',
         'close_menu' => 'Închide meniul',
         'language' => 'Limbă',
+        'switch_language' => 'Comută pe engleză',
         'menu' => 'Meniu',
         'breadcrumb' => 'Firul Ariadnei',
     ],
