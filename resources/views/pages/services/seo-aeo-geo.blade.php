@@ -12,10 +12,10 @@
 
     {{-- Hero --}}
     <section class="border-b border-zinc-200 bg-paper">
-        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
             <x-breadcrumbs />
 
-            <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
                         <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
@@ -133,16 +133,16 @@
     {{-- Glosar SEO / AEO / GEO — termenii definiți vizibil în HTML
          (oglindesc nodul DefinedTermSet injectat de ServiceController). --}}
     @if (! empty($svc['definitions']))
-        <section class="border-b border-zinc-200 bg-white py-16 lg:py-20">
+        <section class="border-b border-zinc-200 bg-white py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="max-w-2xl">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $svc['glossary_eyebrow'] ?? '' }}</p>
                     <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ $svc['glossary_title'] ?? '' }}</h2>
                     <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ $svc['glossary_subtitle'] ?? '' }}</p>
                 </div>
-                <dl data-animate-group class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
+                <dl data-animate-group class="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-5">
                     @foreach ($svc['definitions'] as $def)
-                        <div class="rounded-2xl border border-zinc-200 bg-paper p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-7">
+                        <div class="rounded-2xl border border-zinc-200 bg-paper p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-7">
                             <dt class="inline-flex items-center justify-center rounded-xl bg-zinc-900 px-3 py-1.5 text-sm font-black tracking-tight text-white">{{ $def['term'] }}</dt>
                             <dd class="mt-4 text-sm leading-relaxed text-zinc-700">{{ $def['description'] }}</dd>
                         </div>
@@ -154,9 +154,9 @@
 
     {{-- Highlight: inclus în Website + SEO --}}
     @if (! empty($svc['highlight']))
-        <section class="bg-white py-16 lg:py-20">
+        <section class="bg-white py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-3xl bg-zinc-900 p-8 text-white sm:p-12">
+                <div class="relative overflow-hidden rounded-3xl bg-zinc-900 p-6 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                         <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>
@@ -170,7 +170,7 @@
 
     {{-- Ce includem — grupat pe SEO / AEO / GEO --}}
     @if (! empty($page['includes']))
-        <section class="border-y border-zinc-200 bg-paper py-16 lg:py-24">
+        <section class="border-y border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['includes_eyebrow'] }}</p>
@@ -178,14 +178,14 @@
                     <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ $page['includes_subtitle'] }}</p>
                 </div>
 
-                <div data-animate-group class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                <div data-animate-group class="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-3">
                     @foreach ($page['includes'] as $group)
-                        <div class="flex flex-col rounded-3xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-8">
+                        <div class="flex flex-col rounded-3xl border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-8">
                             <div class="flex items-center gap-3">
                                 <span class="inline-flex shrink-0 items-center justify-center rounded-xl bg-zinc-900 px-3 py-2 text-sm font-black tracking-tight text-white">{{ $group['abbr'] }}</span>
                                 <h3 class="text-sm font-semibold leading-tight text-ink">{{ $group['full'] }}</h3>
                             </div>
-                            <ul class="mt-6 space-y-3">
+                            <ul class="mt-5 space-y-2.5 sm:mt-6 sm:space-y-3">
                                 @foreach ($group['items'] as $item)
                                     <li class="flex items-start gap-3 text-sm text-zinc-700">
                                         <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-900">
@@ -205,7 +205,7 @@
     {{-- Cum cresc rezultatele în timp (timeline interactiv) --}}
     @if (! empty($page['timeline']))
         @php $tlProgress = array_column($page['timeline'], 'progress'); @endphp
-        <section class="bg-white py-20 lg:py-24">
+        <section class="bg-white py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['timeline_eyebrow'] }}</p>
@@ -213,7 +213,7 @@
                     <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ $page['timeline_subtitle'] }}</p>
                 </div>
 
-                <div data-animate="fade-up" x-data="{ t: 0, progress: {{ json_encode($tlProgress) }} }" class="mt-12">
+                <div data-animate="fade-up" x-data="{ t: 0, progress: {{ json_encode($tlProgress) }} }" class="mt-8 sm:mt-12">
                     {{-- Milestones --}}
                     <div class="relative">
                         <div class="absolute inset-x-4 top-4 h-px bg-zinc-200"></div>
@@ -254,13 +254,13 @@
     @endif
 
     {{-- Proces --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['process_eyebrow'] }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ $page['process_title'] }}</h2>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-4">
                 @foreach ($page['process'] as $i => $step)
                     <div>
                         <span class="text-5xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
