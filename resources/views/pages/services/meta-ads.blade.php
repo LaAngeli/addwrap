@@ -13,10 +13,10 @@
 
     {{-- Hero --}}
     <section class="border-b border-zinc-200 bg-paper">
-        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
             <x-breadcrumbs />
 
-            <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
                         <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
@@ -98,7 +98,7 @@
     </section>
 
     {{-- Funnel --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['funnel_eyebrow'] }}</p>
@@ -114,9 +114,9 @@
                 ];
                 $stepLabel = app()->getLocale() === 'ro' ? 'Pasul' : 'Step';
             @endphp
-            <div data-animate-group class="mt-14 flex flex-col items-center gap-3">
+            <div data-animate-group class="mt-10 flex flex-col items-center gap-2.5 sm:mt-14 sm:gap-3">
                 @foreach ($page['funnel'] as $i => $stage)
-                    <div class="w-full {{ $funnelWidths[$i] ?? '' }} rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:border-zinc-900 hover:shadow-md">
+                    <div class="w-full {{ $funnelWidths[$i] ?? '' }} rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:border-zinc-900 hover:shadow-md sm:p-6">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-center gap-3">
                                 <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
@@ -149,14 +149,14 @@
             ];
             $incIndex = 0;
         @endphp
-        <section class="border-y border-zinc-200 bg-paper py-16 lg:py-20">
+        <section class="border-y border-zinc-200 bg-paper py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold tracking-tight text-ink">{{ $svc['features_title'] ?? '' }}</h2>
-                <div data-animate-group class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:gap-5">
                     @foreach ($features as $feature)
                         @php $excl = str_contains($feature, 'Nu include') || str_contains($feature, 'Does not'); @endphp
                         <div @class([
-                            'flex items-start gap-4 rounded-2xl border bg-white p-6 transition',
+                            'flex flex-col gap-3 rounded-2xl border bg-white p-4 transition sm:flex-row sm:items-start sm:gap-4 sm:p-6',
                             'border-zinc-200 hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg' => ! $excl,
                             'border-dashed border-zinc-300' => $excl,
                         ])>
@@ -171,7 +171,7 @@
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $featureIcons[$incIndex++ % count($featureIcons)] !!}</svg>
                                 @endif
                             </span>
-                            <p @class(['text-base font-medium leading-relaxed', 'text-ink' => ! $excl, 'text-muted' => $excl])>{{ $feature }}</p>
+                            <p @class(['text-sm font-medium leading-relaxed sm:text-base', 'text-ink' => ! $excl, 'text-muted' => $excl])>{{ $feature }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -181,12 +181,12 @@
 
     {{-- Add-on-uri --}}
     @if (! empty($addons))
-        <section class="bg-white py-16 lg:py-20">
+        <section class="bg-white py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold tracking-tight text-ink">{{ $page['addons_title'] }}</h2>
-                <div data-animate-group class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:gap-5">
                     @foreach ($addons as $addon)
-                        <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg">
+                        <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
                             <div class="flex items-center justify-between gap-3">
                                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
