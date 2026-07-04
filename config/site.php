@@ -215,7 +215,7 @@ return [
 
     'company' => [
         'name' => 'addWrap',
-        'email' => env('CONTACT_EMAIL', 'hello@addwrap.ro'),
+        'email' => env('CONTACT_EMAIL', 'info@add-wrap.ro'),
         'phone' => '+40 741 069 314',
         // Număr WhatsApp în format internațional, fără + și fără spații (pentru wa.me).
         'whatsapp' => '40741069314',

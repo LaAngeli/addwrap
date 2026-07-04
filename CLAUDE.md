@@ -213,21 +213,30 @@ git push origin main
 
 # Deploy — Email deliverability (configurare DNS, NU în cod)
 
-> ⚠️ **Domeniul final NU este încă stabilit.** Tot ce apare mai jos ca `addwrap.ro` este un placeholder de lucru — domeniul de producție s-ar putea să nu fie `.ro` (TBD: extensie + registrar + provider DNS). Înainte de a aplica oricare dintre pașii de mai jos, confirmă domeniul real cu clientul și înlocuiește peste tot.
+> ✅ **Domeniul final este stabilit: `add-wrap.ro`** (atenție: cu cratimă — brandul rămâne „addWrap" fără cratimă). Email personalizat: `info@add-wrap.ro`. În cod, domeniul SEO/canonical se derivă 100% din `APP_URL` (nimic hardcodat), iar emailul afișat din `config('site.company.email')` / env `CONTACT_EMAIL`. Config-ul și `.env.example` au deja valorile reale; rămâne de setat `.env` de producție pe server + record-urile DNS de mai jos.
 
-Când se stabilește hosting-ul/domeniul final și site-ul trece în producție, configurează următoarele **la nivel de DNS / panou hosting** (nu sunt modificări de cod):
+**`.env` de producție (pe server):**
+```
+APP_NAME=addWrap
+APP_URL=https://add-wrap.ro
+MAIL_FROM_ADDRESS=info@add-wrap.ro
+CONTACT_EMAIL=info@add-wrap.ro
+```
+`APP_URL` E OBLIGATORIU pe server — din el ies canonical, og:url, sitemap, schema (`@id`-uri). Fără el corect, SEO-ul pointează spre domeniul greșit.
 
-1. **SPF** — record `TXT` pe domeniul rădăcină care autorizează explicit serverul SMTP folosit (Hostinger SMTP implicit, sau alt provider dacă se schimbă) să trimită email în numele domeniului.
-2. **DKIM** — semnătura criptografică generată din panoul SMTP-ului (de obicei `TXT default._domainkey.<domeniu>`).
-3. **DMARC** — politică `TXT _dmarc.<domeniu>` pentru ce se întâmplă când SPF/DKIM eșuează. Pornește cu `p=none` (monitorizare) primele zile, apoi `p=quarantine`, abia apoi `p=reject` după ce rapoartele arată trafic curat.
-4. **`MAIL_FROM_ADDRESS` coerent cu domeniul final** — în `.env` de producție, setează adresa de trimitere pe domeniul propriu (ex: `hello@<domeniu-final>`), nu pe un domeniu generic/gratuit (Gmail, Yahoo etc.). Inconsistența domeniu-site / domeniu-email scade scorul de încredere la Gmail/Outlook.
+Configurează și următoarele **la nivel de DNS / panou hosting** (nu sunt modificări de cod):
+
+1. **SPF** — record `TXT` pe `add-wrap.ro` care autorizează explicit serverul SMTP folosit (Hostinger SMTP implicit, sau alt provider dacă se schimbă) să trimită email în numele domeniului.
+2. **DKIM** — semnătura criptografică generată din panoul SMTP-ului (de obicei `TXT default._domainkey.add-wrap.ro`).
+3. **DMARC** — politică `TXT _dmarc.add-wrap.ro` pentru ce se întâmplă când SPF/DKIM eșuează. Pornește cu `p=none` (monitorizare) primele zile, apoi `p=quarantine`, abia apoi `p=reject` după ce rapoartele arată trafic curat.
+4. **`MAIL_FROM_ADDRESS=info@add-wrap.ro`** — deja coerent cu domeniul propriu (nu Gmail/Yahoo). Inconsistența domeniu-site / domeniu-email scade scorul de încredere la Gmail/Outlook.
 5. **Reply-To corect** — deja implementat în cod, nimic de schimbat la deploy:
    - [ContactFormMail::envelope()](app/Mail/ContactFormMail.php:23) — emailul către business are `replyTo` pe adresa expeditorului din formular, ca să răspunzi direct clientului.
    - [ContactConfirmationMail::envelope()](app/Mail/ContactConfirmationMail.php:25) — confirmarea către expeditor are `replyTo` pe adresa firmei.
 
 **De ce contează**: fără SPF/DKIM/DMARC, Gmail și Outlook pun emailurile la Spam sau le resping tăcut, indiferent cât de bun e conținutul. Cele 3 record-uri DNS + adresa `From` coerentă sunt condiția minimă ca un email trimis programatic (formular de contact, confirmare) să ajungă în Inbox.
 
-**Acțiune când se ridică tema de deploy**: revino la această secțiune, confirmă domeniul real, configurează cele 3 record-uri DNS la providerul ales și actualizează `.env` de producție cu `MAIL_FROM_ADDRESS` pe domeniul final.
+**Acțiune la deploy**: setează cele 4 variabile din `.env` de producție (mai sus) și configurează cele 3 record-uri DNS (SPF/DKIM/DMARC) pe `add-wrap.ro` la providerul ales.
 
 ---
 
