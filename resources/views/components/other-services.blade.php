@@ -17,15 +17,20 @@
                 <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ __('services.show.combine_subtitle') }}</p>
             </div>
 
-            <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6 lg:grid-cols-3">
+            <div data-animate-group class="mt-8 grid grid-cols-3 gap-2 sm:mt-12 sm:gap-4 lg:gap-6">
                 @foreach ($combos as $combo)
                     @php $otherIcon = config('site.services.'.$combo['key'].'.icon', 'simple'); @endphp
                     <a
                         href="{{ Localization::serviceUrl($combo['key']) }}"
-                        class="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6"
+                        class="group flex flex-col items-center rounded-2xl border border-zinc-200 bg-white p-3 text-center transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:items-start sm:rounded-3xl sm:p-6 sm:text-left"
                     >
-                        {{-- Vizual: serviciul curent + complementar --}}
-                        <div class="flex items-center gap-2">
+                        {{-- Mobil: o singură pictogramă compactă (serviciul complementar) --}}
+                        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105 sm:hidden">
+                            <x-service-icon :name="$otherIcon" class="h-5 w-5" />
+                        </span>
+
+                        {{-- sm+: perechea serviciu curent → complementar --}}
+                        <div class="hidden items-center gap-2 sm:flex">
                             <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-500">
                                 <x-service-icon :name="$currentIcon" class="h-5 w-5" />
                             </span>
@@ -35,10 +40,10 @@
                             </span>
                         </div>
 
-                        <h3 class="mt-4 text-base font-semibold text-ink sm:mt-5 sm:text-lg">{{ __('services.items.'.$combo['key'].'.name') }}</h3>
-                        <p class="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted sm:line-clamp-none">{{ $combo['reason'] }}</p>
+                        <h3 class="mt-2 text-xs font-semibold leading-tight text-ink sm:mt-5 sm:text-lg sm:leading-normal">{{ __('services.items.'.$combo['key'].'.name') }}</h3>
+                        <p class="mt-2 hidden flex-1 text-sm leading-relaxed text-muted sm:block">{{ $combo['reason'] }}</p>
 
-                        <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-ink">
+                        <span class="mt-5 hidden items-center gap-1 text-sm font-semibold text-ink sm:inline-flex">
                             {{ __('messages.cta.learn_more') }}
                             <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
                         </span>
