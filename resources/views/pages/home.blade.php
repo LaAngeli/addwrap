@@ -326,3 +326,7 @@
 
 @endsection
 
+@push('scripts')
+    <x-turnstile-scripts />
+@endpush
+
