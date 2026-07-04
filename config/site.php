@@ -223,10 +223,10 @@ return [
         // Date legale ale firmei — completează-le o singură dată aici;
         // apar automat pe toate paginile legale (Termeni, Confidențialitate, Cookies).
         'legal' => [
-            'name' => 'addWrap S.R.L.',
-            'cui' => 'RO________',
-            'reg_com' => 'J__/____/____',
-            'address' => '[sediul social — de completat]',
+            'name' => 'ADD WRAP S.R.L.',
+            'cui' => 'RO44665367',
+            'reg_com' => 'J12/3631/2021',
+            'address' => 'Str. Urusagului, nr. 34E, bl. C5, et. 1, ap. 18, sat Florești, jud. Cluj',
         ],
 
         'social' => [
