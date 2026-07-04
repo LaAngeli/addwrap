@@ -13,10 +13,10 @@
 
     {{-- Hero --}}
     <section class="border-b border-zinc-200 bg-paper">
-        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
             <x-breadcrumbs />
 
-            <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
                         <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
@@ -142,7 +142,7 @@
 
     {{-- Modele de colaborare / oferte --}}
     @if (! empty($page['offers']))
-        <section class="bg-white py-16 lg:py-24">
+        <section class="bg-white py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['offers_eyebrow'] }}</p>
@@ -150,17 +150,17 @@
                     <p data-animate="fade-up" class="mt-4 text-lg text-muted">{{ $page['offers_subtitle'] }}</p>
                 </div>
 
-                <div data-animate-group class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6 lg:grid-cols-4">
                     @foreach ($page['offers'] as $offer)
                         <div @class([
-                            'flex h-full flex-col rounded-3xl border p-6 transition hover:-translate-y-1',
+                            'flex h-full flex-col rounded-3xl border p-4 transition hover:-translate-y-1 sm:p-6',
                             'border-zinc-900 bg-zinc-900 text-white shadow-xl' => $offer['featured'] ?? false,
                             'border-zinc-200 bg-white hover:border-zinc-900 hover:shadow-lg' => ! ($offer['featured'] ?? false),
                         ])>
                             @if ($offer['featured'] ?? false)
                                 <span class="mb-3 inline-flex self-start rounded-full bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-zinc-900">{{ __('services.show.recommended') }}</span>
                             @endif
-                            <h3 @class(['text-lg font-bold', 'text-white' => $offer['featured'] ?? false, 'text-ink' => ! ($offer['featured'] ?? false)])>{{ $offer['name'] }}</h3>
+                            <h3 @class(['text-base font-bold sm:text-lg', 'text-white' => $offer['featured'] ?? false, 'text-ink' => ! ($offer['featured'] ?? false)])>{{ $offer['name'] }}</h3>
                             <div class="mt-3 flex flex-wrap items-baseline gap-x-2">
                                 <span @class(['text-2xl font-bold tracking-tight', 'text-white' => $offer['featured'] ?? false, 'text-ink' => ! ($offer['featured'] ?? false)])>{{ $offer['price'] }}</span>
                                 <span @class(['text-xs', 'text-zinc-400' => $offer['featured'] ?? false, 'text-muted' => ! ($offer['featured'] ?? false)])>{{ $offer['unit'] }}</span>
@@ -177,7 +177,7 @@
                             @endif
                             <p @class(['mt-4 flex-1 text-sm leading-relaxed', 'text-zinc-300' => $offer['featured'] ?? false, 'text-muted' => ! ($offer['featured'] ?? false)])>{{ $offer['desc'] }}</p>
                             <a href="{{ Localization::route('contact') }}" @class([
-                                'mt-6 rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition',
+                                'mt-5 rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition sm:mt-6',
                                 'bg-white text-zinc-900 hover:bg-zinc-200' => $offer['featured'] ?? false,
                                 'bg-zinc-900 text-white hover:bg-black' => ! ($offer['featured'] ?? false),
                             ])>{{ $page['price_cta'] }}</a>
@@ -190,9 +190,9 @@
 
     {{-- Avantaj exclusiv + comparație cost --}}
     @if (! empty($svc['highlight']))
-        <section class="bg-white py-16 lg:py-20">
+        <section class="bg-white py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-3xl bg-zinc-900 p-8 text-white sm:p-12">
+                <div class="relative overflow-hidden rounded-3xl bg-zinc-900 p-6 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                     <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>
@@ -232,7 +232,7 @@
                 '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 17l6-6 4 4 8-8M21 7v6m0-6h-6" />',
             ];
         @endphp
-        <section class="border-y border-zinc-200 bg-paper py-20 lg:py-24">
+        <section class="border-y border-zinc-200 bg-paper py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['modules_eyebrow'] }}</p>
@@ -242,17 +242,17 @@
                     @endif
                 </div>
 
-                <div data-animate="fade-up" x-data="{ tab: 0 }" class="mx-auto mt-12 max-w-4xl">
+                <div data-animate="fade-up" x-data="{ tab: 0 }" class="mx-auto mt-8 max-w-4xl sm:mt-12">
                     {{-- Tab-uri --}}
-                    <div class="flex flex-col gap-3 sm:flex-row">
+                    <div class="flex gap-2 sm:gap-3">
                         @foreach ($modules as $i => $module)
                             <button
                                 type="button"
                                 @click="tab = {{ $i }}"
                                 :class="tab === {{ $i }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-400'"
-                                class="flex flex-1 items-center gap-3 rounded-2xl border p-4 text-left transition"
+                                class="flex flex-1 items-center gap-2 rounded-2xl border p-3 text-left transition sm:gap-3 sm:p-4"
                             >
-                                <span :class="tab === {{ $i }} ? 'bg-white/10 text-white' : 'bg-zinc-100 text-zinc-900'" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition">
+                                <span :class="tab === {{ $i }} ? 'bg-white/10 text-white' : 'bg-zinc-100 text-zinc-900'" class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition sm:h-10 sm:w-10">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $moduleIcons[$i] ?? '' !!}</svg>
                                 </span>
                                 <span class="font-semibold">{{ $module['title'] }}</span>
@@ -269,9 +269,9 @@
                                 x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 translate-y-3"
                                 x-transition:enter-end="opacity-100 translate-y-0"
-                                class="rounded-3xl border border-zinc-200 bg-white p-6 sm:p-8"
+                                class="rounded-3xl border border-zinc-200 bg-white p-5 sm:p-8"
                             >
-                                <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                                <ul class="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
                                     @foreach ($module['items'] as $item)
                                         <li class="flex items-start gap-3 text-sm text-zinc-700">
                                             <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-900">
@@ -290,13 +290,13 @@
     @endif
 
     {{-- Proces --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-white py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['process_eyebrow'] }}</p>
                 <h2 data-animate="fade-up" class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ $page['process_title'] }}</h2>
             </div>
-            <div data-animate-group class="mt-14 grid grid-cols-2 gap-8 lg:grid-cols-5">
+            <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-5">
                 @foreach ($page['process'] as $i => $step)
                     <div>
                         <span class="text-4xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
