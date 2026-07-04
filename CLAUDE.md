@@ -298,4 +298,23 @@ Experiența pe smartphone este prioritatea #1 a proiectului AddWrap. Majoritatea
 - `vendor/bin/pint --dirty` după modificări PHP.
 
 ## Mediu de lucru al asistentului
-- În sandbox NU există PHP/Composer; `npm run build` nu rulează aici (Vite/rolldown cere binar nativ Linux, dar `node_modules` e Windows). Fișierele PHP se scriu corect manual; build-ul și comenzile artisan/pint le rulează clientul local. Mount-ul bash poate fi out-of-sync pentru fișiere scrise prin file tools — Read tool e autoritativ.
+- **Uneltele rulează DIRECT pe Windows-ul clientului** (Laragon): `php.exe`, `npm`, `git`, `python`, `magick` — toate funcționează. Deci build-ul, comenzile artisan/pint, testele, git și procesarea de imagini le rulează asistentul, NU clientul. (Nota veche „în sandbox nu există PHP/Composer / `npm run build` nu rulează aici" era ÎNVECHITĂ pentru acest setup — a fost corectată.)
+- Site-ul local e servit la `https://addwrap.test` (Laragon/Apache) — folosește-l pentru verificări de render cu `curl -sk`. Pentru măsurători de layout pe mobil, pornește dev-server-ul prin Claude Preview (`.claude/launch.json`, config `laravel` pe :8000). Dacă portul 8000 e ocupat de o sesiune anterioară, adaugă temporar o config alt-port (`--port=8010`) și revino `.claude/launch.json` la loc după.
+- Mount-ul bash poate fi out-of-sync pentru fișiere scrise prin file tools — Read tool e autoritativ.
+
+## Automatizare după fiecare task (cerință explicită a clientului)
+După FIECARE task încheiat cu succes, asistentul rulează singur (nu clientul), în ordine:
+1. **`npm run build`** — DOAR dacă s-au atins fișiere frontend (`resources/css`, `resources/js`, `vite.config.js`, `tailwind.config.js`, `package.json`/`package-lock.json`, sau orice `.blade.php` care introduce clase Tailwind noi). Regenerează `public/build` (tracked în git pentru shared hosting). Dacă build-ul eșuează, oprește-te și raportează eroarea — nu comite build stricat.
+2. **`php artisan optimize:clear`** — golește cache-urile stale (config/rute/view/compiled/event), ca local-ul să reflecte mereu ultimele modificări. NU rula `php artisan optimize` complet pe local — acela cache-uiește config/rute/view și BLOCHEAZĂ reflectarea editărilor Blade/`.env` până la următorul clear (optimizarea reală de producție se face pe SERVER, la deploy).
+3. **Validare** — după modificări PHP: `vendor/bin/pint --dirty`. După modificări Blade: `php artisan view:cache`, apoi `php -l` pe fiecare `storage/framework/views/*.php`, apoi `php artisan view:clear` (IMPORTANT: `view:cache` compilează dar NU validează sintaxa PHP rezultată — erorile apar abia la render, deci `php -l` e obligatoriu). Rulează testele: `php artisan test --compact`.
+
+## Deploy: automat vs. gated
+Fluxul de deploy e shortcut-ul „update live" de mai sus (build dacă e nevoie → `git add` fișiere specifice → commit cu mesaj relevant bazat pe modificările reale → `git push origin main`).
+
+- **Automat, fără să întrebi:** schimbări mici, sigure, deja verificate (fix-uri, config, conținut, refactor mic, optimizări responsive verificate cu măsurători).
+- **GATED — clientul verifică local întâi, apoi dă „push":** schimbări vizuale mari (rebrand, sistem de culoare, pagini noi / redesign, layout major, conținut real despre firme identificabile). La astea, prezintă rezultatul + verificarea și AȘTEAPTĂ confirmarea înainte de push.
+- **Staging chirurgical:** când clientul are editări proprii necomise în working tree, stage DOAR fișierele tale (`git add <fișiere>`, niciodată `git add -A` / `git add .`) ca să nu-i înghiți munca în progres. Excepție: dacă cere explicit „tot împreună". Dacă `npm run build` a recompilat un bundle din sursa necomisă a clientului (ex: JS), semnalează-i și întreabă cum procedezi.
+- Niciodată `git push --force`, niciodată `--no-verify`. Dacă git raportează conflicte, oprește-te și explică.
+
+## Corectitudine peste complezență (se aplică și aici)
+Dacă o cerință are o problemă reală (tehnică, de securitate, SEO, UX, legal — ex: metrici inventate atribuite unor firme reale), spune-i clar clientului ÎNAINTE de a implementa și propune varianta corectă, argumentat. Nu împacheta corecțiile în complimente. Dacă cererea e corectă, „ok, fac" și mergi mai departe.
