@@ -20,7 +20,7 @@ return [
 
     'show' => [
         'deliverables_title' => 'What we deliver',
-        'included_title' => 'What we include',
+        'included_title' => 'What\'s included',
         'packages_title' => 'Packages',
         'addons_title' => 'Add-on services',
         'other_title' => 'Other services',

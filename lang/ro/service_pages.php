@@ -134,7 +134,7 @@ return [
     'seo-aeo-geo' => [
         'included_label' => 'Inclus în Website + SEO',
         'included_sub' => 'de la 400 €/lună',
-        'includes_eyebrow' => 'Ce includem',
+        'includes_eyebrow' => 'Ce include',
         'includes_title' => 'Acoperim toate cele trei straturi',
         'includes_subtitle' => 'De la căutarea clasică, la răspunsurile directe și cele generate de AI.',
         'includes' => [

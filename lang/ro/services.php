@@ -20,7 +20,7 @@ return [
 
     'show' => [
         'deliverables_title' => 'Ce livrăm',
-        'included_title' => 'Ce includem',
+        'included_title' => 'Ce include',
         'packages_title' => 'Pachete',
         'addons_title' => 'Servicii suplimentare',
         'other_title' => 'Alte servicii',

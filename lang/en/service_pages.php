@@ -134,7 +134,7 @@ return [
     'seo-aeo-geo' => [
         'included_label' => 'Included in Website + SEO',
         'included_sub' => 'from €400/month',
-        'includes_eyebrow' => 'What we include',
+        'includes_eyebrow' => 'What\'s included',
         'includes_title' => 'We cover all three layers',
         'includes_subtitle' => 'From classic search, to direct answers and AI-generated results.',
         'includes' => [
