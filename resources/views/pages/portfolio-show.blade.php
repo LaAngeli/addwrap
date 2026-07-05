@@ -19,7 +19,7 @@
             <div class="mt-6 max-w-3xl">
                 <img src="{{ asset('images/partners/'.($project['logo'] ?? $slug).'.png') }}" alt="{{ $project['client'] ?? '' }}" height="240" class="h-9 w-auto max-w-[220px] object-contain sm:h-10" loading="lazy" decoding="async">
                 <div class="mt-5 flex flex-wrap items-center gap-2 text-xs text-muted">
-                    <span class="rounded-full bg-zinc-900 px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ $c['tag'] ?? __('portfolio.categories.'.($project['category'] ?? 'general')) }}</span>
+                    <span class="rounded-full bg-deep px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ $c['tag'] ?? __('portfolio.categories.'.($project['category'] ?? 'general')) }}</span>
                     <span aria-hidden="true">·</span>
                     <span class="font-medium text-ink">{{ $project['client'] ?? '' }}</span>
                 </div>
@@ -66,7 +66,7 @@
                             <ul class="mt-6 space-y-3">
                                 @foreach ($block['items'] as $item)
                                     <li class="flex items-start gap-3 text-lg leading-relaxed text-zinc-700">
-                                        <span class="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-900"></span>
+                                        <span class="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-deep"></span>
                                         {{ $item }}
                                     </li>
                                 @endforeach

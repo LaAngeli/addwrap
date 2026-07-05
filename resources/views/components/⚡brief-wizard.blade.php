@@ -67,7 +67,7 @@ new class extends Component
 
     {{-- Bara de progres --}}
     <div class="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-zinc-100">
-        <div class="h-full rounded-full bg-zinc-900 transition-all" style="width: {{ (min($step, 3) / 3) * 100 }}%"></div>
+        <div class="h-full rounded-full bg-deep transition-all" style="width: {{ (min($step, 3) / 3) * 100 }}%"></div>
     </div>
 
     <div class="mt-6" wire:key="quiz-step-{{ $step }}">

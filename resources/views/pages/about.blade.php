@@ -49,7 +49,7 @@
                         </div>
 
                         {{-- Panou preview (se schimbă la clic) --}}
-                        <div class="relative mt-4 min-h-[168px] overflow-hidden rounded-2xl bg-zinc-900 p-6 text-white">
+                        <div class="relative mt-4 min-h-[168px] overflow-hidden rounded-2xl bg-deep p-6 text-white">
                             <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                             @foreach ($industries as $i => $ind)
                                 <div
@@ -75,7 +75,7 @@
                                 <button
                                     type="button"
                                     @click="sel = {{ $i }}"
-                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-500 hover:border-zinc-400'"
+                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-200 text-zinc-500 hover:border-zinc-400'"
                                     class="flex items-center justify-center rounded-xl border p-2.5 transition"
                                     :aria-pressed="sel === {{ $i }} ? 'true' : 'false'"
                                     aria-label="{{ $ind['name'] }}"
@@ -136,13 +136,13 @@
                     @foreach (__('pages.about.story_steps') as $i => $step)
                         <div @class([
                             'flex gap-4 rounded-2xl p-5 sm:gap-5 sm:p-8',
-                            'bg-zinc-900' => $loop->last,
+                            'bg-deep' => $loop->last,
                             'border border-zinc-200 bg-white' => ! $loop->last,
                         ])>
                             <span @class([
                                 'inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-white',
                                 'bg-orange' => $loop->last,
-                                'bg-zinc-900' => ! $loop->last,
+                                'bg-deep' => ! $loop->last,
                             ])>{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                             <div>
                                 <h3 @class(['text-lg font-semibold', 'text-white' => $loop->last, 'text-ink' => ! $loop->last])>{{ $step['title'] }}</h3>
@@ -176,7 +176,7 @@
                                 <button
                                     type="button"
                                     @click="sel = sel === '{{ $key }}' ? null : '{{ $key }}'"
-                                    :class="sel === '{{ $key }}' ? 'border-zinc-900 bg-zinc-900 text-white shadow-md' : 'border-zinc-200 bg-white text-zinc-800 hover:-translate-y-0.5 hover:border-zinc-900 hover:shadow-md'"
+                                    :class="sel === '{{ $key }}' ? 'border-zinc-900 bg-deep text-white shadow-md' : 'border-zinc-200 bg-white text-zinc-800 hover:-translate-y-0.5 hover:border-zinc-900 hover:shadow-md'"
                                     class="flex h-12 w-12 items-center justify-center rounded-2xl border shadow-sm transition sm:h-14 sm:w-14"
                                     :aria-pressed="sel === '{{ $key }}' ? 'true' : 'false'"
                                     aria-label="{{ __('services.items.'.$key.'.name') }}"
@@ -191,7 +191,7 @@
                             <button
                                 type="button"
                                 @click="sel = null"
-                                class="flex h-16 w-16 items-center justify-center rounded-full bg-zinc-900 shadow-xl ring-4 ring-white transition sm:h-20 sm:w-20"
+                                class="flex h-16 w-16 items-center justify-center rounded-full bg-deep shadow-xl ring-4 ring-white transition sm:h-20 sm:w-20"
                                 aria-label="{{ config('site.company.name') }}"
                             >
                                 <x-brand-glyph class="h-5 w-auto sm:h-6 text-white" />
@@ -237,7 +237,7 @@
     </section>
 
     {{-- Statistici --}}
-    <section class="relative overflow-hidden bg-zinc-900 py-12 text-white sm:py-16 lg:py-20">
+    <section class="relative overflow-hidden bg-deep py-12 text-white sm:py-16 lg:py-20">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 data-animate="fade-up" class="text-center text-2xl font-bold tracking-tight text-balance sm:text-3xl">{{ __('pages.about.stats_title') }}</h2>
@@ -289,7 +289,7 @@
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6">
                 @foreach (__('pages.about.why_points') as $i => $point)
                     <div class="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:flex-row sm:items-start sm:gap-4 sm:p-6">
-                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-deep text-white">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $whyIcons[$i] ?? '' !!}</svg>
                         </span>
                         <p class="text-sm leading-relaxed text-zinc-700 sm:text-base">{{ $point }}</p>
@@ -310,7 +310,7 @@
             <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-5 lg:grid-cols-4">
                 @foreach ($industries as $i => $industry)
                     <div class="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
-                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
+                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-deep text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $industryIcons[$i] ?? '' !!}</svg>
                         </span>
                         <h3 class="mt-4 font-semibold text-ink">{{ $industry['name'] }}</h3>

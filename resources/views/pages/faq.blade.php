@@ -52,7 +52,7 @@
                                 <button
                                     type="button"
                                     @click="sel = {{ $i }}"
-                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'"
+                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'"
                                     class="rounded-full border px-3 py-1.5 text-xs font-semibold transition"
                                 >{{ $item['title'] }}</button>
                             @endforeach
@@ -70,7 +70,7 @@
                                     class="absolute inset-0 rounded-2xl border border-zinc-200 bg-paper p-5"
                                 >
                                     <div class="flex items-start gap-2">
-                                        <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-[10px] font-bold text-white">?</span>
+                                        <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-deep text-[10px] font-bold text-white">?</span>
                                         <p class="text-sm font-semibold text-ink">{{ $item['q'] }}</p>
                                     </div>
                                     <p class="mt-3 text-sm leading-relaxed text-muted line-clamp-4">{{ $item['a'] }}</p>

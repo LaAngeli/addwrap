@@ -11,7 +11,7 @@ return [
         'cta_primary' => 'Începe proiectul',
         'cta_secondary' => 'Vezi prețurile',
         'explorer_eyebrow' => 'Explorează serviciile',
-        'explorer_title' => 'Alege serviciul potrivit pentru tine',
+        'explorer_title' => 'Alege modul de lucru potrivit obiectivelor tale',
         'explorer_subtitle' => 'Apasă pe un serviciu pentru a vedea ce include și cum te ajută.',
         'view_service' => 'Vezi serviciul complet',
         'hero_points' => ['6 servicii integrate', 'Pachete personalizate', 'Multilingv'],
@@ -40,7 +40,7 @@ return [
             'name' => 'Brandbook',
             'tagline' => 'Identitate vizuală completă pentru brandul tău',
             'excerpt' => 'Logo, paletă, fonturi, ton al vocii, pattern-uri și vizualizări — un sistem de brand complet, livrabile finale.',
-            'description' => 'Construim identitatea vizuală și verbală a brandului tău într-un pachet complet, cu livrabile finale gata de folosit pe toate canalele.',
+            'description' => 'Construim identitatea vizuală și de comunicare a brandului tău într-un pachet complet, cu livrabile finale gata de folosit pe toate canalele.',
             'features' => [
                 'Logo & variațiuni',
                 'Paletă & tipografie',
@@ -65,7 +65,7 @@ return [
                 'text' => 'Reconfigurăm pachetul ca să primești strict instrumentele de care ai nevoie — de ex. doar logo + paletă, doar fonturi + pattern-uri sau doar vizualizări. Preț calculat în funcție de solicitare.',
             ],
             'faq' => [
-                ['q' => 'Ce primesc concret într-un brandbook?', 'a' => 'Logoul în 3 versiuni cu variațiuni de formă și culoare, paleta și fonturile, set de 4 pattern-uri, 10 vizualizări la alegere (carte de vizită, antet, mapă, plicuri etc.) și ghidul de brand cu reguli de utilizare.'],
+                ['q' => 'Ce primesc concret într-un brandbook?', 'a' => 'Nu primești logoul gata în 3 versiuni finale — creăm 3 variații de logo, tu alegi direcția care ți se potrivește, iar în jurul ei construim restul brandbook-ului: paletă, fonturi, pattern-uri, vizualizări și ghidul de brand. Durata variază între o lună și 3 luni, în funcție de complexitate.'],
                 ['q' => 'Cât durează crearea unui brandbook?', 'a' => 'Între 2 și 4 săptămâni, în funcție de complexitate, de la primul brief până la livrabilele finale.'],
                 ['q' => 'Pot să folosesc brandul singur după aceea?', 'a' => 'Da. Primești ghidul de brand cu reguli clare pentru logo, font, culori și vizualizări — îl poți preda oricărui colaborator sau imprimerii fără ambiguități.'],
                 ['q' => 'Pot lua doar o parte din pachet?', 'a' => 'Da. Reconfigurăm pachetul (doar logo + paletă, doar fonturi + pattern-uri sau doar vizualizări) și recalculăm prețul pe solicitarea ta.'],
@@ -98,7 +98,7 @@ return [
                 ['q' => 'Ce conține planul pe 12 luni?', 'a' => 'Strategie cu obiective SMART, calendar editorial detaliat, scenarii lunare de conținut (8 sau 12), canale optime de comunicare și rapoarte lunare sau trimestriale.'],
                 ['q' => 'Faceți și producția conținutului (text + grafică)?', 'a' => 'Strategia și calendarul sunt incluse în abonament. Producția (text, foto/video, montaj) se cotează separat sau prin add-on Filmare/editare video la 50 €/oră.'],
                 ['q' => 'Pot ajusta strategia pe parcurs?', 'a' => 'Da. Lunar revizuim ce funcționează și ajustăm scenariile, astfel încât planul rămâne relevant chiar dacă apar schimbări la business.'],
-                ['q' => 'Pe ce canale lucrăm?', 'a' => 'Stabilim împreună canalele optime în faza de strategie — de regulă Facebook, Instagram, LinkedIn, blog, newsletter — și concentrăm efortul unde audiența ta este.'],
+                ['q' => 'Pe ce canale lucrăm?', 'a' => 'Stabilim împreună canalele optime în faza de strategie — de regulă Facebook, Instagram, TikTok — și concentrăm efortul unde audiența ta este.'],
             ],
         ],
 
@@ -128,7 +128,7 @@ return [
             'note' => 'Bugetele Google Ads NU sunt incluse — se plătesc direct platformei. Toate prețurile + TVA 21%.',
             'faq' => [
                 ['q' => 'Bugetul de publicitate este inclus în tariful lunar?', 'a' => 'Nu. Tariful lunar acoperă management, optimizare și raportare. Bugetul media se plătește direct către Google, separat de fee-ul nostru.'],
-                ['q' => 'Pe ce tip de campanii rulați?', 'a' => 'Search (pentru cerere existentă), Display (notorietate și remarketing) și YouTube (video) — alegerea depinde de obiectivul tău și de publicul țintă.'],
+                ['q' => 'Ce tip de campanii rulați?', 'a' => 'Search (pentru cerere existentă), Display (notorietate și remarketing) și YouTube (video) — alegerea depinde de obiectivul tău și de publicul țintă.'],
                 ['q' => 'Cât durează până apar primele rezultate?', 'a' => 'Search aduce conversii în câteva zile dacă există cerere. Display și YouTube au nevoie de 4-6 săptămâni pentru optimizarea algoritmilor și o medie ROAS stabilă.'],
                 ['q' => 'Există minimum de contract?', 'a' => 'Recomandăm minimum 3 luni — primele 30 de zile sunt de calibrare a algoritmilor, iar performanța reală se vede din luna a doua și a treia.'],
             ],
@@ -145,7 +145,7 @@ return [
                 'vat' => '+ TVA 21%',
                 'frequency' => '/ lună',
             ],
-            'features_title' => 'Ce includem',
+            'features_title' => 'Ce include',
             'features' => [
                 'Setare & structurare campanii',
                 'Monitorizare & optimizare continuă',
@@ -160,7 +160,7 @@ return [
             'faq' => [
                 ['q' => 'Care e diferența dintre Meta Ads și Boost?', 'a' => 'Boost-ul promovează un post existent fără targeting precis. Meta Ads îți oferă obiective dedicate (vânzări, lead-uri, trafic), audiențe granulare, A/B testing și raportare detaliată.'],
                 ['q' => 'Faceți și creative-uri (imagini / video)?', 'a' => 'Strategia, setarea și optimizarea sunt incluse. Creativele se realizează prin add-on (banner 50 €, reformatare 15 €/format) sau folosim materialele tale existente.'],
-                ['q' => 'Cât durează până apar primii lead-uri?', 'a' => 'De obicei 2-3 săptămâni pentru calibrarea algoritmilor Meta și obținerea unei rate stabile cost/rezultat. Primele conversii pot apărea în primele zile.'],
+                ['q' => 'Cât durează până apar primele lead-uri?', 'a' => 'De obicei 2-3 săptămâni pentru calibrarea algoritmilor Meta și obținerea unei rate stabile cost/rezultat. Primele conversii pot apărea în primele zile.'],
                 ['q' => 'Bugetul reclamelor este inclus?', 'a' => 'Nu. Tariful lunar acoperă management, optimizare și raport. Bugetul Meta se plătește direct platformei, separat de fee-ul de management.'],
             ],
         ],
@@ -169,7 +169,7 @@ return [
             'name' => 'SEO / AEO / GEO',
             'tagline' => 'Vizibilitate în Google, în asistenții AI și în motoarele generative',
             'excerpt' => 'Audit tehnic, optimizare on-page, date structurate și monitorizare — inclus în pachetul lunar Website + SEO.',
-            'description' => 'Optimizăm site-ul pentru motoarele de căutare (SEO), pentru răspunsurile directe (AEO) și pentru motoarele generative AI (GEO), ca să fii găsit oriunde caută clienții tăi, inclusiv în ChatGPT și Google AI.',
+            'description' => 'Optimizăm site-ul pentru motoarele de căutare (SEO), pentru răspunsurile directe (AEO) și pentru motoarele generative AI (GEO), ca să fii găsit oriunde te caută clienții tăi, inclusiv în ChatGPT și Google AI.',
             'price' => [
                 'amount' => 'de la 300 €',
                 'unit' => 'SEO · AEO · GEO',
@@ -217,7 +217,7 @@ return [
 
         'web-development' => [
             'name' => 'Website + Mentenanță',
-            'tagline' => 'Site-uri pe măsură, de la prezentare la platforme complexe',
+            'tagline' => 'Site-uri pe măsură, structurate după complexitatea firmei și a obiectivelor tale',
             'excerpt' => 'Site de prezentare de la 400 €, proiecte complexe la cerere, plus mentenanță și SEO în abonament lunar.',
             'description' => 'Construim site-uri rapide și sigure, structurate după complexitatea proiectului și obiectivele tale — de la site de prezentare la magazine online și platforme SaaS.',
             'features' => [

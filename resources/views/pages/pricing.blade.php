@@ -9,7 +9,12 @@
         $calcItems = [];
         foreach (config('site.pricing.services') as $key => $p) {
             if (($p['monthly'] ?? 0) > 0) {
-                $calcItems[] = ['key' => $key, 'name' => __('services.items.'.$key.'.name'), 'monthly' => (int) $p['monthly']];
+                // Etichetă dedicată doar pentru web-development în acest mini-calculator
+                // (nu afectează numele global al serviciului, folosit peste tot altundeva).
+                $name = $key === 'web-development'
+                    ? __('pages.pricing.hero_calc_web_dev_label')
+                    : __('services.items.'.$key.'.name');
+                $calcItems[] = ['key' => $key, 'name' => $name, 'monthly' => (int) $p['monthly']];
             }
         }
         $defaultSel = [];
@@ -68,7 +73,7 @@
                                     :aria-pressed="sel['{{ $item['key'] }}'] ? 'true' : 'false'"
                                 >
                                     <span class="flex items-center gap-3">
-                                        <span :class="sel['{{ $item['key'] }}'] ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-transparent'" class="inline-flex h-5 w-5 items-center justify-center rounded-md border transition">
+                                        <span :class="sel['{{ $item['key'] }}'] ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-300 text-transparent'" class="inline-flex h-5 w-5 items-center justify-center rounded-md border transition">
                                             <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                         </span>
                                         <span class="text-sm font-semibold text-ink">{{ $item['name'] }}</span>
@@ -78,7 +83,7 @@
                             @endforeach
                         </div>
 
-                        <div class="mt-5 rounded-2xl bg-zinc-900 p-4 text-white">
+                        <div class="mt-5 rounded-2xl bg-deep p-4 text-white">
                             <div class="flex items-center justify-between gap-3">
                                 <div>
                                     <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">{{ __('pages.pricing.hero_calc_total') }}</p>
@@ -177,7 +182,7 @@
                 @foreach (__('pages.pricing.table_groups') as $group)
                     <div class="rounded-2xl border border-zinc-200 p-5 sm:p-8">
                         <div class="flex items-center gap-3">
-                            <span class="inline-block h-2 w-2 rounded-full bg-zinc-900"></span>
+                            <span class="inline-block h-2 w-2 rounded-full bg-deep"></span>
                             <h3 class="text-sm font-semibold uppercase tracking-wider text-ink">{{ $group['title'] }}</h3>
                         </div>
                         <ul class="mt-5 divide-y divide-zinc-100">

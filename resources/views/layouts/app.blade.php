@@ -82,7 +82,7 @@
 
     @stack('head')
 </head>
-<body class="min-h-screen bg-white text-ink antialiased flex flex-col">
+<body class="min-h-screen bg-paper text-ink antialiased flex flex-col">
 
     @if ($gtmId)
         {{-- GTM noscript fallback — primul element din body. --}}

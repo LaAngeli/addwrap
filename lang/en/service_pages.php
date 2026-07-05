@@ -68,7 +68,7 @@ return [
             ['title' => 'Educational', 'desc' => 'Answers your audience questions and builds authority.', 'examples' => ['Guides and tips', 'Answers to FAQs', 'Service explainers']],
             ['title' => 'Trust', 'desc' => 'Shows results and the real people behind the brand.', 'examples' => ['Testimonials', 'Case studies', 'Behind the scenes']],
             ['title' => 'Conversion', 'desc' => 'Turns interest into concrete action.', 'examples' => ['Offers', 'Calls to action', 'Product demos']],
-            ['title' => 'Community', 'desc' => 'Humanizes the brand and creates interaction.', 'examples' => ['Questions to the audience', 'User-generated content', 'Team moments']],
+            ['title' => 'Community', 'desc' => 'Humanizes the brand and creates interaction.', 'examples' => ['Questions to the audience', 'Client testimonials', 'Team moments']],
         ],
         'process_eyebrow' => 'How we work',
         'process_title' => 'From analysis to results',
@@ -124,7 +124,7 @@ return [
         'funnel' => [
             ['stage' => 'Awareness', 'desc' => 'We reach new people who do not know you yet.', 'tag' => 'Reach & video'],
             ['stage' => 'Consideration', 'desc' => 'We educate them and create desire with good creative.', 'tag' => 'Engagement & traffic'],
-            ['stage' => 'Conversion', 'desc' => 'We turn them into customers with offers and remarketing.', 'tag' => 'Conversions & remarketing'],
+            ['stage' => 'Conversion', 'desc' => 'We turn them into customers with engaging campaigns and remarketing.', 'tag' => 'Conversions & remarketing'],
         ],
         'addons_title' => 'Add-ons & extras',
         'note_title' => 'Good to know',

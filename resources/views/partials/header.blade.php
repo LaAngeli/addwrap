@@ -141,7 +141,7 @@
                 {{-- Home --}}
                 <a href="{{ Localization::route('home') }}" @click="mobileOpen = false" @class([
                     'group flex items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold transition',
-                    'bg-zinc-900 text-white' => request()->routeIs('*.home'),
+                    'bg-deep text-white' => request()->routeIs('*.home'),
                     'text-ink hover:bg-zinc-50' => ! request()->routeIs('*.home'),
                 ])>
                     {{ __('messages.nav.home') }}
@@ -177,7 +177,7 @@
                                 @php $svcActive = request()->url() === Localization::serviceUrl($key); @endphp
                                 <a href="{{ Localization::serviceUrl($key) }}" @click="mobileOpen = false" @class([
                                     'flex items-center gap-3 rounded-xl px-3 py-2.5 transition',
-                                    'bg-zinc-900 text-white' => $svcActive,
+                                    'bg-deep text-white' => $svcActive,
                                     'text-zinc-700 hover:bg-zinc-50' => ! $svcActive,
                                 ])>
                                     <span @class([
@@ -205,7 +205,7 @@
                 @foreach ($mainLinks as $link)
                     <a href="{{ Localization::route($link['route']) }}" @click="mobileOpen = false" @class([
                         'group flex items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold transition',
-                        'bg-zinc-900 text-white' => request()->routeIs($link['pattern']),
+                        'bg-deep text-white' => request()->routeIs($link['pattern']),
                         'text-ink hover:bg-zinc-50' => ! request()->routeIs($link['pattern']),
                     ])>
                         {{ $link['label'] }}
@@ -247,7 +247,7 @@
 
                             {{-- Marca centrală --}}
                             <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                                <span class="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 shadow-lg ring-4 ring-white">
+                                <span class="flex h-14 w-14 items-center justify-center rounded-full bg-deep shadow-lg ring-4 ring-white">
                                     <x-brand-glyph class="h-4 w-auto text-white" />
                                 </span>
                             </div>
@@ -261,7 +261,7 @@
 
             {{-- Subsol fix: Contact --}}
             <div class="shrink-0 border-t border-zinc-200 px-4 py-4">
-                <a href="{{ Localization::route('contact') }}" @click="mobileOpen = false" class="flex items-center justify-center gap-2 rounded-xl bg-zinc-900 px-4 py-3.5 text-base font-semibold text-white transition hover:bg-black">
+                <a href="{{ Localization::route('contact') }}" @click="mobileOpen = false" class="flex items-center justify-center gap-2 rounded-xl bg-deep px-4 py-3.5 text-base font-semibold text-white transition hover:bg-deep">
                     {{ __('messages.nav.contact') }}
                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                 </a>

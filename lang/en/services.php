@@ -11,7 +11,7 @@ return [
         'cta_primary' => 'Start your project',
         'cta_secondary' => 'See pricing',
         'explorer_eyebrow' => 'Explore the services',
-        'explorer_title' => 'Choose the right service for you',
+        'explorer_title' => 'Choose the way of working that fits your goals',
         'explorer_subtitle' => 'Tap a service to see what it includes and how it helps you.',
         'view_service' => 'View the full service',
         'hero_points' => ['6 integrated services', 'Custom packages', 'Multilingual'],
@@ -40,7 +40,7 @@ return [
             'name' => 'Brandbook',
             'tagline' => 'A complete visual identity for your brand',
             'excerpt' => 'Logo, palette, fonts, tone of voice, patterns and mockups — a complete brand system, final deliverables.',
-            'description' => 'We build your visual and verbal brand identity in a complete package, with final deliverables ready to use across every channel.',
+            'description' => 'We build your visual and communication brand identity in a complete package, with final deliverables ready to use across every channel.',
             'features' => [
                 'Logo & variations',
                 'Palette & typography',
@@ -65,7 +65,7 @@ return [
                 'text' => 'We can reconfigure the package so you get exactly the assets you need — e.g. just logo + palette, just fonts + patterns, or just mockups. Price calculated on request.',
             ],
             'faq' => [
-                ['q' => 'What do I get in the brandbook?', 'a' => 'The logo in 3 versions with shape and color variations, palette and fonts, a set of 4 patterns, 10 selected mockups (business card, letterhead, folder, envelopes, etc.) and the brand guide with usage rules.'],
+                ['q' => 'What do I get in the brandbook?', 'a' => 'You do not get the logo delivered as 3 final versions — we create 3 logo variations, you pick the direction that fits you, and we build the rest of the brandbook around it: palette, fonts, patterns, mockups and the brand guide. Duration ranges from one to 3 months, depending on complexity.'],
                 ['q' => 'How long does the brandbook take?', 'a' => 'Between 2 and 4 weeks, depending on complexity, from the first brief to the final deliverables.'],
                 ['q' => 'Can I use the brand on my own afterwards?', 'a' => 'Yes. You receive the brand guide with clear rules for logo, font, colors and mockups — you can hand it to any collaborator or print shop without ambiguity.'],
                 ['q' => 'Can I take just part of the package?', 'a' => 'Yes. We reshape the package (just logo + palette, just fonts + patterns, or just mockups) and recalculate the price for your request.'],
@@ -98,7 +98,7 @@ return [
                 ['q' => 'What is in the 12-month plan?', 'a' => 'A strategy with SMART goals, a detailed editorial calendar, monthly content scenarios (8 or 12), optimal communication channels and monthly or quarterly reports.'],
                 ['q' => 'Do you also produce the content (copy + visuals)?', 'a' => 'Strategy and calendar are included. Production (copy, photo/video, editing) is quoted separately or via the Video filming/editing add-on at €50/hour.'],
                 ['q' => 'Can I adjust the strategy along the way?', 'a' => 'Yes. We review monthly what works and adjust the scenarios, so the plan stays relevant even if your business changes.'],
-                ['q' => 'Which channels do we work on?', 'a' => 'We pick the optimal channels together in the strategy phase — usually Facebook, Instagram, LinkedIn, blog, newsletter — and concentrate effort where your audience already is.'],
+                ['q' => 'Which channels do we work on?', 'a' => 'We pick the optimal channels together in the strategy phase — usually Facebook, Instagram, TikTok — and concentrate effort where your audience already is.'],
             ],
         ],
 
@@ -145,7 +145,7 @@ return [
                 'vat' => '+ 21% VAT',
                 'frequency' => '/ month',
             ],
-            'features_title' => 'What we include',
+            'features_title' => 'What\'s included',
             'features' => [
                 'Campaign setup & structuring',
                 'Continuous monitoring & optimization',
@@ -160,7 +160,7 @@ return [
             'faq' => [
                 ['q' => 'What is the difference between Meta Ads and Boost?', 'a' => 'Boost promotes an existing post without precise targeting. Meta Ads gives you dedicated objectives (sales, leads, traffic), granular audiences, A/B testing and detailed reporting.'],
                 ['q' => 'Do you also produce creatives (images / video)?', 'a' => 'Strategy, setup and optimization are included. Creatives are produced via add-on (banner €50, reformat €15/format) or we use your existing assets.'],
-                ['q' => 'How long until the first leads?', 'a' => 'Usually 2-3 weeks for Meta algorithm calibration and a stable cost/result. First conversions can appear within days.'],
+                ['q' => 'How long until the first leads arrive?', 'a' => 'Usually 2-3 weeks for Meta algorithm calibration and a stable cost/result. First conversions can appear within days.'],
                 ['q' => 'Is the ad budget included?', 'a' => 'No. The monthly fee covers management, optimization and report. The Meta budget is paid directly to the platform, separate from the management fee.'],
             ],
         ],
@@ -169,7 +169,7 @@ return [
             'name' => 'SEO / AEO / GEO',
             'tagline' => 'Visibility in Google, AI assistants and generative engines',
             'excerpt' => 'Technical audit, on-page optimization, structured data and monitoring — included in the monthly Website + SEO package.',
-            'description' => 'We optimize your website for search engines (SEO), direct answers (AEO) and generative AI engines (GEO), so you are found wherever your customers search, including ChatGPT and Google AI.',
+            'description' => 'We optimize your website for search engines (SEO), direct answers (AEO) and generative AI engines (GEO), so you are found wherever your customers search for you, including ChatGPT and Google AI.',
             'price' => [
                 'amount' => 'from €300',
                 'unit' => 'SEO · AEO · GEO',
@@ -217,7 +217,7 @@ return [
 
         'web-development' => [
             'name' => 'Website + Maintenance',
-            'tagline' => 'Tailored websites, from presentation sites to complex platforms',
+            'tagline' => 'Tailored websites, structured around your company\'s complexity and goals',
             'excerpt' => 'Presentation site from €400, complex projects on request, plus maintenance and SEO in a monthly plan.',
             'description' => 'We build fast, secure websites, structured by project complexity and your goals — from presentation sites to online stores and SaaS platforms.',
             'features' => [

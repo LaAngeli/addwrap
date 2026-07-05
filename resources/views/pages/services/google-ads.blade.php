@@ -19,7 +19,7 @@
             <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep text-white">
                             <x-service-icon :name="$service['icon'] ?? 'magnifying-glass'" class="h-6 w-6" />
                         </span>
                     </div>
@@ -60,7 +60,7 @@
                     {{-- Segmented control: canale --}}
                     <div class="mt-4 inline-flex w-full rounded-full border border-zinc-200 bg-zinc-50 p-1">
                         @foreach ($page['channels'] as $c)
-                            <button type="button" @click="ch = '{{ $c['key'] }}'" :class="ch === '{{ $c['key'] }}' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-semibold transition">{{ $c['name'] }}</button>
+                            <button type="button" @click="ch = '{{ $c['key'] }}'" :class="ch === '{{ $c['key'] }}' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-semibold transition">{{ $c['name'] }}</button>
                         @endforeach
                     </div>
 
@@ -83,14 +83,14 @@
                     <div class="mt-5">
                         <div class="flex h-20 items-end justify-between gap-1.5">
                             <template x-for="(h, i) in bars[ch]" :key="i">
-                                <div class="flex-1 rounded-t bg-zinc-900 transition-all duration-500 ease-out" :style="'height: ' + h + '%'"></div>
+                                <div class="flex-1 rounded-t bg-deep transition-all duration-500 ease-out" :style="'height: ' + h + '%'"></div>
                             </template>
                         </div>
                         <div class="mt-2 text-[10px] text-muted">{{ $page['period_label'] }}</div>
                     </div>
 
                     {{-- ROAS --}}
-                    <div class="mt-4 flex items-center justify-between rounded-xl bg-zinc-900 px-4 py-3 text-white">
+                    <div class="mt-4 flex items-center justify-between rounded-xl bg-deep px-4 py-3 text-white">
                         <span class="text-xs text-zinc-400">{{ $page['roas_label'] }}</span>
                         <span class="text-xl font-bold">{{ $page['roas_value'] }}</span>
                     </div>
@@ -123,7 +123,7 @@
                 <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:gap-5">
                     @foreach ($features as $i => $feature)
                         <div class="group flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:flex-row sm:items-start sm:gap-4 sm:p-6">
-                            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
+                            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-deep text-white transition group-hover:scale-105">
                                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $featureIcons[$i % count($featureIcons)] !!}</svg>
                             </span>
                             <p class="text-sm font-medium leading-relaxed text-ink sm:text-base">{{ $feature }}</p>

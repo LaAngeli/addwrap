@@ -19,7 +19,7 @@
             <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep text-white">
                             <x-service-icon :name="$service['icon'] ?? 'megaphone'" class="h-6 w-6" />
                         </span>
                     </div>
@@ -43,13 +43,13 @@
                 <div data-animate="scale-in" x-data="{ platform: 'fb' }" class="mx-auto w-full max-w-sm rounded-3xl border border-zinc-200 bg-white p-4 shadow-sm lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center">
                     {{-- Comutator platformă --}}
                     <div class="mb-3 inline-flex w-full rounded-full border border-zinc-200 bg-zinc-50 p-1">
-                        <button type="button" @click="platform = 'fb'" :class="platform === 'fb' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-semibold transition">{{ $page['platform_fb'] }}</button>
-                        <button type="button" @click="platform = 'ig'" :class="platform === 'ig' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-semibold transition">{{ $page['platform_ig'] }}</button>
+                        <button type="button" @click="platform = 'fb'" :class="platform === 'fb' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-semibold transition">{{ $page['platform_fb'] }}</button>
+                        <button type="button" @click="platform = 'ig'" :class="platform === 'ig' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-semibold transition">{{ $page['platform_ig'] }}</button>
                     </div>
 
                     {{-- Header postare --}}
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900">
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-deep">
                             <x-brand-glyph class="h-3.5 w-auto text-white" />
                         </span>
                         <div>
@@ -72,7 +72,7 @@
                                 <p class="truncate text-xs uppercase text-muted">{{ $page['preview_url'] }}</p>
                                 <p class="text-sm font-semibold text-ink">{{ $page['preview_headline'] }}</p>
                             </div>
-                            <span class="shrink-0 rounded-md bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-white">{{ $page['preview_cta'] }}</span>
+                            <span class="shrink-0 rounded-md bg-deep px-3 py-1.5 text-xs font-semibold text-white">{{ $page['preview_cta'] }}</span>
                         </div>
 
                         {{-- Instagram: acțiuni --}}
@@ -119,7 +119,7 @@
                     <div class="w-full {{ $funnelWidths[$i] ?? '' }} rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:border-zinc-900 hover:shadow-md sm:p-6">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-center gap-3">
-                                <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                                <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-deep text-white">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $funnelIcons[$i] ?? '' !!}</svg>
                                 </span>
                                 <div>
@@ -162,7 +162,7 @@
                         ])>
                             <span @class([
                                 'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl',
-                                'bg-zinc-900 text-white' => ! $excl,
+                                'bg-deep text-white' => ! $excl,
                                 'bg-zinc-100 text-zinc-500' => $excl,
                             ])>
                                 @if ($excl)
@@ -188,7 +188,7 @@
                     @foreach ($addons as $addon)
                         <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
                             <div class="flex items-center justify-between gap-3">
-                                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-deep text-white">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
                                 </span>
                                 <span class="rounded-full border border-zinc-200 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted">{{ app()->getLocale() === 'ro' ? 'Opțional' : 'Optional' }}</span>

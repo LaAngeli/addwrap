@@ -25,7 +25,7 @@
                         class="group flex flex-col items-center rounded-2xl border border-zinc-200 bg-white p-3 text-center transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:items-start sm:rounded-3xl sm:p-6 sm:text-left"
                     >
                         {{-- Mobil: o singură pictogramă compactă (serviciul complementar) --}}
-                        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105 sm:hidden">
+                        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-deep text-white transition group-hover:scale-105 sm:hidden">
                             <x-service-icon :name="$otherIcon" class="h-5 w-5" />
                         </span>
 
@@ -35,7 +35,7 @@
                                 <x-service-icon :name="$currentIcon" class="h-5 w-5" />
                             </span>
                             <svg class="h-4 w-4 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
-                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-deep text-white transition group-hover:scale-105">
                                 <x-service-icon :name="$otherIcon" class="h-5 w-5" />
                             </span>
                         </div>

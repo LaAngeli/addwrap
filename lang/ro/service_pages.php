@@ -68,7 +68,7 @@ return [
             ['title' => 'Educativ', 'desc' => 'Răspunde la întrebările publicului și construiește autoritate.', 'examples' => ['Ghiduri și sfaturi', 'Răspunsuri la întrebări frecvente', 'Explicații despre servicii']],
             ['title' => 'Încredere', 'desc' => 'Arată rezultate și oameni reali din spatele brandului.', 'examples' => ['Testimoniale', 'Studii de caz', 'Behind the scenes']],
             ['title' => 'Conversie', 'desc' => 'Transformă interesul în acțiune concretă.', 'examples' => ['Oferte', 'Apeluri la acțiune', 'Demonstrații de produs']],
-            ['title' => 'Comunitate', 'desc' => 'Umanizează brandul și creează interacțiune.', 'examples' => ['Întrebări către public', 'Conținut din partea clienților', 'Momente din echipă']],
+            ['title' => 'Comunitate', 'desc' => 'Umanizează brandul și creează interacțiune.', 'examples' => ['Întrebări către public', 'Testimoniale clienți', 'Momente din echipă']],
         ],
         'process_eyebrow' => 'Cum lucrăm',
         'process_title' => 'De la analiză la rezultate',
@@ -124,7 +124,7 @@ return [
         'funnel' => [
             ['stage' => 'Notorietate', 'desc' => 'Ajungem la oameni noi care nu te cunosc încă.', 'tag' => 'Reach & video'],
             ['stage' => 'Considerare', 'desc' => 'Îi educăm și le creăm dorința cu creative bune.', 'tag' => 'Engagement & trafic'],
-            ['stage' => 'Conversie', 'desc' => 'Îi transformăm în clienți cu oferte și remarketing.', 'tag' => 'Conversii & remarketing'],
+            ['stage' => 'Conversie', 'desc' => 'Îi transformăm în clienți cu campanii atractive și remarketing.', 'tag' => 'Conversii & remarketing'],
         ],
         'addons_title' => 'Add-on-uri & extra',
         'note_title' => 'Important de știut',

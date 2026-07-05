@@ -14,18 +14,18 @@
 
     // Fallback dacă nu există imagine: gradient monocrom + monogramă
     $gradients = [
-        'seo' => 'from-zinc-900 to-zinc-700',
-        'ads' => 'from-zinc-800 to-zinc-600',
+        'seo' => 'from-deep to-deep-2',
+        'ads' => 'from-zinc-800 to-deep-2',
         'content' => 'from-zinc-700 to-zinc-900',
-        'branding' => 'from-zinc-900 to-zinc-600',
-        'web' => 'from-zinc-800 to-zinc-950',
-        'strategy' => 'from-zinc-600 to-zinc-800',
+        'branding' => 'from-deep to-deep-2',
+        'web' => 'from-zinc-800 to-deep',
+        'strategy' => 'from-zinc-600 to-deep-2',
     ];
-    $grad = $gradients[$cat] ?? 'from-zinc-900 to-zinc-700';
+    $grad = $gradients[$cat] ?? 'from-deep to-deep-2';
     $mono = mb_strtoupper(mb_substr($c['title'] ?? 'A', 0, 1));
 @endphp
 
-<div {{ $attributes->merge(['class' => 'relative w-full overflow-hidden rounded-2xl bg-zinc-900 '.($tall ? 'aspect-[16/10]' : 'aspect-[16/9]')]) }}>
+<div {{ $attributes->merge(['class' => 'relative w-full overflow-hidden rounded-2xl bg-deep '.($tall ? 'aspect-[16/10]' : 'aspect-[16/9]')]) }}>
     @if ($hasImg)
         <img src="{{ asset($img) }}" alt="{{ $c['title'] ?? '' }}" loading="lazy" decoding="async" class="h-full w-full object-cover" />
     @else
@@ -34,5 +34,5 @@
             <span class="absolute inset-0 flex items-center justify-center text-7xl font-black text-white/15 sm:text-8xl">{{ $mono }}</span>
         </div>
     @endif
-    <span class="absolute left-4 top-4 rounded-full bg-black/40 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur">{{ __('blog.categories.'.$cat) }}</span>
+    <span class="absolute left-4 top-4 rounded-full bg-deep/40 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur">{{ __('blog.categories.'.$cat) }}</span>
 </div>

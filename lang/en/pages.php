@@ -176,7 +176,7 @@ return [
     'portfolio' => [
         'hero_eyebrow' => 'Portfolio',
         'hero_title' => 'Projects and results',
-        'hero_subtitle' => 'A selection of projects we have worked on and the impact generated.',
+        'hero_subtitle' => 'A selection of projects we have worked on and the impact they generated with us.',
         'hero_points' => ['Real results', 'Multiple fields', 'Case studies'],
         'empty_state' => 'Case studies will be added soon. In the meantime, let us discuss your project.',
     ],
@@ -233,6 +233,9 @@ return [
         'hero_title' => 'Clear pricing, no surprises',
         'hero_subtitle' => 'Full price list for addWrap services. All prices exclude VAT (21% rate).',
         'hero_calc_title' => 'Estimate your subscription',
+        // Local label for THIS hero mini-calculator only (does not touch
+        // services.items.web-development.name, used everywhere else).
+        'hero_calc_web_dev_label' => 'Website Maintenance',
         'hero_calc_hint' => 'Tick the services you want',
         'hero_calc_total' => 'Estimated total',
         'hero_calc_vat' => '+ 21% VAT',
@@ -250,8 +253,6 @@ return [
                 ['service' => 'Google Ads — management', 'price' => '€400'],
                 ['service' => 'Meta Ads — management', 'price' => '€400'],
                 ['service' => 'SEO / AEO / GEO (standalone)', 'price' => 'from €300'],
-                ['service' => 'Google Ads add-on (website client)', 'price' => '+ €150–200'],
-                ['service' => 'Meta Ads add-on (website client)', 'price' => '+ €50'],
             ]],
             ['title' => 'Content strategy (yearly)', 'rows' => [
                 ['service' => '8 scenarios / month', 'price' => '€3,000'],
@@ -261,8 +262,10 @@ return [
                 ['service' => 'Presentation site (build)', 'price' => 'from €400'],
                 ['service' => 'Complex projects (eCommerce, SaaS)', 'price' => 'on request'],
                 ['service' => 'Brandbook — complete package', 'price' => '€3,000'],
-                ['service' => 'Google Analytics setup', 'price' => '€150'],
+                ['service' => 'Google Analytics + GTM setup', 'price' => '€150'],
                 ['service' => 'Online banner creation', 'price' => '€50'],
+                ['service' => 'Google Ads add-on (website client)', 'price' => '+ €50'],
+                ['service' => 'Meta Ads add-on (website client)', 'price' => '+ €50'],
             ]],
             ['title' => 'On request', 'rows' => [
                 ['service' => 'Video shooting / editing', 'price' => '€50/hour'],

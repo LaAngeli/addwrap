@@ -22,7 +22,7 @@
                 </div>
 
                 @if (! empty($svc['price']))
-                    <div data-animate="scale-in" class="flex flex-col justify-center rounded-2xl bg-zinc-900 p-6 text-white">
+                    <div data-animate="scale-in" class="flex flex-col justify-center rounded-2xl bg-deep p-6 text-white">
                         <span class="text-4xl font-bold tracking-tight">{{ $svc['price']['amount'] }}</span>
                         @if (! empty($svc['price']['frequency']))
                             <span class="mt-1 text-sm text-zinc-400">{{ $svc['price']['frequency'] }} · {{ $svc['price']['vat'] ?? '' }}</span>
@@ -64,7 +64,7 @@
                             'border-zinc-200' => ! ($plan['featured'] ?? false),
                         ])>
                             @if (! empty($plan['badge']))
-                                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-zinc-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">{{ $plan['badge'] }}</span>
+                                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-deep px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">{{ $plan['badge'] }}</span>
                             @endif
                             <h3 class="text-lg font-semibold text-ink">{{ $plan['name'] }}</h3>
                             <p class="mt-4 text-3xl font-bold tracking-tight text-ink">{{ $plan['volume'] }}</p>
@@ -75,7 +75,7 @@
                             @endif
                             <a href="{{ Localization::route('contact') }}" @class([
                                 'mt-6 block rounded-lg px-5 py-2.5 text-center text-sm font-semibold transition',
-                                'bg-zinc-900 text-white hover:bg-black' => $plan['featured'] ?? false,
+                                'bg-deep text-white hover:bg-deep' => $plan['featured'] ?? false,
                                 'border border-zinc-300 text-ink hover:bg-zinc-50' => ! ($plan['featured'] ?? false),
                             ])>{{ __('services.show.price_cta') }}</a>
                         </div>
@@ -97,7 +97,7 @@
                             <ul class="mt-4 space-y-2.5">
                                 @foreach ($module['items'] as $item)
                                     <li class="flex items-start gap-3 text-sm text-zinc-700">
-                                        <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
+                                        <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-deep text-white">
                                             <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                         </span>
                                         {{ $item }}
@@ -119,7 +119,7 @@
                 <ul class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     @foreach ($svc['features'] as $feature)
                         <li class="flex items-start gap-3 rounded-xl border border-zinc-200 p-4 text-sm text-zinc-700">
-                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
+                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-deep text-white">
                                 <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                             </span>
                             {{ $feature }}

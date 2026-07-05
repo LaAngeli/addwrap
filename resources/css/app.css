@@ -34,9 +34,18 @@
     --color-orange-soft: #fef4ec;
     --color-orange-deep: #a34700;
 
-    --color-ink: #09090b;
-    --color-muted: #71717a;
-    --color-paper: #fafaf9;
+    /*
+    | Fundal teal desaturat (brandbook 2026). `paper` = baza deschisă (teal
+    | subton, în loc de alb rece); `deep`/`deep-2` = suprafețele închise (teal
+    | profund în loc de negru, gradient deep→deep-2). Portocaliul rămâne singurul
+    | accent cromatic, iar textul rămâne aproape-negru (ink) pentru contrast.
+    */
+    --color-deep: #153f45;
+    --color-deep-2: #1a4c53;
+
+    --color-ink: #0e1b1d;
+    --color-muted: #667778;
+    --color-paper: #eef4f4;
 }
 
 @layer base {
@@ -189,7 +198,7 @@
 }
 
 .isometric-card--dark {
-    background: var(--color-ink);
+    background: var(--color-deep);
     outline-color: rgb(255 255 255 / 0.08);
 }
 

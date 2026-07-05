@@ -10,7 +10,7 @@
                 {{ $title ?? __('messages.nav.faq') }}
             </h2>
 
-            <div class="mt-8 divide-y divide-zinc-200 border-t border-zinc-200" x-data="{ open: 0 }">
+            <div class="mt-8 divide-y divide-zinc-200 border-t border-zinc-200" x-data="{ open: null }">
                 @foreach ($faq as $i => $item)
                     <div class="py-2" wire:key="svc-faq-{{ $i }}">
                         <button

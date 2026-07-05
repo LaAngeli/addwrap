@@ -176,7 +176,7 @@ return [
     'portfolio' => [
         'hero_eyebrow' => 'Portofoliu',
         'hero_title' => 'Proiecte și rezultate',
-        'hero_subtitle' => 'O selecție de proiecte la care am lucrat și impactul generat.',
+        'hero_subtitle' => 'O selecție de proiecte la care am lucrat și ce impact au generat cu noi.',
         'hero_points' => ['Rezultate reale', 'Mai multe domenii', 'Studii de caz'],
         'empty_state' => 'Studiile de caz vor fi adăugate în curând. Între timp, hai să discutăm despre proiectul tău.',
     ],
@@ -233,6 +233,9 @@ return [
         'hero_title' => 'Prețuri clare, fără surprize',
         'hero_subtitle' => 'Listă completă de prețuri pentru serviciile addWrap. Toate prețurile sunt fără TVA (cota 21%).',
         'hero_calc_title' => 'Estimează-ți abonamentul',
+        // Etichetă locală DOAR pentru acest mini-calculator din hero (nu atinge
+        // services.items.web-development.name, folosit peste tot altundeva).
+        'hero_calc_web_dev_label' => 'Mentenanță Website',
         'hero_calc_hint' => 'Bifează serviciile dorite',
         'hero_calc_total' => 'Total estimativ',
         'hero_calc_vat' => '+ TVA 21%',
@@ -250,8 +253,6 @@ return [
                 ['service' => 'Google Ads — management', 'price' => '400 €'],
                 ['service' => 'Meta Ads — management', 'price' => '400 €'],
                 ['service' => 'SEO / AEO / GEO (standalone)', 'price' => 'de la 300 €'],
-                ['service' => 'Google Ads add-on (client cu site)', 'price' => '+ 150–200 €'],
-                ['service' => 'Meta Ads add-on (client cu site)', 'price' => '+ 50 €'],
             ]],
             ['title' => 'Strategie de conținut (anual)', 'rows' => [
                 ['service' => '8 scenarii / lună', 'price' => '3.000 €'],
@@ -261,8 +262,10 @@ return [
                 ['service' => 'Site de prezentare (creare)', 'price' => 'de la 400 €'],
                 ['service' => 'Proiecte complexe (eCommerce, SaaS)', 'price' => 'preț la cerere'],
                 ['service' => 'Brandbook — pachet complet', 'price' => '3.000 €'],
-                ['service' => 'Setare Google Analytics', 'price' => '150 €'],
+                ['service' => 'Setare Google Analytics + GTM', 'price' => '150 €'],
                 ['service' => 'Creare banner online', 'price' => '50 €'],
+                ['service' => 'Google Ads add-on (client cu site)', 'price' => '+ 50 €'],
+                ['service' => 'Meta Ads add-on (client cu site)', 'price' => '+ 50 €'],
             ]],
             ['title' => 'La cerere', 'rows' => [
                 ['service' => 'Filmare / editare video', 'price' => '50 €/oră'],
