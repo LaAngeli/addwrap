@@ -113,7 +113,7 @@ return [
                 'vat' => '+ 21% VAT',
                 'frequency' => '/ month',
             ],
-            'features_title' => 'What we include',
+            'features_title' => 'What\'s included',
             'features' => [
                 'Setup, optimization & reporting',
                 'Regardless of the number of campaigns or client budget',
@@ -180,7 +180,7 @@ return [
                 'title' => 'Part of the Website + SEO package',
                 'text' => 'SEO / GEO / AEO optimization is included in the monthly maintenance (from €400/month + 21% VAT), with no separate setup cost.',
             ],
-            'features_title' => 'What we include',
+            'features_title' => 'What\'s included',
             'features' => [
                 'Technical SEO audit & competitive analysis',
                 'On-page SEO implementation',

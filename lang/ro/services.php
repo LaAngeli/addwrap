@@ -113,7 +113,7 @@ return [
                 'vat' => '+ TVA 21%',
                 'frequency' => '/ lună',
             ],
-            'features_title' => 'Ce includem',
+            'features_title' => 'Ce include',
             'features' => [
                 'Setare, optimizare & raportare',
                 'Indiferent de numărul de campanii sau bugetul clientului',
@@ -180,7 +180,7 @@ return [
                 'title' => 'Parte din pachetul Website + SEO',
                 'text' => 'Optimizarea SEO / GEO / AEO este inclusă în mentenanța lunară (de la 400 €/lună + TVA 21%), fără cost separat de start.',
             ],
-            'features_title' => 'Ce includem',
+            'features_title' => 'Ce include',
             'features' => [
                 'Audit SEO tehnic & analiză competitivă',
                 'Implementare SEO On-Page',
