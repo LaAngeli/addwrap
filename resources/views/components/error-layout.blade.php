@@ -25,7 +25,7 @@
 @endphp
 
 {{-- Hero centrat, înălțime generoasă --}}
-<section class="relative flex min-h-[62vh] items-center overflow-hidden bg-white sm:min-h-[68vh]">
+<section class="relative flex min-h-[62vh] items-center overflow-hidden bg-paper sm:min-h-[68vh]">
     <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_62%)]"></div>
     <div class="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-zinc-100 blur-3xl sm:h-96 sm:w-96"></div>
 

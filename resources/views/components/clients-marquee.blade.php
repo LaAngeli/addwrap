@@ -25,7 +25,7 @@
     ];
 @endphp
 
-<section class="border-y border-zinc-200 bg-white py-12 lg:py-14">
+<section class="border-y border-zinc-200 bg-paper py-12 lg:py-14">
     @if ($title)
         <p class="mb-8 text-center text-sm font-semibold uppercase tracking-wider text-muted">{{ $title }}</p>
     @endif

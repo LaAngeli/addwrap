@@ -35,17 +35,19 @@
     --color-orange-deep: #a34700;
 
     /*
-    | Fundal teal desaturat (brandbook 2026). `paper` = baza deschisă (teal
-    | subton, în loc de alb rece); `deep`/`deep-2` = suprafețele închise (teal
-    | profund în loc de negru, gradient deep→deep-2). Portocaliul rămâne singurul
-    | accent cromatic, iar textul rămâne aproape-negru (ink) pentru contrast.
+    | Teal de brand (2026) — DOAR pentru fundaluri/secțiuni/grafică (NU butoane/iconițe).
+    | `teal` = viu (secțiuni-ancoră, glow, grafică); `teal-deep` = capăt de gradient
+    | și text alb pe teal; `teal-ink` = teal închis pentru benzile/panourile întunecate
+    | (CTA etc.) unde portocaliul rămâne lizibil.
     */
-    --color-deep: #153f45;
-    --color-deep-2: #1a4c53;
+    --color-teal: #008f9f;
+    --color-teal-deep: #00707c;
+    --color-teal-ink: #06373f;
 
-    --color-ink: #0e1b1d;
-    --color-muted: #667778;
-    --color-paper: #eef4f4;
+    --color-ink: #09090b;
+    --color-muted: #71717a;
+    /* Pânza site-ului: tentă teal fină în loc de alb pur (fundalul nu mai pare gol). */
+    --color-paper: #eef6f6;
 }
 
 @layer base {
@@ -198,7 +200,7 @@
 }
 
 .isometric-card--dark {
-    background: var(--color-deep);
+    background: var(--color-teal-ink);
     outline-color: rgb(255 255 255 / 0.08);
 }
 

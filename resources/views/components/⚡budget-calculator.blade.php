@@ -79,7 +79,7 @@ new class extends Component
                     <label
                         wire:key="calc-{{ $key }}"
                         class="cursor-pointer select-none rounded-full border px-4 py-2 text-sm font-medium transition"
-                        :class="$wire.selected.includes('{{ $key }}') ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'"
+                        :class="$wire.selected.includes('{{ $key }}') ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'"
                     >
                         <input type="checkbox" wire:model.live="selected" value="{{ $key }}" class="sr-only">
                         {{ __('services.items.'.$key.'.name') }}
@@ -94,7 +94,7 @@ new class extends Component
                     <label
                         wire:key="months-{{ $option }}"
                         class="cursor-pointer select-none rounded-xl border px-3 py-2 text-center text-sm font-medium transition"
-                        :class="$wire.months === {{ $option }} ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'"
+                        :class="$wire.months === {{ $option }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'"
                     >
                         <input type="radio" wire:model.live="months" value="{{ $option }}" class="sr-only">
                         {{ $option }} {{ __('calculator.months_unit') }}
@@ -104,7 +104,7 @@ new class extends Component
         </div>
 
         {{-- Rezultat --}}
-        <div class="flex flex-col justify-center bg-deep p-6 text-white sm:p-8">
+        <div class="flex flex-col justify-center bg-zinc-900 p-6 text-white sm:p-8">
             @if ($this->estimate['empty'])
                 <p class="text-zinc-400">{{ __('calculator.empty_state') }}</p>
             @else

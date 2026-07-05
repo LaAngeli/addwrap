@@ -9,7 +9,7 @@
 @section('content')
 
     {{-- Hero — Split + vizual servicii --}}
-    <section class="relative overflow-hidden border-b border-zinc-200 bg-white">
+    <section class="relative overflow-hidden border-b border-zinc-200 bg-paper">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
         <div class="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-zinc-100 blur-3xl"></div>
 
@@ -59,7 +59,7 @@
                                 <button
                                     type="button"
                                     @click="sel = '{{ $key }}'"
-                                    :class="sel === '{{ $key }}' ? 'border-zinc-900 bg-deep text-white shadow-md' : 'border-zinc-200 bg-white text-zinc-800 hover:-translate-y-0.5 hover:border-zinc-900 hover:shadow-md'"
+                                    :class="sel === '{{ $key }}' ? 'border-zinc-900 bg-zinc-900 text-white shadow-md' : 'border-zinc-200 bg-white text-zinc-800 hover:-translate-y-0.5 hover:border-zinc-900 hover:shadow-md'"
                                     class="flex h-12 w-12 items-center justify-center rounded-2xl border shadow-sm transition sm:h-14 sm:w-14"
                                     title="{{ __('services.items.'.$key.'.name') }}"
                                     aria-label="{{ __('services.items.'.$key.'.name') }}"
@@ -75,7 +75,7 @@
                                 type="button"
                                 @click="sel = 'aw'"
                                 :class="sel === 'aw' ? 'ring-2 ring-zinc-900 ring-offset-2' : ''"
-                                class="flex h-16 w-16 items-center justify-center rounded-full bg-deep text-white shadow-xl transition sm:h-20 sm:w-20"
+                                class="flex h-16 w-16 items-center justify-center rounded-full bg-zinc-900 text-white shadow-xl transition sm:h-20 sm:w-20"
                                 aria-label="{{ config('site.company.name') }}"
                             >
                                 {{-- Glyph „AW" alb pe hub negru --}}
@@ -135,7 +135,7 @@
     </section>
 
     {{-- Explorer interactiv de servicii --}}
-    <section class="bg-white py-20 lg:py-28">
+    <section class="bg-paper py-20 lg:py-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('services.index.explorer_eyebrow') }}</p>
@@ -151,7 +151,7 @@
                         <button
                             type="button"
                             @click="active = '{{ $key }}'"
-                            :class="active === '{{ $key }}' ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-200 text-zinc-700 hover:border-zinc-400'"
+                            :class="active === '{{ $key }}' ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-700 hover:border-zinc-400'"
                             class="flex shrink-0 items-center gap-3 rounded-2xl border px-4 py-3 text-left transition lg:w-full"
                         >
                             <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
@@ -194,7 +194,7 @@
                             class="rounded-3xl border border-zinc-200 p-6 sm:p-8 lg:p-10"
                         >
                             <div class="flex items-center gap-4">
-                                <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-deep text-white">
+                                <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
                                     <x-service-icon :name="$service['icon'] ?? 'simple'" class="h-6 w-6" />
                                 </span>
                                 <div>
@@ -209,7 +209,7 @@
                                 <ul class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                                     @foreach ($highlights as $h)
                                         <li class="flex items-start gap-3 text-sm text-zinc-700">
-                                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-deep text-white">
+                                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
                                                 <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                             </span>
                                             {{ $h }}
@@ -231,7 +231,7 @@
                                 @endif
 
                                 <div class="flex flex-col gap-3 sm:flex-row">
-                                    <a href="{{ Localization::serviceUrl($key) }}" class="rounded-lg bg-deep px-5 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-deep">{{ __('services.index.view_service') }}</a>
+                                    <a href="{{ Localization::serviceUrl($key) }}" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-zinc-900">{{ __('services.index.view_service') }}</a>
                                     <a href="{{ Localization::route('contact') }}" class="rounded-lg border border-zinc-300 px-5 py-2.5 text-center text-sm font-semibold text-ink transition hover:bg-zinc-50">{{ __('services.show.price_cta') }}</a>
                                 </div>
                             </div>
@@ -257,7 +257,7 @@
     </section>
 
     {{-- Proces --}}
-    <section class="bg-white py-20 lg:py-24">
+    <section class="bg-paper py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ __('pages.home.process_eyebrow') }}</p>

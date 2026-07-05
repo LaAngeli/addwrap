@@ -18,7 +18,7 @@
 
 <x-page-hero :title="__('legal.'.$group.'.title')" />
 
-<section class="bg-white py-16 lg:py-20">
+<section class="bg-paper py-16 lg:py-20">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <p class="text-sm text-muted">{{ __('legal.updated') }}: {{ date('d.m.Y') }}</p>
 

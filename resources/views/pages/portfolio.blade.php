@@ -8,7 +8,7 @@
 @section('content')
 
     {{-- Hero — Split + showcase interactiv cu logo-uri --}}
-    <section class="relative overflow-hidden border-b border-zinc-200 bg-white">
+    <section class="relative overflow-hidden border-b border-zinc-200 bg-paper">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
         <div class="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-zinc-100 blur-3xl"></div>
 
@@ -135,7 +135,7 @@
     <x-clients-marquee :title="__('portfolio.clients_title')" />
 
     {{-- Showcase de lucrări — rânduri mari alternante --}}
-    <section class="bg-white py-20 lg:py-28">
+    <section class="bg-paper py-20 lg:py-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="space-y-20 lg:space-y-32">
                 @foreach ($projects as $slug => $project)

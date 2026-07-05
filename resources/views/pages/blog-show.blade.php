@@ -26,7 +26,7 @@
                 <x-breadcrumbs />
 
                 <div class="mt-6 flex items-center gap-2 text-xs text-muted">
-                    <span class="rounded-full bg-deep px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ __('blog.categories.'.($post['category'] ?? 'general')) }}</span>
+                    <span class="rounded-full bg-zinc-900 px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ __('blog.categories.'.($post['category'] ?? 'general')) }}</span>
                     <span aria-hidden="true">·</span>
                     <span>{{ __('blog.read_time', ['min' => $post['read_minutes'] ?? 5]) }}</span>
                 </div>
@@ -35,7 +35,7 @@
                 <p data-animate="fade-up" class="mt-5 text-lg text-muted">{{ $c['excerpt'] ?? '' }}</p>
 
                 <div class="mt-8 flex items-center gap-3">
-                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-deep text-sm font-bold text-white">{{ mb_substr($post['author'] ?? 'A', 0, 1) }}</span>
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-sm font-bold text-white">{{ mb_substr($post['author'] ?? 'A', 0, 1) }}</span>
                     <div class="text-sm">
                         <p class="font-medium text-ink">{{ $post['author'] ?? '' }}</p>
                         <p class="text-muted">{{ __('blog.published_on') }} {{ Carbon::parse($post['date'] ?? now())->locale(app()->getLocale())->isoFormat('D MMMM YYYY') }}</p>
@@ -63,7 +63,7 @@
                         <ul class="mt-6 space-y-3">
                             @foreach ($block['items'] as $item)
                                 <li class="flex items-start gap-3 text-lg leading-relaxed text-zinc-700">
-                                    <span class="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-deep"></span>
+                                    <span class="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-900"></span>
                                     {{ $item }}
                                 </li>
                             @endforeach
@@ -88,7 +88,7 @@
                     <ol class="mt-6 space-y-5">
                         @foreach ($c['howto_steps'] as $i => $step)
                             <li class="flex items-start gap-4">
-                                <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-deep text-sm font-bold text-white">{{ $i + 1 }}</span>
+                                <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-bold text-white">{{ $i + 1 }}</span>
                                 <div>
                                     <h3 class="text-base font-semibold text-ink">{{ $step['name'] }}</h3>
                                     <p class="mt-1 text-sm leading-relaxed text-muted">{{ $step['text'] }}</p>
@@ -101,7 +101,7 @@
 
             {{-- Card serviciu relevant (internal linking SEO) --}}
             @if ($relatedServiceKey && is_array($relatedService))
-                <div class="mt-14 rounded-2xl border border-zinc-900 bg-deep p-6 text-white sm:p-8">
+                <div class="mt-14 rounded-2xl border border-zinc-900 bg-teal-ink p-6 text-white sm:p-8">
                     <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">{{ __('blog.related_service.eyebrow') }}</p>
                     <h3 class="mt-2 text-xl font-bold text-balance">{{ $relatedService['name'] ?? '' }}</h3>
                     <p class="mt-2 text-sm text-zinc-300">{{ $relatedService['tagline'] ?? __('blog.related_service.text') }}</p>

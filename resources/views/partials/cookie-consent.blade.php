@@ -15,7 +15,7 @@
     <div class="mx-auto max-w-3xl rounded-2xl border border-zinc-200 bg-white p-5 shadow-2xl sm:p-6">
 
         <div class="flex items-start gap-3">
-            <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-deep text-white">
+            <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 2a10 10 0 1010 10 4 4 0 01-5-5 4 4 0 01-5-5zm-3 9h.01M15 14h.01M10 16h.01" /></svg>
             </span>
             <div>
@@ -44,7 +44,7 @@
                     <p class="text-sm text-muted">{{ __('messages.cookie.analytics_desc') }}</p>
                 </div>
                 <button type="button" role="switch" aria-checked="false" :aria-checked="prefs.analytics" aria-label="{{ __('messages.cookie.analytics') }}" @click="prefs.analytics = !prefs.analytics"
-                    class="relative h-6 w-11 shrink-0 rounded-full transition" :class="prefs.analytics ? 'bg-deep' : 'bg-zinc-300'">
+                    class="relative h-6 w-11 shrink-0 rounded-full transition" :class="prefs.analytics ? 'bg-zinc-900' : 'bg-zinc-300'">
                     <span class="absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform" :class="prefs.analytics ? 'translate-x-5' : ''"></span>
                 </button>
             </div>
@@ -55,7 +55,7 @@
                     <p class="text-sm text-muted">{{ __('messages.cookie.marketing_desc') }}</p>
                 </div>
                 <button type="button" role="switch" aria-checked="false" :aria-checked="prefs.marketing" aria-label="{{ __('messages.cookie.marketing') }}" @click="prefs.marketing = !prefs.marketing"
-                    class="relative h-6 w-11 shrink-0 rounded-full transition" :class="prefs.marketing ? 'bg-deep' : 'bg-zinc-300'">
+                    class="relative h-6 w-11 shrink-0 rounded-full transition" :class="prefs.marketing ? 'bg-zinc-900' : 'bg-zinc-300'">
                     <span class="absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform" :class="prefs.marketing ? 'translate-x-5' : ''"></span>
                 </button>
             </div>
@@ -74,7 +74,7 @@
                 <button type="button" x-show="showPrefs" @click="savePrefs()" class="w-full rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-zinc-50 sm:w-auto">
                     {{ __('messages.cookie.save') }}
                 </button>
-                <button type="button" @click="acceptAll()" class="w-full rounded-lg bg-deep px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-deep sm:w-auto">
+                <button type="button" @click="acceptAll()" class="w-full rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-900 sm:w-auto">
                     {{ __('messages.cookie.accept') }}
                 </button>
             </div>

@@ -20,7 +20,7 @@
             <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep text-white">
+                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <x-service-icon :name="$service['icon'] ?? 'document-text'" class="h-6 w-6" />
                         </span>
                     </div>
@@ -60,7 +60,7 @@
                         'sel' => max(0, min(11, (int) now()->month - 1)),
                         'months' => $csMonths,
                         'types' => $page['roadmap_types'],
-                        'barColors' => ['bg-deep', 'bg-orange', 'bg-zinc-600', 'bg-zinc-400'],
+                        'barColors' => ['bg-zinc-900', 'bg-orange', 'bg-zinc-600', 'bg-zinc-400'],
                     ];
                 @endphp
                 <div data-animate="scale-in" x-data="{{ json_encode($csState) }}" class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center">
@@ -72,14 +72,14 @@
                     {{-- Bara celor 12 luni --}}
                     <div class="mt-4 grid grid-cols-6 gap-1.5">
                         <template x-for="(mo, i) in months" :key="i">
-                            <button type="button" @click="sel = i" :class="sel === i ? 'bg-deep text-white shadow-sm' : 'bg-zinc-50 text-zinc-500 hover:bg-zinc-100'" class="rounded-lg py-2 text-center text-[11px] font-semibold transition" x-text="mo.m"></button>
+                            <button type="button" @click="sel = i" :class="sel === i ? 'bg-zinc-900 text-white shadow-sm' : 'bg-zinc-50 text-zinc-500 hover:bg-zinc-100'" class="rounded-lg py-2 text-center text-[11px] font-semibold transition" x-text="mo.m"></button>
                         </template>
                     </div>
 
                     {{-- Luna selectată: temă + mix de conținut --}}
                     <div class="mt-4 rounded-2xl border border-zinc-100 bg-zinc-50 p-4">
                         <div class="flex items-center gap-2">
-                            <span class="inline-flex h-7 items-center rounded-lg bg-deep px-2 text-xs font-bold text-white" x-text="'Luna ' + String(sel + 1).padStart(2, '0')"></span>
+                            <span class="inline-flex h-7 items-center rounded-lg bg-zinc-900 px-2 text-xs font-bold text-white" x-text="'Luna ' + String(sel + 1).padStart(2, '0')"></span>
                             <span class="text-sm font-semibold text-ink" x-text="months[sel].theme"></span>
                         </div>
                         <div class="mt-4 space-y-2.5">
@@ -101,7 +101,7 @@
                             <p class="text-[10px] uppercase tracking-wider text-muted">{{ $page['roadmap_goal_label'] }}</p>
                             <p class="mt-0.5 text-base font-bold text-ink" x-text="months[sel].goal"></p>
                         </div>
-                        <div class="rounded-xl bg-deep p-3">
+                        <div class="rounded-xl bg-zinc-900 p-3">
                             <p class="text-[10px] uppercase tracking-wider text-zinc-400">{{ $page['roadmap_measured_label'] }}</p>
                             <p class="mt-0.5 text-base font-bold text-white"><span class="text-orange" x-text="months[sel].measured + '%'"></span> {{ $page['roadmap_target_suffix'] }}</p>
                         </div>
@@ -123,7 +123,7 @@
 
     {{-- Pachete cu comutator de facturare --}}
     @if (! empty($packages))
-        <section class="bg-white py-12 sm:py-16 lg:py-24" x-data="{ billing: 'annual' }">
+        <section class="bg-paper py-12 sm:py-16 lg:py-24" x-data="{ billing: 'annual' }">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['packages_eyebrow'] }}</p>
@@ -134,8 +134,8 @@
                 {{-- Toggle --}}
                 <div class="mt-6 flex justify-center sm:mt-8">
                     <div class="inline-flex rounded-full border border-zinc-200 bg-white p-1">
-                        <button type="button" @click="billing = 'annual'" :class="billing === 'annual' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-4 py-1.5 text-sm font-semibold transition">{{ $page['billing_annual'] }}</button>
-                        <button type="button" @click="billing = 'monthly'" :class="billing === 'monthly' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-4 py-1.5 text-sm font-semibold transition">{{ $page['billing_monthly'] }}</button>
+                        <button type="button" @click="billing = 'annual'" :class="billing === 'annual' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-4 py-1.5 text-sm font-semibold transition">{{ $page['billing_annual'] }}</button>
+                        <button type="button" @click="billing = 'monthly'" :class="billing === 'monthly' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-4 py-1.5 text-sm font-semibold transition">{{ $page['billing_monthly'] }}</button>
                     </div>
                 </div>
 
@@ -147,7 +147,7 @@
                             'border-zinc-200' => ! ($plan['featured'] ?? false),
                         ])>
                             @if (! empty($plan['badge']))
-                                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-deep px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">{{ $plan['badge'] }}</span>
+                                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-zinc-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">{{ $plan['badge'] }}</span>
                             @endif
                             <h3 class="text-base font-semibold text-ink sm:text-lg">{{ $plan['name'] }}</h3>
                             <p class="mt-3 text-xl font-bold tracking-tight text-ink sm:mt-4 sm:text-2xl">{{ $plan['volume'] }}</p>
@@ -164,7 +164,7 @@
 
                             <a href="{{ Localization::route('contact') }}" @class([
                                 'mt-5 block rounded-lg px-4 py-3 text-center text-sm font-semibold transition sm:mt-8 sm:px-5',
-                                'bg-deep text-white hover:bg-deep' => $plan['featured'] ?? false,
+                                'bg-zinc-900 text-white hover:bg-zinc-900' => $plan['featured'] ?? false,
                                 'border border-zinc-300 text-ink hover:bg-zinc-50' => ! ($plan['featured'] ?? false),
                             ])>{{ $page['price_cta'] }}</a>
                         </div>
@@ -178,7 +178,7 @@
                         <ul class="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
                             @foreach ($features as $feature)
                                 <li class="flex items-start gap-3 text-sm text-zinc-700">
-                                    <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-deep text-white">
+                                    <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
                                         <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                     </span>
                                     {{ $feature }}
@@ -226,7 +226,7 @@
     </section>
 
     {{-- Proces --}}
-    <section class="bg-white py-12 sm:py-16 lg:py-24">
+    <section class="bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['process_eyebrow'] }}</p>

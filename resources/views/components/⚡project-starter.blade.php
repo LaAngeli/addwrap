@@ -174,7 +174,7 @@ new class extends Component
     </div>
 
     <div class="h-1.5 w-full bg-zinc-100">
-        <div class="h-full bg-deep transition-all" style="width: {{ ($step / 4) * 100 }}%"></div>
+        <div class="h-full bg-zinc-900 transition-all" style="width: {{ ($step / 4) * 100 }}%"></div>
     </div>
 
     <div class="p-6 sm:p-8" wire:key="starter-step-{{ $step }}">
@@ -196,7 +196,7 @@ new class extends Component
                 @foreach (\App\Support\Localization::services() as $key => $service)
                     <label wire:key="ss-{{ $key }}"
                         class="cursor-pointer select-none rounded-full border px-4 py-2 text-sm font-medium transition"
-                        :class="$wire.selected.includes('{{ $key }}') ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'">
+                        :class="$wire.selected.includes('{{ $key }}') ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'">
                         <input type="checkbox" wire:model.live="selected" value="{{ $key }}" class="sr-only">
                         {{ __('services.items.'.$key.'.name') }}
                     </label>
@@ -204,7 +204,7 @@ new class extends Component
             </div>
 
             @if (! $this->estimate['empty'])
-                <div class="mt-6 rounded-2xl bg-deep p-5 text-white">
+                <div class="mt-6 rounded-2xl bg-teal-ink p-5 text-white">
                     <p class="text-sm text-zinc-400">{{ __('starter.your_estimate') }}</p>
                     <div class="mt-2 flex flex-wrap gap-6">
                         @if ($this->estimate['monthly'] > 0)
@@ -221,7 +221,7 @@ new class extends Component
                 <button type="button" wire:click="back" class="text-sm font-medium text-muted hover:text-ink">&larr; {{ __('quiz.back') }}</button>
                 <div class="flex items-center gap-3">
                     <span x-show="$wire.selected.length === 0" class="hidden text-xs text-muted sm:inline">{{ __('starter.choose_hint') }}</span>
-                    <button type="button" wire:click="next" :disabled="$wire.selected.length === 0" :class="$wire.selected.length === 0 ? 'opacity-50' : 'hover:bg-deep'" class="rounded-lg bg-deep px-5 py-2.5 text-sm font-semibold text-white transition">{{ __('starter.next') }}</button>
+                    <button type="button" wire:click="next" :disabled="$wire.selected.length === 0" :class="$wire.selected.length === 0 ? 'opacity-50' : 'hover:bg-zinc-900'" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white transition">{{ __('starter.next') }}</button>
                 </div>
             </div>
 
@@ -231,7 +231,7 @@ new class extends Component
                 @foreach (['under_500', '500_1500', '1500_3000', 'over_3000'] as $option)
                     <label wire:key="b-{{ $option }}"
                         class="cursor-pointer select-none rounded-xl border px-4 py-3 text-sm font-medium transition"
-                        :class="$wire.budget === '{{ $option }}' ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'">
+                        :class="$wire.budget === '{{ $option }}' ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'">
                         <input type="radio" wire:model.live="budget" value="{{ $option }}" class="sr-only">
                         {{ __('starter.budgets.'.$option) }}
                     </label>
@@ -243,7 +243,7 @@ new class extends Component
                 @foreach (['asap', 'months', 'flexible'] as $option)
                     <label wire:key="t-{{ $option }}"
                         class="cursor-pointer select-none rounded-xl border px-4 py-3 text-center text-sm font-medium transition"
-                        :class="$wire.timeline === '{{ $option }}' ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'">
+                        :class="$wire.timeline === '{{ $option }}' ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-zinc-700 hover:border-zinc-400'">
                         <input type="radio" wire:model.live="timeline" value="{{ $option }}" class="sr-only">
                         {{ __('starter.timelines.'.$option) }}
                     </label>
@@ -254,7 +254,7 @@ new class extends Component
                 <button type="button" wire:click="back" class="text-sm font-medium text-muted hover:text-ink">&larr; {{ __('quiz.back') }}</button>
                 <div class="flex items-center gap-3">
                     <span x-show="! $wire.budget || ! $wire.timeline" class="hidden text-xs text-muted sm:inline">{{ __('starter.choose_hint') }}</span>
-                    <button type="button" wire:click="next" :disabled="! $wire.budget || ! $wire.timeline" :class="(! $wire.budget || ! $wire.timeline) ? 'opacity-50' : 'hover:bg-deep'" class="rounded-lg bg-deep px-5 py-2.5 text-sm font-semibold text-white transition">{{ __('starter.next') }}</button>
+                    <button type="button" wire:click="next" :disabled="! $wire.budget || ! $wire.timeline" :class="(! $wire.budget || ! $wire.timeline) ? 'opacity-50' : 'hover:bg-zinc-900'" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white transition">{{ __('starter.next') }}</button>
                 </div>
             </div>
 

@@ -20,7 +20,7 @@
                 {{-- A: text --}}
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep text-white">
+                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <x-service-icon :name="$service['icon'] ?? 'palette'" class="h-6 w-6" />
                         </span>
                     </div>
@@ -114,7 +114,7 @@
 
     {{-- Stepper interactiv: ce conține pachetul (modulele I-V) --}}
     @if (! empty($modules))
-        <section class="bg-white py-12 sm:py-16 lg:py-24">
+        <section class="bg-paper py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['modules_eyebrow'] }}</p>
@@ -129,7 +129,7 @@
                             <button
                                 type="button"
                                 @click="active = {{ $i }}"
-                                :class="active === {{ $i }} ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-200 text-zinc-700 hover:border-zinc-400'"
+                                :class="active === {{ $i }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-700 hover:border-zinc-400'"
                                 class="shrink-0 rounded-full border px-4 py-2 text-sm font-semibold transition"
                             >
                                 {{ $module['title'] }}
@@ -152,7 +152,7 @@
                                 <ul class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                                     @foreach ($module['items'] as $item)
                                         <li class="flex items-start gap-3 text-sm text-zinc-700">
-                                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-deep text-white">
+                                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
                                                 <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                             </span>
                                             {{ $item }}
@@ -189,9 +189,9 @@
 
     {{-- Pachet flexibil --}}
     @if (! empty($svc['highlight']))
-        <section class="bg-white py-12 sm:py-16 lg:py-20">
+        <section class="bg-paper py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-3xl bg-deep p-8 text-white sm:p-12">
+                <div class="relative overflow-hidden rounded-3xl bg-teal-ink p-8 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                         <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>

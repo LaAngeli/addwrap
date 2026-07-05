@@ -19,7 +19,7 @@
             <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep text-white">
+                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <x-service-icon :name="$service['icon'] ?? 'code-bracket'" class="h-6 w-6" />
                         </span>
                     </div>
@@ -45,16 +45,16 @@
                     <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                         {{-- Tip de site --}}
                         <div class="inline-flex rounded-full border border-zinc-200 bg-zinc-50 p-1 text-xs font-semibold">
-                            <button type="button" @click="type = 'presentation'" :class="type === 'presentation' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-3 py-1.5 transition">{{ $page['type_presentation'] }}</button>
-                            <button type="button" @click="type = 'ecommerce'" :class="type === 'ecommerce' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-3 py-1.5 transition">{{ $page['type_ecommerce'] }}</button>
-                            <button type="button" @click="type = 'saas'" :class="type === 'saas' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-3 py-1.5 transition">{{ $page['type_saas'] }}</button>
+                            <button type="button" @click="type = 'presentation'" :class="type === 'presentation' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-3 py-1.5 transition">{{ $page['type_presentation'] }}</button>
+                            <button type="button" @click="type = 'ecommerce'" :class="type === 'ecommerce' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-3 py-1.5 transition">{{ $page['type_ecommerce'] }}</button>
+                            <button type="button" @click="type = 'saas'" :class="type === 'saas' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="rounded-full px-3 py-1.5 transition">{{ $page['type_saas'] }}</button>
                         </div>
                         {{-- Device --}}
                         <div class="inline-flex shrink-0 rounded-full border border-zinc-200 bg-zinc-50 p-1">
-                            <button type="button" @click="device = 'desktop'" :aria-label="'{{ $page['device_desktop'] }}'" :class="device === 'desktop' ? 'bg-deep text-white' : 'text-zinc-500 hover:text-ink'" class="rounded-full p-1.5 transition">
+                            <button type="button" @click="device = 'desktop'" :aria-label="'{{ $page['device_desktop'] }}'" :class="device === 'desktop' ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-ink'" class="rounded-full p-1.5 transition">
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 5h18v11H3zM8 20h8M12 16v4" /></svg>
                             </button>
-                            <button type="button" @click="device = 'mobile'" :aria-label="'{{ $page['device_mobile'] }}'" :class="device === 'mobile' ? 'bg-deep text-white' : 'text-zinc-500 hover:text-ink'" class="rounded-full p-1.5 transition">
+                            <button type="button" @click="device = 'mobile'" :aria-label="'{{ $page['device_mobile'] }}'" :class="device === 'mobile' ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-ink'" class="rounded-full p-1.5 transition">
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M7 3h10v18H7zM11 18h2" /></svg>
                             </button>
                         </div>
@@ -78,7 +78,7 @@
                                         <div class="h-2.5 w-16 rounded bg-zinc-300"></div>
                                         <div class="flex gap-1.5"><div class="h-2 w-8 rounded bg-zinc-200"></div><div class="h-2 w-8 rounded bg-zinc-200"></div><div class="h-2 w-8 rounded bg-zinc-200"></div></div>
                                     </div>
-                                    <div class="rounded-lg bg-deep p-4">
+                                    <div class="rounded-lg bg-zinc-900 p-4">
                                         <div class="h-3 w-2/3 rounded bg-white/80"></div>
                                         <div class="mt-2 h-2 w-1/2 rounded bg-white/40"></div>
                                         <div class="mt-3 h-5 w-20 rounded bg-white"></div>
@@ -97,7 +97,7 @@
                                             <div class="rounded-lg border border-zinc-100 p-1.5">
                                                 <div class="h-8 rounded bg-zinc-100"></div>
                                                 <div class="mt-1.5 h-1.5 w-3/4 rounded bg-zinc-200"></div>
-                                                <div class="mt-1 h-1.5 w-1/2 rounded bg-deep"></div>
+                                                <div class="mt-1 h-1.5 w-1/2 rounded bg-zinc-900"></div>
                                             </div>
                                         @endfor
                                     </div>
@@ -107,7 +107,7 @@
                                 <div x-show="type === 'saas'" x-cloak x-transition.opacity class="space-y-3">
                                     <div class="grid grid-cols-3 gap-2">
                                         @for ($k = 0; $k < 3; $k++)
-                                            <div class="rounded-lg bg-zinc-100 p-2"><div class="h-1.5 w-1/2 rounded bg-zinc-300"></div><div class="mt-1.5 h-3 w-2/3 rounded bg-deep"></div></div>
+                                            <div class="rounded-lg bg-zinc-100 p-2"><div class="h-1.5 w-1/2 rounded bg-zinc-300"></div><div class="mt-1.5 h-3 w-2/3 rounded bg-zinc-900"></div></div>
                                         @endfor
                                     </div>
                                     <div class="flex h-16 items-end gap-1.5 rounded-lg border border-zinc-100 p-2">
@@ -116,7 +116,7 @@
                                         <div class="h-[50%] w-full rounded-t bg-zinc-300"></div>
                                         <div class="h-[80%] w-full rounded-t bg-zinc-700"></div>
                                         <div class="h-[60%] w-full rounded-t bg-zinc-400"></div>
-                                        <div class="h-[92%] w-full rounded-t bg-deep"></div>
+                                        <div class="h-[92%] w-full rounded-t bg-zinc-900"></div>
                                     </div>
                                     <div class="space-y-1.5">
                                         @for ($k = 0; $k < 3; $k++)
@@ -142,7 +142,7 @@
 
     {{-- Modele de colaborare / oferte --}}
     @if (! empty($page['offers']))
-        <section class="bg-white py-12 sm:py-16 lg:py-24">
+        <section class="bg-paper py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['offers_eyebrow'] }}</p>
@@ -154,7 +154,7 @@
                     @foreach ($page['offers'] as $offer)
                         <div @class([
                             'flex h-full flex-col rounded-3xl border p-4 transition hover:-translate-y-1 sm:p-6',
-                            'border-zinc-900 bg-deep text-white shadow-xl' => $offer['featured'] ?? false,
+                            'border-zinc-900 bg-teal-ink text-white shadow-xl' => $offer['featured'] ?? false,
                             'border-zinc-200 bg-white hover:border-zinc-900 hover:shadow-lg' => ! ($offer['featured'] ?? false),
                         ])>
                             @if ($offer['featured'] ?? false)
@@ -179,7 +179,7 @@
                             <a href="{{ Localization::route('contact') }}" @class([
                                 'mt-5 rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition sm:mt-6',
                                 'bg-white text-zinc-900 hover:bg-zinc-200' => $offer['featured'] ?? false,
-                                'bg-deep text-white hover:bg-deep' => ! ($offer['featured'] ?? false),
+                                'bg-zinc-900 text-white hover:bg-zinc-900' => ! ($offer['featured'] ?? false),
                             ])>{{ $page['price_cta'] }}</a>
                         </div>
                     @endforeach
@@ -190,9 +190,9 @@
 
     {{-- Avantaj exclusiv + comparație cost --}}
     @if (! empty($svc['highlight']))
-        <section class="bg-white py-12 sm:py-16 lg:py-20">
+        <section class="bg-paper py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-3xl bg-deep p-6 text-white sm:p-12">
+                <div class="relative overflow-hidden rounded-3xl bg-teal-ink p-6 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                     <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>
@@ -249,7 +249,7 @@
                             <button
                                 type="button"
                                 @click="tab = {{ $i }}"
-                                :class="tab === {{ $i }} ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-400'"
+                                :class="tab === {{ $i }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-400'"
                                 class="flex flex-1 items-center gap-2 rounded-2xl border p-3 text-left transition sm:gap-3 sm:p-4"
                             >
                                 <span :class="tab === {{ $i }} ? 'bg-white/10 text-white' : 'bg-zinc-100 text-zinc-900'" class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition sm:h-10 sm:w-10">
@@ -290,7 +290,7 @@
     @endif
 
     {{-- Proces --}}
-    <section class="bg-white py-12 sm:py-16 lg:py-24">
+    <section class="bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['process_eyebrow'] }}</p>

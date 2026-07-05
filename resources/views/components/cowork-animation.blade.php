@@ -9,7 +9,7 @@
     $columns = [8, 12, 14, 6];
 @endphp
 
-<section class="overflow-hidden bg-white py-20 lg:py-28">
+<section class="overflow-hidden bg-paper py-20 lg:py-28">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {{-- Heading deasupra (nu peste plan, ca să rămână mereu lizibil) --}}

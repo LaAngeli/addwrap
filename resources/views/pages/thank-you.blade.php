@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <section class="flex items-center justify-center bg-white py-28 lg:py-36">
+    <section class="flex items-center justify-center bg-paper py-28 lg:py-36">
         <div class="mx-auto max-w-xl px-4 text-center sm:px-6">
             <span class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 text-brand-700">
                 <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>

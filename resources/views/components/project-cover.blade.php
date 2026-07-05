@@ -18,7 +18,7 @@
 | în varianta `tall` (showcase mare + banner detaliu); moderată în grila compactă
 | „alte proiecte", care e prea joasă pentru dublare. Fără hover — cardul e static.
 --}}
-<div {{ $attributes->merge(['class' => 'relative flex w-full flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-deep to-deep-2 '.($tall ? 'aspect-[16/10]' : 'aspect-[16/9]')]) }}>
+<div {{ $attributes->merge(['class' => 'relative flex w-full flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-teal-ink to-teal-deep '.($tall ? 'aspect-[16/10]' : 'aspect-[16/9]')]) }}>
     <div class="bg-dot-grid pointer-events-none absolute inset-0 text-white opacity-[0.06]"></div>
     <div class="pointer-events-none absolute -right-16 -top-20 h-52 w-52 rounded-full bg-orange/20 blur-3xl"></div>
 

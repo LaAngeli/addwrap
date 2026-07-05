@@ -28,7 +28,7 @@
             ];
         })->take(4)->values();
     @endphp
-    <section class="relative overflow-hidden border-b border-zinc-200 bg-white">
+    <section class="relative overflow-hidden border-b border-zinc-200 bg-paper">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
         <div class="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-zinc-100 blur-3xl"></div>
 
@@ -58,7 +58,7 @@
                                 <button
                                     type="button"
                                     @click="sel = {{ $i }}"
-                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'"
+                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'"
                                     class="rounded-full border px-3 py-1.5 text-xs font-semibold transition"
                                 >{{ __('blog.categories.'.$sample['cat']) }}</button>
                             @endforeach
@@ -75,11 +75,11 @@
                                     x-transition:enter-end="opacity-100 translate-y-0"
                                     class="absolute inset-0 rounded-2xl border border-zinc-200 bg-paper p-5"
                                 >
-                                    <span class="inline-block rounded-full bg-deep px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">{{ __('blog.categories.'.$sample['cat']) }}</span>
+                                    <span class="inline-block rounded-full bg-zinc-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">{{ __('blog.categories.'.$sample['cat']) }}</span>
                                     <a href="{{ Localization::route('blog.show', ['slug' => $sample['slug']]) }}" class="mt-4 block text-lg font-bold leading-snug text-ink transition hover:text-zinc-600 text-balance">{{ $sample['title'] }}</a>
                                     <p class="mt-3 text-sm leading-relaxed text-muted line-clamp-3">{{ $sample['excerpt'] }}</p>
                                     <div class="mt-5 flex items-center gap-2 text-xs text-muted">
-                                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-deep">
+                                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900">
                                             <x-brand-glyph class="h-2 w-auto text-white" />
                                         </span>
                                         <span>addWrap</span>
@@ -114,13 +114,13 @@
     {{-- Articol featured --}}
     @if ($featured)
         @php $fc = BlogPosts::content($featured); @endphp
-        <section id="articole" class="scroll-mt-20 bg-white py-16 lg:py-20">
+        <section id="articole" class="scroll-mt-20 bg-paper py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <a href="{{ Localization::route('blog.show', ['slug' => $featuredSlug]) }}" data-animate="fade-up" class="group grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
                     <x-blog-cover :post="$featured" tall class="transition group-hover:opacity-95" />
                     <div>
                         <div class="flex items-center gap-2 text-xs text-muted">
-                            <span class="rounded-full bg-deep px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ __('blog.featured_label') }}</span>
+                            <span class="rounded-full bg-zinc-900 px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ __('blog.featured_label') }}</span>
                             <span class="font-semibold uppercase tracking-wider text-ink">{{ __('blog.categories.'.$featured['category']) }}</span>
                         </div>
                         <h2 class="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ $fc['title'] }}</h2>
@@ -147,11 +147,11 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
             <div class="flex flex-wrap gap-2">
-                <button type="button" @click="cat = 'all'" :class="cat === 'all' ? 'bg-deep text-white' : 'border border-zinc-300 text-zinc-700 hover:border-zinc-400'" class="rounded-full px-4 py-2 text-sm font-medium transition">
+                <button type="button" @click="cat = 'all'" :class="cat === 'all' ? 'bg-zinc-900 text-white' : 'border border-zinc-300 text-zinc-700 hover:border-zinc-400'" class="rounded-full px-4 py-2 text-sm font-medium transition">
                     {{ __('blog.all_label') }}
                 </button>
                 @foreach ($categories as $cat)
-                    <button type="button" @click="cat = '{{ $cat }}'" :class="cat === '{{ $cat }}' ? 'bg-deep text-white' : 'border border-zinc-300 text-zinc-700 hover:border-zinc-400'" class="rounded-full px-4 py-2 text-sm font-medium transition">
+                    <button type="button" @click="cat = '{{ $cat }}'" :class="cat === '{{ $cat }}' ? 'bg-zinc-900 text-white' : 'border border-zinc-300 text-zinc-700 hover:border-zinc-400'" class="rounded-full px-4 py-2 text-sm font-medium transition">
                         {{ __('blog.categories.'.$cat) }}
                     </button>
                 @endforeach

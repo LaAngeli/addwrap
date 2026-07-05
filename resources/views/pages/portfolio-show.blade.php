@@ -19,7 +19,7 @@
             <div class="mt-6 max-w-3xl">
                 <img src="{{ asset('images/partners/'.($project['logo'] ?? $slug).'.png') }}" alt="{{ $project['client'] ?? '' }}" height="240" class="h-9 w-auto max-w-[220px] object-contain sm:h-10" loading="lazy" decoding="async">
                 <div class="mt-5 flex flex-wrap items-center gap-2 text-xs text-muted">
-                    <span class="rounded-full bg-deep px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ $c['tag'] ?? __('portfolio.categories.'.($project['category'] ?? 'general')) }}</span>
+                    <span class="rounded-full bg-zinc-900 px-3 py-1 font-semibold uppercase tracking-wider text-white">{{ $c['tag'] ?? __('portfolio.categories.'.($project['category'] ?? 'general')) }}</span>
                     <span aria-hidden="true">·</span>
                     <span class="font-medium text-ink">{{ $project['client'] ?? '' }}</span>
                 </div>
@@ -36,7 +36,7 @@
 
     {{-- Metrici --}}
     @if (! empty($metrics))
-        <section class="bg-white">
+        <section class="bg-paper">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 gap-8 border-b border-zinc-200 py-12 lg:grid-cols-3 lg:py-16">
                     @foreach ($metrics as $metric)
@@ -51,7 +51,7 @@
     @endif
 
     {{-- Corp + sidebar detalii --}}
-    <section class="bg-white py-14 lg:py-20">
+    <section class="bg-paper py-14 lg:py-20">
         <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-3 lg:gap-16 lg:px-8">
 
             {{-- Corp --}}
@@ -66,7 +66,7 @@
                             <ul class="mt-6 space-y-3">
                                 @foreach ($block['items'] as $item)
                                     <li class="flex items-start gap-3 text-lg leading-relaxed text-zinc-700">
-                                        <span class="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-deep"></span>
+                                        <span class="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-900"></span>
                                         {{ $item }}
                                     </li>
                                 @endforeach

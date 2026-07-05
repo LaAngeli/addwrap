@@ -18,7 +18,7 @@
             <div class="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:grid-cols-2 lg:items-center">
                 <div class="lg:col-start-1 lg:row-start-1">
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep text-white">
+                        <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <x-service-icon :name="$service['icon'] ?? 'chart-bar'" class="h-6 w-6" />
                         </span>
                     </div>
@@ -50,7 +50,7 @@
                     {{-- Comutator --}}
                     <div class="inline-flex w-full rounded-full border border-zinc-200 bg-zinc-50 p-1">
                         @foreach ($page['layers'] as $l)
-                            <button type="button" @click="layer = '{{ $l['key'] }}'" :class="layer === '{{ $l['key'] }}' ? 'bg-deep text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-bold transition">{{ $l['name'] }}</button>
+                            <button type="button" @click="layer = '{{ $l['key'] }}'" :class="layer === '{{ $l['key'] }}' ? 'bg-zinc-900 text-white' : 'text-zinc-600 hover:text-ink'" class="flex-1 rounded-full px-3 py-1.5 text-xs font-bold transition">{{ $l['name'] }}</button>
                         @endforeach
                     </div>
 
@@ -72,7 +72,7 @@
                             <div class="rounded-lg border border-zinc-900 bg-zinc-50 p-3">
                                 <div class="flex items-center justify-between">
                                     <span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-500">{{ $page['serp_you'] }}</span>
-                                    <span class="rounded bg-deep px-1.5 py-0.5 text-[10px] font-bold text-white">#1</span>
+                                    <span class="rounded bg-zinc-900 px-1.5 py-0.5 text-[10px] font-bold text-white">#1</span>
                                 </div>
                                 <div class="mt-2 h-2.5 w-3/4 rounded bg-zinc-300"></div>
                                 <div class="mt-1.5 h-2 w-1/2 rounded bg-zinc-200"></div>
@@ -93,7 +93,7 @@
                             {{ $page['aeo_query'] }}
                         </div>
                         <div class="mt-3 rounded-xl border-2 border-zinc-900 p-4">
-                            <span class="inline-block rounded bg-deep px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">{{ $page['aeo_badge'] }}</span>
+                            <span class="inline-block rounded bg-zinc-900 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">{{ $page['aeo_badge'] }}</span>
                             <p class="mt-2 text-sm leading-relaxed text-zinc-700">{{ $page['aeo_answer'] }}</p>
                             <p class="mt-2 text-[11px] text-muted">— {{ $page['aeo_source'] }}</p>
                         </div>
@@ -111,7 +111,7 @@
                             @foreach ($page['geo_sources'] as $i => $src)
                                 <span @class([
                                     'rounded-full px-2.5 py-1 text-[11px] font-medium',
-                                    'bg-deep text-white' => $i === 0,
+                                    'bg-zinc-900 text-white' => $i === 0,
                                     'border border-zinc-200 text-zinc-600' => $i !== 0,
                                 ])>{{ $src }}</span>
                             @endforeach
@@ -133,7 +133,7 @@
     {{-- Glosar SEO / AEO / GEO — termenii definiți vizibil în HTML
          (oglindesc nodul DefinedTermSet injectat de ServiceController). --}}
     @if (! empty($svc['definitions']))
-        <section class="border-b border-zinc-200 bg-white py-12 sm:py-16 lg:py-20">
+        <section class="border-b border-zinc-200 bg-paper py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="max-w-2xl">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $svc['glossary_eyebrow'] ?? '' }}</p>
@@ -143,7 +143,7 @@
                 <dl data-animate-group class="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-5">
                     @foreach ($svc['definitions'] as $def)
                         <div class="rounded-2xl border border-zinc-200 bg-paper p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-7">
-                            <dt class="inline-flex items-center justify-center rounded-xl bg-deep px-3 py-1.5 text-sm font-black tracking-tight text-white">{{ $def['term'] }}</dt>
+                            <dt class="inline-flex items-center justify-center rounded-xl bg-zinc-900 px-3 py-1.5 text-sm font-black tracking-tight text-white">{{ $def['term'] }}</dt>
                             <dd class="mt-4 text-sm leading-relaxed text-zinc-700">{{ $def['description'] }}</dd>
                         </div>
                     @endforeach
@@ -154,9 +154,9 @@
 
     {{-- Highlight: inclus în Website + SEO --}}
     @if (! empty($svc['highlight']))
-        <section class="bg-white py-12 sm:py-16 lg:py-20">
+        <section class="bg-paper py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-3xl bg-deep p-6 text-white sm:p-12">
+                <div class="relative overflow-hidden rounded-3xl bg-teal-ink p-6 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                         <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>
@@ -182,7 +182,7 @@
                     @foreach ($page['includes'] as $group)
                         <div class="flex flex-col rounded-3xl border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-8">
                             <div class="flex items-center gap-3">
-                                <span class="inline-flex shrink-0 items-center justify-center rounded-xl bg-deep px-3 py-2 text-sm font-black tracking-tight text-white">{{ $group['abbr'] }}</span>
+                                <span class="inline-flex shrink-0 items-center justify-center rounded-xl bg-zinc-900 px-3 py-2 text-sm font-black tracking-tight text-white">{{ $group['abbr'] }}</span>
                                 <h3 class="text-sm font-semibold leading-tight text-ink">{{ $group['full'] }}</h3>
                             </div>
                             <ul class="mt-5 space-y-2.5 sm:mt-6 sm:space-y-3">
@@ -205,7 +205,7 @@
     {{-- Cum cresc rezultatele în timp (timeline interactiv) --}}
     @if (! empty($page['timeline']))
         @php $tlProgress = array_column($page['timeline'], 'progress'); @endphp
-        <section class="bg-white py-12 sm:py-16 lg:py-24">
+        <section class="bg-paper py-12 sm:py-16 lg:py-24">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
                     <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['timeline_eyebrow'] }}</p>
@@ -220,7 +220,7 @@
                         <div class="relative grid grid-cols-4 gap-2">
                             @foreach ($page['timeline'] as $i => $step)
                                 <button type="button" @click="t = {{ $i }}" class="flex flex-col items-center gap-2 text-center">
-                                    <span :class="t >= {{ $i }} ? 'bg-deep text-white' : 'border border-zinc-300 bg-white text-zinc-400'" class="relative z-10 inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition">{{ $i + 1 }}</span>
+                                    <span :class="t >= {{ $i }} ? 'bg-zinc-900 text-white' : 'border border-zinc-300 bg-white text-zinc-400'" class="relative z-10 inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition">{{ $i + 1 }}</span>
                                     <span :class="t === {{ $i }} ? 'font-semibold text-ink' : 'text-muted'" class="text-xs transition">{{ $step['month'] }}</span>
                                 </button>
                             @endforeach
@@ -229,7 +229,7 @@
 
                     {{-- Bară de progres --}}
                     <div class="mt-8 h-2 w-full overflow-hidden rounded-full bg-zinc-100">
-                        <div class="h-full rounded-full bg-deep transition-all duration-700 ease-out" :style="'width: ' + progress[t] + '%'"></div>
+                        <div class="h-full rounded-full bg-zinc-900 transition-all duration-700 ease-out" :style="'width: ' + progress[t] + '%'"></div>
                     </div>
 
                     {{-- Panou --}}
@@ -254,7 +254,7 @@
     @endif
 
     {{-- Proces --}}
-    <section class="bg-white py-12 sm:py-16 lg:py-24">
+    <section class="bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p data-animate="fade-up" class="text-sm font-semibold uppercase tracking-wider text-muted">{{ $page['process_eyebrow'] }}</p>

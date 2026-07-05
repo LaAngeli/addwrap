@@ -10,7 +10,7 @@
 
     {{-- Hero — Split + chat interactiv --}}
     @php $chat = __('pages.contact.hero_chat'); @endphp
-    <section class="relative overflow-hidden border-b border-zinc-200 bg-white">
+    <section class="relative overflow-hidden border-b border-zinc-200 bg-paper">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
         <div class="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-zinc-100 blur-3xl"></div>
 
@@ -35,12 +35,12 @@
                     <div class="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-xl shadow-zinc-900/5">
                         {{-- Header --}}
                         <div class="flex items-center gap-3 border-b border-zinc-200 bg-zinc-50 px-5 py-4">
-                            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-deep">
+                            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-zinc-900">
                                 <x-brand-glyph class="h-3 w-auto text-white" />
                             </span>
                             <div>
                                 <p class="text-sm font-semibold text-ink">addWrap</p>
-                                <p class="flex items-center gap-1.5 text-xs text-muted"><span class="h-1.5 w-1.5 rounded-full bg-deep"></span>{{ __('pages.contact.response_badge') }}</p>
+                                <p class="flex items-center gap-1.5 text-xs text-muted"><span class="h-1.5 w-1.5 rounded-full bg-zinc-900"></span>{{ __('pages.contact.response_badge') }}</p>
                             </div>
                         </div>
 
@@ -56,7 +56,7 @@
                                     class="absolute inset-0 flex flex-col justify-center gap-3 p-5"
                                 >
                                     <div class="flex justify-end">
-                                        <p class="max-w-[80%] rounded-2xl rounded-br-sm bg-deep px-4 py-2.5 text-sm text-white">{{ $msg['q'] }}</p>
+                                        <p class="max-w-[80%] rounded-2xl rounded-br-sm bg-zinc-900 px-4 py-2.5 text-sm text-white">{{ $msg['q'] }}</p>
                                     </div>
                                     <div class="flex justify-start">
                                         <p class="max-w-[85%] rounded-2xl rounded-bl-sm bg-zinc-100 px-4 py-2.5 text-sm text-zinc-800">{{ $msg['a'] }}</p>
@@ -71,7 +71,7 @@
                                 <button
                                     type="button"
                                     @click="sel = {{ $i }}"
-                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'"
+                                    :class="sel === {{ $i }} ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'"
                                     class="rounded-full border px-3 py-1.5 text-xs font-semibold transition"
                                 >{{ $msg['q'] }}</button>
                             @endforeach
@@ -94,7 +94,7 @@
     </section>
 
     {{-- Date contact + formular --}}
-    <section id="form" class="scroll-mt-20 bg-white py-16 lg:py-24">
+    <section id="form" class="scroll-mt-20 bg-paper py-16 lg:py-24">
         <div class="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-5 lg:gap-16 lg:px-8">
 
             {{-- Panou de contact --}}
@@ -104,7 +104,7 @@
                 <div class="mt-6 space-y-3">
                     {{-- Email --}}
                     <a href="mailto:{{ $company['email'] }}" class="flex items-center gap-4 rounded-2xl border border-zinc-200 p-4 transition hover:border-zinc-400 hover:bg-zinc-50">
-                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-deep text-white">
+                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                         </span>
                         <span>
@@ -115,7 +115,7 @@
 
                     {{-- Telefon --}}
                     <a href="tel:{{ $phoneHref }}" class="flex items-center gap-4 rounded-2xl border border-zinc-200 p-4 transition hover:border-zinc-400 hover:bg-zinc-50">
-                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-deep text-white">
+                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.68l1.2 3.5a1 1 0 01-.5 1.2L8 9.6a12 12 0 006.4 6.4l1.2-1.5a1 1 0 011.2-.5l3.5 1.2a1 1 0 01.68.95V19a2 2 0 01-2 2A16 16 0 013 5z" /></svg>
                         </span>
                         <span>
@@ -126,7 +126,7 @@
 
                     {{-- WhatsApp --}}
                     <a href="https://wa.me/{{ $company['whatsapp'] }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 rounded-2xl border border-zinc-200 p-4 transition hover:border-zinc-400 hover:bg-zinc-50">
-                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-deep text-white">
+                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 00-8.4 15.16L2 22l4.96-1.3A9.9 9.9 0 1012.04 2zm0 1.8a8.1 8.1 0 11-4.13 15.06l-.3-.18-2.94.77.78-2.87-.2-.3A8.1 8.1 0 0112.04 3.8zm4.66 11.49c-.25-.13-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.13-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.42 1.03 2.59.13.17 1.77 2.7 4.3 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z" /></svg>
                         </span>
                         <span>
@@ -152,7 +152,7 @@
                 </div>
 
                 {{-- Alternativă ghidată --}}
-                <div class="relative overflow-hidden mt-8 rounded-2xl bg-deep p-6 text-white">
+                <div class="relative overflow-hidden mt-8 rounded-2xl bg-teal-ink p-6 text-white">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                         <p class="font-semibold">{{ __('pages.contact.guided_title') }}</p>
@@ -217,7 +217,7 @@
                     <h2 class="text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.contact.faq_title') }}</h2>
                     <p class="mt-4 text-lg text-muted">{{ __('pages.contact.faq_subtitle') }}</p>
 
-                    <div class="relative overflow-hidden mt-8 rounded-3xl bg-deep p-6 text-white">
+                    <div class="relative overflow-hidden mt-8 rounded-3xl bg-teal-ink p-6 text-white">
                         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                         <div class="relative">
                         <p class="font-semibold">{{ __('pages.contact.faq_help_title') }}</p>

@@ -19,7 +19,7 @@
         }
         $defaultSel = [];
     @endphp
-    <section class="relative overflow-hidden border-b border-zinc-200 bg-white">
+    <section class="relative overflow-hidden border-b border-zinc-200 bg-paper">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
         <div class="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-zinc-100 blur-3xl"></div>
 
@@ -73,7 +73,7 @@
                                     :aria-pressed="sel['{{ $item['key'] }}'] ? 'true' : 'false'"
                                 >
                                     <span class="flex items-center gap-3">
-                                        <span :class="sel['{{ $item['key'] }}'] ? 'border-zinc-900 bg-deep text-white' : 'border-zinc-300 text-transparent'" class="inline-flex h-5 w-5 items-center justify-center rounded-md border transition">
+                                        <span :class="sel['{{ $item['key'] }}'] ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-transparent'" class="inline-flex h-5 w-5 items-center justify-center rounded-md border transition">
                                             <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                         </span>
                                         <span class="text-sm font-semibold text-ink">{{ $item['name'] }}</span>
@@ -83,7 +83,7 @@
                             @endforeach
                         </div>
 
-                        <div class="mt-5 rounded-2xl bg-deep p-4 text-white">
+                        <div class="mt-5 rounded-2xl bg-zinc-900 p-4 text-white">
                             <div class="flex items-center justify-between gap-3">
                                 <div>
                                     <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">{{ __('pages.pricing.hero_calc_total') }}</p>
@@ -125,7 +125,7 @@
     </section>
 
     {{-- Carduri de preț pe servicii --}}
-    <section class="bg-white py-12 sm:py-12 sm:py-16 lg:py-24">
+    <section class="bg-paper py-12 sm:py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 data-animate="fade-up" class="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ __('pages.pricing.cards_title') }}</h2>
@@ -171,7 +171,7 @@
     </section>
 
     {{-- Lista completă de prețuri — structurată pe tip de plată --}}
-    <section class="bg-white py-12 sm:py-16 lg:py-24">
+    <section class="bg-paper py-12 sm:py-16 lg:py-24">
         <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 data-animate="fade-up" class="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{{ __('pages.pricing.full_list_title') }}</h2>
@@ -182,7 +182,7 @@
                 @foreach (__('pages.pricing.table_groups') as $group)
                     <div class="rounded-2xl border border-zinc-200 p-5 sm:p-8">
                         <div class="flex items-center gap-3">
-                            <span class="inline-block h-2 w-2 rounded-full bg-deep"></span>
+                            <span class="inline-block h-2 w-2 rounded-full bg-zinc-900"></span>
                             <h3 class="text-sm font-semibold uppercase tracking-wider text-ink">{{ $group['title'] }}</h3>
                         </div>
                         <ul class="mt-5 divide-y divide-zinc-100">
