@@ -280,7 +280,8 @@ Aceste reguli se aplică la tot ce se construiește în AddWrap și au prioritat
 - Toate textele, CTA-urile, meta title/description trec prin `__()` cu chei în `lang/ro` și `lang/en`. Orice text nou se adaugă în AMBELE limbi.
 
 ## Design
-- Paletă neutră monocromă: tokeni `--color-brand-*` (în `@theme`) mapați pe griuri/negru, plus `--color-ink`, `--color-muted`, `--color-paper`. CTA-uri = aproape negru. Fără dark mode (site light-only, consecvent).
+- Fundal pe **două tonuri teal** (2026): `--color-paper: #eef6f6` (turcoaz-deschis = pânza dominantă: body, navbar, TOATE secțiunile) + `--color-teal-ink: #06373f` (teal închis pentru benzi/panouri: CTA, panou-semnătură, plan izometric; gradientele de card folosesc și `--color-teal-deep: #00707c`). Teal-ul se folosește **DOAR pe fundaluri/secțiuni/grafică — NICIODATĂ pe butoane sau iconițe**. Fără al 3-lea ton viu (`#008f9f` `--color-teal` există ca token dar NU se aplică pe suprafețe mari).
+- Accent = **portocaliu** `--color-orange: #f26c00` (butoane/CTA-uri). Carduri de conținut = **albe** (ies pe turcoaz). Chip-urile de iconițe = **închise** (`bg-zinc-900`). Text = `--color-ink`. Tokenii `--color-brand-*` (griuri neutre) rămân. Fără dark mode (site light-only, consecvent).
 - Mobile-first, totul responsive. Spațiere cu utilitare `gap`, nu margini între frați.
 - Animații: GSAP + ScrollTrigger via atribute `data-animate` / `data-animate-group`; parallax izometric via Alpine (`coworkAnimation`). Mereu respectă `prefers-reduced-motion` și ascunde efectele grele pe mobil.
 
