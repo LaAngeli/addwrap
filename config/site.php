@@ -252,4 +252,19 @@ return [
         'secret_key' => env('TURNSTILE_SECRET_KEY'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Deploy hook
+    |--------------------------------------------------------------------------
+    | Hostinger nu oferă acces la restart de PHP-FPM/LSAPI prin SSH, iar OPcache-ul
+    | procesului web (separat de CLI-ul folosit la deploy) nu invalidează mereu
+    | fișierele lang/*.php la timp. Ruta /deploy/opcache-clear (routes/web.php)
+    | apelează opcache_reset() dintr-un request web real, gated de acest token.
+    | Dacă tokenul lipsește din .env, ruta răspunde 404 (vezi Route condition).
+    */
+
+    'deploy' => [
+        'opcache_clear_token' => env('DEPLOY_OPCACHE_TOKEN'),
+    ],
+
 ];

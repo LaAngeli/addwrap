@@ -18,6 +18,22 @@ Route::get('robots.txt', [SeoController::class, 'robots'])->name('robots');
 Route::get('llms.txt', [SeoController::class, 'llms'])->name('llms');
 
 /*
+| Hook de deploy: golește OPcache-ul procesului web (vezi config/site.php).
+| 404 dacă tokenul din .env lipsește sau nu se potrivește.
+*/
+Route::get('deploy/opcache-clear/{token}', function (string $token) {
+    $expected = config('site.deploy.opcache_clear_token');
+
+    abort_if(blank($expected) || ! hash_equals($expected, $token), 404);
+
+    if (function_exists('opcache_reset')) {
+        opcache_reset();
+    }
+
+    return response('opcache cleared');
+})->name('deploy.opcache_clear');
+
+/*
 |--------------------------------------------------------------------------
 | Rute web localizate
 |--------------------------------------------------------------------------
