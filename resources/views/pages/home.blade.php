@@ -170,7 +170,7 @@
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-4 lg:grid-cols-3">
 
                 {{-- Card-semnătură (mare, panou închis teal) --}}
-                <div class="relative col-span-2 flex flex-col justify-between overflow-hidden rounded-3xl bg-teal-ink p-6 text-white sm:p-8">
+                <div class="relative col-span-2 flex flex-col justify-between overflow-hidden rounded-3xl bg-teal p-6 text-white sm:p-8">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.15]"></div>
                     <div class="relative">
                         <span class="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
@@ -282,7 +282,7 @@
     </section>
 
     {{-- Statistici — bandă ink cu glow portocaliu --}}
-    <section class="relative overflow-hidden bg-teal-ink py-12 text-white sm:py-16 lg:py-20">
+    <section class="relative overflow-hidden bg-teal py-12 text-white sm:py-16 lg:py-20">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
         <div class="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-orange opacity-20 blur-3xl"></div>
         <div class="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-zinc-600 opacity-25 blur-3xl"></div>

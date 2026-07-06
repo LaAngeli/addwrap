@@ -156,7 +156,7 @@
     @if (! empty($svc['highlight']))
         <section class="bg-paper py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-3xl bg-teal-ink p-6 text-white sm:p-12">
+                <div class="relative overflow-hidden rounded-3xl bg-teal p-6 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                         <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>

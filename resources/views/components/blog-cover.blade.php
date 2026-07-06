@@ -14,14 +14,14 @@
 
     // Fallback dacă nu există imagine: gradient monocrom + monogramă
     $gradients = [
-        'seo' => 'from-teal-ink to-teal-deep',
+        'seo' => 'from-teal to-teal-deep',
         'ads' => 'from-zinc-800 to-teal-deep',
-        'content' => 'from-zinc-700 to-teal-ink',
-        'branding' => 'from-teal-ink to-teal-deep',
+        'content' => 'from-zinc-700 to-teal',
+        'branding' => 'from-teal to-teal-deep',
         'web' => 'from-zinc-800 to-[#04181c]',
         'strategy' => 'from-zinc-600 to-teal-deep',
     ];
-    $grad = $gradients[$cat] ?? 'from-teal-ink to-teal-deep';
+    $grad = $gradients[$cat] ?? 'from-teal to-teal-deep';
     $mono = mb_strtoupper(mb_substr($c['title'] ?? 'A', 0, 1));
 @endphp
 

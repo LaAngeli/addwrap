@@ -154,7 +154,7 @@
                     @foreach ($page['offers'] as $offer)
                         <div @class([
                             'flex h-full flex-col rounded-3xl border p-4 transition hover:-translate-y-1 sm:p-6',
-                            'border-zinc-900 bg-teal-ink text-white shadow-xl' => $offer['featured'] ?? false,
+                            'border-zinc-900 bg-teal text-white shadow-xl' => $offer['featured'] ?? false,
                             'border-zinc-200 bg-white hover:border-zinc-900 hover:shadow-lg' => ! ($offer['featured'] ?? false),
                         ])>
                             @if ($offer['featured'] ?? false)
@@ -192,7 +192,7 @@
     @if (! empty($svc['highlight']))
         <section class="bg-paper py-12 sm:py-16 lg:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-3xl bg-teal-ink p-6 text-white sm:p-12">
+                <div class="relative overflow-hidden rounded-3xl bg-teal p-6 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                     <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>

@@ -9,7 +9,7 @@
     @class([
         'rounded-2xl border p-5 w-full',
         'bg-white shadow-md border-zinc-100' => ! $dark,
-        'bg-teal-ink border-zinc-800 text-white' => $dark,
+        'bg-teal border-zinc-800 text-white' => $dark,
     ])
     style="min-height: 160px;"
 >

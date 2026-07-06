@@ -101,7 +101,7 @@
 
             {{-- Card serviciu relevant (internal linking SEO) --}}
             @if ($relatedServiceKey && is_array($relatedService))
-                <div class="mt-14 rounded-2xl border border-zinc-900 bg-teal-ink p-6 text-white sm:p-8">
+                <div class="mt-14 rounded-2xl border border-zinc-900 bg-teal p-6 text-white sm:p-8">
                     <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">{{ __('blog.related_service.eyebrow') }}</p>
                     <h3 class="mt-2 text-xl font-bold text-balance">{{ $relatedService['name'] ?? '' }}</h3>
                     <p class="mt-2 text-sm text-zinc-300">{{ $relatedService['tagline'] ?? __('blog.related_service.text') }}</p>

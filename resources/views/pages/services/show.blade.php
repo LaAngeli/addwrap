@@ -22,7 +22,7 @@
                 </div>
 
                 @if (! empty($svc['price']))
-                    <div data-animate="scale-in" class="flex flex-col justify-center rounded-2xl bg-teal-ink p-6 text-white">
+                    <div data-animate="scale-in" class="flex flex-col justify-center rounded-2xl bg-teal p-6 text-white">
                         <span class="text-4xl font-bold tracking-tight">{{ $svc['price']['amount'] }}</span>
                         @if (! empty($svc['price']['frequency']))
                             <span class="mt-1 text-sm text-zinc-400">{{ $svc['price']['frequency'] }} · {{ $svc['price']['vat'] ?? '' }}</span>

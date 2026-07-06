@@ -204,7 +204,7 @@ new class extends Component
             </div>
 
             @if (! $this->estimate['empty'])
-                <div class="mt-6 rounded-2xl bg-teal-ink p-5 text-white">
+                <div class="mt-6 rounded-2xl bg-teal p-5 text-white">
                     <p class="text-sm text-zinc-400">{{ __('starter.your_estimate') }}</p>
                     <div class="mt-2 flex flex-wrap gap-6">
                         @if ($this->estimate['monthly'] > 0)

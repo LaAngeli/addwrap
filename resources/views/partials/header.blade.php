@@ -141,7 +141,7 @@
                 {{-- Home --}}
                 <a href="{{ Localization::route('home') }}" @click="mobileOpen = false" @class([
                     'group flex items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold transition',
-                    'bg-teal-ink text-white' => request()->routeIs('*.home'),
+                    'bg-teal text-white' => request()->routeIs('*.home'),
                     'text-ink hover:bg-zinc-50' => ! request()->routeIs('*.home'),
                 ])>
                     {{ __('messages.nav.home') }}
@@ -177,7 +177,7 @@
                                 @php $svcActive = request()->url() === Localization::serviceUrl($key); @endphp
                                 <a href="{{ Localization::serviceUrl($key) }}" @click="mobileOpen = false" @class([
                                     'flex items-center gap-3 rounded-xl px-3 py-2.5 transition',
-                                    'bg-teal-ink text-white' => $svcActive,
+                                    'bg-teal text-white' => $svcActive,
                                     'text-zinc-700 hover:bg-zinc-50' => ! $svcActive,
                                 ])>
                                     <span @class([
@@ -205,7 +205,7 @@
                 @foreach ($mainLinks as $link)
                     <a href="{{ Localization::route($link['route']) }}" @click="mobileOpen = false" @class([
                         'group flex items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold transition',
-                        'bg-teal-ink text-white' => request()->routeIs($link['pattern']),
+                        'bg-teal text-white' => request()->routeIs($link['pattern']),
                         'text-ink hover:bg-zinc-50' => ! request()->routeIs($link['pattern']),
                     ])>
                         {{ $link['label'] }}
@@ -247,7 +247,7 @@
 
                             {{-- Marca centrală --}}
                             <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                                <span class="flex h-14 w-14 items-center justify-center rounded-full bg-teal-ink shadow-lg ring-4 ring-white">
+                                <span class="flex h-14 w-14 items-center justify-center rounded-full bg-teal shadow-lg ring-4 ring-white">
                                     <x-brand-glyph class="h-4 w-auto text-white" />
                                 </span>
                             </div>

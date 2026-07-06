@@ -36,9 +36,10 @@
 
     /*
     | Teal de brand (2026) — DOAR pentru fundaluri/secțiuni/grafică (NU butoane/iconițe).
-    | `teal` = viu (secțiuni-ancoră, glow, grafică); `teal-deep` = capăt de gradient
-    | și text alb pe teal; `teal-ink` = teal închis pentru benzile/panourile întunecate
-    | (CTA etc.) unde portocaliul rămâne lizibil.
+    | `teal` = teal de brand, folosit pe benzile/panourile întunecate (CTA, card-semnătură,
+    | plan izometric) unde portocaliul rămâne lizibil; `teal-deep` = capăt de gradient și
+    | text alb pe teal. `teal-ink` rămâne definit (teal foarte închis) dar neutilizat pe
+    | suprafețe în momentul de față.
     */
     --color-teal: #008f9f;
     --color-teal-deep: #00707c;
@@ -200,7 +201,7 @@
 }
 
 .isometric-card--dark {
-    background: var(--color-teal-ink);
+    background: var(--color-teal);
     outline-color: rgb(255 255 255 / 0.08);
 }
 

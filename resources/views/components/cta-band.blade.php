@@ -5,7 +5,7 @@
     'href' => '#',
 ])
 
-<section class="relative overflow-hidden bg-teal-ink">
+<section class="relative overflow-hidden bg-teal">
     <div class="bg-dot-grid pointer-events-none absolute inset-0 text-white opacity-[0.12]"></div>
 
     {{-- Glow de brand (portocaliu + halo turcoaz) pe fundal teal închis --}}

@@ -152,7 +152,7 @@
                 </div>
 
                 {{-- Alternativă ghidată --}}
-                <div class="relative overflow-hidden mt-8 rounded-2xl bg-teal-ink p-6 text-white">
+                <div class="relative overflow-hidden mt-8 rounded-2xl bg-teal p-6 text-white">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
                         <p class="font-semibold">{{ __('pages.contact.guided_title') }}</p>
@@ -217,7 +217,7 @@
                     <h2 class="text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">{{ __('pages.contact.faq_title') }}</h2>
                     <p class="mt-4 text-lg text-muted">{{ __('pages.contact.faq_subtitle') }}</p>
 
-                    <div class="relative overflow-hidden mt-8 rounded-3xl bg-teal-ink p-6 text-white">
+                    <div class="relative overflow-hidden mt-8 rounded-3xl bg-teal p-6 text-white">
                         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                         <div class="relative">
                         <p class="font-semibold">{{ __('pages.contact.faq_help_title') }}</p>

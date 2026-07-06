@@ -49,7 +49,7 @@
                         </div>
 
                         {{-- Panou preview (se schimbă la clic) --}}
-                        <div class="relative mt-4 min-h-[168px] overflow-hidden rounded-2xl bg-teal-ink p-6 text-white">
+                        <div class="relative mt-4 min-h-[168px] overflow-hidden rounded-2xl bg-teal p-6 text-white">
                             <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                             @foreach ($industries as $i => $ind)
                                 <div
@@ -136,7 +136,7 @@
                     @foreach (__('pages.about.story_steps') as $i => $step)
                         <div @class([
                             'flex gap-4 rounded-2xl p-5 sm:gap-5 sm:p-8',
-                            'bg-teal-ink' => $loop->last,
+                            'bg-teal' => $loop->last,
                             'border border-zinc-200 bg-white' => ! $loop->last,
                         ])>
                             <span @class([
@@ -237,7 +237,7 @@
     </section>
 
     {{-- Statistici --}}
-    <section class="relative overflow-hidden bg-teal-ink py-12 text-white sm:py-16 lg:py-20">
+    <section class="relative overflow-hidden bg-teal py-12 text-white sm:py-16 lg:py-20">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 data-animate="fade-up" class="text-center text-2xl font-bold tracking-tight text-balance sm:text-3xl">{{ __('pages.about.stats_title') }}</h2>
