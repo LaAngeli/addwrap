@@ -261,8 +261,8 @@
             </div>
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6 lg:grid-cols-4">
                 @foreach (__('pages.about.values') as $i => $value)
-                    <div class="rounded-2xl border border-zinc-200 p-4 sm:p-6">
-                        <span class="text-sm font-bold text-zinc-300">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
+                    <div class="group rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
+                        <span class="inline-block text-[21px] font-bold text-orange transition group-hover:scale-105">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                         <h3 class="mt-3 text-lg font-semibold text-ink">{{ $value['title'] }}</h3>
                         <p class="mt-2 text-sm leading-relaxed text-muted">{{ $value['text'] }}</p>
                     </div>

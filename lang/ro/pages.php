@@ -140,10 +140,10 @@ return [
         ],
         'story_rail_label' => 'Parcursul nostru',
         'story_milestones' => [
-            ['year' => '2019', 'title' => 'Începutul', 'text' => 'Am pornit cu primele proiecte de brand și conținut, lucrate cap-coadă. Fără promisiuni goale — doar muncă atentă și rezultate pe care le puteam măsura.'],
-            ['year' => '2021', 'title' => 'Creștem echipa', 'text' => 'Am adăugat performance marketing și oameni dedicați pe fiecare canal. Așa am putut prelua campanii mai complexe, fără să pierdem grija pentru fiecare client.'],
-            ['year' => '2023', 'title' => 'Servicii integrate', 'text' => 'Am unit brandul, conținutul, reclamele și web-ul sub aceeași strategie. Un singur partener, un singur fir roșu — fără mesaje pierdute între furnizori.'],
-            ['year' => '2025', 'title' => 'Astăzi', 'text' => 'Suntem partener pe termen lung pentru zeci de branduri care vor creștere reală. Punem strategia înaintea tacticilor și măsurăm tot ce contează.'],
+            ['year' => '2020', 'title' => 'Începutul', 'text' => 'Am pornit cu primele proiecte de brand și conținut, lucrate cap-coadă. Fără promisiuni goale — doar muncă atentă și rezultate pe care le puteam măsura.'],
+            ['year' => '2022', 'title' => 'Creștem echipa', 'text' => 'Am adăugat performance marketing și oameni dedicați pe fiecare canal. Așa am putut prelua campanii mai complexe, fără să pierdem grija pentru fiecare client.'],
+            ['year' => '2024', 'title' => 'Servicii integrate', 'text' => 'Am unit brandul, conținutul, reclamele și web-ul sub aceeași strategie. Un singur partener, un singur fir roșu — fără mesaje pierdute între furnizori.'],
+            ['year' => '2026', 'title' => 'Astăzi', 'text' => 'Suntem partener pe termen lung pentru zeci de branduri care vor creștere reală. Punem strategia înaintea tacticilor și măsurăm tot ce contează.'],
         ],
 
         'stats_title' => 'addWrap pe scurt',
@@ -241,6 +241,8 @@ return [
         'hero_calc_withvat' => 'cu TVA 21%',
         'hero_calc_onetime' => 'o singură dată',
         'hero_calc_setup_label' => 'Cost inițial',
+        'hero_calc_annual' => '12 luni, facturat anual',
+        'hero_calc_monthly_fee' => 'Taxă lunară',
         'hero_more' => 'Calculator complet',
         'table_headers' => ['service' => 'Serviciu', 'price' => 'Preț', 'frequency' => 'Frecvență'],
         'full_list_title' => 'Lista completă de prețuri',

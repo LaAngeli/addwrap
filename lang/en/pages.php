@@ -140,10 +140,10 @@ return [
         ],
         'story_rail_label' => 'Our journey',
         'story_milestones' => [
-            ['year' => '2019', 'title' => 'The beginning', 'text' => 'We started with our first brand and content projects, handled end to end. No empty promises — just careful work and results we could measure.'],
-            ['year' => '2021', 'title' => 'Growing the team', 'text' => 'We added performance marketing and specialists for each channel. That let us take on more complex campaigns without losing our care for every client.'],
-            ['year' => '2023', 'title' => 'Integrated services', 'text' => 'We brought brand, content, ads and web under one strategy. One partner, one thread — no messages lost between vendors.'],
-            ['year' => '2025', 'title' => 'Today', 'text' => 'We became a long-term partner for dozens of brands that want real growth. We put strategy before tactics and measure everything that matters.'],
+            ['year' => '2020', 'title' => 'The beginning', 'text' => 'We started with our first brand and content projects, handled end to end. No empty promises — just careful work and results we could measure.'],
+            ['year' => '2022', 'title' => 'Growing the team', 'text' => 'We added performance marketing and specialists for each channel. That let us take on more complex campaigns without losing our care for every client.'],
+            ['year' => '2024', 'title' => 'Integrated services', 'text' => 'We brought brand, content, ads and web under one strategy. One partner, one thread — no messages lost between vendors.'],
+            ['year' => '2026', 'title' => 'Today', 'text' => 'We became a long-term partner for dozens of brands that want real growth. We put strategy before tactics and measure everything that matters.'],
         ],
 
         'stats_title' => 'addWrap at a glance',
@@ -241,6 +241,8 @@ return [
         'hero_calc_withvat' => 'incl. 21% VAT',
         'hero_calc_onetime' => 'one-time',
         'hero_calc_setup_label' => 'Initial cost',
+        'hero_calc_annual' => '12 months, billed annually',
+        'hero_calc_monthly_fee' => 'Monthly fee',
         'hero_more' => 'Full calculator',
         'table_headers' => ['service' => 'Service', 'price' => 'Price', 'frequency' => 'Frequency'],
         'full_list_title' => 'Full price list',
