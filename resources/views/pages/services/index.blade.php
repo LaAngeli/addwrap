@@ -194,7 +194,7 @@
                             class="rounded-3xl border border-zinc-200 p-6 sm:p-8 lg:p-10"
                         >
                             <div class="flex items-center gap-4">
-                                <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                                <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
                                     <x-service-icon :name="$service['icon'] ?? 'simple'" class="h-6 w-6" />
                                 </span>
                                 <div>
@@ -209,7 +209,7 @@
                                 <ul class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                                     @foreach ($highlights as $h)
                                         <li class="flex items-start gap-3 text-sm text-zinc-700">
-                                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
+                                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal text-white">
                                                 <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                             </span>
                                             {{ $h }}

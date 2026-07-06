@@ -104,7 +104,7 @@
                 <div class="mt-6 space-y-3">
                     {{-- Email --}}
                     <a href="mailto:{{ $company['email'] }}" class="flex items-center gap-4 rounded-2xl border border-zinc-200 p-4 transition hover:border-zinc-400 hover:bg-zinc-50">
-                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                         </span>
                         <span>
@@ -115,7 +115,7 @@
 
                     {{-- Telefon --}}
                     <a href="tel:{{ $phoneHref }}" class="flex items-center gap-4 rounded-2xl border border-zinc-200 p-4 transition hover:border-zinc-400 hover:bg-zinc-50">
-                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.68l1.2 3.5a1 1 0 01-.5 1.2L8 9.6a12 12 0 006.4 6.4l1.2-1.5a1 1 0 011.2-.5l3.5 1.2a1 1 0 01.68.95V19a2 2 0 01-2 2A16 16 0 013 5z" /></svg>
                         </span>
                         <span>
@@ -126,7 +126,7 @@
 
                     {{-- WhatsApp --}}
                     <a href="https://wa.me/{{ $company['whatsapp'] }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 rounded-2xl border border-zinc-200 p-4 transition hover:border-zinc-400 hover:bg-zinc-50">
-                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
                             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 00-8.4 15.16L2 22l4.96-1.3A9.9 9.9 0 1012.04 2zm0 1.8a8.1 8.1 0 11-4.13 15.06l-.3-.18-2.94.77.78-2.87-.2-.3A8.1 8.1 0 0112.04 3.8zm4.66 11.49c-.25-.13-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.13-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.42 1.03 2.59.13.17 1.77 2.7 4.3 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z" /></svg>
                         </span>
                         <span>

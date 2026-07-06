@@ -97,7 +97,7 @@
                             <ul class="mt-4 space-y-2.5">
                                 @foreach ($module['items'] as $item)
                                     <li class="flex items-start gap-3 text-sm text-zinc-700">
-                                        <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
+                                        <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal text-white">
                                             <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                         </span>
                                         {{ $item }}
@@ -119,7 +119,7 @@
                 <ul class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     @foreach ($svc['features'] as $feature)
                         <li class="flex items-start gap-3 rounded-xl border border-zinc-200 p-4 text-sm text-zinc-700">
-                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white">
+                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal text-white">
                                 <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                             </span>
                             {{ $feature }}

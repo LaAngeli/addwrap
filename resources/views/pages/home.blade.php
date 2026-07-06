@@ -108,7 +108,7 @@
 
                     {{-- Card plutitor: optimizare --}}
                     <div class="animate-float absolute -left-4 -bottom-5 hidden items-center gap-2 rounded-xl border border-zinc-200 bg-white px-3 py-2 shadow-lg sm:flex">
-                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900 text-white">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-teal text-white">
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                         </span>
                         <span class="text-xs font-semibold text-ink">{{ $dash['float_opt'] }}</span>
@@ -190,7 +190,7 @@
                 {{-- Carduri item --}}
                 @foreach ($bentoItems as $i => $item)
                     <div class="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
-                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
+                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $itemIcons[$i] ?? '' !!}</svg>
                         </span>
                         <h3 class="mt-4 text-lg font-semibold text-ink sm:mt-5">{{ $item['title'] }}</h3>
@@ -199,7 +199,7 @@
                         @if ($i === 0)
                             <div class="mt-4 flex flex-wrap gap-1.5">
                                 @foreach ($serviceKeys as $key)
-                                    <a href="{{ Localization::serviceUrl($key) }}" class="inline-flex h-7 w-7 items-center justify-center rounded-lg border border-zinc-200 text-zinc-500 transition hover:border-zinc-900 hover:bg-zinc-900 hover:text-white" title="{{ __('services.items.'.$key.'.name') }}" aria-label="{{ __('services.items.'.$key.'.name') }}">
+                                    <a href="{{ Localization::serviceUrl($key) }}" class="inline-flex h-7 w-7 items-center justify-center rounded-lg border border-zinc-200 text-zinc-500 transition hover:border-teal hover:bg-teal hover:text-white" title="{{ __('services.items.'.$key.'.name') }}" aria-label="{{ __('services.items.'.$key.'.name') }}">
                                         <x-service-icon :name="config('site.services.'.$key.'.icon', 'simple')" class="h-3.5 w-3.5" />
                                     </a>
                                 @endforeach
@@ -222,7 +222,7 @@
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6 lg:grid-cols-4">
                 @foreach (__('pages.home.why_items') as $i => $item)
                     <div class="group rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
-                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
+                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 @switch($i)
                                     @case(0) <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 3v16h16M9 14l3-4 3 2 4-6" /> @break

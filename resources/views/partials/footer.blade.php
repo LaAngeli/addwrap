@@ -28,7 +28,7 @@
                             @continue(empty($socialIcons[$network]))
                             <a href="{{ $url }}" @if ($url !== '#') target="_blank" rel="noopener noreferrer" @endif
                                 aria-label="{{ ucfirst($network) }}"
-                                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-600 transition hover:border-zinc-900 hover:bg-zinc-900 hover:text-white">
+                                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-600 transition hover:border-teal hover:bg-teal hover:text-white">
                                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{!! $socialIcons[$network] !!}</svg>
                             </a>
                         @endforeach

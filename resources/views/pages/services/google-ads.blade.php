@@ -123,7 +123,7 @@
                 <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:gap-5">
                     @foreach ($features as $i => $feature)
                         <div class="group flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:flex-row sm:items-start sm:gap-4 sm:p-6">
-                            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
+                            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal text-white transition group-hover:scale-105">
                                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $featureIcons[$i % count($featureIcons)] !!}</svg>
                             </span>
                             <p class="text-sm font-medium leading-relaxed text-ink sm:text-base">{{ $feature }}</p>

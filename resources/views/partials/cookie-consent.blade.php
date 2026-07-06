@@ -15,7 +15,7 @@
     <div class="mx-auto max-w-3xl rounded-2xl border border-zinc-200 bg-white p-5 shadow-2xl sm:p-6">
 
         <div class="flex items-start gap-3">
-            <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+            <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 2a10 10 0 1010 10 4 4 0 01-5-5 4 4 0 01-5-5zm-3 9h.01M15 14h.01M10 16h.01" /></svg>
             </span>
             <div>

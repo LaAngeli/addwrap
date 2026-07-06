@@ -119,7 +119,7 @@
                     <div class="w-full {{ $funnelWidths[$i] ?? '' }} rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition card-hover-neon sm:p-6">
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-center gap-3">
-                                <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                                <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $funnelIcons[$i] ?? '' !!}</svg>
                                 </span>
                                 <div>
@@ -188,7 +188,7 @@
                     @foreach ($addons as $addon)
                         <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
                             <div class="flex items-center justify-between gap-3">
-                                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white">
+                                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal text-white">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" /></svg>
                                 </span>
                                 <span class="rounded-full border border-zinc-200 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted">{{ app()->getLocale() === 'ro' ? 'Opțional' : 'Optional' }}</span>
