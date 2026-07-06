@@ -166,12 +166,14 @@ return [
         // Model dedicat calculatoarelor (mini-calc din hero + budget-calculator).
         // Item-uri ATOMICE, grupate pe tipul de plată, ca lunarul și one-time-ul să
         // nu se amestece. 'from' => true = preț estimativ („de la"); false = fix.
+        // 'addon_price' = preț redus aplicat automat când item-ul e bifat împreună
+        // cu cel puțin un alt serviciu (semnal de „client cu contract activ").
         // Aliniate 1:1 cu lista de prețuri (config table_groups din lang/pages).
         'calculator' => [
             'monthly' => [
                 'content-strategy' => ['price' => 250, 'from' => true],
-                'google-ads' => ['price' => 400, 'from' => false],
-                'meta-ads' => ['price' => 400, 'from' => false],
+                'google-ads' => ['price' => 400, 'from' => false, 'addon_price' => 250],
+                'meta-ads' => ['price' => 400, 'from' => false, 'addon_price' => 250],
                 'seo-aeo-geo' => ['price' => 300, 'from' => true],
                 'web-maintenance' => ['price' => 100, 'from' => true],
             ],

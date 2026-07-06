@@ -254,6 +254,8 @@ return [
                 ['service' => 'Google Ads — management', 'price' => '€400'],
                 ['service' => 'Meta Ads — management', 'price' => '€400'],
                 ['service' => 'SEO / AEO / GEO (standalone)', 'price' => 'from €300'],
+                ['service' => 'Google Ads add-on', 'price' => '+ €250'],
+                ['service' => 'Meta Ads add-on', 'price' => '+ €250'],
             ]],
             ['title' => 'Content strategy (yearly)', 'rows' => [
                 ['service' => '8 scenarios / month', 'price' => '€3,000'],
@@ -265,8 +267,6 @@ return [
                 ['service' => 'Brandbook — complete package', 'price' => '€3,000'],
                 ['service' => 'Google Analytics + GTM setup', 'price' => '€150'],
                 ['service' => 'Online banner creation', 'price' => '€50'],
-                ['service' => 'Google Ads add-on (website client)', 'price' => '+ €50'],
-                ['service' => 'Meta Ads add-on (website client)', 'price' => '+ €50'],
             ]],
             ['title' => 'On request', 'rows' => [
                 ['service' => 'Video shooting / editing', 'price' => '€50/hour'],
@@ -301,7 +301,7 @@ return [
             ['q' => 'Do prices include VAT?', 'a' => 'No, all prices exclude VAT. The applicable rate is 21% and is added to the invoice.'],
             ['q' => 'Is the advertising budget included?', 'a' => 'No. For Google Ads and Meta Ads, the media budget is paid directly to the platforms, separately from the management fee.'],
             ['q' => 'Does the website cost extra?', 'a' => 'No. Website creation is included in the maintenance contract (from €400/month), with no large upfront investment.'],
-            ['q' => 'Can I combine several services?', 'a' => 'Yes. For Website + SEO clients, paid campaigns have a reduced add-on, because the tracking infrastructure is already set up.'],
+            ['q' => 'Can I combine several services?', 'a' => 'Yes. For clients with an active subscription (Website, SEO or content), Google/Meta Ads campaigns use a reduced add-on rate (€250/month instead of €400), because the tracking infrastructure is already set up.'],
             ['q' => 'How is the final quote set?', 'a' => 'We start from your goals and project scope. Use the calculator for a ballpark estimate, then we send you an exact quote.'],
         ],
 

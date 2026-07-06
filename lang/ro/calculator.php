@@ -32,6 +32,10 @@ return [
     'cta' => 'Cere o ofertă exactă',
     'disclaimer' => 'Prețurile marcate „de la" sunt estimative și se stabilesc după discuție. Toate valorile sunt în €, fără TVA (21%) și fără bugetul media.',
 
+    // Tarif add-on (aplicat automat când Google/Meta Ads e ales împreună cu alt serviciu).
+    'addon_badge' => 'add-on',
+    'addon_hint' => 'aplicat automat la combinație cu alt serviciu',
+
     // Etichete item-uri (atomice — split față de cele 6 servicii)
     'items' => [
         'content-strategy' => 'Strategie de conținut',

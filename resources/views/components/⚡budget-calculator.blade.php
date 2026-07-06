@@ -15,20 +15,34 @@ new class extends Component
     public int $months = 6;
 
     /**
-     * @return array{monthly: int, monthly_from: bool, onetime: int, onetime_from: bool, contract: int, contract_from: bool, empty: bool}
+     * @return array{monthly: int, monthly_from: bool, onetime: int, onetime_from: bool, contract: int, contract_from: bool, empty: bool, addon_active: array<int, string>}
      */
     #[Computed]
     public function estimate(): array
     {
         $cfg = config('site.pricing.calculator');
+        $selection = array_merge($this->monthly, $this->onetime);
 
         $monthlySum = 0;
         $monthlyFrom = false;
+        $addonActive = [];
         foreach ($this->monthly as $key) {
-            if (isset($cfg['monthly'][$key])) {
-                $monthlySum += (int) $cfg['monthly'][$key]['price'];
-                $monthlyFrom = $monthlyFrom || (bool) $cfg['monthly'][$key]['from'];
+            if (! isset($cfg['monthly'][$key])) {
+                continue;
             }
+            $item = $cfg['monthly'][$key];
+            $price = (int) $item['price'];
+
+            // Tariful de add-on se aplică dacă item-ul are un preț redus configurat
+            // ȘI utilizatorul a bifat cel puțin un alt serviciu (semnal de „client cu
+            // contract activ", pentru care infrastructura de tracking există deja).
+            if (! empty($item['addon_price']) && count($selection) > 1) {
+                $price = (int) $item['addon_price'];
+                $addonActive[] = $key;
+            }
+
+            $monthlySum += $price;
+            $monthlyFrom = $monthlyFrom || (bool) $item['from'];
         }
 
         $onetimeSum = 0;
@@ -48,6 +62,7 @@ new class extends Component
             'contract' => $monthlySum * $this->months + $onetimeSum,
             'contract_from' => $monthlyFrom || $onetimeFrom,
             'empty' => $monthlySum === 0 && $onetimeSum === 0,
+            'addon_active' => $addonActive,
         ];
     }
 
@@ -87,6 +102,7 @@ new class extends Component
     $fmt = fn (int $value): string => number_format($value, 0, ',', '.');
     $monthlyItems = config('site.pricing.calculator.monthly');
     $onetimeItems = config('site.pricing.calculator.onetime');
+    $addonActive = $this->estimate['addon_active'];
 @endphp
 
 <div class="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm">
@@ -102,6 +118,10 @@ new class extends Component
             </div>
             <div class="mt-3 space-y-2.5">
                 @foreach ($monthlyItems as $key => $it)
+                    @php
+                        $isAddon = in_array($key, $addonActive, true);
+                        $displayPrice = $isAddon ? (int) $it['addon_price'] : (int) $it['price'];
+                    @endphp
                     <label
                         wire:key="calc-m-{{ $key }}"
                         class="flex cursor-pointer items-center justify-between gap-3 rounded-xl border p-3 transition"
@@ -111,10 +131,15 @@ new class extends Component
                             <span :class="$wire.monthly.includes('{{ $key }}') ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-transparent'" class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition">
                                 <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                             </span>
-                            <span class="text-sm font-semibold text-ink">{{ __('calculator.items.'.$key) }}</span>
+                            <span class="flex flex-col text-left">
+                                <span class="text-sm font-semibold text-ink">{{ __('calculator.items.'.$key) }}</span>
+                                @if ($isAddon)
+                                    <span class="text-[10px] font-semibold uppercase tracking-wide text-teal">{{ __('calculator.addon_badge') }}</span>
+                                @endif
+                            </span>
                         </span>
                         <span class="shrink-0 text-right text-sm font-semibold text-ink">
-                            @if ($it['from'])<span class="mr-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">{{ __('calculator.from_prefix') }}</span> @endif{{ $fmt($it['price']) }} €<span class="text-xs font-medium text-muted">{{ __('calculator.unit_month') }}</span>
+                            @if ($it['from'])<span class="mr-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">{{ __('calculator.from_prefix') }}</span> @endif{{ $fmt($displayPrice) }} €<span class="text-xs font-medium text-muted">{{ __('calculator.unit_month') }}</span>
                         </span>
                         <input type="checkbox" wire:model.live="monthly" value="{{ $key }}" class="sr-only">
                     </label>
@@ -140,12 +165,16 @@ new class extends Component
                             <span class="text-sm font-semibold text-ink">{{ __('calculator.items.'.$key) }}</span>
                         </span>
                         <span class="shrink-0 text-right text-sm font-semibold text-ink">
-                            @if ($it['from'])<span class="mr-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">{{ __('calculator.from_prefix') }}</span> @endif{{ $fmt($it['price']) }} €
+                            @if ($it['from'])<span class="mr-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">{{ __('calculator.from_prefix') }}</span> @endif{{ $fmt((int) $it['price']) }} €
                         </span>
                         <input type="checkbox" wire:model.live="onetime" value="{{ $key }}" class="sr-only">
                     </label>
                 @endforeach
             </div>
+
+            @if (! empty($addonActive))
+                <p class="mt-3 text-xs text-muted">{{ __('calculator.addon_hint') }}</p>
+            @endif
 
             {{-- Durata contractului — relevantă doar când există abonament lunar --}}
             @if ($this->estimate['monthly'] > 0)

@@ -254,6 +254,8 @@ return [
                 ['service' => 'Google Ads — management', 'price' => '400 €'],
                 ['service' => 'Meta Ads — management', 'price' => '400 €'],
                 ['service' => 'SEO / AEO / GEO (standalone)', 'price' => 'de la 300 €'],
+                ['service' => 'Google Ads add-on', 'price' => '+ 250 €'],
+                ['service' => 'Meta Ads add-on', 'price' => '+ 250 €'],
             ]],
             ['title' => 'Strategie de conținut (anual)', 'rows' => [
                 ['service' => '8 scenarii / lună', 'price' => '3.000 €'],
@@ -265,8 +267,6 @@ return [
                 ['service' => 'Brandbook — pachet complet', 'price' => '3.000 €'],
                 ['service' => 'Setare Google Analytics + GTM', 'price' => '150 €'],
                 ['service' => 'Creare banner online', 'price' => '50 €'],
-                ['service' => 'Google Ads add-on (client cu site)', 'price' => '+ 50 €'],
-                ['service' => 'Meta Ads add-on (client cu site)', 'price' => '+ 50 €'],
             ]],
             ['title' => 'La cerere', 'rows' => [
                 ['service' => 'Filmare / editare video', 'price' => '50 €/oră'],
@@ -301,7 +301,7 @@ return [
             ['q' => 'Prețurile includ TVA?', 'a' => 'Nu, toate prețurile sunt fără TVA. Cota aplicabilă este de 21% și se adaugă pe factură.'],
             ['q' => 'Bugetul de publicitate este inclus?', 'a' => 'Nu. Pentru Google Ads și Meta Ads, bugetul media se plătește direct platformelor, separat de fee-ul de management.'],
             ['q' => 'Crearea site-ului costă separat?', 'a' => 'Nu. Crearea site-ului este inclusă în contractul de mentenanță (de la 400 €/lună), fără investiție mare la start.'],
-            ['q' => 'Pot combina mai multe servicii?', 'a' => 'Da. Pentru clienții cu Website + SEO, campaniile plătite au un add-on redus, fiindcă infrastructura de tracking e deja configurată.'],
+            ['q' => 'Pot combina mai multe servicii?', 'a' => 'Da. Pentru clienții cu abonament activ (Website, SEO sau conținut), campaniile Google/Meta Ads au tarif de add-on redus (250 €/lună în loc de 400 €), fiindcă infrastructura de tracking e deja configurată.'],
             ['q' => 'Cum se stabilește oferta finală?', 'a' => 'Pornim de la obiectivele și scopul proiectului. Folosește calculatorul pentru o estimare orientativă, apoi îți trimitem o ofertă exactă.'],
         ],
 

@@ -32,6 +32,10 @@ return [
     'cta' => 'Request an exact quote',
     'disclaimer' => 'Prices marked "from" are estimates and are set after a discussion. All values are in €, excluding VAT (21%) and media budget.',
 
+    // Add-on rate (applied automatically when Google/Meta Ads is picked with another service).
+    'addon_badge' => 'add-on',
+    'addon_hint' => 'applied automatically when combined with another service',
+
     // Item labels (atomic — split from the 6 services)
     'items' => [
         'content-strategy' => 'Content strategy',

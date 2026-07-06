@@ -9,15 +9,20 @@
         // Mini-calc din hero = DOAR abonament lunar (titlul „Estimează-ți abonamentul").
         // One-time-ul (creare site, brandbook, setări) trăiește în calculatorul complet
         // de mai jos. Item-urile vin din pricing.calculator.monthly; 'from' = estimativ.
+        // 'addonPrice' = tarif redus, aplicat automat când item-ul e bifat împreună cu
+        // alt serviciu (nu contează care; semnal de „client cu contract activ").
         $calcItems = [];
         foreach (config('site.pricing.calculator.monthly') as $key => $p) {
             $calcItems[] = [
                 'key' => $key,
                 'name' => __('calculator.items.'.$key),
                 'price' => (int) $p['price'],
+                'addonPrice' => isset($p['addon_price']) ? (int) $p['addon_price'] : null,
                 'from' => (bool) $p['from'],
             ];
         }
+        $addonBadge = __('calculator.addon_badge');
+        $addonHint = __('calculator.addon_hint');
     @endphp
     <section class="relative overflow-hidden border-b border-zinc-200 bg-paper">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
@@ -49,9 +54,17 @@
                         init() {
                             window.addEventListener('pageshow', (e) => { if (e.persisted) this.sel = {}; });
                         },
-                        total() { let t = 0; this.items.forEach(i => { if (this.sel[i.key]) t += i.price; }); return t; },
+                        selectedCount() { return this.items.filter(i => this.sel[i.key]).length; },
+                        priceFor(item) {
+                            return (item.addonPrice !== null && this.sel[item.key] && this.selectedCount() > 1) ? item.addonPrice : item.price;
+                        },
+                        isAddon(item) {
+                            return item.addonPrice !== null && this.sel[item.key] && this.selectedCount() > 1;
+                        },
+                        total() { let t = 0; this.items.forEach(i => { if (this.sel[i.key]) t += this.priceFor(i); }); return t; },
                         totalVat() { return Math.round(this.total() * 1.21); },
-                        hasFrom() { return this.items.some(i => this.sel[i.key] && i.from); }
+                        hasFrom() { return this.items.some(i => this.sel[i.key] && i.from); },
+                        hasAddonActive() { return this.items.some(i => this.isAddon(i)); }
                     }"
                     class="mx-auto w-full max-w-md lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:max-w-none lg:self-center"
                 >
@@ -74,13 +87,17 @@
                                         <span :class="sel['{{ $item['key'] }}'] ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-transparent'" class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition">
                                             <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                                         </span>
-                                        <span class="text-sm font-semibold text-ink">{{ $item['name'] }}</span>
+                                        <span class="flex flex-col">
+                                            <span class="text-sm font-semibold text-ink">{{ $item['name'] }}</span>
+                                            <span x-show="isAddon(items[{{ $loop->index }}])" x-cloak class="text-[10px] font-semibold uppercase tracking-wide text-teal">{{ $addonBadge }}</span>
+                                        </span>
                                     </span>
                                     <span class="shrink-0 text-sm font-semibold text-ink">
-                                        @if ($item['from'])<span class="mr-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">{{ __('calculator.from_prefix') }}</span> @endif{{ $item['price'] }} €<span class="text-xs font-medium text-muted">{{ __('calculator.unit_month') }}</span>
+                                        @if ($item['from'])<span class="mr-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">{{ __('calculator.from_prefix') }}</span> @endif<span x-text="priceFor(items[{{ $loop->index }}])">{{ $item['price'] }}</span> €<span class="text-xs font-medium text-muted">{{ __('calculator.unit_month') }}</span>
                                     </span>
                                 </button>
                             @endforeach
+                            <p x-show="hasAddonActive()" x-cloak class="text-xs text-muted">{{ $addonHint }}</p>
                         </div>
 
                         <div class="mt-5 rounded-2xl bg-zinc-900 p-4 text-white">
