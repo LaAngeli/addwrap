@@ -180,7 +180,7 @@
 
                 <div data-animate-group class="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-3">
                     @foreach ($page['includes'] as $group)
-                        <div class="flex flex-col rounded-3xl border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-8">
+                        <div class="flex flex-col rounded-3xl border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 card-hover-neon sm:p-8">
                             <div class="flex items-center gap-3">
                                 <span class="inline-flex shrink-0 items-center justify-center rounded-xl bg-zinc-900 px-3 py-2 text-sm font-black tracking-tight text-white">{{ $group['abbr'] }}</span>
                                 <h3 class="text-sm font-semibold leading-tight text-ink">{{ $group['full'] }}</h3>

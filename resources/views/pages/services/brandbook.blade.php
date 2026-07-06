@@ -177,7 +177,7 @@
             </div>
             <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6 lg:grid-cols-3">
                 @foreach ($page['board'] as $item)
-                    <div class="rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
+                    <div class="rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
                         <h3 class="font-semibold text-ink">{{ $item['label'] }}</h3>
                         <p class="mt-1 text-sm text-muted">{{ $item['desc'] }}</p>
                     </div>

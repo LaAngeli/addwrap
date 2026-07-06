@@ -189,7 +189,7 @@
 
                 {{-- Carduri item --}}
                 @foreach ($bentoItems as $i => $item)
-                    <div class="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
+                    <div class="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $itemIcons[$i] ?? '' !!}</svg>
                         </span>
@@ -221,7 +221,7 @@
             </div>
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6 lg:grid-cols-4">
                 @foreach (__('pages.home.why_items') as $i => $item)
-                    <div class="group rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
+                    <div class="group rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 @switch($i)

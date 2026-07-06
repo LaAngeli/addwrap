@@ -135,9 +135,9 @@
                 <div data-animate-group class="space-y-4 sm:space-y-7">
                     @foreach (__('pages.about.story_steps') as $i => $step)
                         <div @class([
-                            'flex gap-4 rounded-2xl p-5 sm:gap-5 sm:p-8',
+                            'flex gap-4 rounded-2xl p-5 transition sm:gap-5 sm:p-8',
                             'bg-teal' => $loop->last,
-                            'border border-zinc-200 bg-white' => ! $loop->last,
+                            'border border-zinc-200 bg-white card-hover-neon' => ! $loop->last,
                         ])>
                             <span @class([
                                 'inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-white',
@@ -288,7 +288,7 @@
             </div>
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6">
                 @foreach (__('pages.about.why_points') as $i => $point)
-                    <div class="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:flex-row sm:items-start sm:gap-4 sm:p-6">
+                    <div class="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:flex-row sm:items-start sm:gap-4 sm:p-6">
                         <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $whyIcons[$i] ?? '' !!}</svg>
                         </span>
@@ -309,7 +309,7 @@
             </div>
             <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-5 lg:grid-cols-4">
                 @foreach ($industries as $i => $industry)
-                    <div class="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
+                    <div class="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
                         <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $industryIcons[$i] ?? '' !!}</svg>
                         </span>

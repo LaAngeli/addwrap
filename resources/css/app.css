@@ -205,6 +205,20 @@
     outline-color: rgb(255 255 255 / 0.08);
 }
 
+/* Efect neon la hover — doar carduri de conținut albe (nu în secțiunile hero). */
+.card-hover-neon {
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+.card-hover-neon:hover {
+    border-color: var(--color-teal) !important;
+    box-shadow:
+        0 0 0 1px var(--color-teal),
+        0 0 18px 2px rgb(0 143 159 / 0.45),
+        0 0 36px 8px rgb(0 143 159 / 0.25) !important;
+}
+
 /* Marquee pentru bara de "clienți / tehnologii" (logos placeholder) */
 @keyframes marquee {
     from {

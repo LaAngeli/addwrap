@@ -155,7 +155,7 @@
                         <div @class([
                             'flex h-full flex-col rounded-3xl border p-4 transition hover:-translate-y-1 sm:p-6',
                             'border-zinc-900 bg-teal text-white shadow-xl' => $offer['featured'] ?? false,
-                            'border-zinc-200 bg-white hover:border-zinc-900 hover:shadow-lg' => ! ($offer['featured'] ?? false),
+                            'border-zinc-200 bg-white card-hover-neon' => ! ($offer['featured'] ?? false),
                         ])>
                             @if ($offer['featured'] ?? false)
                                 <span class="mb-3 inline-flex self-start rounded-full bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-zinc-900">{{ __('services.show.recommended') }}</span>

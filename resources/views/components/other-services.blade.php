@@ -22,7 +22,7 @@
                     @php $otherIcon = config('site.services.'.$combo['key'].'.icon', 'simple'); @endphp
                     <a
                         href="{{ Localization::serviceUrl($combo['key']) }}"
-                        class="group flex flex-col items-center rounded-2xl border border-zinc-200 bg-white p-3 text-center transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:items-start sm:rounded-3xl sm:p-6 sm:text-left"
+                        class="group flex flex-col items-center rounded-2xl border border-zinc-200 bg-white p-3 text-center transition hover:-translate-y-1 card-hover-neon sm:items-start sm:rounded-3xl sm:p-6 sm:text-left"
                     >
                         {{-- Mobil: o singură pictogramă compactă (serviciul complementar) --}}
                         <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-900 text-white transition group-hover:scale-105 sm:hidden">

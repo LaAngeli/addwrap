@@ -211,7 +211,7 @@
             </div>
             <div data-animate-group class="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6 lg:grid-cols-4">
                 @foreach ($page['pillars'] as $pillar)
-                    <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 hover:border-zinc-900 hover:shadow-lg sm:p-6">
+                    <div class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 transition hover:-translate-y-1 card-hover-neon sm:p-6">
                         <h3 class="text-base font-semibold text-ink sm:text-lg">{{ $pillar['title'] }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $pillar['desc'] }}</p>
                         <ul class="mt-4 space-y-1.5 border-t border-zinc-100 pt-4 text-sm text-zinc-600">
