@@ -154,14 +154,32 @@ return [
             'medium' => 1.0,
             'large' => 1.4,
         ],
-        // Valori orientative în EUR (fără TVA), aliniate la lista de prețuri.
+        // Valori orientative în EUR (fără TVA), folosite de wizard-ul project-starter.
         'services' => [
             'brandbook' => ['monthly' => 0, 'setup' => 3000],
             'content-strategy' => ['monthly' => 250, 'setup' => 0],
-            'google-ads' => ['monthly' => 400, 'setup' => 150],
+            'google-ads' => ['monthly' => 400, 'setup' => 0],
             'meta-ads' => ['monthly' => 400, 'setup' => 0],
             'seo-aeo-geo' => ['monthly' => 300, 'setup' => 0],
             'web-development' => ['monthly' => 100, 'setup' => 400],
+        ],
+        // Model dedicat calculatoarelor (mini-calc din hero + budget-calculator).
+        // Item-uri ATOMICE, grupate pe tipul de plată, ca lunarul și one-time-ul să
+        // nu se amestece. 'from' => true = preț estimativ („de la"); false = fix.
+        // Aliniate 1:1 cu lista de prețuri (config table_groups din lang/pages).
+        'calculator' => [
+            'monthly' => [
+                'content-strategy' => ['price' => 250, 'from' => true],
+                'google-ads' => ['price' => 400, 'from' => false],
+                'meta-ads' => ['price' => 400, 'from' => false],
+                'seo-aeo-geo' => ['price' => 300, 'from' => true],
+                'web-maintenance' => ['price' => 100, 'from' => true],
+            ],
+            'onetime' => [
+                'web-creation' => ['price' => 400, 'from' => true],
+                'brandbook' => ['price' => 3000, 'from' => false],
+                'analytics-setup' => ['price' => 150, 'from' => false],
+            ],
         ],
     ],
 

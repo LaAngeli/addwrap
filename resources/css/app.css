@@ -219,6 +219,17 @@
         0 0 36px 8px rgb(0 143 159 / 0.25) !important;
 }
 
+/* Aceeași rețetă, permanent activă (nu doar la hover) — liste de prețuri statice.
+   Intensitate redusă cu 50% față de .card-hover-neon (rămâne vizibilă permanent,
+   nu doar tranzitoriu la hover, deci nu trebuie să fie la fel de puternică). */
+.card-neon-active {
+    border-color: #18181b !important;
+    box-shadow:
+        0 0 0 1px #18181b,
+        0 0 18px 2px rgb(0 143 159 / 0.225),
+        0 0 36px 8px rgb(0 143 159 / 0.125) !important;
+}
+
 /* Marquee pentru bara de "clienți / tehnologii" (logos placeholder) */
 @keyframes marquee {
     from {
