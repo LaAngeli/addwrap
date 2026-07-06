@@ -189,7 +189,7 @@
                                     </span>
                                     <span class="min-w-0">
                                         <span class="block text-sm font-semibold">{{ __('services.items.'.$key.'.name') }}</span>
-                                        <span @class(['block truncate text-xs', 'text-zinc-400' => $svcActive, 'text-muted' => ! $svcActive])>{{ __('services.items.'.$key.'.tagline') }}</span>
+                                        <span @class(['block truncate text-xs', 'text-white/85' => $svcActive, 'text-muted' => ! $svcActive])>{{ __('services.items.'.$key.'.tagline') }}</span>
                                     </span>
                                 </a>
                             @endforeach

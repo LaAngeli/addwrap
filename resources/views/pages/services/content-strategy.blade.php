@@ -235,7 +235,7 @@
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-5">
                 @foreach ($page['process'] as $i => $step)
                     <div>
-                        <span class="text-4xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
+                        <span class="text-[2.025rem] font-bold text-teal">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                         <h3 class="mt-3 font-semibold text-ink">{{ $step['title'] }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $step['text'] }}</p>
                     </div>

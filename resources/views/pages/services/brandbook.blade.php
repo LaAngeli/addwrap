@@ -194,7 +194,7 @@
                 <div class="relative overflow-hidden rounded-3xl bg-teal p-8 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
-                        <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>
+                        <p class="text-sm font-semibold uppercase tracking-wider text-white/85">{{ $svc['highlight']['title'] }}</p>
                         <p class="mt-3 max-w-3xl text-xl font-medium">{{ $svc['highlight']['text'] }}</p>
                         <a href="{{ Localization::route('contact') }}" class="mt-6 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200">{{ $page['price_cta'] }}</a>
                     </div>
@@ -213,7 +213,7 @@
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-4">
                 @foreach (__('pages.home.process_steps') as $i => $step)
                     <div>
-                        <span class="text-5xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
+                        <span class="text-[2.7rem] font-bold text-teal">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                         <h3 class="mt-3 text-lg font-semibold text-ink">{{ $step['title'] }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $step['text'] }}</p>
                     </div>

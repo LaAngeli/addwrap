@@ -205,13 +205,13 @@ new class extends Component
 
             @if (! $this->estimate['empty'])
                 <div class="mt-6 rounded-2xl bg-teal p-5 text-white">
-                    <p class="text-sm text-zinc-400">{{ __('starter.your_estimate') }}</p>
+                    <p class="text-sm text-white/85">{{ __('starter.your_estimate') }}</p>
                     <div class="mt-2 flex flex-wrap gap-6">
                         @if ($this->estimate['monthly'] > 0)
-                            <div><span class="text-2xl font-bold">{{ $fmt($this->estimate['monthly']) }}</span> <span class="text-zinc-400">{{ __('starter.per_month') }}</span></div>
+                            <div><span class="text-2xl font-bold">{{ $fmt($this->estimate['monthly']) }}</span> <span class="text-white/85">{{ __('starter.per_month') }}</span></div>
                         @endif
                         @if ($this->estimate['setup'] > 0)
-                            <div><span class="text-2xl font-bold">{{ $fmt($this->estimate['setup']) }}</span> <span class="text-zinc-400">{{ __('starter.setup') }}</span></div>
+                            <div><span class="text-2xl font-bold">{{ $fmt($this->estimate['setup']) }}</span> <span class="text-white/85">{{ __('starter.setup') }}</span></div>
                         @endif
                     </div>
                 </div>

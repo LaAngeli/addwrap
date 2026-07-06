@@ -25,12 +25,12 @@
                     <div data-animate="scale-in" class="flex flex-col justify-center rounded-2xl bg-teal p-6 text-white">
                         <span class="text-4xl font-bold tracking-tight">{{ $svc['price']['amount'] }}</span>
                         @if (! empty($svc['price']['frequency']))
-                            <span class="mt-1 text-sm text-zinc-400">{{ $svc['price']['frequency'] }} · {{ $svc['price']['vat'] ?? '' }}</span>
+                            <span class="mt-1 text-sm text-white/85">{{ $svc['price']['frequency'] }} · {{ $svc['price']['vat'] ?? '' }}</span>
                         @else
-                            <span class="mt-1 text-sm text-zinc-400">{{ $svc['price']['vat'] ?? '' }}</span>
+                            <span class="mt-1 text-sm text-white/85">{{ $svc['price']['vat'] ?? '' }}</span>
                         @endif
                         @if (! empty($svc['price']['unit']))
-                            <span class="mt-3 text-sm text-zinc-300">{{ $svc['price']['unit'] }}</span>
+                            <span class="mt-3 text-sm text-white/85">{{ $svc['price']['unit'] }}</span>
                         @endif
                         <a href="{{ Localization::route('contact') }}" class="mt-6 rounded-lg bg-white px-5 py-2.5 text-center text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200">{{ __('services.show.price_cta') }}</a>
                     </div>

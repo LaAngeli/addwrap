@@ -102,9 +102,9 @@
             {{-- Card serviciu relevant (internal linking SEO) --}}
             @if ($relatedServiceKey && is_array($relatedService))
                 <div class="mt-14 rounded-2xl border border-zinc-900 bg-teal p-6 text-white sm:p-8">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">{{ __('blog.related_service.eyebrow') }}</p>
+                    <p class="text-xs font-semibold uppercase tracking-wider text-white/85">{{ __('blog.related_service.eyebrow') }}</p>
                     <h3 class="mt-2 text-xl font-bold text-balance">{{ $relatedService['name'] ?? '' }}</h3>
-                    <p class="mt-2 text-sm text-zinc-300">{{ $relatedService['tagline'] ?? __('blog.related_service.text') }}</p>
+                    <p class="mt-2 text-sm text-white/85">{{ $relatedService['tagline'] ?? __('blog.related_service.text') }}</p>
                     <a href="{{ Localization::serviceUrl($relatedServiceKey) }}" class="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100">
                         {{ __('blog.related_service.cta') }}
                         <span aria-hidden="true">&rarr;</span>

@@ -64,7 +64,7 @@
                                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{!! $industryIcons[$i] ?? '' !!}</svg>
                                     </span>
                                     <p class="mt-4 text-xl font-bold tracking-tight">{{ $ind['name'] }}</p>
-                                    <p class="mt-1 text-sm leading-relaxed text-zinc-300">{{ $ind['focus'] }}</p>
+                                    <p class="mt-1 text-sm leading-relaxed text-white/85">{{ $ind['focus'] }}</p>
                                 </div>
                             @endforeach
                         </div>
@@ -146,7 +146,7 @@
                             ])>{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                             <div>
                                 <h3 @class(['text-lg font-semibold', 'text-white' => $loop->last, 'text-ink' => ! $loop->last])>{{ $step['title'] }}</h3>
-                                <p @class(['mt-2 text-sm leading-relaxed', 'text-zinc-300' => $loop->last, 'text-muted' => ! $loop->last])>{{ $step['text'] }}</p>
+                                <p @class(['mt-2 text-sm leading-relaxed', 'text-white/85' => $loop->last, 'text-muted' => ! $loop->last])>{{ $step['text'] }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -245,7 +245,7 @@
                 @foreach (__('pages.about.stats') as $stat)
                     <div class="text-center">
                         <div class="text-4xl font-bold tracking-tight sm:text-5xl">{{ $stat['value'] }}</div>
-                        <p class="mt-2 text-sm text-zinc-400">{{ $stat['label'] }}</p>
+                        <p class="mt-2 text-sm text-white/85">{{ $stat['label'] }}</p>
                     </div>
                 @endforeach
             </div>

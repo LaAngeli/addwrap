@@ -15,7 +15,7 @@
     <div class="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:py-20">
         <h2 data-animate="fade-up" class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-balance">{{ $title }}</h2>
         @if ($text)
-            <p data-animate="fade-up" class="mx-auto mt-4 max-w-xl text-lg text-zinc-400">{{ $text }}</p>
+            <p data-animate="fade-up" class="mx-auto mt-4 max-w-xl text-lg text-white/85">{{ $text }}</p>
         @endif
         <div data-animate="fade-up" class="mt-8">
             <a href="{{ $href }}" class="inline-block rounded-lg bg-orange px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-orange-deep">{{ $button }}</a>

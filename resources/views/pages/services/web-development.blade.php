@@ -163,19 +163,19 @@
                             <h3 @class(['text-base font-bold sm:text-lg', 'text-white' => $offer['featured'] ?? false, 'text-ink' => ! ($offer['featured'] ?? false)])>{{ $offer['name'] }}</h3>
                             <div class="mt-3 flex flex-wrap items-baseline gap-x-2">
                                 <span @class(['text-2xl font-bold tracking-tight', 'text-white' => $offer['featured'] ?? false, 'text-ink' => ! ($offer['featured'] ?? false)])>{{ $offer['price'] }}</span>
-                                <span @class(['text-xs', 'text-zinc-400' => $offer['featured'] ?? false, 'text-muted' => ! ($offer['featured'] ?? false)])>{{ $offer['unit'] }}</span>
+                                <span @class(['text-xs', 'text-white/85' => $offer['featured'] ?? false, 'text-muted' => ! ($offer['featured'] ?? false)])>{{ $offer['unit'] }}</span>
                             </div>
                             @if (! empty($offer['note']))
                                 <p @class([
                                     'mt-2 inline-flex items-center gap-1.5 text-xs font-medium',
-                                    'text-zinc-300' => $offer['featured'] ?? false,
+                                    'text-white/85' => $offer['featured'] ?? false,
                                     'text-muted' => ! ($offer['featured'] ?? false),
                                 ])>
                                     <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l2.5 2.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                     {{ $offer['note'] }}
                                 </p>
                             @endif
-                            <p @class(['mt-4 flex-1 text-sm leading-relaxed', 'text-zinc-300' => $offer['featured'] ?? false, 'text-muted' => ! ($offer['featured'] ?? false)])>{{ $offer['desc'] }}</p>
+                            <p @class(['mt-4 flex-1 text-sm leading-relaxed', 'text-white/85' => $offer['featured'] ?? false, 'text-muted' => ! ($offer['featured'] ?? false)])>{{ $offer['desc'] }}</p>
                             <a href="{{ Localization::route('contact') }}" @class([
                                 'mt-5 rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition sm:mt-6',
                                 'bg-white text-zinc-900 hover:bg-zinc-200' => $offer['featured'] ?? false,
@@ -195,13 +195,13 @@
                 <div class="relative overflow-hidden rounded-3xl bg-teal p-6 text-white sm:p-12">
                     <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12]"></div>
                     <div class="relative">
-                    <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400">{{ $svc['highlight']['title'] }}</p>
+                    <p class="text-sm font-semibold uppercase tracking-wider text-white/85">{{ $svc['highlight']['title'] }}</p>
                     <p class="mt-3 max-w-3xl text-xl font-medium">{{ $svc['highlight']['text'] }}</p>
 
                     <div class="mt-8 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2">
                         <div class="rounded-2xl border border-white/15 p-5">
-                            <p class="text-xs uppercase tracking-wider text-zinc-500">{{ $page['cost_old_label'] }}</p>
-                            <p class="mt-2 text-xl font-bold text-zinc-500 line-through">{{ $page['cost_old_value'] }}</p>
+                            <p class="text-xs uppercase tracking-wider text-white/85">{{ $page['cost_old_label'] }}</p>
+                            <p class="mt-2 text-xl font-bold text-white/85 line-through">{{ $page['cost_old_value'] }}</p>
                         </div>
                         <div class="rounded-2xl bg-white p-5 text-zinc-900">
                             <p class="text-xs uppercase tracking-wider text-zinc-500">{{ $page['cost_new_label'] }}</p>
@@ -212,7 +212,7 @@
                     <div class="mt-8 flex flex-wrap items-center gap-4">
                         <a href="{{ Localization::route('contact') }}" class="inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200">{{ $page['price_cta'] }}</a>
                         @if (! empty($page['min_term']))
-                            <span class="inline-flex items-center gap-1.5 text-sm text-zinc-400">
+                            <span class="inline-flex items-center gap-1.5 text-sm text-white/85">
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l2.5 2.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                 {{ $page['min_term'] }}
                             </span>
@@ -299,7 +299,7 @@
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-5">
                 @foreach ($page['process'] as $i => $step)
                     <div>
-                        <span class="text-4xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
+                        <span class="text-[2.025rem] font-bold text-teal">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                         <h3 class="mt-3 font-semibold text-ink">{{ $step['title'] }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $step['text'] }}</p>
                     </div>

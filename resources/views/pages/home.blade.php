@@ -272,7 +272,7 @@
             <div data-animate-group class="mt-10 grid grid-cols-2 gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-4">
                 @foreach (__('pages.home.process_steps') as $i => $step)
                     <div class="relative">
-                        <span class="text-5xl font-bold text-zinc-200">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
+                        <span class="text-[2.7rem] font-bold text-teal">{{ str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                         <h3 class="mt-3 text-lg font-semibold text-ink">{{ $step['title'] }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $step['text'] }}</p>
                     </div>
@@ -295,7 +295,7 @@
                             'text-orange' => $i % 2 === 0,
                             'text-white' => $i % 2 === 1,
                         ])>{{ $stat['value'] }}</div>
-                        <p class="mt-2 text-sm text-zinc-400">{{ $stat['label'] }}</p>
+                        <p class="mt-2 text-sm text-white/85">{{ $stat['label'] }}</p>
                     </div>
                 @endforeach
             </div>
