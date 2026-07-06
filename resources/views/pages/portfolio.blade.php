@@ -1,6 +1,10 @@
 @php
     use App\Support\Projects;
     use App\Support\Localization;
+
+    // Showcase-ul interactiv din hero: doar clienții cu hero != false (unii clienți,
+    // ex. Cleaning Pasca, apar doar în grila de jos, nu în hero). Grila = toți $projects.
+    $heroProjects = array_filter($projects, fn ($p) => $p['hero'] ?? true);
 @endphp
 
 @extends('layouts.app')
@@ -33,7 +37,7 @@
                     data-animate="scale-in"
                     x-data="{
                         sel: 0,
-                        count: {{ count($projects) }},
+                        count: {{ count($heroProjects) }},
                         timer: null,
                         start() {
                             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -49,7 +53,7 @@
                     {{-- Scenă: logo-ul clientului selectat + info --}}
                     <div class="relative aspect-[16/11] overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-xl shadow-zinc-900/10">
                         <div class="bg-dot-grid pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]"></div>
-                        @foreach ($projects as $slug => $project)
+                        @foreach ($heroProjects as $slug => $project)
                             @php $c = Projects::content($project); @endphp
                             <div
                                 x-show="sel === {{ $loop->index }}"
@@ -86,7 +90,7 @@
 
                     {{-- Selector: chip-uri cu logo (clic sau auto-derulare, pauză la hover) --}}
                     <div class="mt-3 grid grid-cols-4 gap-2.5">
-                        @foreach ($projects as $slug => $project)
+                        @foreach ($heroProjects as $slug => $project)
                             <button
                                 type="button"
                                 @click="sel = {{ $loop->index }}"

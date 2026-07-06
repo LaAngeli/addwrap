@@ -63,7 +63,8 @@ class Projects
      * până la primirea rezultatelor reale (nu se inventează cifre/citate pentru
      * firme reale). `icon` alege ilustrația copertei; `logo` = fișierul din
      * public/images/partners; `tag`/`keywords` (localizate) = eticheta și
-     * cuvintele-cheie de domeniu afișate pe copertă.
+     * cuvintele-cheie de domeniu afișate pe copertă. `hero => false` exclude
+     * clientul din showcase-ul interactiv din hero (rămâne în grila de jos).
      *
      * @return array<string, array<string, mixed>>
      */
@@ -331,6 +332,40 @@ class Projects
                     'blocks' => [
                         ['type' => 'heading', 'text' => 'About the client'],
                         ['type' => 'paragraph', 'text' => 'Solis School of Life is an alternative school in Cluj, with experiential learning, bilingual teaching and a personalized path for each child. Its approach emphasizes education “with soul and wisdom”.'],
+                    ],
+                ],
+            ],
+
+            'cleaning-pasca' => [
+                'slug' => 'cleaning-pasca',
+                'client' => 'Cleaning Pasca',
+                'category' => 'general',
+                'icon' => 'cleaning',
+                'logo' => 'cleaning-pasca',
+                'year' => '2024',
+                'url' => 'https://ecocleaningpasca.ro/',
+                'featured' => false,
+                'hero' => false,
+                'ro' => [
+                    'title' => 'Cleaning Pasca — servicii profesionale de curățenie',
+                    'tag' => 'Curățenie',
+                    'keywords' => 'Birouri · Scări de bloc · Comercial',
+                    'excerpt' => 'Firmă de curățenie profesională din Cluj: birouri, scări de bloc, spații comerciale și curățenie după constructor.',
+                    'metrics' => [],
+                    'blocks' => [
+                        ['type' => 'heading', 'text' => 'Despre client'],
+                        ['type' => 'paragraph', 'text' => 'Cleaning Pasca este o firmă de curățenie profesională din Cluj, cu o gamă variată de servicii pentru afaceri: curățenie de birouri, scări de bloc, spații comerciale, curățenie după constructor, alpinism utilitar, întreținere spațiu verde și servicii DDD (dezinsecție, dezinfecție, deratizare). Firma își asumă calitatea prin contract.'],
+                    ],
+                ],
+                'en' => [
+                    'title' => 'Cleaning Pasca — professional cleaning services',
+                    'tag' => 'Cleaning',
+                    'keywords' => 'Offices · Buildings · Commercial',
+                    'excerpt' => 'Professional cleaning company in Cluj: offices, residential buildings, commercial spaces and post-construction cleaning.',
+                    'metrics' => [],
+                    'blocks' => [
+                        ['type' => 'heading', 'text' => 'About the client'],
+                        ['type' => 'paragraph', 'text' => 'Cleaning Pasca is a professional cleaning company in Cluj offering a wide range of services for businesses: office cleaning, residential building (stairwell) cleaning, commercial spaces, post-construction cleaning, rope-access work, green-space maintenance and pest-control services. The company backs its quality with contractual guarantees.'],
                     ],
                 ],
             ],
