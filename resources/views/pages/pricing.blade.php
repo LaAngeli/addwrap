@@ -6,18 +6,23 @@
 
     {{-- Hero — Split + mini-calculator dinamic (sincronizat cu config) --}}
     @php
+        // Brandbook e cost unic (setup), nu abonament lunar — afișat separat, ca
+        // primul rând din listă, cu propriul total „cost inițial" (nu intră în
+        // suma lunară). web-development e exclus din acest mini-calculator.
         $calcItems = [];
         foreach (config('site.pricing.services') as $key => $p) {
+            if ($key === 'web-development') {
+                continue;
+            }
             if (($p['monthly'] ?? 0) > 0) {
-                // Etichetă dedicată doar pentru web-development în acest mini-calculator
-                // (nu afectează numele global al serviciului, folosit peste tot altundeva).
-                $name = $key === 'web-development'
-                    ? __('pages.pricing.hero_calc_web_dev_label')
-                    : __('services.items.'.$key.'.name');
-                $calcItems[] = ['key' => $key, 'name' => $name, 'monthly' => (int) $p['monthly']];
+                $calcItems[] = ['key' => $key, 'name' => __('services.items.'.$key.'.name'), 'monthly' => (int) $p['monthly']];
             }
         }
         $defaultSel = [];
+
+        $brandbookSetup = (int) (config('site.pricing.services.brandbook.setup') ?? 0);
+        $brandbookSetupFmt = number_format($brandbookSetup, 0, ',', '.').' €';
+        $brandbookSetupVatFmt = number_format((int) round($brandbookSetup * 1.21), 0, ',', '.').' €';
     @endphp
     <section class="relative overflow-hidden border-b border-zinc-200 bg-paper">
         <div class="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]"></div>
@@ -64,6 +69,26 @@
                         </div>
 
                         <div class="mt-5 space-y-2.5">
+                            {{-- Brandbook: cost unic, rând separat, în top --}}
+                            <button
+                                type="button"
+                                @click="sel.brandbook = !sel.brandbook"
+                                :class="sel.brandbook ? 'border-zinc-900 bg-zinc-50' : 'border-zinc-200 hover:border-zinc-400'"
+                                class="flex w-full items-center justify-between gap-3 rounded-xl border p-3 text-left transition"
+                                :aria-pressed="sel.brandbook ? 'true' : 'false'"
+                            >
+                                <span class="flex items-center gap-3">
+                                    <span :class="sel.brandbook ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-300 text-transparent'" class="inline-flex h-5 w-5 items-center justify-center rounded-md border transition">
+                                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                                    </span>
+                                    <span class="text-sm font-semibold text-ink">{{ __('services.items.brandbook.name') }}</span>
+                                </span>
+                                <span class="shrink-0 text-right">
+                                    <span class="block text-sm font-semibold text-ink">{{ $brandbookSetupFmt }}</span>
+                                    <span class="block text-[10px] font-medium uppercase tracking-wide text-muted">{{ __('pages.pricing.hero_calc_onetime') }}</span>
+                                </span>
+                            </button>
+
                             @foreach ($calcItems as $item)
                                 <button
                                     type="button"
@@ -100,6 +125,25 @@
                                     <span class="text-lg font-bold" x-text="totalVat()">0</span>
                                     <span class="text-sm text-zinc-400"> {{ __('pages.pricing.hero_calc_unit') }}</span>
                                 </p>
+                            </div>
+
+                            {{-- Brandbook (cost unic) — total separat, doar când e bifat --}}
+                            <div x-show="sel.brandbook" x-cloak class="mt-3 border-t border-white/10 pt-3">
+                                <div class="flex items-center justify-between gap-3">
+                                    <div>
+                                        <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">{{ __('pages.pricing.hero_calc_setup_label') }}</p>
+                                        <p class="text-xs text-zinc-500">{{ __('pages.pricing.hero_calc_novat') }}</p>
+                                    </div>
+                                    <p class="text-right">
+                                        <span class="text-lg font-bold text-white">{{ $brandbookSetupFmt }}</span>
+                                    </p>
+                                </div>
+                                <div class="mt-2 flex items-center justify-between gap-3">
+                                    <p class="text-sm text-zinc-300">{{ __('pages.pricing.hero_calc_withvat') }}</p>
+                                    <p class="text-right">
+                                        <span class="text-sm font-bold text-zinc-200">{{ $brandbookSetupVatFmt }}</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

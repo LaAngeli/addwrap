@@ -233,15 +233,14 @@ return [
         'hero_title' => 'Clear pricing, no surprises',
         'hero_subtitle' => 'Full price list for addWrap services. All prices exclude VAT (21% rate).',
         'hero_calc_title' => 'Estimate your subscription',
-        // Local label for THIS hero mini-calculator only (does not touch
-        // services.items.web-development.name, used everywhere else).
-        'hero_calc_web_dev_label' => 'Website Maintenance',
         'hero_calc_hint' => 'Tick the services you want',
         'hero_calc_total' => 'Estimated total',
         'hero_calc_vat' => '+ 21% VAT',
         'hero_calc_unit' => '€/month',
         'hero_calc_novat' => 'excl. VAT',
         'hero_calc_withvat' => 'incl. 21% VAT',
+        'hero_calc_onetime' => 'one-time',
+        'hero_calc_setup_label' => 'Initial cost',
         'hero_more' => 'Full calculator',
         'table_headers' => ['service' => 'Service', 'price' => 'Price', 'frequency' => 'Frequency'],
         'full_list_title' => 'Full price list',

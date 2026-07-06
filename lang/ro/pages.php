@@ -233,15 +233,14 @@ return [
         'hero_title' => 'Prețuri clare, fără surprize',
         'hero_subtitle' => 'Listă completă de prețuri pentru serviciile addWrap. Toate prețurile sunt fără TVA (cota 21%).',
         'hero_calc_title' => 'Estimează-ți abonamentul',
-        // Etichetă locală DOAR pentru acest mini-calculator din hero (nu atinge
-        // services.items.web-development.name, folosit peste tot altundeva).
-        'hero_calc_web_dev_label' => 'Mentenanță Website',
         'hero_calc_hint' => 'Bifează serviciile dorite',
         'hero_calc_total' => 'Total estimativ',
         'hero_calc_vat' => '+ TVA 21%',
         'hero_calc_unit' => '€/lună',
         'hero_calc_novat' => 'fără TVA',
         'hero_calc_withvat' => 'cu TVA 21%',
+        'hero_calc_onetime' => 'o singură dată',
+        'hero_calc_setup_label' => 'Cost inițial',
         'hero_more' => 'Calculator complet',
         'table_headers' => ['service' => 'Serviciu', 'price' => 'Preț', 'frequency' => 'Frecvență'],
         'full_list_title' => 'Lista completă de prețuri',

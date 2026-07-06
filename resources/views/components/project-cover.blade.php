@@ -29,7 +29,12 @@
     </div>
 
     {{-- Logo client, în culoare, direct pe card --}}
-    <div class="relative flex flex-1 items-center justify-center {{ $tall ? 'px-8 py-4' : 'px-5 py-3' }}">
+    {{-- min-h-0 lasă flex-item-ul să se micșoreze sub 128/160px pe carduri scunde
+    (ex: aspect-[2/1] pe hero-ul de detaliu), astfel încât h-full + object-contain
+    strâng logo-ul la spațiul chiar disponibil — subsolul cu numele clientului nu
+    mai e împins în afara cardului și tăiat de overflow-hidden, indiferent de
+    aspect-ratio-ul logo-ului sau de ecran. --}}
+    <div class="relative flex flex-1 min-h-0 items-center justify-center {{ $tall ? 'px-8 py-4' : 'px-5 py-3' }}">
         @if ($logo)
             <img
                 src="{{ \App\Support\Media::partnerLogo($logo, true) }}"
@@ -38,7 +43,7 @@
                 loading="lazy"
                 decoding="async"
                 @class([
-                    'w-auto object-contain',
+                    'h-full w-auto object-contain',
                     'max-h-32 max-w-[72%] sm:max-h-40' => $tall,
                     'max-h-16 max-w-[64%]' => ! $tall,
                 ])
